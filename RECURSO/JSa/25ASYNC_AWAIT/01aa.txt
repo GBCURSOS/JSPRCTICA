@@ -1,0 +1,31 @@
+# Funciones Asíncronas (Async/Await) en JavaScript
+
+## 1. Introducción
+Las funciones asíncronas (async/await) son una característica de JavaScript que simplifica el trabajo con operaciones asíncronas. Introducidas en ES2017, proporcionan una sintaxis más limpia y fácil de leer para manejar promesas.
+
+- `async`: Declara una función asíncrona.
+- `await`: Pausa la ejecución de la función asíncrona y espera la resolución de una promesa.
+
+## 2. Await y precedencia de operadores
+El operador `await` tiene una precedencia alta, lo que significa que se aplica a la expresión inmediatamente siguiente. Es importante usar paréntesis cuando se necesita aplicar `await` a una expresión más compleja.
+
+## 3. Comparación entre funciones async y Promesas
+Las funciones async son una abstracción sobre las Promesas. Internamente, una función async siempre devuelve una Promesa. La principal ventaja es que permiten escribir código asíncrono que parece y se comporta como código síncrono.
+
+## 4. Bucles con async/await
+Usar async/await en bucles requiere cuidado. Un `forEach` con operaciones asíncronas no esperará a que estas se completen. Para operaciones secuenciales, se recomienda usar un bucle `for...of`. Para operaciones paralelas, se puede usar `Promise.all()` con `map()`.
+
+## 5. Menos indentación
+Async/await permite escribir código asíncrono con menos niveles de indentación comparado con las cadenas de promesas, lo que mejora la legibilidad.
+
+## 6. Operaciones asíncronas simultáneas (paralelas)
+Aunque async/await es secuencial por naturaleza, se puede lograr paralelismo usando `Promise.all()`, `Promise.race()`, o iniciando las promesas antes de esperar por ellas.
+
+## 7. Iteradores Async: Básico
+Los iteradores async permiten la iteración asíncrona sobre datos. Se declaran con `async function*` y usan `yield` para producir valores de forma asíncrona.
+
+## 8. Cómo hacer que un iterador sea utilizable dentro de una función de callback async
+Para usar un iterador dentro de una función de callback async, se puede convertir el iterador en un array o usar un bucle `for...of` dentro de una función async IIFE.
+
+Nota sobre los ejemplos
+En los siguientes ejemplos, utilizaremos la API pública de JSONPlaceholder (https://jsonplaceholder.typicode.com). Esta API proporciona datos ficticios pero funciona como una API real, permitiéndonos demostrar el uso de async/await en situaciones más cercanas a la realidad.

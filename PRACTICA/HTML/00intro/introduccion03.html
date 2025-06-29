@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción 03 - El DOM y JavaScript</title>
+    <link rel="stylesheet" href="../../CSS/00intro/introduccion03.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>El DOM y JavaScript</h1>
+            <p class="subtitle">Cómo JavaScript modifica las páginas web</p>
+        </header>
+
+        <main class="content">
+            <section class="introduction">
+                <h2>¿Qué es el DOM?</h2>
+                <p>
+                    El DOM (Document Object Model) es la representación que hace el navegador de una página web.
+                    Cuando el navegador lee un archivo HTML, no solo muestra el contenido, sino que también
+                    crea una estructura interna que representa todos los elementos de la página.
+                </p>
+                <p>
+                    Esta estructura permite que JavaScript pueda acceder y modificar cualquier elemento
+                    de la página web de forma dinámica, sin necesidad de recargar la página completa.
+                </p>
+            </section>
+
+            <section class="concept">
+                <h2>¿Cómo funciona el DOM?</h2>
+                <div class="definition">
+                    <p>
+                        El DOM convierte cada elemento HTML en un <strong>objeto</strong> que JavaScript
+                        puede manipular. Cada etiqueta, cada texto, cada atributo se convierte en una
+                        parte del DOM que puede ser modificada.
+                    </p>
+                </div>
+
+                <h3>Proceso de creación del DOM:</h3>
+                <ol>
+                    <li><strong>El navegador lee el HTML:</strong> Analiza etiqueta por etiqueta del archivo HTML.</li>
+                    <li><strong>Crea la estructura del DOM:</strong> Convierte cada elemento en un objeto interno.</li>
+                    <li><strong>Renderiza la página:</strong> Muestra el contenido visual basado en el DOM.</li>
+                    <li><strong>JavaScript accede al DOM:</strong> Puede leer y modificar cualquier elemento.</li>
+                    <li><strong>Actualización automática:</strong> Los cambios se reflejan inmediatamente en la página.
+                    </li>
+                </ol>
+
+                <h3>Elementos que JavaScript puede modificar:</h3>
+                <ul>
+                    <li><strong>Texto:</strong> Cambiar el contenido de títulos, párrafos, botones, etc.</li>
+                    <li><strong>Estilos:</strong> Modificar colores, tamaños, posiciones, efectos visuales.</li>
+                    <li><strong>Atributos:</strong> Cambiar enlaces, imágenes, clases CSS, IDs.</li>
+                    <li><strong>Estructura:</strong> Agregar, eliminar o mover elementos dentro de la página.</li>
+                    <li><strong>Eventos:</strong> Responder a clics, movimientos del mouse, teclado, etc.</li>
+                </ul>
+            </section>
+
+            <section class="concept">
+                <h2>¿Por qué es importante el DOM?</h2>
+
+                <h3>Antes del DOM y JavaScript:</h3>
+                <div class="comparison-card before">
+                    <ul>
+                        <li>Las páginas web eran completamente estáticas</li>
+                        <li>Para cambiar cualquier contenido había que recargar la página</li>
+                        <li>No había interactividad con el usuario</li>
+                        <li>Los formularios solo se validaban en el servidor</li>
+                        <li>La experiencia era lenta y limitada</li>
+                    </ul>
+                </div>
+
+                <h3>Con el DOM y JavaScript:</h3>
+                <div class="comparison-card after">
+                    <ul>
+                        <li>Las páginas web son dinámicas e interactivas</li>
+                        <li>El contenido puede cambiar sin recargar la página</li>
+                        <li>Los usuarios pueden interactuar en tiempo real</li>
+                        <li>Validación inmediata de formularios</li>
+                        <li>Experiencia fluida y moderna</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Ejemplos de modificaciones del DOM</h2>
+
+                <h3>Cambios que JavaScript puede hacer:</h3>
+
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h4>Cambiar Texto</h4>
+                        <p>Modificar el contenido de un título, párrafo o botón instantáneamente.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Cambiar Colores</h4>
+                        <p>Modificar el color de fondo, texto o bordes de cualquier elemento.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Mostrar/Ocultar</h4>
+                        <p>Hacer que elementos aparezcan o desaparezcan según las acciones del usuario.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Agregar Elementos</h4>
+                        <p>Crear nuevos elementos y agregarlos a la página dinámicamente.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Responder a Eventos</h4>
+                        <p>Reaccionar cuando el usuario hace clic, escribe o mueve el mouse.</p>
+                    </div>
+
+                    <div class="example-card">
+                        <h4>Actualizar Información</h4>
+                        <p>Cambiar datos, contadores, cronómetros o cualquier información en tiempo real.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>JavaScript y el DOM en Acción</h2>
+                <div class="definition">
+                    <p>
+                        Para entender cómo JavaScript puede modificar el DOM, es mejor verlo en acción.
+                        A continuación se presenta un ejemplo práctico donde JavaScript modifica
+                        elementos de una página web en tiempo real.
+                    </p>
+                </div>
+
+                <h3>Qué veremos en el ejemplo:</h3>
+                <ul>
+                    <li><strong>Un cronómetro en funcionamiento:</strong> JavaScript actualiza los números cada segundo
+                    </li>
+                    <li><strong>Botones interactivos:</strong> JavaScript responde a los clics del usuario</li>
+                    <li><strong>Cambios de estado:</strong> La página se actualiza sin recargar</li>
+                    <li><strong>Modificación del DOM:</strong> JavaScript cambia el contenido de la página</li>
+                </ul>
+
+                <div class="demo-link">
+                    <h4>Ver JavaScript modificando el DOM:</h4>
+                    <a href="ejemploDOM.html" class="demo-button" target="_blank">
+                        🚀 Ver Ejemplo Práctico del DOM
+                    </a>
+                    <p class="demo-note">
+                        <strong>Instrucciones:</strong> El enlace abrirá una nueva página donde podrás ver
+                        cómo JavaScript modifica el DOM en tiempo real con un cronómetro simple.
+                    </p>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Conceptos Clave del DOM</h2>
+
+                <h3>Términos importantes:</h3>
+                <div class="key-concepts">
+                    <div class="concept-item">
+                        <h4>Elemento</h4>
+                        <p>Cada etiqueta HTML (como &lt;h1&gt;, &lt;p&gt;, &lt;div&gt;) se convierte en un elemento del
+                            DOM.</p>
+                    </div>
+
+                    <div class="concept-item">
+                        <h4>Nodo</h4>
+                        <p>Cada parte del DOM (elementos, texto, atributos) es un nodo que JavaScript puede manipular.
+                        </p>
+                    </div>
+
+                    <div class="concept-item">
+                        <h4>Árbol del DOM</h4>
+                        <p>La estructura jerárquica donde cada elemento tiene padres, hijos y hermanos.</p>
+                    </div>
+
+                    <div class="concept-item">
+                        <h4>Evento</h4>
+                        <p>Acciones del usuario (clic, teclado, mouse) que JavaScript puede detectar y manejar.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="conclusion">
+                <h2>Conclusión</h2>
+                <p>
+                    El DOM es el puente que conecta JavaScript con las páginas web. Sin el DOM, JavaScript
+                    solo podría realizar cálculos internos, pero no podría crear la interactividad que
+                    experimentamos en las páginas web modernas.
+                </p>
+                <p>
+                    Comprender el DOM es fundamental para entender cómo JavaScript transforma páginas
+                    estáticas en experiencias dinámicas e interactivas. Es la base de toda la programación
+                    web frontend moderna.
+                </p>
+                <p>
+                    En las siguientes lecciones se profundizará en las técnicas específicas para
+                    manipular el DOM y crear aplicaciones web interactivas.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

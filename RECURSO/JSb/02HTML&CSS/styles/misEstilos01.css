@@ -1,0 +1,36 @@
+.bod {
+    background-color: rgb(228, 57, 57);
+    color:blueviolet
+}
+.hea {
+    background-color: lightblue;
+}
+.sec {
+    background-color: yellow;
+}
+
+header > p {
+    font-size: 50px;
+}
+section > p {
+    font-size: 30px;
+}
+
+#uno {
+    color:green;
+}
+#dos {
+    color:blue;
+}
+#tres {
+    color:orange;
+}
+#cuatro {
+    color:brown;
+}
+
+p[name="dodo"]{
+    font-family:fantasy;
+    color: black;
+}
+    

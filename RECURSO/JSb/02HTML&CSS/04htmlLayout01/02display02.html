@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DISPLAY TRADICIONAL</title>
+    <style>
+      body {
+        width: 900px;
+        background-color: black;
+        margin: 0px;
+      }
+      #sdos {
+        overflow: auto;
+        padding: 5px;
+        vertical-align: middle;
+      }
+      #AA {
+        margin: 2px;
+        border: 1px solid white;
+      }
+      #BB {
+        width: 48.5%;
+        float: left;
+        margin: 2px;
+        border: 1px solid white;
+      }
+      #CC {
+        width: 48.5%;
+        float: right;
+        margin: 2px;
+        border: 1px solid white;
+      }
+      div {
+        background-color: bisque;
+        overflow: auto;
+        padding: 10px;
+        border: 2px solid green;
+      }
+      p {
+        border: 5px solid yellow;
+      }
+      img {
+        border: 2px solid black;
+      }
+      #dos {
+        float: left;
+        margin: 0px 10px;
+      }
+      #tres {
+        float: right;
+        margin: 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="AA">
+      <div>
+        <img src="../images/01uno.jpg" width="100px" />
+        <p>
+          El modelo de caja tradicional establece que los elementos pueden
+          flotar a cada lado de la ventana y compartir espacio en la misma línea
+          con otros elementos, sin importar su tipo. Por ejemplo, si tenemos dos
+          elementos Block que representan columnas en el diseño, podemos
+          posicionar una columna a la izquierda y la otra columna a la derecha
+          haciendo que los elementos floten hacia el lado que queremos. Las
+          siguientes son las propiedades que ofrece CSS para este propósito.
+          <mark>float</mark> Esta propiedad permite a un elemento flotar hacia
+          un lado u otro, y ocupar el espacio disponible, incluso cuando tiene
+          que compartir la línea con otro elemento. Los valores disponibles son
+          <strong>none</strong> (el elemento no flota),
+          <strong>left</strong> (el elemento flota hacia la izquierda) y
+          <strong>right</strong> (el elemento flota hacia la derecha).
+          <mark>clear</mark> Esta propiedad restaura el flujo normal del
+          documento, y no permite que el elemento siga flotando hacia la
+          izquierda, la derecha o ambos lados. Los valores disponibles son none,
+          left, right, y both (ambos). La propiedad float hace que el elemento
+          flote a un lado u otro en el espacio disponible. Cuando se aplica esta
+          propiedad, los elementos no siguen el flujo normal del documento, se
+          desplazan a la izquierda o a la derecha del espacio disponible,
+          respondiendo al valor de la propiedad float y hasta que especifiquemos
+          lo contrario con la propiedad clear.
+        </p>
+      </div>
+    </section>
+    <section id="sdos">
+      <section id="BB">
+        <div>
+          <img id="dos" src="../images/02dos.jpg" width="100px" />
+          <p>
+            El documento incluye una sección con una imagen y un párrafo. Si
+            abrimos este documento usando los estilos por defecto, el elemento
+            se muestra debajo del elemento &lt;img&gt;
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem adipisci officia dicta, sit doloremque iusto ipsa consequuntur quibusdam ratione dolorem repellat illo perspiciatis error aspernatur pariatur sint rerum natus quidem.
+          </p>
+        </div>
+
+        <div>
+          <img id="tres" src="../images/03tres.jpg" width="100px" />
+          <p>
+            Si queremos mostrar el texto al lado de la imagen, podemos hacer que
+            el elemento &lt;img&gt; flote hacia la izquierda o la derecha. Si
+            queremos mostrar el texto al lado de la imagen, podemos hacer que el
+            elemento &lt;img&gt; flote hacia la izquierda o la derecha.
+          </p>
+        </div>
+      </section>
+
+      <section id="CC">
+        <div>
+          <img id="dosa" src="../images/02dos.jpg" width="200px" />
+          <p>
+            El documento incluye una sección con una imagen y un párrafo. Si
+            abrimos este documento usando los estilos por defecto, el elemento
+            se muestra debajo del elemento &lt;img&gt;
+          </p>
+        </div>
+        <div>
+          <img id="tresa" src="../images/03tres.jpg" width="200px" />
+          <p>
+            Si queremos mostrar el texto al lado de la imagen, podemos hacer que
+            el elemento &lt;img&gt; flote hacia la izquierda o la derecha. Si
+            queremos mostrar el texto al lado de la imagen, podemos hacer que el
+            elemento &lt;img&gt; flote hacia la izquierda o la derecha.
+          </p>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

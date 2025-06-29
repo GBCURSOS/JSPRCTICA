@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Este texto es el título del documento</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Este es un documento HTML5">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <style>
+            section {
+                background-color: lightgreen;
+            }
+            #cajapadre {
+                width: 400px;
+                height: 350px;
+            }
+            #contenedor {
+                position: absolute;
+                top: 40px;
+                left: 20px;
+                width: 360px;
+                height: 300px;
+                border: 2px solid black;
+            }
+            #contenedorsuperior {
+                width: 360px;
+                height: 300px;
+            }
+            #contenedorinferior {
+                position: relative;
+                left: 40px;
+                width: 300px;
+                height: 35px;
+                padding-top: 15px;
+                font-size: 30px;
+                background-color: lightgray;
+                text-align: center;
+            }
+            #contenedor:hover {
+                top: 50px;
+                #contenedorinferior { display:none}
+            }
+            img {
+                position: absolute;
+                top: 40px;
+                left: 20px;
+            }
+        </style>
+    </head>
+<body>
+    <section id="cajapadre">
+        <img src="../images/05cinco.jpg" width="360" height="300">
+        <div id="contenedor">
+            <div id="contenedorsuperior"></div>
+            <div id="contenedorinferior">
+                <span><strong>Este es mi cuerpo</strong></span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

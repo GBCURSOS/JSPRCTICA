@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Relaciones en el DOM</title>
+  </head>
+  <body>
+    <div id="contenedor">
+      <h1>Título Principal</h1>
+      <p>Este es un párrafo de ejemplo.</p>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+      </ul>
+    </div>
+
+    <script>
+      // Función para mostrar información sobre un nodo
+      function mostrarInfo(nodo, relacion) {
+        console.log(
+          `${relacion}: ${nodo.nodeName} - "${nodo.textContent.trim()}"`
+        );
+      }
+
+      // Obtener el elemento contenedor
+      const contenedor = document.getElementById("contenedor");
+
+      // 1. Relación Padre-Hijo
+      console.log("--- Relación Padre-Hijo ---");
+      mostrarInfo(contenedor, "Padre");
+      contenedor.childNodes.forEach((hijo) => {
+        if (hijo.nodeType === Node.ELEMENT_NODE) {
+          mostrarInfo(hijo, "Hijo");
+        }
+      });
+
+      // 2. Acceder a hijos específicos
+      console.log("\n--- Acceso a hijos específicos ---");
+      mostrarInfo(contenedor.firstElementChild, "Primer hijo elemento");
+      mostrarInfo(contenedor.lastElementChild, "Último hijo elemento");
+
+      // 3. Relación entre Hermanos
+      console.log("\n--- Relación entre Hermanos ---");
+      let primerHijo = contenedor.firstElementChild;
+      let siguienteHermano = primerHijo.nextElementSibling;
+      while (siguienteHermano) {
+        mostrarInfo(siguienteHermano, "Hermano siguiente");
+        siguienteHermano = siguienteHermano.nextElementSibling;
+      }
+
+      // 4. Navegar hacia arriba (hijo a padre)
+      console.log("\n--- Navegación hacia arriba ---");
+      const li = contenedor.querySelector("li");
+      mostrarInfo(li, "Elemento inicial");
+      mostrarInfo(li.parentElement, "Padre");
+      mostrarInfo(li.closest("div"), "Ancestro div más cercano");
+
+      // 5. Contar hijos
+      console.log("\n--- Conteo de hijos ---");
+      console.log(`Número de hijos elemento: ${contenedor.children.length}`);
+      console.log(`Número de nodos hijo: ${contenedor.childNodes.length}`);
+    </script>
+  </body>
+</html>

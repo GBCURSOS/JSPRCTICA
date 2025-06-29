@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMACIONES</title>
+    <style>
+        p {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            animation: mianimacion 1s ease-in-out 0s infinite normal none;
+        }
+        @keyframes mianimacion {
+            20% {
+                background: #FFFFFF;
+            }
+            35% {
+                transform: scale(0.5);
+                background: #FFFF00;
+            }
+            50% {
+                transform: scale(1.5);
+                background: #FF0000;
+            }
+            65% {
+                transform: scale(0.5);
+                background: #FFFF00;
+            }
+            80% {
+                background: #FFFFFF;
+            }
+        }
+        #titulo {
+            font: bold 26px Verdana, sans-serif;
+        }     
+        
+    </style>
+</head>
+<body>
+    <h1 id="titulo">ANIMACIONES</h1>
+    <p id="uno">
+        <mark></mark>
+    </p>
+    <p id="dos">
+        <mark>animation-name</mark> Esta propiedad especifica el nombre usado para identificar los pasos
+        de la animación. Se puede usar para configurar varias animaciones al mismo tiempo
+        declarando los nombres separados por coma.
+    </p>
+    <p id="tres">
+        <mark>animation-duration</mark> Esta propiedad determina la duración de cada ciclo de la
+        animación. El valor se debe especificar en segundos (por ejemplo, 1s).        
+    </p>
+    <p id="cuatro">
+        <mark>animation-timing-function</mark> Esta propiedad determina cómo se llevará a cabo el
+        proceso de animación por medio de una curva Bézier declarada con los valores <mark>ease,
+        linear, ease-in, ease-out y ease-in-out</mark>.
+    </p>
+    <p id="cinco">
+        <mark>animation-delay</mark> Esta propiedad especifica el tiempo que el navegador esperará antes
+        de iniciar la animación.
+    </p>
+    <p id="seis">
+        <mark>animation-iteration-count </mark> Esta propiedad declara la cantidad de veces que se
+        ejecutará la animación. Acepta un número entero o el valor <mark>infinite</mark> , el cual hace que la
+        animación se ejecute por tiempo indefinido. El valor por defecto es <mark>1</mark>.
+    </p>
+    <p id="siete">
+        <mark>animation-direction </mark> Esta propiedad declara la dirección de la animación. Acepta cuatro
+        valores: <strong> normal (por defecto), reverse, alternate, y alternate-reverse </strong>. El valor
+        reverse invierte la dirección de la animación, mostrando los pasos en la dirección opuesta en
+        la que se han declarado. El valor <strong>alternate</strong> mezcla los ciclos de la animación, reproduciendo
+        los que tienen un índice impar en dirección normal y el resto en dirección invertida. Finalmente,
+        el valor <strong>alternate-reverse</strong> hace lo mismo que <strong>alternate</strong>, pero en sentido inverso.        
+    </p>
+    <p id="sietea">
+        <mark>animation-fill-mode</mark> Esta propiedad define cómo afecta la animación a los estilos del
+        elemento. Acepta los valores <strong> none (por defecto), forwards, backwards, y both </strong>. El valor
+        forwards mantiene al elemento con los estilos definidos por las propiedades aplicadas en
+        el último paso de la animación, mientras que backwards aplica los estilos del primer paso
+        tan pronto como se define la animación (antes de ser ejecutada). Finalmente, el valor both
+        produce ambos efectos.
+    </p>
+    <p id="ocho">
+        <mark>animation</mark> Esta propiedad nos permite definir todos los valores de la animación al
+        mismo tiempo.
+    </p>
+    <p id="nueve">
+        Estas propiedades configuran la animación, pero los pasos se declaran por medio de la
+        regla <mark>@keyframes</mark>. Esta regla se debe identificar con el nombre usado para configurar la
+        animación, y debe incluir la lista de propiedades que queremos modificar en cada paso. La
+        posición de cada paso de la animación se determina con un valor en porcentaje, donde 0 %
+        corresponde al primer fotograma o al comienzo de la animación, y 100 % corresponde al final.
+    </p>
+</body>
+</html>

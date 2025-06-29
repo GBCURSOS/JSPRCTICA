@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Timing</h2>
+
+    <p>Click "Try it". Wait 5 seconds. The page will alert "Hello".</p>
+    <p>Click "Stop" to prevent the first function to execute.</p>
+    <p>(You must click "Stop" before the 5 seconds are up.)</p>
+
+    <button onclick="myVar = setTimeout(myFunction, 5000)">
+      Try it</button>
+
+    <button onclick="clearTimeout(myVar)">
+      Stop it</button>
+
+    <script>
+      function myFunction() {
+        alert("Después de 5 segundo");
+    }
+    </script>
+  </body>
+</html>

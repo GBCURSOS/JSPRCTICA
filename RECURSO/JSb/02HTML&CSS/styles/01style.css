@@ -1,0 +1,25 @@
+
+@font-face {
+    font-family: "LetraTitulo";
+    src: url("/Fuentes/alpha_echo.ttf");
+}
+
+header{
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+    color: darkgreen;
+    font: bold LetraTitulo, Verdana, sans-serif ;
+    
+}
+
+body {
+    font-size: 20px;
+    background-color: darkgray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+p {
+    font-size: 40px
+}
+    

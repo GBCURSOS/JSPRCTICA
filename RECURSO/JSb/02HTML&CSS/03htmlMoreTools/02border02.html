@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordes</title>
+    <style>
+        body {
+            margin: 130px;
+            padding: 115px;
+            text-align: left;
+            border-style: solid;
+            border-width: 2px;
+            width: 500px;
+        }
+        #titulo {
+            font: bold 26px Verdana, sans-serif;
+        }
+        p {
+            width: 400px;
+        }
+        #uno {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 5px dashed #CCCCCC;
+        }
+        #dos {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 5px dashed #CCCCCC;
+            border-style: none dotted dashed groove;
+        }
+        #tres {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 5px dashed #CCCCCC;
+            border-color: greenyellow;
+        }
+        #cuatro {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #999999;
+            outline: 2px dashed #000000;
+            outline-offset: 15px;
+        }
+        #cinco{
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="titulo">
+        <h1>BORDES</h1>
+    </p>
+    <p id="uno">
+        <mark>outline-width</mark> Esta propiedad define el ancho del borde. Acepta valores en cualquiera
+        de las unidades disponibles en CSS (px, %, em, etc.) y también las palabras clave thin,
+        medium, y thick.        
+        <br>
+    </p>
+    <p id="dos">
+        <mark>outline-style</mark> Esta propiedad define el estilo del borde. Los valores disponibles son
+        none, auto, dotted, dashed, solid, double, groove, ridge, inset, y outset.
+        <br>
+    </p>
+    <p id="tres">
+        <mark>outline-color</mark> Esta propiedad define el color del borde.        <br>
+    </p>
+    <p id="cuatro">
+        <mark>outline-offset</mark> Esta propiedad define el desplazamiento (a qué distancia de los límites
+        de la caja se dibujará el segundo borde). Acepta valores en cualquiera de las unidades
+        disponibles en CSS (px, %, em, etc.).
+        <br>
+    </p>
+    <p id="cinco">
+        <mark>outline</mark>  Esta propiedad nos permite especificar el ancho, estilo y color del borde al mismo
+        tiempo (el desplazamiento aún se debe definir con la propiedad outline-offset).        
+    </p>    
+</body>
+</html>

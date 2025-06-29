@@ -1,0 +1,10 @@
+Introducción: Muestra la sintaxis básica de las funciones flecha y cómo se comparan con las funciones tradicionales.
+Ámbito léxico y enlace (valor de 'this'): Demuestra cómo las funciones flecha mantienen el contexto de this del ámbito circundante.
+Objeto arguments: Muestra que las funciones flecha no tienen su propio objeto arguments, pero pueden usar parámetros rest.
+Retorno implícito: Ilustra cómo las funciones flecha pueden tener un retorno implícito cuando el cuerpo de la función es una sola expresión.
+Funciones flecha como constructores: Demuestra que las funciones flecha no pueden ser usadas como constructores.
+Retorno explícito: Muestra cómo usar un bloque de código y una declaración de retorno explícita en funciones flecha.
+Ejemplos como callback en map: Demuestra el uso de funciones flecha como callbacks en el método map.
+Ejemplo con find: Muestra cómo usar una función flecha con el método find.
+Comparación de 'this': Compara el comportamiento de this en funciones tradicionales y funciones flecha dentro de un objeto.
+Uso en métodos de array: Proporciona ejemplos adicionales de funciones flecha utilizadas con métodos de array como map, filter y reduce.

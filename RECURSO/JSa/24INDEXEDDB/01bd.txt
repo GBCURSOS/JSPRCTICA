@@ -1,0 +1,9 @@
+Explicación del código:
+Abrir la base de datos: Se utiliza indexedDB.open() para abrir o crear la base de datos llamada TiendaDB.
+Manejo de eventos:
+onerror: Muestra un error si no se puede abrir la base de datos.
+onsuccess: Se ejecuta cuando la base de datos se abre correctamente.
+onupgradeneeded: Se ejecuta cuando se necesita crear o actualizar la estructura de la base de datos. Aquí se crean los tres almacenes de objetos (clientes, productos y pedidos).
+Funciones para agregar datos:
+agregarCliente(), agregarProducto() y agregarPedido() son funciones que manejan las transacciones necesarias para añadir registros a sus respectivos almacenes.
+Ejemplo de uso: Al final del código, después de abrir la base de datos, se agregan algunos clientes y productos, y se crea un pedido que relaciona a un cliente con un producto.

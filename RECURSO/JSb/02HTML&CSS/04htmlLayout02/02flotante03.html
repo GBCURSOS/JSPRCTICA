@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAJAS FLOTANTES</title>
+    <style>
+        body {
+            width: 50%;
+        }
+        #cajapadre {
+            position: relative;
+            width: 600px;
+            border: 2px solid;
+            z-index: 2;
+        }
+        #caja-1 {
+            position: absolute;
+            top: 25px;
+            z-index: 1;
+            float: left;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color:#AAAAAA;
+
+        }
+        #caja-2 {
+            float: left;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color: #CCCCCC;
+        }
+        #caja-3 {
+            float: right;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color: #AAAAAA;
+        }
+        #caja-4 {
+            float: right;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color: #CCCCCC;
+        }
+        .restaurar {
+            clear: both;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div>
+        <p>
+            El orden de los elementos del código no solo determina la ubicación de las cajas en la
+página, sino también qué caja va a estar por encima de las demás cuando se superponen.
+Debido a que en nuestro ejemplo <strong>caja-1</strong> se ha declarado primero en el código, se dibuja
+sobre <strong>caja-2</strong>, pero CSS ofrece la siguiente propiedad para cambiar este comportamiento.
+<ul>
+    <li><strong>z-index</strong> Esta propiedad define un índice que determina la posición del elemento en el eje
+z. El elemento con el índice más alto se dibujará sobre el elemento con el índice más bajo.
+    </li>
+</ul>
+
+        </p>
+    </div>
+    <section id="cajapadre">
+        <div id="caja-1">Caja 1</div>
+        <div id="caja-2">Caja 2</div>
+        <div id="caja-3">Caja 3</div>
+        <div id="caja-4">Caja 4</div>
+        <div class="restaurar"></div>
+    </section>
+
+</body>
+</html>

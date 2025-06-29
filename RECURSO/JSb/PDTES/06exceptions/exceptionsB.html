@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try_Catch_Finally</title>
+</head>
+<body>
+  
+  <p>Por favor digite un número entre 5 y 10:</p>
+  <input id="demo" type="text">
+  <button type="button" onclick="funcionPrueba()">Prueba Entrada</button>
+  
+  <p id="message"></p>
+  
+  <script>
+  function funcionPrueba() {
+    const message = document.getElementById("message");
+    message.innerHTML = "";
+    let x = document.getElementById("demo").value;
+    try { 
+      if(x == "")  throw "vacío";
+      if(isNaN(x)) throw "NaN";
+      if(x > 10)   throw "muy alto";
+      if(x < 5)    throw "muy bajo";
+    }
+    catch(err) {
+      message.innerHTML = "Entrada " + err + " corregir";
+    }
+    finally {
+      document.getElementById("demo").value = "por favor digite un valor";
+    }
+  }
+  </script>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+</body>
+</html>

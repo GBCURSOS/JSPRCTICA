@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRANSICIONES</title>
+    <style>
+        body {
+            width: 600px;
+        }
+        p {
+            margin: 30px;
+            padding: 15px;
+            width: 400px;
+            text-align: center;
+            border: 1px solid;
+        }
+        #uno:hover {
+            transition: transform 7s linear 2s;
+            transform: rotate(5deg);
+        }
+        #dos:hover, #tres:hover {
+            transition: width 15s linear 0s;
+            width: 600px;
+        }
+        #titulo {
+            font: bold 26px Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">TRANSICIONES</h1>
+    <p id="uno">
+        <mark>Con la seudoclase :hover</mark> podemos realizar transformaciones dinámicas. Sin embargo, una
+        animación real requiere una transición entre los dos pasos del proceso. Para este propósito,
+        CSS ofrece las siguientes propiedades.        
+    </p>
+    <p id="unoa">
+        <mark>transition-property</mark> Esta propiedad especifica las propiedades que participan en la
+        transición. Además de los nombres de las propiedades, podemos asignar el valor all para
+        indicar que todas las propiedades participarán de la transición.        
+    </p>
+    <p id="dos">
+        <mark>transition-duration </mark>  Esta propiedad especifica la duración de la transición en
+        segundos (s).        
+    </p>
+    <p id="tres">
+        <mark>transition-timing-function</mark> Esta propiedad determina la función que se usa para
+            calcular los valores para la transición. Los valores disponibles son <mark>ease, ease-in, ease-
+            out, ease-in-out, linear, step-start, y step-end.</mark>         
+    </p>
+    <p id="cuatro">
+        <mark>transition-delay</mark> Esta propiedad especifica el tiempo que el navegador esperará antes
+        de iniciar la animación.
+    </p>
+    <p id="cinco">
+        <mark>transition</mark> Esta propiedad nos permite declarar todos los valores de la transición al
+        mismo tiempo.
+    </p>
+    <p id="seis">
+        Implementando estas propiedades le indicamos al navegador que tiene que crear todos los
+        pasos de la animación y generar una transición entre el estado actual del elemento y el
+        especificado por las propiedades. Las siguientes reglas implementan la propiedad
+        transition para animar la transformación introducida en el ejemplo anterior
+    </p>
+    <p id="siete">
+        La propiedad transition puede recibir hasta cuatro parámetros separados por un
+        espacio. El primer valor es la propiedad que se considerará para crear la transición (en nuestro
+        ejemplo, usamos la propiedad transform), el segundo parámetro determina la duración de la
+        animación (1 segundo), el tercer parámetro es un valor que determina cómo se llevará a cabo
+        la transición por medio de una curva Bézier, y el último parámetro determina cuántos
+        segundos tarda la animación en comenzar.
+        Si la transición tiene que considerar los valores de más de una propiedad, tenemos que
+        declarar los nombres de las propiedades separadas por coma. Cuando se tienen que
+        considerar todas las propiedades que se modifican para crear la animación, podemos usar el
+        valor all en su lugar.
+    </p>
+</body>
+</html>

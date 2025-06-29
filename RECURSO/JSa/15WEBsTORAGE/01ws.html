@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Web Storage</title>
+</head>
+<body>
+    <h1>Ejemplo de Web Storage</h1>
+    
+    <h2>localStorage</h2>
+    <input type="text" id="localInput" placeholder="Escribe algo...">
+    <button onclick="guardarLocal()">Guardar en localStorage</button>
+    <button onclick="obtenerLocal()">Obtener de localStorage</button>
+    <button onclick="eliminarLocal()">Eliminar de localStorage</button>
+    <button onclick="limpiarLocal()">Limpiar localStorage</button>
+    <p id="localOutput"></p>
+
+    <h2>sessionStorage</h2>
+    <input type="text" id="sessionInput" placeholder="Escribe algo...">
+    <button onclick="guardarSession()">Guardar en sessionStorage</button>
+    <button onclick="obtenerSession()">Obtener de sessionStorage</button>
+    <p id="sessionOutput"></p>
+
+    <script src="./01ws.js"></script>
+</body>
+</html>

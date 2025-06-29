@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones</title>
+    <style>
+        body {
+            margin: 150px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 16px Verdana, sans-serif;
+            width: 900px;
+        }
+        p {
+            border: 1px solid;
+            font-size: 26px;    
+        }
+        #uno {
+            margin: 15px;
+            padding: 15px;
+            transform: scaleY(1.3);
+        }
+        #unoa {
+            margin: 45px;
+            padding: 15px;
+            transform: scale(-1);
+        }
+        #dos {
+            margin: 75px;
+            padding: 15px;
+            text-align: center;
+            width: 150px;
+            height: 300px;
+            font-size: 16px; 
+            transform: rotate(270deg);
+        }
+        #tres {
+            margin: 45px;
+            padding: 15px;
+            transform: scale(0.25);
+            transform: skew(15deg);
+        }
+        #cuatro {
+            transform: translate(100px);
+        }
+    </style>
+</head>
+<body>
+    <h1>TRANSFORMACIONES</h1>
+    <p id="uno">
+        <mark>scale(x, y)</mark> Esta función modifica la escala del elemento. Existen otras dos funciones
+        relacionadas llamadas scaleX() y scaleY() pare especificar los valores horizontales y
+        verticales independientemente.
+    </p>
+    <p id="unoa">
+        <mark>scale(x, y)</mark> Esta función modifica la escala del elemento. Existen otras dos funciones
+        relacionadas llamadas scaleX() y scaleY() pare especificar los valores horizontales y
+        verticales independientemente.
+    </p>
+    <p id="tres">
+        <mark>skew(ángulo)</mark> Esta función inclina el elemento. El atributo representa los grados de
+        desplazamiento. La función puede incluir dos valores para representar el ángulo horizontal
+        y vertical. Los valores se pueden declarar en deg (grados), grad (gradianes), rad
+        (radianes) o turn (espiras).
+    </p>
+    <p id="cuatro">
+        <mark>translate(x, y)</mark> Esta función desplaza al elemento a la posición determinada por los
+        atributos x e y.
+    </p>
+    <p id="dos">
+        <mark>rotate(ángulo)</mark> Esta función rota el elemento. El atributo representa los grados de
+        rotación y se puede declarar en deg (grados), grad (gradianes), rad (radianes) o turn
+        (espiras).
+    </p>
+</body>
+</html>

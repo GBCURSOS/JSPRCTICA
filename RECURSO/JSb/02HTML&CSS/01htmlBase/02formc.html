@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Formularios</title>
+    </head>
+    <body>
+        <section>
+            <form name="form1" method="get">
+                <p><label>Nombre: <input type="text" name="nombre"
+                maxlength="15"></label></p>
+                <p><label><input type="checkbox" name="edad15" value="15" checked> 15
+                Años</label></p>
+                <p><label><input type="checkbox" name="edad30" value="30" checked> 30
+                Años</label></p>
+                <p><label><input type="checkbox" name="edad45" value="45"> 45
+                Años</label></p>
+                <p><label><input type="checkbox" name="edad60" value="60"> 60
+                Años</label></p>
+                <p><input type="submit" value="Enviar"></p>
+            </form>    
+            <hr>
+            <form name="form2" method="get">
+                <p><label>Nombre: <input type="text" name="nombre"
+                maxlength="15"></label></p>
+                <p><label><input type="radio" name="edad" value="15" checked> 15
+                Años</label></p>
+                <p><label><input type="radio" name="edad" value="30"> 30
+                Años</label></p>
+                <p><label><input type="radio" name="edad" value="45"> 45
+                Años</label></p>
+                <p><label><input type="radio" name="edad" value="60"> 60
+                Años</label></p>
+                <p><input type="submit" value="Enviar"></p>
+            </form>
+            <hr>
+            <form name="form3" method="get" action="procesar.php">
+                <p><label>Nombre: <input type="text" name="nombre"
+                maxlength="15"></label></p>
+                <p><label>Correo: <input type="email" name="correo"></label></p>
+                <p><label>Teléfono: <input type="tel" name="telefono"></label></p>
+                <p><label>Sitio Web: <input type="url" name="sitioweb"></label></p>
+                <p><label><input type="number" name="edad" min="13" max="100">
+                Años</label></p>
+                <p><label><input type="range" name="edad" min="13" max="100" value="35"
+                                oninput="num.value = this.value"
+                          >
+                <output id="num">0</output>
+                Años</label></p>
+                <p><label><input type="radio" name="edad" value="45"> 45
+                Años</label></p>
+                <p><label><input type="date" name="fecha" value="2017-02-05">
+                Fecha </label></p>
+                <p><label><input type="color" name="micolor" value="#99BB00">
+                Color </label></p>
+                <p><label>Texto: <textarea name="texto" cols="50"
+                                    rows="6"></textarea></label></p>
+                <p><input type="image" src="../images/green-button-icon-png-13.png" width="100"></p>
+            </form>
+            <hr>
+            <form name="form4" method="get">
+                <p>
+                <label for="listado">Libros: </label>
+                <select name="libro" id="listado">
+                <option value="1">IT</option>
+                <option value="2">Carrie</option>
+                <option value="3">El Resplandor</option>
+                <option value="4">Misery</option>
+                </select>
+                </p>
+                <p><input type="submit" value="Enviar"></p>
+            </form>
+            <hr>
+            <form name="form5" method="get">
+
+                <datalist id="datos">
+                    <option value="123123123" label="Teléfono 1"></option>
+                    <option value="456456456" label="Teléfono 2"></option>
+                </datalist>
+
+                <p><label>Teléfono: <input type="tel" name="telefono"
+                    list="datos"></label></p>
+                <p><input type="submit" value="Enviar"></p>
+
+            </form>
+            <hr>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,507 @@
+/* Introducción 02 - Estilos para JavaScript: Historia y Ejecución */
+
+/* Paleta de colores:
+   #1B262C - Azul oscuro (principal)
+   #0F4C75 - Azul medio (secundario)
+   #3282B8 - Azul claro (acentos)
+   #BBE1FA - Azul muy claro (fondos suaves)
+*/
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía */
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.8;
+  color: #1b262c;
+  background-color: #bbe1fa;
+  font-size: 16px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #bbe1fa;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #1b262c;
+  border-radius: 10px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+/* Contenido principal */
+.content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #3282b8;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 40px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+/* Títulos */
+h2 {
+  font-size: 1.8rem;
+  color: #0f4c75;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3282b8;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #1b262c;
+  margin: 25px 0 15px 0;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: #0f4c75;
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+}
+
+/* Párrafos */
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.introduction p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Definiciones destacadas */
+.definition {
+  background-color: #bbe1fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 5px solid #0f4c75;
+  margin: 20px 0;
+}
+
+.definition p {
+  margin-bottom: 0;
+  text-indent: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* Listas */
+ul,
+ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+ol li {
+  margin-bottom: 12px;
+}
+
+/* Texto destacado */
+strong {
+  color: #0f4c75;
+  font-weight: bold;
+}
+
+em {
+  color: #1b262c;
+  font-style: italic;
+  font-weight: 500;
+}
+
+code {
+  background-color: #bbe1fa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 0.95em;
+  color: #1b262c;
+  border: 1px solid #3282b8;
+}
+
+/* Bloques de código */
+pre {
+  background-color: #1b262c;
+  color: #bbe1fa;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 15px 0;
+  border: 2px solid #0f4c75;
+}
+
+pre code {
+  background: none;
+  border: none;
+  color: #bbe1fa;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Ejemplos */
+.example {
+  background-color: #bbe1fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #3282b8;
+  margin: 20px 0;
+}
+
+.example h4 {
+  margin-top: 0;
+  color: #1b262c;
+}
+
+.example p {
+  text-indent: 0;
+  margin-bottom: 10px;
+}
+
+/* Timeline */
+.timeline {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3282b8;
+  margin: 20px 0;
+}
+
+.timeline h4 {
+  margin-top: 0;
+  color: #0f4c75;
+}
+
+.timeline ul {
+  margin-bottom: 0;
+}
+
+.timeline li {
+  margin-bottom: 10px;
+}
+
+/* Flujo de proceso */
+.process-flow {
+  background-color: #0f4c75;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.process-flow h4 {
+  margin: 0 0 10px 0;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.process-flow p {
+  margin: 0;
+  text-indent: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.4;
+}
+
+/* Grid de motores */
+.engines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.engine-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #3282b8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.engine-card h4 {
+  margin-top: 0;
+  color: #0f4c75;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bbe1fa;
+}
+
+.engine-card ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.engine-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Tabla de comparación */
+.comparison-table {
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.comparison-header {
+  background-color: #0f4c75;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.comparison-row:not(:first-child) div {
+  background-color: white;
+  padding: 15px;
+  border-bottom: 1px solid #bbe1fa;
+  text-align: center;
+}
+
+.comparison-row:not(:first-child) div:first-child {
+  background-color: #bbe1fa;
+  font-weight: bold;
+  color: #1b262c;
+}
+
+/* Nota de instalación */
+.installation-note {
+  background-color: #3282b8;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.installation-note h4 {
+  margin-top: 0;
+  color: white;
+}
+
+.installation-note p {
+  margin-bottom: 0;
+  text-indent: 0;
+}
+
+/* Pasos de ejecución */
+.execution-steps {
+  background-color: #bbe1fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #3282b8;
+  margin: 20px 0;
+}
+
+.execution-steps h4 {
+  margin-top: 0;
+  color: #0f4c75;
+}
+
+.execution-steps ol {
+  margin-bottom: 0;
+}
+
+/* Salida esperada */
+.expected-output {
+  margin: 20px 0;
+}
+
+.expected-output h4 {
+  color: #0f4c75;
+  margin-bottom: 10px;
+}
+
+.expected-output pre {
+  background-color: #1b262c;
+  color: #3282b8;
+  font-size: 0.85rem;
+}
+
+/* Conceptos principales */
+.concept {
+  padding: 25px;
+  margin: 30px 0;
+  border: 1px solid #3282b8;
+  border-radius: 10px;
+  background-color: #bbe1fa;
+}
+
+.concept h2 {
+  background-color: #0f4c75;
+  color: white;
+  padding: 15px;
+  margin: -25px -25px 20px -25px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+}
+
+/* Conclusión */
+.conclusion {
+  background-color: #1b262c;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+.conclusion h2 {
+  color: white;
+  border-bottom-color: white;
+}
+
+.conclusion p {
+  text-indent: 0;
+  margin-bottom: 20px;
+}
+
+.conclusion p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .content {
+    padding: 25px 20px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  p {
+    text-indent: 1em;
+  }
+
+  .engines-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-row {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .comparison-row div {
+    text-align: left !important;
+  }
+
+  pre {
+    padding: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  .concept {
+    padding: 20px;
+  }
+
+  .concept h2 {
+    margin: -20px -20px 15px -20px;
+    padding: 12px;
+  }
+
+  .engine-card {
+    padding: 15px;
+  }
+
+  pre {
+    padding: 10px;
+  }
+}

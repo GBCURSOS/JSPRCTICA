@@ -1,0 +1,15 @@
+#titulo {
+  font: bold 26px Verdana, sans-serif;
+  color: #09b127;
+}
+#descripcion {
+  font: bold 26px Verdana, sans-serif;
+  color: rgb(107, 110, 8);
+}
+#tipoFuente {
+  font: bold 26px Verdana, sans-serif;
+  /* color: yellow */
+  /*color: hsla(50, 50%, 50%,50%);*/
+  color: hsl(50, 50%, 50%);
+  
+}

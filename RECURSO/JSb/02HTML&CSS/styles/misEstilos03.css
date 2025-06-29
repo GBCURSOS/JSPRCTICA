@@ -1,0 +1,20 @@
+
+
+#titulo {
+    font-family: Verdana, sans-serif;
+    font-size: 26px;
+    color: orange;
+}
+#descripcion {
+    text-align: right;
+    word-spacing: 10px;
+    line-height: 10px;
+}
+#tipoFuente {
+    font: bold 20px MiNuevaLetra, Verdana, sans-serif;
+}
+@font-face {
+    font-family: "MiNuevaLetra";
+    src: url("../fonts/Villa.ttf");
+}
+   

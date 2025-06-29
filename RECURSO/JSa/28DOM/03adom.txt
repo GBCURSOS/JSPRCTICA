@@ -1,0 +1,30 @@
+3.1 Métodos de selección básicos:
+
+getElementById: Selecciona un elemento por su ID único.
+getElementsByClassName: Selecciona elementos por su clase.
+getElementsByTagName: Selecciona elementos por su etiqueta HTML.
+
+3.2 Selectores CSS con querySelector y querySelectorAll:
+
+querySelector: Selecciona el primer elemento que coincide con un selector CSS.
+querySelectorAll: Selecciona todos los elementos que coinciden con un selector CSS.
+
+3.3 Colecciones de elementos:
+
+NodeList: Colección de nodos retornada por métodos como querySelectorAll.
+HTMLCollection: Colección de elementos HTML retornada por métodos como getElementsByClassName.
+
+3.4 Navegación por el DOM:
+
+parentNode: Accede al nodo padre de un elemento.
+childNodes: Accede a los nodos hijos de un elemento.
+nextSibling y previousSibling: Navega entre nodos hermanos.
+firstChild y lastChild: Accede al primer y último hijo de un elemento.
+
+Notas:
+
+getElementsByClassName y getElementsByTagName devuelven una HTMLCollection, que es similar a un array pero no tiene todos los métodos de array.
+querySelectorAll devuelve un NodeList, que es más flexible y permite usar forEach.
+Las propiedades como childNodes y nextSibling incluyen nodos de texto y comentarios, no solo elementos HTML.
+Existen variantes como nextElementSibling y children que solo consideran elementos HTML, ignorando nodos de texto y comentarios.
+

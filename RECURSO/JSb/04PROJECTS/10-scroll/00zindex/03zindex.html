@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      #blue,
+      #green,
+      #grey {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        color: #eee;
+        opacity: 0.95;
+        padding: 15px;
+        line-height: 100px;
+        text-align: center;
+      }
+      #blue {
+        z-index: 1;
+        background-color: #1c87c9;
+        top: 60px;
+        left: 50px;
+        line-height: 1;
+      }
+      .black {
+        height: 80px;
+        width: 160px;
+        background-color: #000;
+        line-height: 100px;
+        bottom: 20px;
+        position: absolute;
+        z-index: 10;
+      }
+      #green {
+        z-index: 3;
+        background-color: #8ebf42;
+        top: 100px;
+        left: 170px;
+      }
+      #grey {
+        background-color: #666;
+        top: 200px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Z-index property example</h2>
+    <div class="container">
+      <div id="blue">
+        Blue
+        <div class="black">Black</div>
+      </div>
+      <div id="green">Green</div>
+      <div id="grey">Grey</div>
+    </div>
+  </body>
+</html>

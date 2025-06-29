@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAJAS FLOTANTES</title>
+    <style>
+        body {
+            width: 50%;
+        }
+        #cajapadre {
+            position: relative;
+            width: 600px;
+            border: 1px solid;
+        }
+        #caja-1 {
+            position: absolute;
+            top: 30px;
+            float: left;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color:#AAAAAA;
+        }    
+        #caja-2 {
+            float: left;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color: #CCCCCC;
+        }
+        #caja-3 {
+            float: right;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color: #AAAAAA;
+        }
+        #caja-4 {
+            float: right;
+            width: 140px;
+            height: 50px;
+            margin: 5px;
+            background-color: #CCCCCC;
+        }
+        .restaurar {
+            clear: both;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div>
+        <p>
+            Otra alternativa es usar posicionamiento absoluto. En este caso, el elemento se elimina del
+diseño, por lo que el resto de los elementos se ven afectados por la regla. Cuando usamos
+posicionamiento absoluto, también tenemos que considerar que el elemento se ubicará con
+respecto a la ventana del navegador, a menos que declaremos la posición de su elemento
+padre. Por lo tanto, si queremos especificar una posición absoluta para un elemento basada
+en la posición de su elemento padre, también tenemos que declarar la propiedad position
+para el padre. En el siguiente ejemplo, declaramos una posición relativa para el elemento
+cajapadre y una posición absoluta de 25 píxeles desde la parte superior para la caja-1, lo
+que hará que se ubique en una posición más baja que el resto de las cajas.
+        </p>
+    </div>
+    <section id="cajapadre">
+        <div id="caja-1">Caja 1</div>
+        <div id="caja-2">Caja 2</div>
+        <div id="caja-3">Caja 3</div>
+        <div id="caja-4">Caja 4</div>
+        <div class="restaurar"></div>
+    </section>
+
+</body>
+</html>

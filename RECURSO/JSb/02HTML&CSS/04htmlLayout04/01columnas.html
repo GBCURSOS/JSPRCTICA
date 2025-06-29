@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columnas</title>
+    <style>
+        body {
+            width: 50%;
+        }
+        #articulonoticias {
+            width: 580px;
+            padding: 10px;
+            margin: 2px;
+            border: 1px solid;
+            column-count: 2;
+            column-gap: 20px;
+        }
+        #other {
+            width: 580px;
+            padding: 10px;
+            margin: 2px;
+            border: 1px solid green;
+            column-count: 3;
+            column-gap: 20px;
+            column-rule: 1px solid lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>COLUMNAS</h1>
+    <section>
+        <p>
+            Además de las propiedades que hemos estudiado para organizar las caja en pantalla, CSS
+    también incluye un grupo de propiedades para facilitar la creación de columnas.
+    <strong>column-count</strong> Esta propiedad especifica el número de columnas que el navegador tiene
+    que generar para distribuir el contenido del elemento.
+    <strong>column-width</strong> Esta propiedad declara el ancho de las columnas. El valor se puede
+    declarar como <strong>auto</strong> (por defecto) o en cualquiera de las unidades de CSS, como píxeles o
+    porcentaje.
+    <strong>column-span</strong> Esta propiedad se aplica a elementos dentro de la caja para determinar si
+    el elemento se ubicará en una columna o repartido entre varias columnas. Los valores
+    disponibles son <strong>all</strong> (todas las columnas) y <strong>none</strong> (por defecto).
+    <strong>column-fill</strong> Esta propiedad determina cómo se repartirá el contenido entre las
+    columnas. Los valores disponibles son <strong>auto</strong> (las columnas son completadas de forma
+    secuencial) y <strong>balance</strong> (el contenido se divide en partes iguales entre todas las columnas).
+    <strong>column-gap</strong> Esta propiedad define el tamaño del espacio entre las columnas. Acepta un
+    valor en cualquiera de las unidades disponibles en CSS, como píxeles y porcentaje.
+    <strong>columns</strong> Esta propiedad nos permite declarar los valores de las propiedades column-
+    count y column-width al mismo tiempo.
+    El elemento, cuyo contenido queremos dividir en columnas, es un elemento común, y su
+    contenido se declara del mismo modo que lo hemos hecho antes. El navegador se encarga de
+    crear las columnas y dividir el contenido por nosotros. El siguiente ejemplo incluye un
+    elemento <strong>&lt;article&gt;</strong> con un texto extenso que vamos a presentar en dos columnas.
+        </p>
+        <p>
+            La propiedad <strong>column-gap</strong> define el tamaño del espacio entre las columnas. Esta
+separación es solo espacio vacío, pero CSS ofrece las siguientes propiedades para generar una
+línea que ayuda al usuario a visualizar la división.
+<strong>column-rule-style</strong> Esta propiedad define el estilo de la línea usada para representar la
+división. Los valores disponibles son hidden (por defecto), dotted, dashed, solid,
+double, groove, ridge, inset, y outset.
+<strong>column-rule-color</strong> Esta propiedad especifica el color de la línea usada para representar
+la división.
+<strong>column-rule-width</strong> Esta propiedad especifica el ancho de la línea usada para
+representar la división.
+<strong>column-rule</strong> Esta propiedad nos permite definir todos los valores de la línea al mismo
+tiempo.
+        </p>
+    </section>
+    <hr>
+    <section>
+        <article id="articulonoticias">
+            <span>HTML, sigla en inglés de HyperText Markup Language
+            (lenguaje de marcas de hipertexto), hace referencia al lenguaje de
+            marcado para la elaboración de páginas web. Es un estándar que sirve de
+            referencia del software que conecta con la elaboración de páginas web
+            en sus diferentes versiones, define una estructura básica y un código
+            (denominado código HTML) para la definición de contenido de una página
+            web, como texto, imágenes, vídeos, juegos, entre otros. Es un estándar
+            a cargo del World Wide Web Consortium (W3C) o Consorcio WWW,
+            organización dedicada a la estandarización de casi todas las
+            tecnologías ligadas a la web, sobre todo en lo referente a su escritura
+            e interpretación.</span>
+        </article>
+    </section>
+    <section id="other">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Pariatur quisquam nesciunt est, molestias voluptatibus, accusantium ratione placeat praesentium minus,
+            id beatae ducimus laudantium rem velit aut doloribus dignissimos architecto deserunt.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, 
+            voluptatum incidunt exercitationem doloremque eaque delectus porro dolores sed nulla veniam esse dolor
+            nostrum ratione veritatis.
+            Omnis repudiandae voluptatem corrupti repellat?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Culpa beatae at magni repudiandae mollitia omnis laudantium, 
+            quisquam inventore, ad quae veritatis iusto tempora repellendus eveniet. 
+            Obcaecati incidunt molestiae nobis deserunt?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Pariatur quisquam nesciunt est, molestias voluptatibus, accusantium ratione placeat praesentium minus,
+            id beatae ducimus laudantium rem velit aut doloribus dignissimos architecto deserunt.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, 
+            voluptatum incidunt exercitationem doloremque eaque delectus porro dolores sed nulla veniam esse dolor
+            nostrum ratione veritatis.
+            Omnis repudiandae voluptatem corrupti repellat?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Culpa beatae at magni repudiandae mollitia omnis laudantium, 
+            quisquam inventore, ad quae veritatis iusto tempora repellendus eveniet. 
+            Obcaecati incidunt molestiae nobis deserunt?
+        </p>
+    </section>
+
+</body>
+</html>

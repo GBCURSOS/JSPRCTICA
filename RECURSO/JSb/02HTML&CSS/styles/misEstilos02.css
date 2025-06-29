@@ -1,0 +1,28 @@
+p:nth-child(2) {
+    font-size: 30px;
+}
+p:nth-child(1) {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+p:nth-child(2) {
+    background-color: #CCCCCC;
+}
+p:nth-child(3) {
+    background-color: orange;
+}
+p:nth-child(4) {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 25px; 
+}
+p:last-child {
+    background-color: orange;
+    color: violet;
+    font-size: 50px;
+}
+
+    
+    

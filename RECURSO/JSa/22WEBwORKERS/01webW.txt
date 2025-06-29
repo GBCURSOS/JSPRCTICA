@@ -1,0 +1,54 @@
+Definición:
+Un Web Worker es un script que se ejecuta en segundo plano, independientemente del script principal de una página web. Esto permite realizar tareas intensivas en computación sin afectar el rendimiento o la capacidad de respuesta de la página.
+Características principales:
+
+Se ejecutan en un hilo separado.
+No tienen acceso al DOM, window o document.
+Pueden usar XMLHttpRequest para E/S de red.
+Pueden usar la mayoría de las APIs de JavaScript, incluyendo WebSockets, IndexedDB, etc.
+
+
+Casos de uso:
+
+Cálculos complejos o que consumen mucho tiempo.
+Procesamiento de grandes conjuntos de datos.
+Operaciones de red o E/S que podrían bloquear el hilo principal.
+
+
+Cómo funcionan:
+
+Se crean desde el script principal usando el constructor Worker().
+La comunicación entre el script principal y el worker se realiza mediante mensajes.
+Usan postMessage() para enviar datos y onmessage para recibir datos.
+
+
+Ventajas:
+
+Mejora el rendimiento de la aplicación web.
+Previene el bloqueo de la interfaz de usuario durante tareas pesadas.
+Permite una mejor utilización de sistemas multi-core.
+
+
+Limitaciones:
+
+No tienen acceso directo al DOM.
+Overhead de comunicación entre el worker y el script principal.
+Consumo adicional de memoria.
+
+
+
+En el ejemplo proporcionado:
+
+main.js es el script principal que crea un Web Worker.
+worker.js es el script que se ejecuta en el Web Worker.
+El script principal envía un mensaje al worker para iniciar un cálculo pesado.
+El worker realiza el cálculo y devuelve el resultado al script principal.
+Todo esto ocurre sin bloquear la ejecución del script principal.
+
+Para usar este ejemplo en una página web real, necesitarías:
+
+Un archivo HTML que cargue main.js.
+Ambos archivos JavaScript (main.js y worker.js) en el mismo directorio del servidor web.
+Un servidor web para servir los archivos (los Web Workers no funcionan con el protocolo file://).
+
+Los Web Workers son especialmente útiles en aplicaciones web que requieren procesamiento intensivo de datos, como editores de imágenes en el navegador, juegos complejos, o aplicaciones que manejan grandes conjuntos de datos en tiempo real.

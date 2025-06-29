@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción 01 - Tipos de Archivos en Programación</title>
+    <link rel="stylesheet" href="../../CSS/00intro/introduccion01.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Tipos de Archivos en Programación</h1>
+            <p class="subtitle">Comprendiendo las diferencias fundamentales</p>
+        </header>
+
+        <main class="content">
+            <section class="introduction">
+                <h2>¿Qué son los archivos en programación?</h2>
+                <p>
+                    En el mundo de la programación, se trabaja con diferentes tipos de archivos que contienen código. 
+                    Es fundamental comprender las diferencias entre estos tipos de archivos para entender cómo 
+                    funcionan los lenguajes de programación y cómo se ejecutan los programas.
+                </p>
+                <p>
+                    Existen tres categorías principales de archivos que se deben conocer: los archivos fuente, 
+                    los archivos compilados y los archivos interpretados. Cada uno tiene características 
+                    específicas y cumple un papel diferente en el proceso de desarrollo y ejecución de software.
+                </p>
+            </section>
+
+            <section class="concept">
+                <h2>Archivo Fuente</h2>
+                <div class="definition">
+                    <p>
+                        Un <strong>archivo fuente</strong> es el código original que escriben los programadores. 
+                        Este código está escrito en un lenguaje de programación específico y está diseñado para 
+                        ser leído y comprendido por los seres humanos.
+                    </p>
+                </div>
+                
+                <h3>Características principales:</h3>
+                <ul>
+                    <li><strong>Legible por humanos:</strong> El código está escrito con palabras y símbolos que los programadores pueden entender fácilmente.</li>
+                    <li><strong>Texto plano:</strong> Se guarda como archivo de texto sin formato especial.</li>
+                    <li><strong>Extensiones específicas:</strong> Cada lenguaje tiene sus propias extensiones (por ejemplo: .js para JavaScript, .py para Python, .java para Java).</li>
+                    <li><strong>Editables:</strong> Pueden ser modificados con cualquier editor de texto o IDE.</li>
+                </ul>
+
+                <p>
+                    El archivo fuente es donde se expresan las ideas y lógica de programación. Es el punto 
+                    de partida de cualquier programa y contiene las instrucciones que se quieren que ejecute 
+                    la computadora, pero escritas de manera que los programadores puedan entenderlas y modificarlas.
+                </p>
+
+                <div class="example">
+                    <h4>Ejemplo de nombres de archivos fuente:</h4>
+                    <ul>
+                        <li>calculadora.js (JavaScript)</li>
+                        <li>procesarDatos.py (Python)</li>
+                        <li>GestorUsuarios.java (Java)</li>
+                        <li>estilos.css (CSS)</li>
+                        <li>pagina.html (HTML)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Archivo Compilado</h2>
+                <div class="definition">
+                    <p>
+                        Un <strong>archivo compilado</strong> es el resultado de transformar el código fuente 
+                        en un formato que la computadora puede ejecutar directamente. Este proceso se llama 
+                        <em>compilación</em> y lo realiza un programa especial llamado <em>compilador</em>.
+                    </p>
+                </div>
+
+                <h3>El proceso de compilación:</h3>
+                <ol>
+                    <li>El programador escribe el código fuente</li>
+                    <li>El compilador lee el código fuente</li>
+                    <li>El compilador traduce el código a lenguaje máquina o bytecode</li>
+                    <li>Se genera un archivo ejecutable</li>
+                </ol>
+
+                <h3>Características principales:</h3>
+                <ul>
+                    <li><strong>No legible por humanos:</strong> El contenido está en código máquina o bytecode.</li>
+                    <li><strong>Ejecutable:</strong> La computadora puede ejecutar estos archivos directamente.</li>
+                    <li><strong>Optimizado:</strong> El compilador puede optimizar el código para mejor rendimiento.</li>
+                    <li><strong>Independiente del código fuente:</strong> Una vez compilado, no necesita el archivo fuente para ejecutarse.</li>
+                </ul>
+
+                <h3>Ventajas de la compilación:</h3>
+                <ul>
+                    <li><strong>Velocidad de ejecución:</strong> Los programas compilados suelen ejecutarse más rápido.</li>
+                    <li><strong>Detección temprana de errores:</strong> Muchos errores se detectan durante la compilación.</li>
+                    <li><strong>Protección del código:</strong> El código fuente original no es visible en el archivo compilado.</li>
+                    <li><strong>Distribución fácil:</strong> Se puede distribuir solo el archivo ejecutable.</li>
+                </ul>
+
+                <div class="example">
+                    <h4>Ejemplo de archivos compilados:</h4>
+                    <ul>
+                        <li>aplicacion.exe (Windows)</li>
+                        <li>programa.app (macOS)</li>
+                        <li>calculadora (Linux)</li>
+                        <li>MiApp.class (Java bytecode)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Archivo Interpretado</h2>
+                <div class="definition">
+                    <p>
+                        Un <strong>archivo interpretado</strong> es código fuente que se ejecuta línea por línea 
+                        en tiempo real por un programa especial llamado <em>intérprete</em>. No se transforma 
+                        previamente a código máquina, sino que se traduce y ejecuta simultáneamente.
+                    </p>
+                </div>
+
+                <h3>El proceso de interpretación:</h3>
+                <ol>
+                    <li>El programador escribe el código fuente</li>
+                    <li>El intérprete lee la primera línea del código</li>
+                    <li>El intérprete traduce y ejecuta esa línea inmediatamente</li>
+                    <li>El proceso se repite para cada línea hasta terminar el programa</li>
+                </ol>
+
+                <h3>Características principales:</h3>
+                <ul>
+                    <li><strong>Ejecución inmediata:</strong> No requiere un paso de compilación previo.</li>
+                    <li><strong>Código fuente visible:</strong> El código original permanece legible.</li>
+                    <li><strong>Flexibilidad:</strong> Permite modificaciones y pruebas rápidas.</li>
+                    <li><strong>Dependiente del intérprete:</strong> Necesita el intérprete instalado para ejecutarse.</li>
+                </ul>
+
+                <h3>Ventajas de la interpretación:</h3>
+                <ul>
+                    <li><strong>Desarrollo rápido:</strong> No hay que esperar tiempo de compilación.</li>
+                    <li><strong>Multiplataforma:</strong> El mismo código funciona en diferentes sistemas operativos.</li>
+                    <li><strong>Interactividad:</strong> Permite ejecución línea por línea para pruebas.</li>
+                    <li><strong>Flexibilidad:</strong> Facilita la experimentación y el aprendizaje.</li>
+                </ul>
+
+                <div class="example">
+                    <h4>Lenguajes típicamente interpretados:</h4>
+                    <ul>
+                        <li>JavaScript (ejecutado por navegadores web)</li>
+                        <li>Python (ejecutado por el intérprete de Python)</li>
+                        <li>Ruby (ejecutado por el intérprete de Ruby)</li>
+                        <li>PHP (ejecutado por el servidor web)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="comparison">
+                <h2>Comparación Práctica</h2>
+                <p>
+                    Para entender mejor las diferencias, imaginemos que queremos crear un programa que 
+                    calcule el área de un círculo:
+                </p>
+
+                <div class="comparison-item">
+                    <h3>Lenguaje Compilado (como C++):</h3>
+                    <ol>
+                        <li>Se escribe el código fuente: <code>calculadora.cpp</code></li>
+                        <li>Se compila: <code>g++ calculadora.cpp -o calculadora</code></li>
+                        <li>Se obtiene un ejecutable: <code>calculadora.exe</code></li>
+                        <li>Se ejecuta: <code>./calculadora</code></li>
+                    </ol>
+                    <p><strong>Resultado:</strong> Un archivo ejecutable independiente que funciona sin necesidad del código fuente.</p>
+                </div>
+
+                <div class="comparison-item">
+                    <h3>Lenguaje Interpretado (como Python):</h3>
+                    <ol>
+                        <li>Se escribe el código fuente: <code>calculadora.py</code></li>
+                        <li>Se ejecuta directamente: <code>python calculadora.py</code></li>
+                    </ol>
+                    <p><strong>Resultado:</strong> El código se ejecuta inmediatamente, pero necesita el intérprete de Python instalado.</p>
+                </div>
+            </section>
+
+            <section class="conclusion">
+                <h2>Conclusión</h2>
+                <p>
+                    Comprender la diferencia entre archivos fuente, compilados e interpretados es fundamental 
+                    para cualquier programador. Cada tipo tiene sus ventajas y desventajas, y la elección 
+                    entre un lenguaje compilado o interpretado depende de las necesidades específicas del proyecto.
+                </p>
+                <p>
+                    Los archivos fuente son el punto de partida, donde se expresan las ideas. 
+                    Los archivos compilados ofrecen velocidad y eficiencia. Los archivos interpretados 
+                    brindan flexibilidad y facilidad de desarrollo.
+                </p>
+                <p>
+                    En las siguientes lecciones, se profundizará en cómo JavaScript se comporta en diferentes 
+                    entornos y por qué es considerado un lenguaje interpretado con características especiales.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

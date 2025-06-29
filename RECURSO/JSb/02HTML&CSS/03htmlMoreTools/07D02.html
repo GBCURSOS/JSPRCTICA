@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D</title>
+    <style>
+        #titulo {
+            font: bold 26px Verdana, sans-serif;
+        }
+        #uno {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+        }
+        #uno:hover {
+            transform: rotate(90deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="titulo">TRANSFORMACIONES 3D</h1>
+    <p id="uno">
+        CSS también incluye algunas propiedades que podemos usar para lograr un efecto más realista.
+    </p>
+    <p id="unoa">
+        <mark>perspective</mark> Esta propiedad trabaja de forma similar a la función
+        perspective(), pero opera en el elemento padre. La propiedad crea un contenedor 
+        que aplica el efecto de perspectiva a los elementos en su interior.       
+    </p>
+    <p id="dos">
+        <mark>perspective-origin</mark> Esta propiedad cambia las coordenadas x e y del espectador.
+        Acepta dos valores en porcentaje, píxeles, o las palabras clave center, left, right, top
+        y bottom. Los valores por defecto son 50% 50%
+    </p>
+    <p id="tres">
+        <mark>backface-visibility</mark> Esta propiedad determina si el reverso del elemento será visible o
+        no. Acepta dos valores: visible o hidden , con el valor visible configurado por defecto.
+    </p>
+</body>
+</html>

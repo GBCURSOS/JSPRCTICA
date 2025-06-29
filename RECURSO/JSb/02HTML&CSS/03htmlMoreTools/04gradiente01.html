@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradientes</title>
+    <style>
+        body {
+            background: url("../images/fondoHechoLadrillos.jpg");
+            }
+            
+        #titulo {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 26px Verdana, sans-serif;
+            background: -webkit-linear-gradient(top, #FFFFFF, #666666);
+        }      
+        #uno {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 26px Verdana, sans-serif;
+            background: -webkit-linear-gradient(top, #FFFFFF, #666666);
+        }   
+        #unoa {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 26px Verdana, sans-serif;
+            background: -webkit-linear-gradient(top right, #FFFFFF, #f00606);
+        }     
+        #dos {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 26px Verdana, sans-serif;
+            background: -webkit-linear-gradient(top, transparent, #666666);
+        }    
+        #tres {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 26px Verdana, sans-serif;
+            background: -webkit-linear-gradient(top, #040b46, #FFFFFF, #06f141);
+        }    
+        #cuatro {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            font: bold 26px Verdana, sans-serif;
+            background: -webkit-radial-gradient(30px 50px, ellipse, #FFFFFF 50%,
+            #666666 70%, #999999 90%);
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">GRADIENTES</h1>
+    <p id="uno">
+        Un gradiente se forma mediante una serie de colores que varían continuamente con una
+        transición suave de un color a otro. Los gradientes se crean como imágenes y se agregan al
+        fondo del elemento con las propiedades background-image o background. Para crear la
+        imagen con el gradiente, CSS ofrece las siguientes funciones:<br>
+    </p>
+    <p id="unoa">
+        <mark>IMPORTANTE:</mark>  algunas propiedades y funciones CSS todavía se consideran
+        experimentales. Por esta razón, se deben declarar con un prefijo que
+        representa el motor web utilizado. Por ejemplo, si queremos que la función
+        linear-gradient() funcione en Google Chrome, tenemos que declararla
+        como <mark>-webkit-linear-gradient()</mark>. Si quiere usar esta función en su
+        sitio web, deberá repetir la propiedad background para cada navegador
+        existente con su correspondiente prefijo. Los prefijos requeridos para los
+        navegadores más populares son <mark>-moz-</mark>  para Mozilla Firefox, <mark>-webkit-</mark>  para
+        Safari y Google Chrome, <mark>-o-</mark>  para Opera, y <mark>-ms-</mark>  para Internet Explorer.
+    </p>
+    <br>
+    <p id="dos">
+        <mark>linear-gradient(posición, ángulo, colores)</mark> 
+        Esta función crea un gradiente lineal. El atributo posición determina el lado o la esquina desde la cual comienza el gradiente y se
+        declara con los valores top, bottom , left y right; el atributo ángulo define la dirección
+        del gradiente y se puede declarar en las unidades deg (grados), grad (gradianes), rad
+        (radianes), o turn (espiras), y el atributo colores es la lista de colores que participan en el
+        gradiente separados por coma. Los valores para el atributo colores pueden incluir un
+        segundo valor en porcentaje separado por un espacio para indicar la posición donde
+        finaliza el color.
+    </p>
+    <br>
+    <p id="tres">
+        <mark>radial-gradient(posición, forma, colores, extensión)</mark> 
+        Esta función crea un
+        gradiente radial. El atributo posición indica el origen del gradiente y se puede declarar en
+        píxeles, en porcentaje, o por medio de la combinación de los valores center, top,
+        bottom, left y right, el atributo forma determina la forma del gradiente y se declara
+        con los valores circle y ellipse , el atributo colores es la lista de los colores que
+        participan en el gradiente separados por coma, y el atributo extensión determina la forma
+        que el gradiente va a adquirir con los valores closest-side, closest-corner,
+        farthest-side, y farthest-corner. Los valores para el atributo colores pueden
+        incluir un segundo valor en porcentaje separado por un espacio para indicar la posición
+        donde finaliza el color.
+    </p>
+    <p id="cuatro">
+        <mark>radial-gradient(posición, forma, colores, extensión)</mark> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Sequi deleniti est id velit? Sit, dolores maxime quos sequi quisquam doloribus unde 
+        minima harum nam inventore accusamus dolorem culpa accusantium ea!
+    </p>
+    <br>
+</body>
+</html>

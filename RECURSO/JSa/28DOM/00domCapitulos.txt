@@ -1,0 +1,145 @@
+
+# Curso de DOM (Document Object Model)
+
+## Capítulo 1: Introducción al DOM
+1.1 ¿Qué es el DOM?
+1.2 Historia y evolución del DOM
+1.3 Importancia del DOM en el desarrollo web
+1.4 Relación entre HTML, CSS y el DOM
+
+## Capítulo 2: Estructura del DOM
+2.1 Árbol de nodos
+2.2 Tipos de nodos (elemento, texto, atributo, etc.)
+2.3 Propiedades de los nodos
+2.4 Relaciones entre nodos (padre, hijo, hermano)
+
+## Capítulo 3: Selección de Elementos
+3.1 Métodos de selección básicos (getElementById, getElementsByClassName, etc.)
+3.2 Selectores CSS con querySelector y querySelectorAll
+3.3 Colecciones de elementos (NodeList, HTMLCollection)
+3.4 Navegación por el DOM (parentNode, childNodes, nextSibling, etc.)
+
+## Capítulo 4: Manipulación del DOM
+4.1 Crear y eliminar elementos
+4.2 Modificar contenido (innerHTML, textContent)
+4.3 Trabajar con atributos
+4.4 Manipular estilos y clases CSS
+4.5 Trabajar con propiedades de elementos
+
+## Capítulo 5: Eventos en el DOM
+5.1 Introducción a los eventos
+5.2 Tipos de eventos comunes (click, submit, load, etc.)
+5.3 Manejo de eventos (addEventListener, removeEventListener)
+5.4 Event bubbling y capturing
+5.5 Delegación de eventos
+
+## Capítulo 6: Traversing y Manipulación Avanzada
+6.1 Recorrer el DOM eficientemente
+6.2 Trabajar con fragmentos de documento
+6.3 Clonación de nodos
+6.4 Inserción y reordenamiento de elementos
+
+## Capítulo 7: DOM y Rendimiento
+7.1 Optimización de manipulaciones del DOM
+7.2 Reflow y repaint
+7.3 Uso de requestAnimationFrame
+7.4 Virtualización del DOM
+
+## Capítulo 8: APIs del DOM
+8.1 Geolocalización
+8.2 Drag and Drop
+8.3 Web Storage (localStorage y sessionStorage)
+8.4 History API
+
+## Capítulo 9: DOM en Contextos Específicos
+9.1 DOM en aplicaciones de una sola página (SPA)
+9.2 Shadow DOM y Web Components
+9.3 DOM en el contexto de frameworks (React, Vue, Angular)
+
+## Capítulo 10: Seguridad y el DOM
+10.1 Cross-Site Scripting (XSS)
+10.2 Content Security Policy (CSP)
+10.3 Sanitización de entrada de usuario
+
+## Capítulo 11: Testing y Depuración del DOM
+11.1 Herramientas de desarrollo del navegador
+11.2 Debugging de manipulaciones del DOM
+11.3 Testing automatizado de interacciones con el DOM
+
+## Capítulo 12: Futuro del DOM
+12.1 Nuevas APIs y propuestas
+12.2 El DOM en el contexto de las PWAs
+12.3 Tendencias futuras en la manipulación del DOM
+
+
+
+# Referencias para el Curso de DOM
+
+## Libros
+
+1. "DOM Enlightenment" por Cody Lindley
+   - Cubre los fundamentos del DOM de manera profunda y práctica.
+
+2. "JavaScript: The Definitive Guide" por David Flanagan
+   - Incluye secciones extensas sobre el DOM y su manipulación.
+
+3. "Eloquent JavaScript" por Marijn Haverbeke
+   - Tiene capítulos dedicados al DOM y eventos del navegador.
+
+4. "JavaScript & jQuery: The Missing Manual" por David Sawyer McFarland
+   - Ofrece una perspectiva práctica sobre la manipulación del DOM.
+
+5. "Professional JavaScript for Web Developers" por Matt Frisbie
+   - Contiene capítulos detallados sobre el DOM y APIs relacionadas.
+
+## Recursos en línea
+
+1. MDN Web Docs - DOM
+   https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+   - Documentación completa y actualizada sobre el DOM.
+
+2. W3Schools - JavaScript HTML DOM
+   https://www.w3schools.com/js/js_htmldom.asp
+   - Tutoriales y ejemplos prácticos sobre manipulación del DOM.
+
+3. JavaScript.info - Document
+   https://javascript.info/document
+   - Guía detallada sobre el DOM con ejemplos interactivos.
+
+4. CSS-Tricks - What Is the DOM?
+   https://css-tricks.com/dom/
+   - Artículo que explica el DOM de manera clara y concisa.
+
+5. Udacity - JavaScript and the DOM (curso gratuito)
+   https://www.udacity.com/course/javascript-and-the-dom--ud117
+   - Curso en línea que cubre los fundamentos del DOM.
+
+6. FreeCodeCamp - Manipulating the DOM
+   https://www.freecodecamp.org/news/tag/dom/
+   - Colección de artículos y tutoriales sobre manipulación del DOM.
+
+7. Google Developers - Web Fundamentals: Working with the DOM
+   https://developers.google.com/web/fundamentals/web-components/shadowdom
+   - Guía sobre conceptos avanzados como Shadow DOM.
+
+8. JavaScript30 por Wes Bos
+   https://javascript30.com/
+   - Curso gratuito de 30 días con varios proyectos que involucran manipulación del DOM.
+
+9. DOM Manipulation in JavaScript - All You Need to Know
+   https://www.freecodecamp.org/news/dom-manipulation-in-javascript/
+   - Guía completa de FreeCodeCamp sobre manipulación del DOM.
+
+10. You Don't Need jQuery
+    http://youmightnotneedjquery.com/
+    - Muestra cómo realizar tareas comunes del DOM con JavaScript puro.
+
+## Documentación oficial
+
+1. WHATWG - DOM Living Standard
+   https://dom.spec.whatwg.org/
+   - Especificación oficial del DOM.
+
+2. W3C - Document Object Model (DOM)
+   https://www.w3.org/DOM/
+   - Estándares y especificaciones del W3C relacionados con el DOM.

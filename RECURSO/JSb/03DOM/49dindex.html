@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>GFG</h2>
+
+    <!-- Input elements with name  
+    attributes of "geek" -->
+    <input type="text" placeholder="Text input"
+     name="geek" />
+    <input type="number" placeholder="Number input"
+     name="geek" />
+    <input type="text" id="myInput" />
+    <script>
+        const inputs = document.getElementsByName("geek");
+        console.log('array',inputs);
+
+        // Select second element with
+        // name attribute "geek"
+        console.log('second',inputs[1]);
+        
+    </script>
+  </body>
+</html>

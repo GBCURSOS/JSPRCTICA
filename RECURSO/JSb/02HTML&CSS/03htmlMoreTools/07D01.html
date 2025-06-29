@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D</title>
+    <style>
+        #titulo {
+            font: bold 26px Verdana, sans-serif;
+        }
+        #uno {
+            margin: 30px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid;
+            transform: perspective(500px) rotate3d(0, 1, 0, 45deg);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="titulo">TRANSFORMACIONES 3D</h1>
+    <p id="uno">
+        De la misma manera que podemos generar transformaciones en dos dimensiones sobre
+        elementos HTML, también podemos hacerlo en tres dimensiones. Estos tipos de
+        transformaciones se realizan considerando un tercer eje que representa profundidad y se
+        identifica con la letra z. Las siguientes son las funciones disponibles para este propósito.
+    </p>
+    <p id="unoa">
+        De la misma manera que podemos generar transformaciones en dos dimensiones sobre
+        elementos HTML, también podemos hacerlo en tres dimensiones. Estos tipos de
+        transformaciones se realizan considerando un tercer eje que representa profundidad y se
+        identifica con la letra z. Las siguientes son las funciones disponibles para este propósito.
+    </p>
+    <p id="dos">
+        <mark>scale3d(x, y, z)</mark> Esta función asigna una nueva escala al elemento en un espacio 3D.
+        Acepta tres valores en números decimales para establecer la escala en los ejes x, y y z. Al
+        igual que con transformaciones 2D, el valor 1 preserva la escala original.
+    </p>
+    <p id="tres">
+        <mark>rotate3d(x, y, z, ángulo)</mark> Esta función rota el elemento en un ángulo y sobre un eje
+        específicos. Los valores para los ejes se deben especificar en números decimales y el
+        ángulo se puede expresar en deg (grados), grad (gradianes), rad (radianes), o turn
+        (espiras). Los valores asignados a los ejes determinan un vector de rotación, por lo que los
+        valores no son importantes, pero sí lo es la relación entre los mismos. Por ejemplo,
+        rotate3d(5, 2, 6, 30deg) producirá el mismo efecto que rotate3d(50, 20, 60,
+        30deg), debido a que el vector resultante es el mismo.+
+    </p>
+    <p id="cuatro">
+        <mark>translate3d(x, y, z)</mark> Esta función mueve el elemento a una nueva posición en el
+        espacio 3D. Acepta tres valores en píxeles para los ejes x, y y z.
+    </p>
+    <p id="cinco">
+        <mark>perspective(valor)</mark> Esta función agrega un efecto de profundidad a la escena
+        incrementando el tamaño del lado del elemento cercano al espectador
+    </p>
+    <p id="seis">
+        Algunas transformaciones 3D se pueden aplicar directamente al elemento, como hemos
+        hecho con las transformaciones 2D, pero otras requieren que primero declaremos la
+        perspectiva. Por ejemplo, si rotamos el elemento en el eje y, un lado del elemento se
+        desplazará hacia adelante y el otro hacia atrás, pero el tamaño de cada lado permanecerá
+        igual y por ello el usuario no verá la transformación. Para lograr un efecto realista, tenemos
+        que declarar la perspectiva con la función <mark>perspective()</mark>.
+    </p>
+</body>
+</html>

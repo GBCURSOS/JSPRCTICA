@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Arrays</h1>
+    <h2>The sort() Method</h2>
+
+    <p>Click the buttons to sort car objects on type.</p>
+
+    <button onclick="functionSort()">Sort</button>
+    <p id="demo"></p>
+
+    <script>
+      const cars = [
+        { type: "Volvo", year: 2016 },
+        { type: "BMW", year: 2010 },
+        { type: "Saab", year: 2001 },
+        { type: "Chevrolet", year: 2011 },
+      ];
+
+      displayCars();
+
+      function functionSort() {
+        cars.sort(function (a, b) {
+          let x = b.type.toLowerCase(); 
+          let y = a.type.toLowerCase();
+          //let x = b.year;
+          //let y = a.year;
+          if (x < y) {
+            return -1;
+          }
+          if (x > y) {
+            return 1;
+          }
+          return 0;
+        });
+        displayCars();
+      }
+
+      function displayCars() {
+        document.getElementById("demo").innerHTML =
+          cars[0].type +
+          " " +
+          cars[0].year +
+          "<br>" +
+          cars[1].type +
+          " " +
+          cars[1].year +
+          "<br>" +
+          cars[2].type +
+          " " +
+          cars[2].year +
+          "<br>" +
+          cars[3].type +
+          " " +
+          cars[3].year;
+      }
+    </script>
+  </body>
+</html>

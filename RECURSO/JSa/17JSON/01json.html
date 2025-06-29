@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos de JSON con Fetch y Web Storage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      .example {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      button {
+        margin: 5px;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejemplos de JSON con Fetch y Web Storage</h1>
+
+    <!-- Ejemplo 1: Fetch de posts de JSONPlaceholder -->
+    <div class="example">
+      <h2>1. Posts de JSONPlaceholder</h2>
+      <button onclick="fetchPosts()">Obtener Posts</button>
+      <pre id="postsOutput"></pre>
+    </div>
+
+    <!-- Ejemplo 2: Fetch de datos de usuario de GitHub -->
+    <div class="example">
+      <h2>2. Datos de Usuario de GitHub</h2>
+      <input
+        type="text"
+        id="githubUsername"
+        placeholder="Nombre de usuario de GitHub"
+      />
+      <button onclick="fetchGithubUser()">Obtener Datos</button>
+      <pre id="githubOutput"></pre>
+    </div>
+
+    <!-- Ejemplo 3: Fetch de datos de clima -->
+    <div class="example">
+      <h2>3. Datos de Clima</h2>
+      <input type="text" id="cityName" placeholder="Nombre de la ciudad" />
+      <button onclick="fetchWeather()">Obtener Clima</button>
+      <pre id="weatherOutput"></pre>
+    </div>
+
+    <!-- Ejemplo 4: JSON con Web Storage -->
+    <div class="example">
+      <h2>4. Favoritos con Web Storage</h2>
+      <input type="text" id="favoriteItem" placeholder="Añadir favorito" />
+      <button onclick="addFavorite()">Añadir a Favoritos</button>
+      <button onclick="displayFavorites()">Mostrar Favoritos</button>
+      <button onclick="clearFavorites()">Limpiar Favoritos</button>
+      <pre id="favoritesOutput"></pre>
+    </div>
+
+    <script src="./01json.js"></script>
+  </body>
+</html>

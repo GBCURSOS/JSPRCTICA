@@ -1,0 +1,12 @@
+Export por defecto:
+En saludos.js, usamos export default. Esto permite importar la función directamente sin llaves en otros módulos.
+Importando miembros nombrados de otro módulo:
+En main.js, importamos sumar y restar de matematicas.js usando llaves {}. Esto importa específicamente esas funciones.
+Importando un módulo entero:
+En main.js, importamos todo el módulo utilidades.js como un objeto llamado utilidades. Podemos acceder a sus miembros usando la notación de punto.
+Importando miembros nombrados con alias:
+En main.js, importamos multiplicar y dividir con alias (mult y div). Esto permite renombrar las funciones al importarlas.
+Importando con efecto secundario:
+Importamos inicializador.js sin asignar ningún nombre. Esto ejecuta el código en el módulo sin importar explícitamente ningún valor.
+Exportando múltiples miembros nombrados:
+En matematicas.js, exportamos varias funciones individualmente. Esto permite importarlas selectivamente en otros módulos.

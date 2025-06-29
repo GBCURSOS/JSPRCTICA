@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación del DOM</title>
+    <style>
+        .destacado { background-color: yellow; font-weight: bold; }
+        .grande { font-size: 1.2em; }
+    </style>
+</head>
+<body>
+    <h1 id="titulo-principal">Manipulación del DOM</h1>
+    
+    <div id="contenedor">
+        <p id="parrafo1">Este es el párrafo original.</p>
+    </div>
+
+    <button id="btn-crear">Crear Elemento</button>
+    <button id="btn-eliminar">Eliminar Elemento</button>
+    <button id="btn-modificar">Modificar Contenido</button>
+    <button id="btn-atributos">Modificar Atributos</button>
+    <button id="btn-estilos">Modificar Estilos</button>
+    <button id="btn-propiedades">Modificar Propiedades</button>
+
+    <script>
+        // 4.1 Crear y eliminar elementos
+        const btnCrear = document.getElementById('btn-crear');
+        const btnEliminar = document.getElementById('btn-eliminar');
+        const contenedor = document.getElementById('contenedor');
+
+        btnCrear.addEventListener('click', () => {
+            const nuevoElemento = document.createElement('p');
+            nuevoElemento.textContent = 'Este es un nuevo párrafo.';
+            nuevoElemento.id = 'nuevoParrafo';
+            contenedor.appendChild(nuevoElemento);
+            console.log('Elemento creado:', nuevoElemento);
+        });
+
+        btnEliminar.addEventListener('click', () => {
+            const elementoAEliminar = document.getElementById('nuevoParrafo');
+            if (elementoAEliminar) {
+                contenedor.removeChild(elementoAEliminar);
+                console.log('Elemento eliminado');
+            } else {
+                console.log('No hay elemento para eliminar');
+            }
+        });
+
+        // 4.2 Modificar contenido (innerHTML, textContent)
+        const btnModificar = document.getElementById('btn-modificar');
+        const parrafo1 = document.getElementById('parrafo1');
+
+        btnModificar.addEventListener('click', () => {
+            parrafo1.innerHTML = 'Este párrafo ha sido <strong>modificado</strong> con innerHTML.';
+            console.log('Contenido modificado con innerHTML');
+            
+            setTimeout(() => {
+                parrafo1.textContent = 'Este párrafo ha sido modificado con textContent.';
+                console.log('Contenido modificado con textContent');
+            }, 2000);
+        });
+
+        // 4.3 Trabajar con atributos
+        const btnAtributos = document.getElementById('btn-atributos');
+
+        btnAtributos.addEventListener('click', () => {
+            const img = document.createElement('img');
+            img.setAttribute('src', 'https://via.placeholder.com/150');
+            img.setAttribute('alt', 'Imagen de ejemplo');
+            contenedor.appendChild(img);
+            console.log('Atributos de la imagen:', img.getAttribute('src'), img.getAttribute('alt'));
+        });
+
+        // 4.4 Manipular estilos y clases CSS
+        const btnEstilos = document.getElementById('btn-estilos');
+
+        btnEstilos.addEventListener('click', () => {
+            parrafo1.style.color = 'blue';
+            parrafo1.classList.add('destacado');
+            setTimeout(() => {
+                parrafo1.classList.remove('destacado');
+                parrafo1.classList.add('grande');
+            }, 2000);
+            console.log('Estilos y clases modificados');
+        });
+
+        // 4.5 Trabajar con propiedades de elementos
+        const btnPropiedades = document.getElementById('btn-propiedades');
+
+        btnPropiedades.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = 'Texto inicial';
+            contenedor.appendChild(input);
+            console.log('Valor inicial del input:', input.value);
+
+            setTimeout(() => {
+                input.value = 'Nuevo valor';
+                console.log('Nuevo valor del input:', input.value);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

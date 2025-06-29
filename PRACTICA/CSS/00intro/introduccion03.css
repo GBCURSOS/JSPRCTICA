@@ -1,0 +1,416 @@
+/* Introducción 03 - Estilos para El DOM y JavaScript */
+
+/* Paleta de colores:
+   #1B262C - Azul oscuro (principal)
+   #0F4C75 - Azul medio (secundario)
+   #3282B8 - Azul claro (acentos)
+   #BBE1FA - Azul muy claro (fondos suaves)
+*/
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía */
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.8;
+  color: #1b262c;
+  background-color: #bbe1fa;
+  font-size: 16px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #bbe1fa;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #1b262c;
+  border-radius: 10px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+/* Contenido principal */
+.content {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #3282b8;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 40px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+/* Títulos */
+h2 {
+  font-size: 1.8rem;
+  color: #0f4c75;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #3282b8;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #1b262c;
+  margin: 25px 0 15px 0;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: #0f4c75;
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+}
+
+/* Párrafos */
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.introduction p:first-of-type {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Definiciones destacadas */
+.definition {
+  background-color: #bbe1fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 5px solid #0f4c75;
+  margin: 20px 0;
+}
+
+.definition p {
+  margin-bottom: 0;
+  text-indent: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* Listas */
+ul,
+ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+ol li {
+  margin-bottom: 12px;
+}
+
+/* Texto destacado */
+strong {
+  color: #0f4c75;
+  font-weight: bold;
+}
+
+em {
+  color: #1b262c;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Conceptos principales */
+.concept {
+  padding: 25px;
+  margin: 30px 0;
+  border: 1px solid #3282b8;
+  border-radius: 10px;
+  background-color: #bbe1fa;
+}
+
+.concept h2 {
+  background-color: #0f4c75;
+  color: white;
+  padding: 15px;
+  margin: -25px -25px 20px -25px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+}
+
+/* Tarjetas de comparación */
+.comparison-card {
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border-left: 4px solid #3282b8;
+}
+
+.comparison-card.before {
+  background-color: #ffe5e5;
+  border-left-color: #ff6b6b;
+}
+
+.comparison-card.after {
+  background-color: #e5f5e5;
+  border-left-color: #28a745;
+}
+
+.comparison-card ul {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.comparison-card li {
+  margin-bottom: 8px;
+}
+
+/* Grid de ejemplos */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.example-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #3282b8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.example-card h4 {
+  margin-top: 0;
+  color: #0f4c75;
+  margin-bottom: 15px;
+}
+
+.example-card p {
+  margin-bottom: 0;
+  text-indent: 0;
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* Enlace de demo */
+.demo-link {
+  background-color: #0f4c75;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.demo-link h4 {
+  margin-top: 0;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.demo-button {
+  display: inline-block;
+  background-color: #3282b8;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.demo-button:hover {
+  background-color: #bbe1fa;
+  color: #1b262c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.demo-note {
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-indent: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Conceptos clave */
+.key-concepts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.concept-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3282b8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.concept-item h4 {
+  margin-top: 0;
+  color: #0f4c75;
+  margin-bottom: 10px;
+}
+
+.concept-item p {
+  margin-bottom: 0;
+  text-indent: 0;
+  font-size: 0.95rem;
+}
+
+/* Conclusión */
+.conclusion {
+  background-color: #1b262c;
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+.conclusion h2 {
+  color: white;
+  border-bottom-color: white;
+}
+
+.conclusion p {
+  text-indent: 0;
+  margin-bottom: 20px;
+}
+
+.conclusion p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .content {
+    padding: 25px 20px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  p {
+    text-indent: 1em;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key-concepts {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px 10px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+  }
+
+  .concept {
+    padding: 20px;
+  }
+
+  .concept h2 {
+    margin: -20px -20px 15px -20px;
+    padding: 12px;
+  }
+
+  .example-card,
+  .concept-item {
+    padding: 15px;
+  }
+
+  .demo-link {
+    padding: 20px;
+  }
+}

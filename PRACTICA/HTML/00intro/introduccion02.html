@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción 02 - JavaScript: Historia y Ejecución</title>
+    <link rel="stylesheet" href="../../CSS/00intro/introduccion02.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>JavaScript: Historia y Ejecución</h1>
+            <p class="subtitle">Del navegador al servidor</p>
+        </header>
+
+        <main class="content">
+            <section class="introduction">
+                <h2>Introducción</h2>
+                <p>
+                    JavaScript es uno de los lenguajes de programación más importantes y utilizados en el mundo actual.
+                    Para comprender completamente su funcionamiento, es esencial conocer su historia, su propósito
+                    original
+                    y cómo evolucionó hasta convertirse en un lenguaje versátil que se ejecuta tanto en navegadores
+                    como en servidores.
+                </p>
+                <p>
+                    En esta lección se explorará la historia de JavaScript, su proceso de ejecución en diferentes
+                    entornos, y se comprenderá qué son los motores de JavaScript y cómo Node.js revolucionó
+                    el uso de este lenguaje fuera del navegador.
+                </p>
+            </section>
+
+            <section class="concept">
+                <h2>Historia de JavaScript</h2>
+                <div class="definition">
+                    <p>
+                        JavaScript fue creado en 1995 por <strong>Brendan Eich</strong> mientras trabajaba en
+                        Netscape Communications. El lenguaje fue desarrollado en tan solo <strong>10 días</strong>
+                        con el objetivo específico de hacer las páginas web más interactivas y dinámicas.
+                    </p>
+                </div>
+
+                <h3>¿Por qué se creó JavaScript?</h3>
+                <p>
+                    A mediados de los años 90, las páginas web eran completamente estáticas. Solo contenían texto
+                    e imágenes sin ningún tipo de interactividad. Los usuarios no podían interactuar con el contenido
+                    más allá de hacer clic en enlaces para navegar a otras páginas.
+                </p>
+
+                <h4>Problemas que existían antes de JavaScript:</h4>
+                <ul>
+                    <li><strong>Páginas estáticas:</strong> El contenido no podía cambiar sin recargar la página
+                        completa.</li>
+                    <li><strong>Validación del lado del servidor:</strong> Cualquier validación de formularios requería
+                        enviar datos al servidor.</li>
+                    <li><strong>Falta de interactividad:</strong> No había manera de responder a las acciones del
+                        usuario en tiempo real.</li>
+                    <li><strong>Experiencia de usuario limitada:</strong> La navegación web era lenta y poco atractiva.
+                    </li>
+                </ul>
+
+                <h3>Objetivos de la creación de JavaScript:</h3>
+                <ol>
+                    <li><strong>Hacer las páginas web interactivas:</strong> Permitir que el contenido respondiera a las
+                        acciones del usuario.</li>
+                    <li><strong>Validación en el cliente:</strong> Verificar formularios antes de enviarlos al servidor.
+                    </li>
+                    <li><strong>Manipulación dinámica del contenido:</strong> Cambiar texto, imágenes y estilos sin
+                        recargar la página.</li>
+                    <li><strong>Mejorar la experiencia del usuario:</strong> Crear interfaces más atractivas y
+                        responsivas.</li>
+                </ol>
+
+                <div class="timeline">
+                    <h4>Cronología importante:</h4>
+                    <ul>
+                        <li><strong>1995:</strong> Brendan Eich crea JavaScript en Netscape</li>
+                        <li><strong>1996:</strong> Microsoft crea JScript para Internet Explorer</li>
+                        <li><strong>1997:</strong> JavaScript se estandariza como ECMAScript</li>
+                        <li><strong>2009:</strong> Se lanza Node.js, llevando JavaScript al servidor</li>
+                        <li><strong>2015:</strong> ECMAScript 6 (ES6) moderniza significativamente el lenguaje</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Proceso de Ejecución en el Navegador</h2>
+                <div class="definition">
+                    <p>
+                        Cuando se ejecuta JavaScript en un navegador web, el código pasa por un proceso específico
+                        que involucra varios componentes del navegador trabajando en conjunto para interpretar
+                        y ejecutar las instrucciones.
+                    </p>
+                </div>
+
+                <h3>Pasos del proceso de ejecución:</h3>
+                <ol>
+                    <li><strong>Carga del archivo:</strong> El navegador descarga el archivo JavaScript desde el
+                        servidor web.</li>
+                    <li><strong>Análisis sintáctico (Parsing):</strong> El motor de JavaScript analiza el código y
+                        verifica que la sintaxis sea correcta.</li>
+                    <li><strong>Compilación Just-In-Time:</strong> El código se convierte a bytecode o código máquina
+                        optimizado.</li>
+                    <li><strong>Ejecución:</strong> El motor ejecuta las instrucciones línea por línea.</li>
+                    <li><strong>Interacción con el DOM:</strong> JavaScript puede modificar el contenido y estructura de
+                        la página web.</li>
+                </ol>
+
+                <h3>Componentes involucrados en el navegador:</h3>
+                <ul>
+                    <li><strong>Motor de JavaScript:</strong> Interpreta y ejecuta el código (V8 en Chrome, SpiderMonkey
+                        en Firefox).</li>
+                    <li><strong>DOM (Document Object Model):</strong> Representación de la estructura HTML que
+                        JavaScript puede modificar.</li>
+                    <li><strong>APIs del navegador:</strong> Funcionalidades adicionales como localStorage,
+                        geolocalización, etc.</li>
+                    <li><strong>Event Loop:</strong> Maneja la ejecución asíncrona y los eventos del usuario.</li>
+                </ul>
+
+                <div class="process-flow">
+                    <h4>Flujo simplificado:</h4>
+                    <p>Archivo .js → Motor JS → Parsing → Compilación → Ejecución → Modificación del DOM</p>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Ejemplo Práctico usando la Consola</h2>
+                <div class="definition">
+                    <p>
+                        La consola del navegador es una herramienta fundamental para aprender JavaScript.
+                        Permite ejecutar código JavaScript directamente y ver los resultados inmediatamente,
+                        sin necesidad de modificar archivos HTML.
+                    </p>
+                </div>
+
+                <h3>Cómo acceder a la consola:</h3>
+                <ol>
+                    <li>Abrir cualquier navegador web (Chrome, Firefox, Safari, Edge)</li>
+                    <li>Presionar la tecla <strong>F12</strong> o hacer clic derecho y seleccionar "Inspeccionar"</li>
+                    <li>Buscar la pestaña <strong>"Console"</strong> o <strong>"Consola"</strong></li>
+                    <li>Escribir código JavaScript directamente en la línea de comandos</li>
+                </ol>
+
+                <div class="example">
+                    <h4>Ejemplo básico: Variables y operaciones</h4>
+                    <pre><code>// Declarar variables
+let nombre = "JavaScript";
+let año = 1995;
+
+// Mostrar valores
+console.log("Lenguaje:", nombre);
+console.log("Año de creación:", año);
+
+// Operación matemática simple
+let suma = 15 + 25;
+console.log("15 + 25 =", suma);</code></pre>
+                </div>
+
+                <h3>Instrucciones para probar:</h3>
+                <ol>
+                    <li>Abrir la consola del navegador (F12 → Console)</li>
+                    <li>Copiar y pegar cada línea del ejemplo</li>
+                    <li>Presionar Enter después de cada línea</li>
+                    <li>Observar los resultados que aparecen en la consola</li>
+                </ol>
+            </section>
+
+            <section class="concept">
+                <h2>¿Qué es un Motor de JavaScript?</h2>
+                <div class="definition">
+                    <p>
+                        Un <strong>motor de JavaScript</strong> es un programa que ejecuta código JavaScript.
+                        Es el componente responsable de interpretar, compilar y ejecutar el código, convirtiéndolo
+                        en instrucciones que la computadora puede entender y procesar.
+                    </p>
+                </div>
+
+                <h3>Función principal del motor:</h3>
+                <p>
+                    El motor de JavaScript toma el código fuente escrito por el programador (que es texto legible por
+                    humanos)
+                    y lo transforma en instrucciones ejecutables que la máquina puede procesar. Este proceso incluye
+                    análisis, optimización y ejecución del código.
+                </p>
+
+                <h3>Motores principales y sus características:</h3>
+                <div class="engines-grid">
+                    <div class="engine-card">
+                        <h4>V8 (Google Chrome)</h4>
+                        <ul>
+                            <li>Desarrollado por Google</li>
+                            <li>Compila JavaScript directamente a código máquina</li>
+                            <li>Usado en Chrome y Node.js</li>
+                            <li>Conocido por su alta performance</li>
+                        </ul>
+                    </div>
+
+                    <div class="engine-card">
+                        <h4>SpiderMonkey (Firefox)</h4>
+                        <ul>
+                            <li>El primer motor de JavaScript (1995)</li>
+                            <li>Desarrollado por Mozilla</li>
+                            <li>Implementa las últimas características de ECMAScript</li>
+                            <li>Usado en Firefox</li>
+                        </ul>
+                    </div>
+
+                    <div class="engine-card">
+                        <h4>JavaScriptCore (Safari)</h4>
+                        <ul>
+                            <li>Desarrollado por Apple</li>
+                            <li>También conocido como Nitro</li>
+                            <li>Optimizado para dispositivos Apple</li>
+                            <li>Usado en Safari y aplicaciones iOS</li>
+                        </ul>
+                    </div>
+
+                    <div class="engine-card">
+                        <h4>Chakra (Edge Legacy)</h4>
+                        <ul>
+                            <li>Desarrollado por Microsoft</li>
+                            <li>Usado en versiones antiguas de Edge</li>
+                            <li>Ahora Edge usa V8</li>
+                            <li>Enfocado en compatibilidad con estándares</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Proceso interno del motor:</h3>
+                <ol>
+                    <li><strong>Lexical Analysis:</strong> Convierte el código en tokens (palabras clave, operadores,
+                        identificadores).</li>
+                    <li><strong>Syntax Analysis:</strong> Crea un árbol de sintaxis abstracta (AST) del código.</li>
+                    <li><strong>Code Generation:</strong> Convierte el AST en bytecode o código máquina.</li>
+                    <li><strong>Optimization:</strong> Optimiza el código durante la ejecución para mejor rendimiento.
+                    </li>
+                    <li><strong>Execution:</strong> Ejecuta las instrucciones optimizadas.</li>
+                </ol>
+            </section>
+
+            <section class="concept">
+                <h2>Historia de Node.js</h2>
+                <div class="definition">
+                    <p>
+                        <strong>Node.js</strong> fue creado en 2009 por <strong>Ryan Dahl</strong> con el objetivo
+                        revolucionario de ejecutar JavaScript fuera del navegador, específicamente en servidores
+                        y aplicaciones de escritorio.
+                    </p>
+                </div>
+
+                <h3>¿Por qué se creó Node.js?</h3>
+                <p>
+                    Antes de Node.js, JavaScript solo podía ejecutarse en navegadores web. Los desarrolladores tenían
+                    que usar diferentes lenguajes para el frontend (JavaScript) y el backend (PHP, Python, Java, etc.).
+                    Ryan Dahl vio una oportunidad para unificar el desarrollo usando un solo lenguaje.
+                </p>
+
+                <h4>Problemas que Node.js resolvió:</h4>
+                <ul>
+                    <li><strong>Fragmentación de lenguajes:</strong> Diferentes lenguajes para frontend y backend.</li>
+                    <li><strong>Compartir código:</strong> Imposibilidad de reutilizar código entre cliente y servidor.
+                    </li>
+                    <li><strong>Escalabilidad:</strong> Muchos servidores no manejaban bien miles de conexiones
+                        simultáneas.</li>
+                    <li><strong>Desarrollo full-stack:</strong> Los desarrolladores necesitaban conocer múltiples
+                        lenguajes.</li>
+                </ul>
+
+                <h3>Innovaciones de Node.js:</h3>
+                <ol>
+                    <li><strong>Motor V8:</strong> Utilizó el motor de JavaScript de Google Chrome.</li>
+                    <li><strong>Event Loop:</strong> Implementó un modelo de programación asíncrona y no bloqueante.
+                    </li>
+                    <li><strong>NPM:</strong> Creó un sistema de gestión de paquetes robusto.</li>
+                    <li><strong>APIs del sistema:</strong> Proporcionó acceso a sistema de archivos, redes, etc.</li>
+                </ol>
+
+                <div class="timeline">
+                    <h4>Historia de Node.js:</h4>
+                    <ul>
+                        <li><strong>2009:</strong> Ryan Dahl presenta Node.js en la JSConf</li>
+                        <li><strong>2010:</strong> Se lanza NPM (Node Package Manager)</li>
+                        <li><strong>2011:</strong> Node.js llega a Windows</li>
+                        <li><strong>2015:</strong> Se forma la Node.js Foundation</li>
+                        <li><strong>2019:</strong> Se fusiona con la JS Foundation para crear OpenJS Foundation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Instalación de Node.js en Windows</h2>
+                <div class="definition">
+                    <p>
+                        Para ejecutar JavaScript fuera del navegador, es necesario instalar Node.js en el sistema.
+                        El proceso de instalación en Windows es sencillo y se realiza mediante un instalador gráfico.
+                    </p>
+                </div>
+
+                <h3>Pasos para la instalación:</h3>
+                <ol>
+                    <li><strong>Descargar Node.js:</strong>
+                        <ul>
+                            <li>Visitar el sitio oficial: <code>https://nodejs.org</code></li>
+                            <li>Hacer clic en "Download" para Windows</li>
+                            <li>Se recomienda la versión LTS (Long Term Support)</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Ejecutar el instalador:</strong>
+                        <ul>
+                            <li>Hacer doble clic en el archivo descargado (.msi)</li>
+                            <li>Seguir las instrucciones del asistente de instalación</li>
+                            <li>Aceptar los términos y condiciones</li>
+                            <li>Mantener la ruta de instalación predeterminada</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Verificar la instalación:</strong>
+                        <ul>
+                            <li>Abrir el Command Prompt (cmd) o PowerShell</li>
+                            <li>Escribir: <code>node --version</code></li>
+                            <li>Escribir: <code>npm --version</code></li>
+                            <li>Ambos comandos deben mostrar números de versión</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="installation-note">
+                    <h4>Nota importante:</h4>
+                    <p>
+                        La instalación de Node.js incluye automáticamente NPM (Node Package Manager),
+                        que es el gestor de paquetes que permite instalar bibliotecas y herramientas adicionales.
+                    </p>
+                </div>
+
+                <h3>Verificación exitosa:</h3>
+                <div class="example">
+                    <pre><code>C:\Users\Usuario> node --version
+v18.17.0
+
+C:\Users\Usuario> npm --version
+9.6.7</code></pre>
+                </div>
+            </section>
+
+            <section class="concept">
+                <h2>Proceso de Ejecución en Node.js</h2>
+                <div class="definition">
+                    <p>
+                        El proceso de ejecución de JavaScript en Node.js es diferente al del navegador.
+                        En lugar de interactuar con el DOM, Node.js proporciona APIs para interactuar
+                        con el sistema operativo, archivos, redes y otros recursos del servidor.
+                    </p>
+                </div>
+
+                <h3>Diferencias clave con el navegador:</h3>
+                <div class="comparison-table">
+                    <div class="comparison-row">
+                        <div class="comparison-header">Aspecto</div>
+                        <div class="comparison-header">Navegador</div>
+                        <div class="comparison-header">Node.js</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div><strong>Entorno</strong></div>
+                        <div>Páginas web, DOM</div>
+                        <div>Servidor, sistema operativo</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div><strong>APIs disponibles</strong></div>
+                        <div>DOM, BOM, Fetch, LocalStorage</div>
+                        <div>File System, HTTP, Path, OS</div>
+                    </div>
+                    <div class="comparison-row">
+                        <div><strong>Objetivo</strong></div>
+                        <div>Interactividad en páginas web</div>
+                        <div>Aplicaciones de servidor, herramientas</div>
+                    </div>
+                </div>
+
+                <h3>Pasos de ejecución en Node.js:</h3>
+                <ol>
+                    <li><strong>Crear archivo JavaScript:</strong> Guardar el código en un archivo con extensión .js
+                    </li>
+                    <li><strong>Abrir terminal:</strong> Navegar a la carpeta donde está el archivo</li>
+                    <li><strong>Ejecutar comando:</strong> Usar <code>node nombreArchivo.js</code></li>
+                    <li><strong>Ver resultados:</strong> La salida aparece directamente en la terminal</li>
+                </ol>
+
+                <div class="example">
+                    <h4>Ejemplo básico: El mismo código en Node.js</h4>
+                    <p><strong>Archivo: ejemplo.js</strong></p>
+                    <pre><code>// Declarar variables
+let nombre = "JavaScript";
+let año = 1995;
+
+// Mostrar valores
+console.log("Lenguaje:", nombre);
+console.log("Año de creación:", año);
+
+// Operación matemática simple
+let suma = 15 + 25;
+console.log("15 + 25 =", suma);
+
+// Funcionalidad específica de Node.js
+console.log("Ejecutándose en Node.js versión:", process.version);</code></pre>
+                </div>
+
+                <div class="execution-steps">
+                    <h4>Para ejecutar este ejemplo:</h4>
+                    <ol>
+                        <li>Crear un archivo llamado <code>ejemplo.js</code></li>
+                        <li>Copiar el código anterior en el archivo</li>
+                        <li>Abrir terminal en la carpeta del archivo</li>
+                        <li>Ejecutar: <code>node ejemplo.js</code></li>
+                        <li>Observar los resultados en la terminal</li>
+                    </ol>
+                </div>
+
+                <div class="expected-output">
+                    <h4>Salida esperada:</h4>
+                    <pre><code>Lenguaje: JavaScript
+Año de creación: 1995
+15 + 25 = 40
+Ejecutándose en Node.js versión: v18.17.0</code></pre>
+                </div>
+            </section>
+
+            <section class="conclusion">
+                <h2>Conclusión</h2>
+                <p>
+                    JavaScript ha evolucionado desde ser un simple lenguaje para agregar interactividad a páginas web
+                    hasta convertirse en un ecosistema completo que abarca tanto el desarrollo frontend como backend.
+                    La comprensión de su historia, el funcionamiento de los motores de JavaScript y la revolución
+                    que representó Node.js es fundamental para cualquier desarrollador moderno.
+                </p>
+                <p>
+                    El ejemplo mostrado demuestra que el núcleo del lenguaje JavaScript (variables, operaciones)
+                    permanece igual tanto en el navegador como en Node.js. La diferencia radica en
+                    las APIs y funcionalidades específicas que cada entorno proporciona.
+                </p>
+                <p>
+                    En la siguiente lección se explorará en detalle qué es el DOM y cómo JavaScript puede
+                    interactuar con él para crear páginas web dinámicas e interactivas.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Formularios</title>
+    </head>
+    <body>
+        <section>
+            <form name="form1" method="get">
+                <p><label>Nombre: <input type="text" name="nombre"></label></p>
+                <p><label>Edad: <input type="text" name="edad" disabled></label></p>
+                <p><input type="submit" value="Enviar"></p>
+                </form>
+            <hr>                
+            <form name="form2" method="get">
+                <p><label>Buscar: <input type="search" name="buscar"
+                                    placeholder="Término a buscar"></label></p>
+                <p><label>Código Postal: <input pattern="[0-5]{5}" name="cp"
+                                            title="Inserte su código postal"></label></p>
+                <p><input type="submit" value="Buscar"></p>
+            </form>      
+            <hr>
+        </section>
+    </body>
+</html>

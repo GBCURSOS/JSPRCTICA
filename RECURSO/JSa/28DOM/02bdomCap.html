@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tipos de Nodos en el DOM</title>
+  </head>
+  <body>
+    <h1 id="titulo">Tipos de Nodos en el DOM</h1>
+    <p>
+      Este es un párrafo con <strong>texto en negrita</strong> y un
+      <a href="https://ejemplo.com">enlace</a>.
+    </p>
+    <!-- Este es un comentario -->
+    <div id="contenedor" class="importante">
+      Este es el texto dentro del div.
+    </div>
+
+    <script>
+      // Función para obtener y mostrar el tipo de nodo
+      function mostrarTipoNodo(nodo) {
+        console.log(`Tipo de nodo: ${nodo.nodeType} - ${nodo.nodeName}`);
+      }
+
+      // 1. Nodo Documento
+      mostrarTipoNodo(document);
+
+      // 2. Nodo Elemento
+      const titulo = document.getElementById("titulo");
+      mostrarTipoNodo(titulo);
+
+      // 3. Nodo Atributo
+      const atributoClase = document
+        .getElementById("contenedor")
+        .getAttributeNode("class");
+      mostrarTipoNodo(atributoClase);
+
+      // 4. Nodo Texto
+      const textoTitulo = titulo.firstChild;
+      mostrarTipoNodo(textoTitulo);
+
+      // 5. Nodo Comentario
+      const comentario = document.body.childNodes[5]; // Puede variar dependiendo del navegador
+      mostrarTipoNodo(comentario);
+
+      // 6. Nodo DocumentType (DOCTYPE)
+      const doctype = document.doctype;
+      mostrarTipoNodo(doctype);
+
+      // Bonus: Mostrar todos los nodos hijos del body
+      console.log("Nodos hijos del body:");
+      document.body.childNodes.forEach((nodo, index) => {
+        console.log(`Nodo ${index}:`, nodo.nodeType, nodo.nodeName);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display</title>
+    <style>
+      p {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+      }
+
+      span {
+        background-color: red;
+        color: white;
+        padding: 10px;
+      }
+
+      p.ex1 > span {
+        display: none;
+      }
+      p.ex2 {
+        display: inline;
+      }
+      p.ex3 > span{
+        display: block;
+      }
+      p.ex4 {
+        display: inline-block;
+      }
+      p.ex5 {
+        display: flex;
+      }
+      p.ex6 {
+        display: grid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The display Property</h1>
+
+    <h2>display: none:</h2>
+    <p class="ex1">ex1
+      <span>Text 1</span>
+      <span>Text 2</span>
+      <span>Text 3</span>
+    </p>
+
+
+    <h2>display: inline:</h2>
+    <p class="ex2">ex2
+      <span>Text 1</span>
+      <span>Text 2</span>
+      <span>Text 3</span>
+    </p>
+
+    <h2>display: block:</h2>
+    <p class="ex3">ex3
+      <span>Text 1</span>
+      <span>Text 2</span>
+      <span>Text 3</span>
+    </p>
+
+    <h2>display: inline-block:</h2>
+    <p class="ex4">ex4
+      <span>Text 1</span>
+      <span>Text 2</span>
+      <span>Text 3</span>
+    </p>
+
+    <h2>display: flex:</h2>
+    <p class="ex5">ex5
+      <span>Text 1</span>
+      <span>Text 2</span>
+      <span>Text 3</span>
+    </p>
+ 
+    <h2>display: grid:</h2>
+    <p class="ex6">ex6
+      <span>Text 1</span>
+      <span>Text 2</span>
+      <span>Text 3</span>
+    </p>
+  </body>
+</html>

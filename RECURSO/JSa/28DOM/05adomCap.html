@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en el DOM</title>
+    <style>
+        .container { border: 1px solid black; padding: 20px; margin: 20px; }
+        .highlight { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1>Eventos en el DOM</h1>
+
+    <!-- 5.1 Introducción a los eventos y 5.2 Tipos de eventos comunes -->
+    <div class="container">
+        <h2>Eventos Comunes</h2>
+        <button id="clickMe">Haz clic</button>
+        <input type="text" id="inputField" placeholder="Escribe algo">
+        <form id="myForm">
+            <input type="text" placeholder="Nombre">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- 5.3 Manejo de eventos -->
+    <div class="container">
+        <h2>Manejo de Eventos</h2>
+        <button id="addEvent">Añadir Evento</button>
+        <button id="removeEvent">Quitar Evento</button>
+        <p id="eventText">Texto para eventos</p>
+    </div>
+
+    <!-- 5.4 Event bubbling y capturing -->
+    <div class="container" id="bubblingContainer">
+        <h2>Bubbling y Capturing</h2>
+        <div id="outer" style="padding: 20px; background-color: lightblue;">
+            Outer
+            <div id="inner" style="padding: 20px; background-color: lightgreen;">
+                Inner
+                <button id="bubbleButton">Botón</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5.5 Delegación de eventos -->
+    <div class="container">
+        <h2>Delegación de Eventos</h2>
+        <ul id="todoList">
+            <li>Tarea 1</li>
+            <li>Tarea 2</li>
+            <li>Tarea 3</li>
+        </ul>
+        <button id="addTask">Añadir Tarea</button>
+    </div>
+
+    <script>
+        // 5.1 y 5.2 Introducción y tipos de eventos comunes
+        document.getElementById('clickMe').addEventListener('click', function() {
+            alert('¡Botón clicado!');
+        });
+
+        document.getElementById('inputField').addEventListener('input', function(e) {
+            console.log('Valor del input:', e.target.value);
+        });
+
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Formulario enviado');
+        });
+
+        // Evento load
+        window.addEventListener('load', function() {
+            console.log('Página completamente cargada');
+        });
+
+        // 5.3 Manejo de eventos (addEventListener, removeEventListener)
+        const eventText = document.getElementById('eventText');
+        function highlightText() {
+            eventText.classList.add('highlight');
+        }
+
+        document.getElementById('addEvent').addEventListener('click', function() {
+            eventText.addEventListener('mouseover', highlightText);
+            console.log('Evento añadido');
+        });
+
+        document.getElementById('removeEvent').addEventListener('click', function() {
+            eventText.removeEventListener('mouseover', highlightText);
+            eventText.classList.remove('highlight');
+            console.log('Evento removido');
+        });
+
+        // 5.4 Event bubbling y capturing
+        document.getElementById('bubblingContainer').addEventListener('click', function(e) {
+            console.log('Fase de capturing:', e.target.id);
+        }, true); // true para fase de capturing
+
+        ['outer', 'inner', 'bubbleButton'].forEach(function(id) {
+            document.getElementById(id).addEventListener('click', function(e) {
+                console.log('Bubbling:', this.id);
+                // e.stopPropagation(); // Descomenta para detener la propagación
+            });
+        });
+
+        // 5.5 Delegación de eventos
+        const todoList = document.getElementById('todoList');
+        todoList.addEventListener('click', function(e) {
+            if (e.target.tagName === 'LI') {
+                e.target.classList.toggle('highlight');
+            }
+        });
+
+        let taskCount = 3;
+        document.getElementById('addTask').addEventListener('click', function() {
+            taskCount++;
+            const newTask = document.createElement('li');
+            newTask.textContent = 'Tarea ' + taskCount;
+            todoList.appendChild(newTask);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Explicación de los ejemplos:
+
+Leer archivo como string: Utilizamos FileReader.readAsText() para leer el contenido del archivo como texto.
+Leer archivo como dataURL: Usamos FileReader.readAsDataURL() para obtener una representación en base64 del archivo, útil para previsualizar imágenes.
+Dividir un archivo: El método slice() de File (heredado de Blob) permite obtener una porción del archivo.
+Obtener propiedades del archivo: Accedemos a propiedades como nombre, tipo, tamaño y fecha de última modificación.
+Seleccionar múltiples archivos y restringir tipos: Usamos los atributos multiple y accept en el input de tipo file para permitir selección múltiple y restringir tipos.
+Descarga de CSV del lado del cliente: Creamos un Blob con el contenido CSV y usamos URL.createObjectURL() para generar un enlace descargable.
+
+Puntos clave:
+
+La File API permite trabajar con archivos del sistema de archivos del usuario de forma segura en el navegador.
+Los objetos File heredan de Blob, por lo que tienen todas sus capacidades.
+FileReader proporciona métodos para leer el contenido de Files o Blobs de diferentes formas.
+Blob es útil para manejar datos binarios y crear archivos para descargar.
+La selección de archivos se maneja típicamente con elementos <input type="file">.
+
+Estas APIs son fundamentales para aplicaciones web que necesitan procesar archivos del lado del cliente, como editores de imágenes en línea, validadores de documentos, o cualquier aplicación que necesite leer o manipular archivos antes de enviarlos a un servidor.

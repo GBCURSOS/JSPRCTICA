@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: block;
+            width: 500px;
+        }
+        p {
+            border: 2px solid;
+        }
+        div {
+            border: 2px solid red;
+        }
+    </style>
+    <title>Display</title>
+</head>
+<body>
+    <h1>DISPLAY</h1>
+    <div>
+        <p>
+            Como hemos mencionado en el capítulo anterior, los navegadores crean una caja virtual
+alrededor de cada elemento para determinar el área que ocupan. Para organizar estas cajas en
+la pantalla, los elementos se clasifican en dos tipos básicos: Block (bloque) e Inline (en línea).
+La diferencia principal entre estos dos tipos es que los elementos Block tienen un tamaño
+personalizado y generan saltos de línea, mientras que los elementos Inline tienen un tamaño
+determinado por su contenido y no generan saltos de línea. Debido a sus características, los
+elementos Block se colocan de uno en uno en las distintas líneas, y los elementos Inline se
+colocan uno al lado del otro en la misma línea, a menos que no haya suficiente espacio
+horizontal disponible, como lo ilustra la Figura
+        </p>
+        <img src="../images/figuraBloquesInline.png">
+        <p>
+            Debido a sus características, los elementos Block son apropiados para crear columnas y
+secciones en una página web, mientras que los elementos Inline son adecuados para
+representar contenido. Esta es la razón por la que los elementos que definen la estructura de
+un documento, como &lt;section&gt;, &lt;nav&gt;, &lt;header&gt;, &lt;footer&gt; , o &lt;div&gt;, se declaran como
+elementos Block por defecto, y otros como &lt;span&gt;, &lt;strong&gt;, o &lt;em&gt;, que representan el
+contenido de esos elementos, se declaran como elementos Inline.
+        </p>
+        <p>
+            <strong>display</strong> Esta propiedad define el tipo de caja usado para presentar el elemento en
+pantalla. Existen varios valores disponibles para esta propiedad. Los más utilizados son <strong>none</strong>
+(elimina el elemento), <strong>block</strong> (muestra el elemento en una nueva línea y con un
+tamaño personalizado), <strong>inline</strong> (muestra el elemento en la misma línea), e <strong>inline-
+block</strong> (muestra el elemento en la misma línea y con un tamaño personalizado).
+Los elementos estructurales se configuran por defecto con el valor block, mientras que
+los elementos que representan el contenido normalmente se configuran como inline. Si
+queremos modificar el tipo de elemento, solo tenemos que asignar la propiedad display con
+un nuevo valor. Así, las antiguas versiones de navegadores no reconocen los nuevos
+elementos incorporados por HTML5 y los consideran como elementos Inline por defecto. Si
+queremos asegurarnos de que estos elementos se interpreten como elementos Block en todos
+los navegadores, podemos declarar la siguiente regla en nuestras hojas de estilo.
+        </p>
+        <p>
+            Los elementos estructurales se configuran por defecto con el valor block, mientras que
+los elementos que representan el contenido normalmente se configuran como <strong>inline</strong>. Si
+queremos modificar el tipo de elemento, solo tenemos que asignar la propiedad <strong>display</strong> con
+un nuevo valor. Así, las antiguas versiones de navegadores no reconocen los nuevos
+elementos incorporados por HTML5 y los consideran como elementos Inline por defecto. Si
+queremos asegurarnos de que estos elementos se interpreten como elementos Block en todos
+los navegadores, podemos declarar la siguiente regla en nuestras hojas de estilo.
+        </p>
+        <p>
+            La propiedad display cuenta con otros valores además de block e inline. Por ejemplo,
+el valor <strong>none</strong> oculta el elemento. Cuando este valor se asigna a un elemento, el documento se
+presenta como si el elemento no existiera. Es útil cuando queremos cambiar el documento
+dinámicamente desde JavaScript o cuando usamos diseño web adaptable para diseñar nuestro
+sitio web, como veremos en próximos capítulos.<br>
+Lo básico: el valor none para la propiedad display elimina el elemento del
+documento. Si lo que queremos es volver al elemento invisible, podemos
+usar otra propiedad CSS llamada visibility. Esta propiedad acepta los
+valores <strong> visible y hidden </strong>. Cuando el valor hidden se asigna a la
+propiedad, se generan el elemento y su contenido <strong> (ocupan un espacio en la
+pantalla) </strong>, pero no se muestran al usuario.<br>
+Otro valor disponible para la propiedad <strong>display</strong> es <strong>inline-block</strong>. Los elementos Block
+presentan dos características, una es que producen un salto de línea, por lo que el siguiente
+elemento se muestra en una nueva línea, y la otra es que pueden adoptar un tamaño
+personalizado. Esta es la razón por la que las propiedades <strong>width</strong> y <strong>height</strong> estudiadas
+anteriormente solo trabajan con elementos Block. Si asignamos estas propiedades a un
+elemento Inline como <strong>&lt;span&gt;</strong>, no ocurre nada. Pero la propiedad display ofrece el valor
+inline-block para definir un elemento Inline que puede adoptar un tamaño personalizado.
+Esto significa que los elementos Inline-Block se posicionarán uno al lado del otro en la misma
+fila, pero con el tamaño que queramos.
+        </p>
+    </div>
+
+</body>
+</html>

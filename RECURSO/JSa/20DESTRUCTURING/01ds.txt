@@ -1,0 +1,8 @@
+Destructuring de objetos: Muestra cómo extraer propiedades de un objeto y asignarlas a variables.
+Destructuring de arrays: Ilustra cómo extraer elementos de un array y asignarlos a variables.
+Destructuring en parámetros de funciones: Demuestra cómo usar destructuring directamente en los parámetros de una función.
+Destructuring anidado: Muestra cómo realizar destructuring en objetos y arrays anidados.
+Intercambio de variables: Usa destructuring para intercambiar valores entre variables de manera concisa.
+Destructuring en bucles: Ejemplo de cómo usar destructuring en un bucle for...of.
+Actualización de objetos: Muestra cómo usar el operador spread junto con destructuring para actualizar objetos de manera inmutable.
+Destructuring con renombrado y valores por defecto: Combina el renombrado de variables y la asignación de valores por defecto en una sola expresión de destructuring.

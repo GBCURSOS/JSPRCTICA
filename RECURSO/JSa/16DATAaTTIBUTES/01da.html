@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos de Data Attributes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      .example {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      button {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejemplos de Data Attributes</h1>
+
+    <!-- Ejemplo 1: Información de usuario -->
+    <div class="example" id="ejemplo1">
+      <h2>1. Información de Usuario</h2>
+      <div
+        id="userInfo"
+        data-id="12345"
+        data-name="Juan Pérez"
+        data-age="30"
+        data-city="Madrid"
+      >
+        Haz clic para ver la información del usuario
+      </div>
+      <button onclick="mostrarInfoUsuario()">Mostrar Info</button>
+    </div>
+
+    <!-- Ejemplo 2: Galería de imágenes -->
+    <div class="example" id="ejemplo2">
+      <h2>2. Galería de Imágenes</h2>
+      <img
+        id="galleryImage"
+        src="https://via.placeholder.com/300x200"
+        alt="Imagen de galería"
+        data-images='["https://via.placeholder.com/300x200/ff0000", "https://via.placeholder.com/300x200/00ff00", "https://via.placeholder.com/300x200/0000ff"]'
+      />
+      <br />
+      <button onclick="cambiarImagen()">Cambiar Imagen</button>
+    </div>
+
+    <!-- Ejemplo 3: Tooltips personalizados -->
+    <div class="example" id="ejemplo3">
+      <h2>3. Tooltips Personalizados</h2>
+      <button data-tooltip="Este es un botón importante">
+        Botón con Tooltip
+      </button>
+      <button data-tooltip="Cuidado al hacer clic aquí">Otro Botón</button>
+    </div>
+
+    <!-- Ejemplo 4: Filtrado de elementos -->
+    <div class="example" id="ejemplo4">
+      <h2>4. Filtrado de Elementos</h2>
+      <div>
+        <button data-filter="todos">Todos</button>
+        <button data-filter="fruta">Frutas</button>
+        <button data-filter="verdura">Verduras</button>
+      </div>
+      <ul id="listaAlimentos">
+        <li data-category="fruta">Manzana</li>
+        <li data-category="verdura">Zanahoria</li>
+        <li data-category="fruta">Plátano</li>
+        <li data-category="verdura">Brócoli</li>
+      </ul>
+    </div>
+
+    <!-- Ejemplo 5: Formulario dinámico -->
+    <div class="example" id="ejemplo5">
+      <h2>5. Formulario Dinámico</h2>
+      <form id="dynamicForm">
+        <input
+          type="text"
+          data-validate="required"
+          data-error-message="Este campo es obligatorio"
+        />
+        <input
+          type="email"
+          data-validate="email"
+          data-error-message="Introduce un email válido"
+        />
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+      </form>
+      <div id="formErrors"></div>
+    </div>
+
+    <script src="./01da.js"></script>
+  </body>
+</html>

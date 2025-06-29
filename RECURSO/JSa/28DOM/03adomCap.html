@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Selección del DOM</title>
+    <style>
+        .resaltado { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1 id="titulo-principal">Ejemplo de Selección del DOM</h1>
+    
+    <div id="contenedor">
+        <p class="parrafo">Este es el primer párrafo.</p>
+        <p class="parrafo resaltado">Este es el segundo párrafo resaltado.</p>
+        <p class="parrafo">Este es el tercer párrafo.</p>
+    </div>
+    
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <script>
+        // 3.1 Métodos de selección básicos
+        console.log("--- Métodos de selección básicos ---");
+
+        // getElementById
+        const tituloPrincipal = document.getElementById('titulo-principal');
+        console.log("Título principal:", tituloPrincipal.textContent);
+
+        // getElementsByClassName
+        const parrafos = document.getElementsByClassName('parrafo');
+        console.log("Número de párrafos:", parrafos.length);
+
+        // getElementsByTagName
+        const listaItems = document.getElementsByTagName('li');
+        console.log("Número de elementos de lista:", listaItems.length);
+
+        // 3.2 Selectores CSS con querySelector y querySelectorAll
+        console.log("--- Selectores CSS ---");
+
+        // querySelector
+        const primerParrafo = document.querySelector('.parrafo');
+        console.log("Primer párrafo:", primerParrafo.textContent);
+
+        // querySelectorAll
+        const todosParrafos = document.querySelectorAll('.parrafo');
+        console.log("Todos los párrafos:");
+        todosParrafos.forEach((p, index) => console.log(`Párrafo ${index + 1}:`, p.textContent));
+
+        // 3.3 Colecciones de elementos
+        console.log("--- Colecciones de elementos ---");
+
+        // NodeList (querySelectorAll)
+        console.log("NodeList de párrafos:");
+        todosParrafos.forEach((p, index) => console.log(`Párrafo ${index + 1} clase:`, p.className));
+
+        // HTMLCollection (getElementsByClassName)
+        console.log("HTMLCollection de párrafos:");
+        for (let i = 0; i < parrafos.length; i++) {
+            console.log(`Párrafo ${i + 1} clase:`, parrafos[i].className);
+        }
+
+        // 3.4 Navegación por el DOM
+        console.log("--- Navegación por el DOM ---");
+
+        const contenedor = document.getElementById('contenedor');
+
+        // parentNode
+        console.log("Padre del contenedor:", contenedor.parentNode.tagName);
+
+        // childNodes
+        console.log("Nodos hijos del contenedor:", contenedor.childNodes.length);
+
+        // firstChild y lastChild
+        console.log("Primer hijo del contenedor:", contenedor.firstChild.nodeType);
+        console.log("Último hijo del contenedor:", contenedor.lastChild.nodeType);
+
+        // nextSibling y previousSibling
+        const segundoParrafo = contenedor.children[1];
+        console.log("Hermano siguiente del segundo párrafo:", segundoParrafo.nextSibling.nodeType);
+        console.log("Hermano anterior del segundo párrafo:", segundoParrafo.previousSibling.nodeType);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+header {
+    margin: 50px;
+    padding: 50px;
+    text-align: center;
+    border-width: 10px;
+    border-style: solid;
+    border-color: green;
+}
+#titulo {
+    font: bold 50px Verdana, sans-serif;
+    color: red;
+}
+#descripcion {
+    font: bold 20px Verdana, sans-serif;
+    color: green;
+    text-align: right;
+    width: 75%;
+    height: 150px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+#tipoFuente {
+    font: bold 20px Verdana, sans-serif;
+    color: blue;
+    width: 50%;
+    height: 100px;
+    overflow: auto;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+#figura{
+    text-align: center;
+    border-width: 20px;
+    border-style: solid;
+    border-color: black;
+}
+      
+    

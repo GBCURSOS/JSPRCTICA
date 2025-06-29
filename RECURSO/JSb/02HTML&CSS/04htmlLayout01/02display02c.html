@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display</title>
+    <style>
+      div {
+        border: 3px solid #4caf50;
+        padding: 5px;
+      }
+
+      .img1 {
+        float: left;
+      }
+
+      .img2 {
+        float: right;
+      }
+
+      .clearfix {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Without Clearfix</h2>
+
+    <p>
+      This image is floated to the right. It is also taller than the element
+      containing it, so it overflows outside of its container:
+    </p>
+
+    <div>
+      <img
+        class="img1"
+        src="pineapple.jpg"
+        alt="Pineapple"
+        width="170"
+        height="170"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum perspiciatis
+      excepturi incidunt, illum ullam doloribus sint facere libero quae!
+      Doloribus veritatis aliquid reprehenderit numquam voluptatem debitis
+      quibusdam, qui nobis aspernatur vitae mollitia perspiciatis saepe commodi
+      laborum recusandae id incidunt aliquam fugit quos ab voluptatum dolorum
+      rerum! Asperiores maxime, eos modi nihil eum voluptatem hic ipsum animi
+      porro dolores similique. Maiores, deserunt. Expedita nam, tempora itaque
+      ratione, accusantium aspernatur incidunt voluptates cum odio minima eaque
+      animi error consequuntur dicta laudantium esse aliquam labore deleniti.
+      Odit porro vitae praesentium. Repellat maiores tempore, ipsa asperiores
+      alias aspernatur qui voluptates maxime, reprehenderit cumque excepturi?
+    </div>
+
+    <h2 style="clear: right">With Clearfix</h2>
+    <p>
+      We can fix this by adding a clearfix class with overflow: auto; to the
+      containing element:
+    </p>
+
+    <div class="clearfix">
+      <img
+        class="img2"
+        src="pineapple.jpg"
+        alt="Pineapple"
+        width="170"
+        height="170"
+      />
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla
+      accusantium amet dolores fuga possimus? Natus repellendus ipsa, dicta,
+      commodi id architecto ab, sunt voluptatibus laudantium modi itaque
+      doloremque cumque asperiores soluta impedit animi vero neque similique
+      excepturi nobis eveniet? Ad maiores beatae quod voluptatibus rerum odio
+      dolorum, eos debitis error quasi ullam vel nobis incidunt rem ea deleniti
+      quia non consequuntur aliquid repellat accusamus molestias? Animi,
+      expedita dolorum? Minima ullam rerum, provident deserunt, officia,
+      mollitia perferendis consectetur eaque architecto veritatis ex optio
+      tempora officiis! Dignissimos dolore molestiae exercitationem! Voluptates
+      rem neque quo quas quidem aperiam recusandae cupiditate facere ad sit!
+    </div>
+  </body>
+</html>
