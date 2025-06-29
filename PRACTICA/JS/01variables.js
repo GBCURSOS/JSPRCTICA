@@ -4,6 +4,11 @@ Ctrl + K, S - Detener Quokka
 Ctrl + K, R - Reiniciar Quokka
 */
 
+/* 
+Ctrl + Shift + P - Abrir paleta de comandos
+Terminal:Select Default Profile
+*/
+
 /* VARIABLES */
 // Declaración de variables
 
