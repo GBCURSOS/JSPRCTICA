@@ -1,0 +1,656 @@
+/* ============================================
+   TALLER 1 - ESTILOS CSS
+   Paleta de colores: E4E0E1, D6C0B3, AB886D, 493628
+   ============================================ */
+
+/* Variables CSS para la paleta de colores */
+:root {
+    /* Paleta de colores principal */
+    --color-primary: #493628;        /* Marrón oscuro - texto principal */
+    --color-secondary: #AB886D;      /* Marrón medio - acentos */
+    --color-tertiary: #D6C0B3;       /* Beige - fondos secundarios */
+    --color-light: #E4E0E1;          /* Gris claro - fondo principal */
+    
+    /* Colores de estado */
+    --color-success: #4CAF50;        /* Verde para éxito */
+    --color-warning: #FF9800;        /* Naranja para advertencia */
+    --color-error: #F44336;          /* Rojo para error */
+    --color-info: #2196F3;           /* Azul para información */
+    
+    /* Colores de dificultad */
+    --color-easy: #4CAF50;           /* Verde - Básico */
+    --color-medium: #FF9800;         /* Naranja - Intermedio */
+    --color-hard: #FF5722;           /* Rojo - Avanzado */
+    --color-expert: #9C27B0;         /* Púrpura - Experto */
+    
+    /* Colores de texto */
+    --text-primary: #493628;         /* Texto principal */
+    --text-secondary: #AB886D;       /* Texto secundario */
+    --text-light: #D6C0B3;           /* Texto claro */
+    --text-white: #ffffff;           /* Texto blanco */
+    
+    /* Colores de fondo */
+    --bg-primary: #E4E0E1;           /* Fondo principal */
+    --bg-secondary: #D6C0B3;         /* Fondo secundario */
+    --bg-card: #ffffff;              /* Fondo de tarjetas */
+    --bg-code: #f8f8f8;              /* Fondo de código */
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(73, 54, 40, 0.1);
+    --shadow-md: 0 4px 8px rgba(73, 54, 40, 0.15);
+    --shadow-lg: 0 8px 16px rgba(73, 54, 40, 0.2);
+    --shadow-xl: 0 12px 24px rgba(73, 54, 40, 0.25);
+    
+    /* Bordes redondeados */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+    /* Tipografía */
+    --font-family-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--text-white);
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+    text-align: center;
+}
+
+.header h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 300;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+}
+
+.taller-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.intro-section,
+.instructions-section,
+.conclusion-section {
+    background: var(--bg-card);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--color-secondary);
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--color-primary);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Párrafos */
+p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Listas */
+ul, ol {
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.6;
+}
+
+/* Enlaces */
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* ============================================
+   OBJETIVOS
+   ============================================ */
+.objetivos {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+}
+
+.objetivos h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.objetivos ul {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   INSTRUCCIONES
+   ============================================ */
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.instruction-card {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-top: 4px solid var(--color-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instruction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.instruction-card h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.instruction-card p {
+    margin-bottom: 0;
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   EJERCICIOS
+   ============================================ */
+.exercises-section {
+    background: var(--bg-card);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.exercise-card {
+    background: var(--bg-card);
+    border: 1px solid var(--color-tertiary);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.exercise-header {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-tertiary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.exercise-header h3 {
+    color: var(--color-primary);
+    margin-bottom: 0;
+    font-size: var(--font-size-xl);
+}
+
+.difficulty {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.difficulty.easy {
+    background: var(--color-easy);
+    color: var(--text-white);
+}
+
+.difficulty.medium {
+    background: var(--color-medium);
+    color: var(--text-white);
+}
+
+.difficulty.hard {
+    background: var(--color-hard);
+    color: var(--text-white);
+}
+
+.difficulty.expert {
+    background: var(--color-expert);
+    color: var(--text-white);
+}
+
+.exercise-content {
+    padding: var(--spacing-md);
+}
+
+.exercise-content > p {
+    font-size: var(--font-size-lg);
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.task,
+.code-example,
+.expected-result {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.task {
+    background: var(--bg-primary);
+    border-left: 4px solid var(--color-info);
+}
+
+.code-example {
+    background: var(--bg-code);
+    border-left: 4px solid var(--color-secondary);
+}
+
+.expected-result {
+    background: var(--bg-primary);
+    border-left: 4px solid var(--color-success);
+}
+
+.task h4,
+.code-example h4,
+.expected-result h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+}
+
+.task p,
+.code-example p,
+.expected-result p {
+    margin-bottom: 0;
+}
+
+/* Código */
+code {
+    background: var(--bg-code);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-primary);
+    border: 1px solid var(--color-tertiary);
+}
+
+pre {
+    background: var(--bg-code);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    border: 1px solid var(--color-tertiary);
+    margin-top: var(--spacing-sm);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    display: block;
+    white-space: pre;
+}
+
+/* ============================================
+   CONCLUSIÓN
+   ============================================ */
+.next-steps {
+    background: var(--color-secondary);
+    color: var(--text-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+}
+
+.next-steps h3 {
+    color: var(--text-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.next-steps p {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background: var(--color-primary);
+    color: var(--text-white);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-xl);
+}
+
+.footer p {
+    margin-bottom: 0;
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .header h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .instruction-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exercise-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .taller-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    h2 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .intro-section,
+    .instructions-section,
+    .exercises-section,
+    .conclusion-section {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .header h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .exercise-content,
+    .task,
+    .code-example,
+    .expected-result {
+        padding: var(--spacing-sm);
+    }
+    
+    pre {
+        font-size: var(--font-size-xs);
+    }
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-lg {
+    font-size: var(--font-size-lg);
+}
+
+.text-xl {
+    font-size: var(--font-size-xl);
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exercise-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.exercise-card:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+.exercise-card:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Mejora el contraste para usuarios con preferencias de alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #2d1f16;
+        --color-secondary: #8b6f56;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+    }
+}
+
+/* ============================================
+   IMPRESIÓN
+   ============================================ */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .header,
+    .footer {
+        background: none;
+        color: black;
+        box-shadow: none;
+    }
+    
+    .exercise-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .difficulty {
+        background: none;
+        color: black;
+        border: 1px solid black;
+    }
+}

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 1 - Fundamentos de JavaScript</title>
+    <link rel="stylesheet" href="../CSS/taller01.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Taller 1: Fundamentos de JavaScript</h1>
+                <p class="subtitle">Variables, Tipos, Conversiones y Operaciones Básicas</p>
+                <div class="taller-info">
+                    <span class="badge">20 Ejercicios</span>
+                    <span class="badge">Nivel: Principiante</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Introducción -->
+        <section class="intro-section">
+            <h2>Introducción al Taller</h2>
+            <p>Este taller está diseñado para estudiantes que se aproximan por primera vez a la programación. 
+            Los ejercicios están ordenados de manera progresiva, desde conceptos básicos hasta operaciones 
+            más complejas que integran variables, tipos de datos, conversiones y coerción de tipos.</p>
+            
+            <div class="objetivos">
+                <h3>Objetivos de Aprendizaje</h3>
+                <ul>
+                    <li>Comprender el concepto de variables y su declaración</li>
+                    <li>Identificar los diferentes tipos de datos en JavaScript</li>
+                    <li>Aplicar conversiones explícitas entre tipos</li>
+                    <li>Reconocer la coerción implícita de tipos</li>
+                    <li>Realizar operaciones básicas con números</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Instrucciones -->
+        <section class="instructions-section">
+            <h2>Instrucciones Generales</h2>
+            <div class="instruction-grid">
+                <div class="instruction-card">
+                    <h4>📝 Cómo Trabajar</h4>
+                    <p>El estudiante debe resolver cada ejercicio en orden, escribiendo el código JavaScript 
+                    correspondiente y observando los resultados en la consola.</p>
+                </div>
+                <div class="instruction-card">
+                    <h4>🔍 Qué Observar</h4>
+                    <p>Es importante prestar atención a los tipos de datos que se obtienen y cómo JavaScript 
+                    maneja las conversiones automáticas.</p>
+                </div>
+                <div class="instruction-card">
+                    <h4>✅ Verificación</h4>
+                    <p>Cada ejercicio incluye el resultado esperado para que el estudiante pueda verificar 
+                    su solución.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ejercicios -->
+        <section class="exercises-section">
+            <h2>Ejercicios del Taller</h2>
+
+            <!-- Ejercicio 1 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 1: Primera Variable</h3>
+                    <span class="difficulty easy">Básico</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante declara su primera variable y la muestra en consola.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Declarar una variable llamada <code>nombre</code> con el valor "Estudiante" y mostrarla en la consola.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let nombre = "Estudiante";
+console.log(nombre);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Estudiante</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 2 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 2: Tipos de Variables</h3>
+                    <span class="difficulty easy">Básico</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante crea variables de diferentes tipos y observa sus valores.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear tres variables: un número (edad = 20), un texto (ciudad = "Madrid"), y un booleano (esEstudiante = true).</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let edad = 20;
+let ciudad = "Madrid";
+let esEstudiante = true;
+console.log(edad, ciudad, esEstudiante);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>20 "Madrid" true</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 3 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 3: Identificar Tipos</h3>
+                    <span class="difficulty easy">Básico</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante usa typeof para identificar tipos de datos.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Usar typeof para mostrar el tipo de las variables: 42, "Hola", true, y undefined.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>console.log(typeof 42);
+console.log(typeof "Hola");
+console.log(typeof true);
+console.log(typeof undefined);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>number, string, boolean, undefined</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 4 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 4: Operaciones Básicas</h3>
+                    <span class="difficulty easy">Básico</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante realiza operaciones aritméticas básicas.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear dos números (a = 10, b = 3) y mostrar suma, resta, multiplicación y división.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let a = 10;
+let b = 3;
+console.log("Suma:", a + b);
+console.log("Resta:", a - b);
+console.log("Multiplicación:", a * b);
+console.log("División:", a / b);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Suma: 13, Resta: 7, Multiplicación: 30, División: 3.333...</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 5 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 5: Concatenación de Strings</h3>
+                    <span class="difficulty easy">Básico</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante combina textos usando el operador +.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear nombre = "Ana" y apellido = "García", luego mostrar el nombre completo.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let nombre = "Ana";
+let apellido = "García";
+let nombreCompleto = nombre + " " + apellido;
+console.log("Nombre completo:", nombreCompleto);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Nombre completo: Ana García</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 6 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 6: Template Literals</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante usa backticks para crear strings con variables.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear producto = "Laptop" y precio = 999, mostrar mensaje usando template literals.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let producto = "Laptop";
+let precio = 999;
+console.log(`El ${producto} cuesta $${precio}`);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>El Laptop cuesta $999</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 7 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 7: Conversión a Número</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante convierte strings a números usando diferentes métodos.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Convertir "25" a número usando Number(), parseInt(), y parseFloat().</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let texto = "25";
+console.log("Number():", Number(texto));
+console.log("parseInt():", parseInt(texto));
+console.log("parseFloat():", parseFloat(texto));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Number(): 25, parseInt(): 25, parseFloat(): 25</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 8 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 8: Conversión a String</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante convierte números a strings de diferentes formas.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Convertir el número 123 a string usando String(), toString(), y concatenación con "".</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let numero = 123;
+console.log("String():", String(numero));
+console.log("toString():", numero.toString());
+console.log("Concatenación:", numero + "");</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>String(): "123", toString(): "123", Concatenación: "123"</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 9 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 9: Coerción Implícita - Suma</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante observa cómo JavaScript convierte tipos automáticamente.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Mostrar el resultado de: 5 + "3", "5" + 3, 5 + 3, y observar las diferencias.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>console.log("5 + '3' =", 5 + "3");
+console.log("'5' + 3 =", "5" + 3);
+console.log("5 + 3 =", 5 + 3);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>5 + '3' = "53", '5' + 3 = "53", 5 + 3 = 8</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 10 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 10: Coerción Implícita - Otros Operadores</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante explora la coerción con operadores matemáticos.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Mostrar el resultado de: "10" - 3, "10" * 2, "10" / 2.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>console.log("'10' - 3 =", "10" - 3);
+console.log("'10' * 2 =", "10" * 2);
+console.log("'10' / 2 =", "10" / 2);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>'10' - 3 = 7, '10' * 2 = 20, '10' / 2 = 5</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 11 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 11: Valores Especiales</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante trabaja con null, undefined y NaN.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear variables con null, undefined, y mostrar el resultado de convertir "abc" a número.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let valor1 = null;
+let valor2 = undefined;
+let valor3 = Number("abc");
+console.log("null:", valor1);
+console.log("undefined:", valor2);
+console.log("NaN:", valor3);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>null: null, undefined: undefined, NaN: NaN</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 12 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 12: Operaciones con Decimales</h3>
+                    <span class="difficulty medium">Intermedio</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante realiza cálculos con números decimales.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear precio = 19.99 y descuento = 0.15, calcular el precio final.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let precio = 19.99;
+let descuento = 0.15;
+let precioFinal = precio * (1 - descuento);
+console.log("Precio final:", precioFinal);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Precio final: 16.991500000000002</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 13 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 13: Redondeo de Números</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante aprende a redondear números decimales.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Usando el número 15.789, mostrar Math.round(), Math.floor(), Math.ceil().</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let numero = 15.789;
+console.log("Math.round():", Math.round(numero));
+console.log("Math.floor():", Math.floor(numero));
+console.log("Math.ceil():", Math.ceil(numero));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Math.round(): 16, Math.floor(): 15, Math.ceil(): 16</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 14 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 14: Formato de Números</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante formatea números con decimales específicos.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear precio = 123.456789 y mostrarlo con 2 decimales usando toFixed().</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let precio = 123.456789;
+console.log("Precio formateado:", precio.toFixed(2));
+console.log("Tipo del resultado:", typeof precio.toFixed(2));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Precio formateado: "123.46", Tipo del resultado: string</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 15 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 15: Comparaciones con Coerción</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante compara == vs ===.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Comparar 5 == "5", 5 === "5", true == 1, true === 1.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>console.log("5 == '5':", 5 == "5");
+console.log("5 === '5':", 5 === "5");
+console.log("true == 1:", true == 1);
+console.log("true === 1:", true === 1);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>5 == '5': true, 5 === '5': false, true == 1: true, true === 1: false</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 16 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 16: Cálculo de Área</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante aplica fórmulas matemáticas básicas.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Calcular el área de un círculo con radio = 5 (π × r²).</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let radio = 5;
+let area = Math.PI * radio * radio;
+console.log("Área del círculo:", area);
+console.log("Área redondeada:", Math.round(area));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Área del círculo: 78.53981633..., Área redondeada: 79</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 17 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 17: Conversiones Complejas</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante maneja conversiones con valores mixtos.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Convertir "12.34abc" usando parseInt() y parseFloat().</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let textoMixto = "12.34abc";
+console.log("parseInt():", parseInt(textoMixto));
+console.log("parseFloat():", parseFloat(textoMixto));
+console.log("Number():", Number(textoMixto));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>parseInt(): 12, parseFloat(): 12.34, Number(): NaN</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 18 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 18: Operaciones Combinadas</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante combina múltiples operaciones y conversiones.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Calcular: (parseFloat("10.5") + parseInt("20.7")) * Number("2").</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let resultado = (parseFloat("10.5") + parseInt("20.7")) * Number("2");
+console.log("Resultado:", resultado);
+console.log("Paso a paso:");
+console.log("parseFloat('10.5'):", parseFloat("10.5"));
+console.log("parseInt('20.7'):", parseInt("20.7"));
+console.log("Number('2'):", Number("2"));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Resultado: 61, parseFloat('10.5'): 10.5, parseInt('20.7'): 20, Number('2'): 2</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 19 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 19: Validación de Números</h3>
+                    <span class="difficulty hard">Avanzado</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante verifica si un valor es un número válido.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Usar isNaN() para verificar: 42, "42", "abc", NaN.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>console.log("isNaN(42):", isNaN(42));
+console.log("isNaN('42'):", isNaN("42"));
+console.log("isNaN('abc'):", isNaN("abc"));
+console.log("isNaN(NaN):", isNaN(NaN));</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>isNaN(42): false, isNaN('42'): false, isNaN('abc'): true, isNaN(NaN): true</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 20 -->
+            <div class="exercise-card">
+                <div class="exercise-header">
+                    <h3>Ejercicio 20: Proyecto Final - Calculadora Simple</h3>
+                    <span class="difficulty expert">Experto</span>
+                </div>
+                <div class="exercise-content">
+                    <p><strong>Objetivo:</strong> El estudiante integra todos los conceptos aprendidos.</p>
+                    <div class="task">
+                        <h4>Tarea:</h4>
+                        <p>Crear una calculadora que tome dos strings con números, los convierta y realice las 4 operaciones básicas.</p>
+                    </div>
+                    <div class="code-example">
+                        <h4>Código esperado:</h4>
+                        <pre><code>let numeroTexto1 = "15.5";
+let numeroTexto2 = "4.2";
+
+let num1 = parseFloat(numeroTexto1);
+let num2 = parseFloat(numeroTexto2);
+
+console.log(`Números: ${num1} y ${num2}`);
+console.log(`Suma: ${(num1 + num2).toFixed(2)}`);
+console.log(`Resta: ${(num1 - num2).toFixed(2)}`);
+console.log(`Multiplicación: ${(num1 * num2).toFixed(2)}`);
+console.log(`División: ${(num1 / num2).toFixed(2)}`);</code></pre>
+                    </div>
+                    <div class="expected-result">
+                        <h4>Resultado esperado:</h4>
+                        <code>Números: 15.5 y 4.2, Suma: 19.70, Resta: 11.30, Multiplicación: 65.10, División: 3.69</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusión -->
+        <section class="conclusion-section">
+            <h2>Conclusión del Taller</h2>
+            <p>Al completar este taller, el estudiante ha trabajado con los conceptos fundamentales de JavaScript 
+            necesarios para continuar con estructuras de control más avanzadas. Los ejercicios han cubierto:</p>
+            <ul>
+                <li>Declaración y uso de variables</li>
+                <li>Identificación de tipos de datos</li>
+                <li>Conversiones explícitas e implícitas</li>
+                <li>Operaciones aritméticas básicas</li>
+                <li>Formateo y validación de números</li>
+            </ul>
+            <div class="next-steps">
+                <h3>Próximos Pasos</h3>
+                <p>El estudiante está preparado para avanzar al <strong>Taller 2 de Fundamentos</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Talleres de JavaScript - Taller 1 completado</p>
+        </footer>
+    </div>
+</body>
+</html>
