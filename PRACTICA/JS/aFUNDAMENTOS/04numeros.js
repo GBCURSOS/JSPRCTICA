@@ -48,7 +48,8 @@ console.log("contador final:", contador); // 5
 console.log("\n--- PROPIEDADES DE NUMBER ---");
 console.log("Number.MAX_VALUE:", Number.MAX_VALUE);
 console.log("Number.MIN_VALUE:", Number.MIN_VALUE);
-console.log("Number.MAX_SAFE_INTEGER:", Number.MAX_SAFE_INTEGER);
+console.
+log("Number.MAX_SAFE_INTEGER:", Number.MAX_SAFE_INTEGER);
 console.log("Number.MIN_SAFE_INTEGER:", Number.MIN_SAFE_INTEGER);
 console.log("Number.POSITIVE_INFINITY:", Number.POSITIVE_INFINITY);
 console.log("Number.NEGATIVE_INFINITY:", Number.NEGATIVE_INFINITY);

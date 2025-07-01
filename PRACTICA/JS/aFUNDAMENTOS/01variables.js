@@ -68,6 +68,8 @@ console.log("const: no reasignable, block scope");
 
 const objeto = {}; // Ejemplo de objeto vacío
 console.log("Objeto vacío:", objeto);
+const arreglo = []; // Ejemplo de array vacío
+console.log("Array vacío:", arreglo);
 
 let variable = 200; // Ejemplo de variable let
 console.log("Variable let:", variable); 
