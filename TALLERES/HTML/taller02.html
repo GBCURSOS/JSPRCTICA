@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 02 - Números, Cadenas y Coerción</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+        
+        .seccion {
+            margin: 40px 0;
+            border-top: 2px solid #ecf0f1;
+            padding-top: 30px;
+        }
+        
+        .seccion h2 {
+            color: #27ae60;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .problema {
+            background-color: #f8f9fa;
+            border-left: 5px solid #3498db;
+            margin: 30px 0;
+            padding: 25px;
+            border-radius: 5px;
+        }
+        
+        .problema h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        
+        .enunciado {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        
+        .salida-esperada {
+            background-color: #e8f5e8;
+            border: 1px solid #27ae60;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .salida-esperada h4 {
+            color: #27ae60;
+            margin: 0 0 10px 0;
+        }
+        
+        .codigo-area {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        
+        .solucion {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            display: none;
+        }
+        
+        .solucion h4 {
+            color: #856404;
+            margin: 0 0 10px 0;
+        }
+        
+        button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 TALLER 02: Números, Cadenas y Coerción de Tipos</h1>
+        <p style="text-align: center; font-style: italic; color: #7f8c8d;">
+            Resolver cada problema paso a paso. Leer cuidadosamente cada enunciado y pensar antes de escribir el código.
+        </p>
+        
+        <!-- SECCIÓN 1: NÚMEROS -->
+        <div class="seccion">
+            <h2>🔢 PROBLEMAS DE NÚMEROS</h2>
+            
+            <div class="problema">
+                <h3>Problema 1: Calculadora de Ventas</h3>
+                <div class="enunciado">
+                    Una tienda vendió 3 productos durante el día:
+                    <br>• Producto A: $1250.75
+                    <br>• Producto B: $890.50  
+                    <br>• Producto C: $2340.25
+                    <br><br>
+                    Calcular el total de ventas, el promedio de venta por producto, 
+                    y mostrar el total redondeado a 2 decimales.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Producto A: $1250.75<br>
+                    Producto B: $890.5<br>
+                    Producto C: $2340.25<br>
+                    Total de ventas: $4481.5<br>
+                    Promedio por producto: $1493.83
+                </div>
+                <div class="codigo-area" id="codigo1">
+// Escribir el código aquí
+let productoA = 1250.75;
+let productoB = 890.50;
+let productoC = 2340.25;
+
+// Completar el código...</div>
+                <button onclick="toggleSolucion(1)">👁️ Ver Solución</button>
+                <div id="solucion1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let productoA = 1250.75;
+let productoB = 890.50;
+let productoC = 2340.25;
+
+let total = productoA + productoB + productoC;
+let promedio = total / 3;
+
+console.log("Producto A: $" + productoA);
+console.log("Producto B: $" + productoB);
+console.log("Producto C: $" + productoC);
+console.log("Total de ventas: $" + total);
+console.log("Promedio por producto: $" + promedio.toFixed(2));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 2: Conversor de Temperatura</h3>
+                <div class="enunciado">
+                    El termómetro marca 77 grados Fahrenheit. Convertir esta temperatura 
+                    a grados Celsius usando la fórmula: C = (F - 32) × 5/9
+                    <br><br>
+                    Mostrar el resultado redondeado a 1 decimal.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Temperatura en Fahrenheit: 77°F<br>
+                    Temperatura en Celsius: 25.0°C
+                </div>
+                <div class="codigo-area" id="codigo2">
+// Escribir el código aquí
+let fahrenheit = 77;
+
+// Completar la conversión...</div>
+                <button onclick="toggleSolucion(2)">👁️ Ver Solución</button>
+                <div id="solucion2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let fahrenheit = 77;
+let celsius = (fahrenheit - 32) * 5 / 9;
+
+console.log("Temperatura en Fahrenheit: " + fahrenheit + "°F");
+console.log("Temperatura en Celsius: " + celsius.toFixed(1) + "°C");
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 3: Generador de Números de Lotería</h3>
+                <div class="enunciado">
+                    Generar 5 números aleatorios para un boleto de lotería. 
+                    Cada número debe estar entre 1 y 50 (inclusive).
+                    <br><br>
+                    Mostrar los números generados en el formato: "Números de lotería: 15, 32, 8, 41, 27"
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Números de lotería: 23, 15, 42, 8, 31
+                    <br><small>(Los números serán diferentes cada vez que se ejecute)</small>
+                </div>
+                <div class="codigo-area" id="codigo3">
+// Escribir el código aquí
+// Pista: Math.random() genera números entre 0 y 1
+// Pista: Math.floor() redondea hacia abajo
+
+let numero1 = Math.floor(Math.random() * 50) + 1;
+// Completar para los otros 4 números...</div>
+                <button onclick="toggleSolucion(3)">👁️ Ver Solución</button>
+                <div id="solucion3" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let numero1 = Math.floor(Math.random() * 50) + 1;
+let numero2 = Math.floor(Math.random() * 50) + 1;
+let numero3 = Math.floor(Math.random() * 50) + 1;
+let numero4 = Math.floor(Math.random() * 50) + 1;
+let numero5 = Math.floor(Math.random() * 50) + 1;
+
+console.log("Números de lotería: " + numero1 + ", " + numero2 + ", " + numero3 + ", " + numero4 + ", " + numero5);
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 4: Calculadora de Interés Simple</h3>
+                <div class="enunciado">
+                    Un cliente tiene $5000 ahorrados en un banco que paga 3.5% de interés anual simple.
+                    <br>Calcular cuánto dinero tendrá después de 2 años.
+                    <br><br>
+                    Fórmula: Monto Final = Capital + (Capital × Tasa × Tiempo)
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Capital inicial: $5000<br>
+                    Tasa de interés: 3.5% anual<br>
+                    Tiempo: 2 años<br>
+                    Interés ganado: $350<br>
+                    Monto final: $5350
+                </div>
+                <div class="codigo-area" id="codigo4">
+// Escribir el código aquí
+let capital = 5000;
+let tasa = 3.5 / 100;  // Convertir porcentaje a decimal
+let tiempo = 2;
+
+// Completar el cálculo...</div>
+                <button onclick="toggleSolucion(4)">👁️ Ver Solución</button>
+                <div id="solucion4" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let capital = 5000;
+let tasa = 3.5 / 100;
+let tiempo = 2;
+
+let interes = capital * tasa * tiempo;
+let montoFinal = capital + interes;
+
+console.log("Capital inicial: $" + capital);
+console.log("Tasa de interés: " + (tasa * 100) + "% anual");
+console.log("Tiempo: " + tiempo + " años");
+console.log("Interés ganado: $" + interes);
+console.log("Monto final: $" + montoFinal);
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 5: Convertidor de Bases Numéricas</h3>
+                <div class="enunciado">
+                    Convertir el número decimal 42 a:
+                    <br>• Sistema binario (base 2)
+                    <br>• Sistema octal (base 8)  
+                    <br>• Sistema hexadecimal (base 16)
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Número decimal: 42<br>
+                    En binario: 101010<br>
+                    En octal: 52<br>
+                    En hexadecimal: 2a
+                </div>
+                <div class="codigo-area" id="codigo5">
+// Escribir el código aquí
+let numero = 42;
+
+// Pista: usar toString(base)
+// Completar las conversiones...</div>
+                <button onclick="toggleSolucion(5)">👁️ Ver Solución</button>
+                <div id="solucion5" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let numero = 42;
+
+let binario = numero.toString(2);
+let octal = numero.toString(8);
+let hexadecimal = numero.toString(16);
+
+console.log("Número decimal: " + numero);
+console.log("En binario: " + binario);
+console.log("En octal: " + octal);
+console.log("En hexadecimal: " + hexadecimal);
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 6: Área y Perímetro de un Círculo</h3>
+                <div class="enunciado">
+                    Un círculo tiene un radio de 7.5 metros.
+                    <br>Calcular su área y perímetro.
+                    <br><br>
+                    Fórmulas:
+                    <br>• Área = π × radio²
+                    <br>• Perímetro = 2 × π × radio
+                    <br><br>
+                    Mostrar los resultados con 2 decimales.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Radio: 7.5 metros<br>
+                    Área: 176.71 metros cuadrados<br>
+                    Perímetro: 47.12 metros
+                </div>
+                <div class="codigo-area" id="codigo6">
+// Escribir el código aquí
+let radio = 7.5;
+// Pista: usar Math.PI para el valor de π
+
+// Completar los cálculos...</div>
+                <button onclick="toggleSolucion(6)">👁️ Ver Solución</button>
+                <div id="solucion6" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let radio = 7.5;
+
+let area = Math.PI * radio * radio;
+let perimetro = 2 * Math.PI * radio;
+
+console.log("Radio: " + radio + " metros");
+console.log("Área: " + area.toFixed(2) + " metros cuadrados");
+console.log("Perímetro: " + perimetro.toFixed(2) + " metros");
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 7: Validador de Números</h3>
+                <div class="enunciado">
+                    Analizar estos valores: 42, "123", NaN, 3.14, "texto", Infinity, 0
+                    <br><br>
+                    Para cada valor, determinar si:
+                    <br>• Es de tipo número
+                    <br>• Es un número finito
+                    <br>• Es un número entero
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Analizando: 42<br>
+                    - Es número: true<br>
+                    - Es finito: true<br>
+                    - Es entero: true<br>
+                    <br>
+                    Analizando: "123"<br>
+                    - Es número: false<br>
+                    - Es finito: false<br>
+                    - Es entero: false<br>
+                    (y así para todos los valores...)
+                </div>
+                <div class="codigo-area" id="codigo7">
+// Escribir el código aquí
+let valor1 = 42;
+let valor2 = "123";
+let valor3 = NaN;
+let valor4 = 3.14;
+
+// Pista: usar typeof, Number.isFinite(), Number.isInteger()
+// Analizar cada valor...</div>
+                <button onclick="toggleSolucion(7)">👁️ Ver Solución</button>
+                <div id="solucion7" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let valor1 = 42;
+let valor2 = "123";
+let valor3 = NaN;
+let valor4 = 3.14;
+let valor5 = "texto";
+let valor6 = Infinity;
+let valor7 = 0;
+
+console.log("Analizando: " + valor1);
+console.log("- Es número: " + (typeof valor1 === 'number'));
+console.log("- Es finito: " + Number.isFinite(valor1));
+console.log("- Es entero: " + Number.isInteger(valor1));
+
+console.log("\nAnalizando: " + valor2);
+console.log("- Es número: " + (typeof valor2 === 'number'));
+console.log("- Es finito: " + Number.isFinite(valor2));
+console.log("- Es entero: " + Number.isInteger(valor2));
+
+console.log("\nAnalizando: " + valor3);
+console.log("- Es número: " + (typeof valor3 === 'number'));
+console.log("- Es finito: " + Number.isFinite(valor3));
+console.log("- Es entero: " + Number.isInteger(valor3));
+
+// Continuar para los demás valores...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: CADENAS -->
+        <div class="seccion">
+            <h2>📝 PROBLEMAS DE CADENAS</h2>
+
+            <div class="problema">
+                <h3>Problema 8: Analizador de Texto</h3>
+                <div class="enunciado">
+                    Analizar este texto: "   Aprender JavaScript es muy Divertido   "
+                    <br><br>
+                    Mostrar:
+                    <br>• Longitud original (con espacios)
+                    <br>• Texto sin espacios al inicio y final
+                    <br>• Longitud sin espacios extra
+                    <br>• Texto en mayúsculas
+                    <br>• Texto en minúsculas
+                    <br>• Primer y último carácter (del texto limpio)
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Texto original: "   Aprender JavaScript es muy Divertido   "<br>
+                    Longitud original: 42<br>
+                    Texto limpio: "Aprender JavaScript es muy Divertido"<br>
+                    Longitud limpia: 36<br>
+                    En mayúsculas: "APRENDER JAVASCRIPT ES MUY DIVERTIDO"<br>
+                    En minúsculas: "aprender javascript es muy divertido"<br>
+                    Primer carácter: A<br>
+                    Último carácter: o
+                </div>
+                <div class="codigo-area" id="codigo8">
+// Escribir el código aquí
+let texto = "   Aprender JavaScript es muy Divertido   ";
+
+// Completar el análisis...</div>
+                <button onclick="toggleSolucion(8)">👁️ Ver Solución</button>
+                <div id="solucion8" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let texto = "   Aprender JavaScript es muy Divertido   ";
+let textoLimpio = texto.trim();
+
+console.log('Texto original: "' + texto + '"');
+console.log("Longitud original: " + texto.length);
+console.log('Texto limpio: "' + textoLimpio + '"');
+console.log("Longitud limpia: " + textoLimpio.length);
+console.log('En mayúsculas: "' + textoLimpio.toUpperCase() + '"');
+console.log('En minúsculas: "' + textoLimpio.toLowerCase() + '"');
+console.log("Primer carácter: " + textoLimpio[0]);
+console.log("Último carácter: " + textoLimpio[textoLimpio.length - 1]);
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 9: Buscador de Palabras</h3>
+                <div class="enunciado">
+                    En el texto "JavaScript es genial y JavaScript es poderoso", buscar información sobre la palabra "JavaScript":
+                    <br><br>
+                    Encontrar:
+                    <br>• Posición de la primera aparición
+                    <br>• Posición de la última aparición
+                    <br>• Si el texto contiene "genial"
+                    <br>• Si el texto empieza con "JavaScript"
+                    <br>• Si el texto termina con "poderoso"
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Texto: "JavaScript es genial y JavaScript es poderoso"<br>
+                    Primera aparición de "JavaScript": posición 0<br>
+                    Última aparición de "JavaScript": posición 25<br>
+                    ¿Contiene "genial"? true<br>
+                    ¿Empieza con "JavaScript"? true<br>
+                    ¿Termina con "poderoso"? true
+                </div>
+                <div class="codigo-area" id="codigo9">
+// Escribir el código aquí
+let frase = "JavaScript es genial y JavaScript es poderoso";
+
+// Completar las búsquedas...</div>
+                <button onclick="toggleSolucion(9)">👁️ Ver Solución</button>
+                <div id="solucion9" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let frase = "JavaScript es genial y JavaScript es poderoso";
+
+console.log('Texto: "' + frase + '"');
+console.log('Primera aparición de "JavaScript": posición ' + frase.indexOf("JavaScript"));
+console.log('Última aparición de "JavaScript": posición ' + frase.lastIndexOf("JavaScript"));
+console.log('¿Contiene "genial"? ' + frase.includes("genial"));
+console.log('¿Empieza con "JavaScript"? ' + frase.startsWith("JavaScript"));
+console.log('¿Termina con "poderoso"? ' + frase.endsWith("poderoso"));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 10: Extractor de Información Personal</h3>
+                <div class="enunciado">
+                    De la cadena "Juan Carlos Pérez González", extraer:
+                    <br>• El primer nombre (primeras 4 letras)
+                    <br>• El segundo nombre (letras de la posición 5 a 11)
+                    <br>• Los apellidos (desde la posición 13 hasta el final)
+                    <br>• Las últimas 8 letras
+                    <br>• Solo la palabra "Pérez" (posición 13 a 17)
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Nombre completo: "Juan Carlos Pérez González"<br>
+                    Primer nombre: "Juan"<br>
+                    Segundo nombre: "Carlos"<br>
+                    Apellidos: "Pérez González"<br>
+                    Últimas 8 letras: "González"<br>
+                    Solo "Pérez": "Pérez"
+                </div>
+                <div class="codigo-area" id="codigo10">
+// Escribir el código aquí
+let nombreCompleto = "Juan Carlos Pérez González";
+
+// Pista: usar substring() y slice()
+// Completar las extracciones...</div>
+                <button onclick="toggleSolucion(10)">👁️ Ver Solución</button>
+                <div id="solucion10" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let nombreCompleto = "Juan Carlos Pérez González";
+
+let primerNombre = nombreCompleto.substring(0, 4);
+let segundoNombre = nombreCompleto.substring(5, 11);
+let apellidos = nombreCompleto.substring(13);
+let ultimas8 = nombreCompleto.slice(-8);
+let soloPerez = nombreCompleto.substring(13, 18);
+
+console.log('Nombre completo: "' + nombreCompleto + '"');
+console.log('Primer nombre: "' + primerNombre + '"');
+console.log('Segundo nombre: "' + segundoNombre + '"');
+console.log('Apellidos: "' + apellidos + '"');
+console.log('Últimas 8 letras: "' + ultimas8 + '"');
+console.log('Solo "Pérez": "' + soloPerez + '"');
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 11: Corrector de Texto</h3>
+                <div class="enunciado">
+                    Corregir este texto con errores: "Me gusta Python. Python es facil. Python es rapido."
+                    <br><br>
+                    Cambios requeridos:
+                    <br>• Cambiar todas las apariciones de "Python" por "JavaScript"
+                    <br>• Cambiar "facil" por "fácil"
+                    <br>• Cambiar "rapido" por "rápido"
+                    <br><br>
+                    Mostrar el texto original y el corregido.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Texto original: "Me gusta Python. Python es facil. Python es rapido."<br>
+                    Texto corregido: "Me gusta JavaScript. JavaScript es fácil. JavaScript es rápido."
+                </div>
+                <div class="codigo-area" id="codigo11">
+// Escribir el código aquí
+let textoOriginal = "Me gusta Python. Python es facil. Python es rapido.";
+
+// Pista: usar replace() o replaceAll()
+// Completar las correcciones...</div>
+                <button onclick="toggleSolucion(11)">👁️ Ver Solución</button>
+                <div id="solucion11" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let textoOriginal = "Me gusta Python. Python es facil. Python es rapido.";
+
+let paso1 = textoOriginal.replaceAll("Python", "JavaScript");
+let paso2 = paso1.replace("facil", "fácil");
+let textoCorregido = paso2.replace("rapido", "rápido");
+
+console.log('Texto original: "' + textoOriginal + '"');
+console.log('Texto corregido: "' + textoCorregido + '"');
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 12: Procesador de Lista de Compras</h3>
+                <div class="enunciado">
+                    Procesar esta lista de compras como texto: "pan,leche,huevos,queso,manzanas"
+                    <br><br>
+                    Realizar las siguientes tareas:
+                    <br>• Convertirla en elementos separados
+                    <br>• Contar cuántos productos hay
+                    <br>• Mostrar cada producto en una línea
+                    <br>• Crear una nueva lista separada por " - "
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Lista original: "pan,leche,huevos,queso,manzanas"<br>
+                    Número de productos: 5<br>
+                    Productos:<br>
+                    1. pan<br>
+                    2. leche<br>
+                    3. huevos<br>
+                    4. queso<br>
+                    5. manzanas<br>
+                    Lista con guiones: "pan - leche - huevos - queso - manzanas"
+                </div>
+                <div class="codigo-area" id="codigo12">
+// Escribir el código aquí
+let listaCompras = "pan,leche,huevos,queso,manzanas";
+
+// Pista: usar split() y join()
+// Completar el procesamiento...</div>
+                <button onclick="toggleSolucion(12)">👁️ Ver Solución</button>
+                <div id="solucion12" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let listaCompras = "pan,leche,huevos,queso,manzanas";
+let productos = listaCompras.split(",");
+
+console.log('Lista original: "' + listaCompras + '"');
+console.log("Número de productos: " + productos.length);
+console.log("Productos:");
+console.log("1. " + productos[0]);
+console.log("2. " + productos[1]);
+console.log("3. " + productos[2]);
+console.log("4. " + productos[3]);
+console.log("5. " + productos[4]);
+
+let listaConGuiones = productos.join(" - ");
+console.log('Lista con guiones: "' + listaConGuiones + '"');
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 13: Generador de Mensajes Personalizados</h3>
+                <div class="enunciado">
+                    Crear mensajes personalizados usando estos datos:
+                    <br>• Nombre: "María"
+                    <br>• Edad: 25  
+                    <br>• Ciudad: "Barcelona"
+                    <br>• Profesión: "Diseñadora"
+                    <br><br>
+                    Generar estos mensajes usando template literals:
+                    <br>• Saludo personal
+                    <br>• Información completa
+                    <br>• Mensaje de años hasta jubilación (65 años)
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    ¡Hola María! Bienvenida al sistema.<br>
+                    María tiene 25 años, vive en Barcelona y es Diseñadora.<br>
+                    Te faltan 40 años para jubilarte.
+                </div>
+                <div class="codigo-area" id="codigo13">
+// Escribir el código aquí
+let nombre = "María";
+let edad = 25;
+let ciudad = "Barcelona";
+let profesion = "Diseñadora";
+
+// Pista: usar template literals con ${}
+// Completar los mensajes...</div>
+                <button onclick="toggleSolucion(13)">👁️ Ver Solución</button>
+                <div id="solucion13" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let nombre = "María";
+let edad = 25;
+let ciudad = "Barcelona";
+let profesion = "Diseñadora";
+
+let saludo = `¡Hola ${nombre}! Bienvenida al sistema.`;
+let informacion = `${nombre} tiene ${edad} años, vive en ${ciudad} y es ${profesion}.`;
+let jubilacion = `Te faltan ${65 - edad} años para jubilarte.`;
+
+console.log(saludo);
+console.log(informacion);
+console.log(jubilacion);
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 14: Formateador de Códigos</h3>
+                <div class="enunciado">
+                    Formatear estos códigos:
+                    <br>• Número de factura: "7" → debe quedar "F-007"
+                    <br>• Código de producto: "42" → debe quedar "PROD-0042"  
+                    <br>• ID de usuario: "123" → debe quedar "USER-00123"
+                    <br><br>
+                    También crear un separador de 30 guiones y repetir "¡OFERTA!" 3 veces.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Factura: F-007<br>
+                    Producto: PROD-0042<br>
+                    Usuario: USER-00123<br>
+                    ------------------------------<br>
+                    ¡OFERTA!¡OFERTA!¡OFERTA!
+                </div>
+                <div class="codigo-area" id="codigo14">
+// Escribir el código aquí
+let numFactura = "7";
+let codProducto = "42";
+let idUsuario = "123";
+
+// Pista: usar padStart() y repeat()
+// Completar el formateo...</div>
+                <button onclick="toggleSolucion(14)">👁️ Ver Solución</button>
+                <div id="solucion14" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let numFactura = "7";
+let codProducto = "42";
+let idUsuario = "123";
+
+let factura = "F-" + numFactura.padStart(3, "0");
+let producto = "PROD-" + codProducto.padStart(4, "0");
+let usuario = "USER-" + idUsuario.padStart(5, "0");
+let separador = "-".repeat(30);
+let oferta = "¡OFERTA!".repeat(3);
+
+console.log("Factura: " + factura);
+console.log("Producto: " + producto);
+console.log("Usuario: " + usuario);
+console.log(separador);
+console.log(oferta);
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: COERCIÓN DE TIPOS -->
+        <div class="seccion">
+            <h2>🔄 PROBLEMAS DE COERCIÓN DE TIPOS</h2>
+
+            <div class="problema">
+                <h3>Problema 15: Calculadora de Texto</h3>
+                <div class="enunciado">
+                    Un usuario ingresa estos valores como texto: "15" y "8"
+                    <br><br>
+                    Mostrar qué pasa cuando:
+                    <br>• Se suman con el operador +
+                    <br>• Se restan con el operador -
+                    <br>• Se multiplican con el operador *
+                    <br>• Se dividen con el operador /
+                    <br>• Se convierten a número y luego se suman
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Valores originales: "15" y "8"<br>
+                    Suma con +: "158"<br>
+                    Resta con -: 7<br>
+                    Multiplicación con *: 120<br>
+                    División con /: 1.875<br>
+                    Suma después de convertir: 23
+                </div>
+                <div class="codigo-area" id="codigo15">
+// Escribir el código aquí
+let numero1 = "15";
+let numero2 = "8";
+
+// Completar las operaciones...</div>
+                <button onclick="toggleSolucion(15)">👁️ Ver Solución</button>
+                <div id="solucion15" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let numero1 = "15";
+let numero2 = "8";
+
+console.log('Valores originales: "' + numero1 + '" y "' + numero2 + '"');
+console.log("Suma con +: " + (numero1 + numero2));
+console.log("Resta con -: " + (numero1 - numero2));
+console.log("Multiplicación con *: " + (numero1 * numero2));
+console.log("División con /: " + (numero1 / numero2));
+console.log("Suma después de convertir: " + (Number(numero1) + Number(numero2)));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 16: Analizador de Verdadero y Falso</h3>
+                <div class="enunciado">
+                    Analizar estos valores para ver si JavaScript los considera verdaderos o falsos:
+                    <br>• 0
+                    <br>• ""
+                    <br>• "0"
+                    <br>• "false"
+                    <br>• null
+                    <br>• undefined
+                    <br>• []
+                    <br>• {}
+                    <br><br>
+                    Para cada uno, mostrar si es verdadero o falso usando el operador !
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    El valor 0 es: falso<br>
+                    El valor "" es: falso<br>
+                    El valor "0" es: verdadero<br>
+                    El valor "false" es: verdadero<br>
+                    El valor null es: falso<br>
+                    El valor undefined es: falso<br>
+                    El valor [] es: verdadero<br>
+                    El valor {} es: verdadero
+                </div>
+                <div class="codigo-area" id="codigo16">
+// Escribir el código aquí
+let valor1 = 0;
+let valor2 = "";
+let valor3 = "0";
+let valor4 = "false";
+let valor5 = null;
+let valor6 = undefined;
+let valor7 = [];
+let valor8 = {};
+
+// Pista: usar !! para convertir a booleano
+// Completar el análisis...</div>
+                <button onclick="toggleSolucion(16)">👁️ Ver Solución</button>
+                <div id="solucion16" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let valor1 = 0;
+let valor2 = "";
+let valor3 = "0";
+let valor4 = "false";
+let valor5 = null;
+let valor6 = undefined;
+let valor7 = [];
+let valor8 = {};
+
+console.log("El valor " + valor1 + " es: " + (!!valor1 ? "verdadero" : "falso"));
+console.log('El valor "' + valor2 + '" es: ' + (!!valor2 ? "verdadero" : "falso"));
+console.log('El valor "' + valor3 + '" es: ' + (!!valor3 ? "verdadero" : "falso"));
+console.log('El valor "' + valor4 + '" es: ' + (!!valor4 ? "verdadero" : "falso"));
+console.log("El valor " + valor5 + " es: " + (!!valor5 ? "verdadero" : "falso"));
+console.log("El valor " + valor6 + " es: " + (!!valor6 ? "verdadero" : "falso"));
+console.log("El valor [] es: " + (!!valor7 ? "verdadero" : "falso"));
+console.log("El valor {} es: " + (!!valor8 ? "verdadero" : "falso"));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 17: Comparador de Igualdades</h3>
+                <div class="enunciado">
+                    Comparar estos pares de valores usando == y === para entender la diferencia:
+                    <br>• 5 y "5"
+                    <br>• true y 1
+                    <br>• false y 0
+                    <br>• null y undefined
+                    <br>• "" y 0
+                    <br><br>
+                    Para cada par, mostrar el resultado de ambas comparaciones.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Comparando 5 y "5":<br>
+                    - Con == (con conversión): true<br>
+                    - Con === (sin conversión): false<br>
+                    <br>
+                    Comparando true y 1:<br>
+                    - Con == (con conversión): true<br>
+                    - Con === (sin conversión): false<br>
+                    (y así para todos...)
+                </div>
+                <div class="codigo-area" id="codigo17">
+// Escribir el código aquí
+// Primer par: 5 y "5"
+let a1 = 5;
+let b1 = "5";
+
+// Completar las comparaciones...</div>
+                <button onclick="toggleSolucion(17)">👁️ Ver Solución</button>
+                <div id="solucion17" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let a1 = 5, b1 = "5";
+let a2 = true, b2 = 1;
+let a3 = false, b3 = 0;
+let a4 = null, b4 = undefined;
+let a5 = "", b5 = 0;
+
+console.log("Comparando " + a1 + ' y "' + b1 + '":');
+console.log("- Con == (con conversión): " + (a1 == b1));
+console.log("- Con === (sin conversión): " + (a1 === b1));
+
+console.log("\nComparando " + a2 + " y " + b2 + ":");
+console.log("- Con == (con conversión): " + (a2 == b2));
+console.log("- Con === (sin conversión): " + (a2 === b2));
+
+console.log("\nComparando " + a3 + " y " + b3 + ":");
+console.log("- Con == (con conversión): " + (a3 == b3));
+console.log("- Con === (sin conversión): " + (a3 === b3));
+
+console.log("\nComparando " + a4 + " y " + b4 + ":");
+console.log("- Con == (con conversión): " + (a4 == b4));
+console.log("- Con === (sin conversión): " + (a4 === b4));
+
+console.log('\nComparando "' + a5 + '" y ' + b5 + ':');
+console.log("- Con == (con conversión): " + (a5 == b5));
+console.log("- Con === (sin conversión): " + (a5 === b5));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 18: Convertidor Universal</h3>
+                <div class="enunciado">
+                    Tomar el valor "42" y convertirlo a:
+                    <br>• Número usando Number()
+                    <br>• Número usando el operador + 
+                    <br>• Número usando parseInt()
+                    <br>• Booleano usando Boolean()
+                    <br>• Booleano usando !!
+                    <br><br>
+                    También tomar el número 0 y convertirlo a string y booleano.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Valor original: "42"<br>
+                    Con Number(): 42<br>
+                    Con +: 42<br>
+                    Con parseInt(): 42<br>
+                    Con Boolean(): true<br>
+                    Con !!: true<br>
+                    <br>
+                    Valor 0 como string: "0"<br>
+                    Valor 0 como booleano: false
+                </div>
+                <div class="codigo-area" id="codigo18">
+// Escribir el código aquí
+let textoNumero = "42";
+let numeroZero = 0;
+
+// Completar las conversiones...</div>
+                <button onclick="toggleSolucion(18)">👁️ Ver Solución</button>
+                <div id="solucion18" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let textoNumero = "42";
+let numeroZero = 0;
+
+console.log('Valor original: "' + textoNumero + '"');
+console.log("Con Number(): " + Number(textoNumero));
+console.log("Con +: " + (+textoNumero));
+console.log("Con parseInt(): " + parseInt(textoNumero));
+console.log("Con Boolean(): " + Boolean(textoNumero));
+console.log("Con !!: " + (!!textoNumero));
+
+console.log("\nValor 0 como string: " + '"' + String(numeroZero) + '"');
+console.log("Valor 0 como booleano: " + Boolean(numeroZero));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 19: Operaciones Extrañas</h3>
+                <div class="enunciado">
+                    JavaScript a veces hace cosas raras con las conversiones. Calcular y explicar qué pasa en estas operaciones:
+                    <br>• true + true
+                    <br>• "5" - "2"
+                    <br>• "5" + 2
+                    <br>• "5" * "2"
+                    <br>• [] + []
+                    <br>• [] + {}
+                    <br>• "10" - 5 + "3"
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    true + true = 2<br>
+                    "5" - "2" = 3<br>
+                    "5" + 2 = "52"<br>
+                    "5" * "2" = 10<br>
+                    [] + [] = ""<br>
+                    [] + {} = "[object Object]"<br>
+                    "10" - 5 + "3" = "53"
+                </div>
+                <div class="codigo-area" id="codigo19">
+// Escribir el código aquí
+// Completar las operaciones raras...</div>
+                <button onclick="toggleSolucion(19)">👁️ Ver Solución</button>
+                <div id="solucion19" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+console.log("true + true = " + (true + true));
+console.log('"5" - "2" = ' + ("5" - "2"));
+console.log('"5" + 2 = ' + ("5" + 2));
+console.log('"5" * "2" = ' + ("5" * "2"));
+console.log("[] + [] = " + '"' + ([] + []) + '"');
+console.log("[] + {} = " + '"' + ([] + {}) + '"');
+console.log('"10" - 5 + "3" = ' + ("10" - 5 + "3"));
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <h3>Problema 20: Detector de Tipos y Conversiones</h3>
+                <div class="enunciado">
+                    Crear un analizador que tome cualquier valor y muestre:
+                    <br>• Su valor original
+                    <br>• Su tipo usando typeof
+                    <br>• Cómo se ve convertido a string
+                    <br>• Cómo se ve convertido a número
+                    <br>• Cómo se ve convertido a booleano
+                    <br><br>
+                    Analizar estos valores: 42, "texto", null, undefined, []
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    === ANALIZANDO: 42 ===<br>
+                    Tipo: number<br>
+                    Como string: "42"<br>
+                    Como número: 42<br>
+                    Como booleano: true<br>
+                    <br>
+                    === ANALIZANDO: "texto" ===<br>
+                    Tipo: string<br>
+                    Como string: "texto"<br>
+                    Como número: NaN<br>
+                    Como booleano: true<br>
+                    (y así para todos...)
+                </div>
+                <div class="codigo-area" id="codigo20">
+// Escribir el código aquí
+let valor1 = 42;
+let valor2 = "texto";
+let valor3 = null;
+let valor4 = undefined;
+let valor5 = [];
+
+// Analizar cada valor paso a paso...</div>
+                <button onclick="toggleSolucion(20)">👁️ Ver Solución</button>
+                <div id="solucion20" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+let valor1 = 42;
+let valor2 = "texto";
+let valor3 = null;
+let valor4 = undefined;
+let valor5 = [];
+
+console.log("=== ANALIZANDO: " + valor1 + " ===");
+console.log("Tipo: " + typeof valor1);
+console.log('Como string: "' + String(valor1) + '"');
+console.log("Como número: " + Number(valor1));
+console.log("Como booleano: " + Boolean(valor1));
+
+console.log('\n=== ANALIZANDO: "' + valor2 + '" ===');
+console.log("Tipo: " + typeof valor2);
+console.log('Como string: "' + String(valor2) + '"');
+console.log("Como número: " + Number(valor2));
+console.log("Como booleano: " + Boolean(valor2));
+
+console.log("\n=== ANALIZANDO: " + valor3 + " ===");
+console.log("Tipo: " + typeof valor3);
+console.log('Como string: "' + String(valor3) + '"');
+console.log("Como número: " + Number(valor3));
+console.log("Como booleano: " + Boolean(valor3));
+
+console.log("\n=== ANALIZANDO: " + valor4 + " ===");
+console.log("Tipo: " + typeof valor4);
+console.log('Como string: "' + String(valor4) + '"');
+console.log("Como número: " + Number(valor4));
+console.log("Como booleano: " + Boolean(valor4));
+
+console.log("\n=== ANALIZANDO: [] ===");
+console.log("Tipo: " + typeof valor5);
+console.log('Como string: "' + String(valor5) + '"');
+console.log("Como número: " + Number(valor5));
+console.log("Como booleano: " + Boolean(valor5));
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+            <h3 style="color: #2c3e50;">🎉 ¡Felicitaciones!</h3>
+            <p>Se ha completado el Taller 02 de JavaScript. Ahora hay una base sólida en:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li>✅ Operaciones con números y Math</li>
+                <li>✅ Manipulación y procesamiento de cadenas</li>
+                <li>✅ Comprensión de la coerción de tipos</li>
+            </ul>
+            <p><strong>¡Continuar practicando estos conceptos fundamentales!</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSolucion(num) {
+            const solucion = document.getElementById('solucion' + num);
+            if (solucion.style.display === 'none' || solucion.style.display === '') {
+                solucion.style.display = 'block';
+            } else {
+                solucion.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
