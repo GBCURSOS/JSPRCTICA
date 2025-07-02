@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/taller09.css">
+    <title>Taller 09 - Condicionales y Ciclos</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Taller 09: Condicionales y Ciclos en JavaScript</h1>
+            <div class="taller-info">
+                <span class="badge">20 Ejercicios</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECCIÓN 1: CICLOS FOR -->
+        <div class="seccion">
+            <h2>🔄 EJERCICIOS CON CICLO FOR</h2>
+
+            <div class="problema">
+                <h3>Ejercicio 1: Números del 1 al 15</h3>
+                <div class="enunciado">
+                    Utilice un ciclo <strong>for</strong> para imprimir todos los números del 1 al 15.
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    1<br>2<br>3<br>...<br>15
+                </div>
+                <div class="codigo-area" id="codigo1">// Escribir el código aquí
+                    for (let i = 1; i <= 15; i++) { // Completar el código... }</div>
+                        <button onclick="toggleSolucion(1)">👁️ Ver Solución</button>
+                        <div id="solucion1" class="solucion">
+                            <h4>📝 Solución:</h4>
+                            <div class="codigo-area">for (let i = 1; i <= 15; i++) { console.log(i); }</div>
+                            </div>
+                        </div>
+
+                        <div class="problema">
+                            <h3>Ejercicio 2: Números pares del 2 al 20</h3>
+                            <div class="enunciado">
+                                Utilice un ciclo <strong>for</strong> para imprimir solo los números pares del 2 al 20.
+                            </div>
+                            <div class="salida-esperada">
+                                <h4>💡 Salida Esperada:</h4>
+                                2<br>4<br>6<br>8<br>10<br>12<br>14<br>16<br>18<br>20
+                            </div>
+                            <div class="codigo-area" id="codigo2">// Escribir el código aquí
+                                for (let i = 2; i <= 20; i +=2) { // Completar el código... }</div>
+                                    <button onclick="toggleSolucion(2)">👁️ Ver Solución</button>
+                                    <div id="solucion2" class="solucion">
+                                        <h4>📝 Solución:</h4>
+                                        <div class="codigo-area">for (let i = 2; i <= 20; i +=2) { console.log(i);
+                                                }</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="problema">
+                                        <h3>Ejercicio 3: Cuenta regresiva desde 10</h3>
+                                        <div class="enunciado">
+                                            Utilice un ciclo <strong>for</strong> para hacer una cuenta regresiva desde
+                                            10 hasta 1,
+                                            luego imprima "¡Despegue!".
+                                        </div>
+                                        <div class="salida-esperada">
+                                            <h4>💡 Salida Esperada:</h4>
+                                            10<br>9<br>8<br>...<br>1<br>¡Despegue!
+                                        </div>
+                                        <div class="codigo-area" id="codigo3">// Escribir el código aquí
+                                            for (let i = 10; i >= 1; i--) {
+                                            // Completar el código...
+                                            }</div>
+                                        <button onclick="toggleSolucion(3)">👁️ Ver Solución</button>
+                                        <div id="solucion3" class="solucion">
+                                            <h4>📝 Solución:</h4>
+                                            <div class="codigo-area">for (let i = 10; i >= 1; i--) {
+                                                console.log(i);
+                                                }
+                                                console.log("¡Despegue!");</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="problema">
+                                        <h3>Ejercicio 4: Tabla de multiplicar del 7</h3>
+                                        <div class="enunciado">
+                                            Utilice un ciclo <strong>for</strong> para generar la tabla de multiplicar
+                                            del 7 (del 1 al 10).
+                                        </div>
+                                        <div class="salida-esperada">
+                                            <h4>💡 Salida Esperada:</h4>
+                                            7 x 1 = 7<br>7 x 2 = 14<br>...<br>7 x 10 = 70
+                                        </div>
+                                        <div class="codigo-area" id="codigo4">// Escribir el código aquí
+                                            for (let i = 1; i <= 10; i++) { // Completar el código... }</div>
+                                                <button onclick="toggleSolucion(4)">👁️ Ver Solución</button>
+                                                <div id="solucion4" class="solucion">
+                                                    <h4>📝 Solución:</h4>
+                                                    <div class="codigo-area">for (let i = 1; i <= 10; i++) {
+                                                            console.log(`7 x ${i}=${7 * i}`); }</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="problema">
+                                                    <h3>Ejercicio 5: Suma de números del 1 al 100</h3>
+                                                    <div class="enunciado">
+                                                        Utilice un ciclo <strong>for</strong> para calcular la suma de
+                                                        todos los números del 1 al 100.
+                                                    </div>
+                                                    <div class="salida-esperada">
+                                                        <h4>💡 Salida Esperada:</h4>
+                                                        La suma de números del 1 al 100 es: 5050
+                                                    </div>
+                                                    <div class="codigo-area" id="codigo5">// Escribir el código aquí
+                                                        let suma = 0;
+                                                        for (let i = 1; i <= 100; i++) { // Completar el código...
+                                                            }</div>
+                                                            <button onclick="toggleSolucion(5)">👁️ Ver
+                                                                Solución</button>
+                                                            <div id="solucion5" class="solucion">
+                                                                <h4>📝 Solución:</h4>
+                                                                <div class="codigo-area">let suma = 0;
+                                                                    for (let i = 1; i <= 100; i++) { suma +=i; }
+                                                                        console.log("La suma de números del 1 al 100
+                                                                        es:", suma);</div>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+
+                                                    <!-- SECCIÓN 2: CICLOS WHILE -->
+                                                    <div class="seccion">
+                                                        <h2>🔄 EJERCICIOS CON CICLO WHILE</h2>
+
+                                                        <div class="problema">
+                                                            <h3>Ejercicio 6: Dividir hasta llegar a 1</h3>
+                                                            <div class="enunciado">
+                                                                Tiene el número 128. Utilice un ciclo
+                                                                <strong>while</strong> para dividirlo entre 2
+                                                                hasta que sea menor o igual a 1. Cuente cuántas
+                                                                divisiones hizo.
+                                                            </div>
+                                                            <div class="salida-esperada">
+                                                                <h4>💡 Salida Esperada:</h4>
+                                                                División 1: 64<br>División 2: 32<br>...<br>Número de
+                                                                divisiones: 7
+                                                            </div>
+                                                            <div class="codigo-area" id="codigo6">// Escribir el código
+                                                                aquí
+                                                                let numero = 128;
+                                                                let divisiones = 0;
+                                                                while (numero > 1) {
+                                                                // Completar el código...
+                                                                }</div>
+                                                            <button onclick="toggleSolucion(6)">👁️ Ver
+                                                                Solución</button>
+                                                            <div id="solucion6" class="solucion">
+                                                                <h4>📝 Solución:</h4>
+                                                                <div class="codigo-area">let numero = 128;
+                                                                    let divisiones = 0;
+                                                                    while (numero > 1) {
+                                                                    numero = numero / 2;
+                                                                    divisiones++;
+                                                                    console.log(`División ${divisiones}: ${numero}`);
+                                                                    }
+                                                                    console.log("Número de divisiones:", divisiones);
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="problema">
+                                                            <h3>Ejercicio 7: Números impares menores a 25</h3>
+                                                            <div class="enunciado">
+                                                                Utilice un ciclo <strong>while</strong> para imprimir
+                                                                todos los números impares menores a 25.
+                                                            </div>
+                                                            <div class="salida-esperada">
+                                                                <h4>💡 Salida Esperada:</h4>
+                                                                1<br>3<br>5<br>7<br>...<br>23
+                                                            </div>
+                                                            <div class="codigo-area" id="codigo7">// Escribir el código
+                                                                aquí
+                                                                let i = 1;
+                                                                while (i < 25) { // Completar el código... }</div>
+                                                                    <button onclick="toggleSolucion(7)">👁️ Ver
+                                                                        Solución</button>
+                                                                    <div id="solucion7" class="solucion">
+                                                                        <h4>📝 Solución:</h4>
+                                                                        <div class="codigo-area">let i = 1;
+                                                                            while (i < 25) { console.log(i); i +=2;
+                                                                                }</div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="problema">
+                                                                        <h3>Ejercicio 8: Potencias de 2</h3>
+                                                                        <div class="enunciado">
+                                                                            Utilice un ciclo <strong>while</strong> para
+                                                                            imprimir las primeras 8 potencias de 2 (2^1,
+                                                                            2^2, 2^3, etc.).
+                                                                        </div>
+                                                                        <div class="salida-esperada">
+                                                                            <h4>💡 Salida Esperada:</h4>
+                                                                            2^1 = 2<br>2^2 = 4<br>2^3 = 8<br>...<br>2^8
+                                                                            = 256
+                                                                        </div>
+                                                                        <div class="codigo-area" id="codigo8">//
+                                                                            Escribir el código aquí
+                                                                            let exponente = 1;
+                                                                            while (exponente <= 8) { // Completar el
+                                                                                código... }</div>
+                                                                                <button onclick="toggleSolucion(8)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion8" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">let
+                                                                                        exponente = 1;
+                                                                                        while (exponente <= 8) { let
+                                                                                            potencia=2 ** exponente;
+                                                                                            console.log(`2^${exponente}=${potencia}`);
+                                                                                            exponente++; }</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <!-- SECCIÓN 3: CICLOS DO-WHILE -->
+                                                                        <div class="seccion">
+                                                                            <h2>🔁 EJERCICIOS CON CICLO DO-WHILE</h2>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 9: Menú de opciones</h3>
+                                                                                <div class="enunciado">
+                                                                                    Simule un menú que se muestre al
+                                                                                    menos una vez. Utilice
+                                                                                    <strong>do-while</strong>
+                                                                                    para mostrar opciones del 1 al 4, y
+                                                                                    "salir" cuando la opción sea 4.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    === MENÚ ===<br>1. Opción 1<br>2.
+                                                                                    Opción 2<br>3. Opción 3<br>4.
+                                                                                    Salir<br>
+                                                                                    Opción seleccionada: 1<br>(repite
+                                                                                    hasta opción 4)
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo9">//
+                                                                                    Escribir el código aquí
+                                                                                    let opcion = 0;
+                                                                                    do {
+                                                                                    // Completar el código...
+                                                                                    } while (opcion !== 4);</div>
+                                                                                <button onclick="toggleSolucion(9)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion9" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">let opcion
+                                                                                        = 0;
+                                                                                        do {
+                                                                                        console.log("=== MENÚ ===");
+                                                                                        console.log("1. Opción 1");
+                                                                                        console.log("2. Opción 2");
+                                                                                        console.log("3. Opción 3");
+                                                                                        console.log("4. Salir");
+                                                                                        opcion++; // Simula selección de
+                                                                                        usuario
+                                                                                        console.log("Opción
+                                                                                        seleccionada:", opcion);
+                                                                                        } while (opcion !== 4);</div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 10: Contar dígitos</h3>
+                                                                                <div class="enunciado">
+                                                                                    Utilice <strong>do-while</strong>
+                                                                                    para contar cuántos dígitos tiene el
+                                                                                    número 9876.
+                                                                                    Divida entre 10 en cada iteración.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    El número 9876 tiene 4 dígitos
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo10">
+                                                                                    // Escribir el código aquí
+                                                                                    let numero = 9876;
+                                                                                    let digitos = 0;
+                                                                                    do {
+                                                                                    // Completar el código...
+                                                                                    } while (numero > 0);</div>
+                                                                                <button onclick="toggleSolucion(10)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion10" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">let numero
+                                                                                        = 9876;
+                                                                                        let digitos = 0;
+                                                                                        do {
+                                                                                        numero = Math.floor(numero /
+                                                                                        10);
+                                                                                        digitos++;
+                                                                                        } while (numero > 0);
+                                                                                        console.log("El número 9876
+                                                                                        tiene", digitos, "dígitos");
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- SECCIÓN 4: FOR...IN -->
+                                                                        <div class="seccion">
+                                                                            <h2>🔍 EJERCICIOS CON FOR...IN</h2>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 11: Propiedades de un
+                                                                                    estudiante</h3>
+                                                                                <div class="enunciado">
+                                                                                    Cree un objeto estudiante con
+                                                                                    propiedades (nombre, edad, curso,
+                                                                                    nota).
+                                                                                    Utilice <strong>for...in</strong>
+                                                                                    para mostrar todas las propiedades y
+                                                                                    sus valores.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    nombre: Juan<br>edad: 20<br>curso:
+                                                                                    JavaScript<br>nota: 9.5
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo11">
+                                                                                    // Escribir el código aquí
+                                                                                    const estudiante = {
+                                                                                    nombre: "Juan",
+                                                                                    edad: 20,
+                                                                                    curso: "JavaScript",
+                                                                                    nota: 9.5
+                                                                                    };
+                                                                                    for (let propiedad in estudiante) {
+                                                                                    // Completar el código...
+                                                                                    }</div>
+                                                                                <button onclick="toggleSolucion(11)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion11" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">const
+                                                                                        estudiante = {
+                                                                                        nombre: "Juan",
+                                                                                        edad: 20,
+                                                                                        curso: "JavaScript",
+                                                                                        nota: 9.5
+                                                                                        };
+                                                                                        for (let propiedad in
+                                                                                        estudiante) {
+                                                                                        console.log(`${propiedad}:
+                                                                                        ${estudiante[propiedad]}`);
+                                                                                        }</div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 12: Índices de un array
+                                                                                </h3>
+                                                                                <div class="enunciado">
+                                                                                    Tiene el array: ["lunes", "martes",
+                                                                                    "miércoles", "jueves", "viernes"].
+                                                                                    Utilice <strong>for...in</strong>
+                                                                                    para mostrar cada índice y su valor
+                                                                                    correspondiente.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    Índice 0: lunes<br>Índice 1:
+                                                                                    martes<br>...<br>Índice 4: viernes
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo12">
+                                                                                    // Escribir el código aquí
+                                                                                    const dias = ["lunes", "martes",
+                                                                                    "miércoles", "jueves", "viernes"];
+                                                                                    for (let indice in dias) {
+                                                                                    // Completar el código...
+                                                                                    }</div>
+                                                                                <button onclick="toggleSolucion(12)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion12" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">const dias
+                                                                                        = ["lunes", "martes",
+                                                                                        "miércoles", "jueves",
+                                                                                        "viernes"];
+                                                                                        for (let indice in dias) {
+                                                                                        console.log(`Índice ${indice}:
+                                                                                        ${dias[indice]}`);
+                                                                                        }</div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 13: Inventario de
+                                                                                    productos</h3>
+                                                                                <div class="enunciado">
+                                                                                    Cree un objeto que represente un
+                                                                                    inventario con al menos 5 productos
+                                                                                    y sus cantidades.
+                                                                                    Utilice <strong>for...in</strong>
+                                                                                    para mostrar el inventario completo.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    manzanas: 50<br>bananas:
+                                                                                    30<br>naranjas: 25<br>etc.
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo13">
+                                                                                    // Escribir el código aquí
+                                                                                    const inventario = {
+                                                                                    manzanas: 50,
+                                                                                    bananas: 30,
+                                                                                    naranjas: 25,
+                                                                                    peras: 15,
+                                                                                    uvas: 40
+                                                                                    };
+                                                                                    for (let producto in inventario) {
+                                                                                    // Completar el código...
+                                                                                    }</div>
+                                                                                <button onclick="toggleSolucion(13)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion13" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">const
+                                                                                        inventario = {
+                                                                                        manzanas: 50,
+                                                                                        bananas: 30,
+                                                                                        naranjas: 25,
+                                                                                        peras: 15,
+                                                                                        uvas: 40
+                                                                                        };
+                                                                                        for (let producto in inventario)
+                                                                                        {
+                                                                                        console.log(`${producto}:
+                                                                                        ${inventario[producto]}`);
+                                                                                        }</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- SECCIÓN 5: FOR...OF -->
+                                                                        <div class="seccion">
+                                                                            <h2>🎯 EJERCICIOS CON FOR...OF</h2>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 14: Colores favoritos</h3>
+                                                                                <div class="enunciado">
+                                                                                    Tiene el array: ["rojo", "azul",
+                                                                                    "verde", "amarillo", "morado"].
+                                                                                    Utilice <strong>for...of</strong>
+                                                                                    para mostrar cada color con un
+                                                                                    mensaje.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    Color favorito: rojo<br>Color
+                                                                                    favorito: azul<br>...<br>Color
+                                                                                    favorito: morado
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo14">
+                                                                                    // Escribir el código aquí
+                                                                                    const colores = ["rojo", "azul",
+                                                                                    "verde", "amarillo", "morado"];
+                                                                                    for (let color of colores) {
+                                                                                    // Completar el código...
+                                                                                    }</div>
+                                                                                <button onclick="toggleSolucion(14)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion14" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">const
+                                                                                        colores = ["rojo", "azul",
+                                                                                        "verde", "amarillo", "morado"];
+                                                                                        for (let color of colores) {
+                                                                                        console.log("Color favorito:",
+                                                                                        color);
+                                                                                        }</div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 15: Caracteres de una
+                                                                                    palabra</h3>
+                                                                                <div class="enunciado">
+                                                                                    Utilice <strong>for...of</strong>
+                                                                                    para recorrer cada letra de la
+                                                                                    palabra "JAVASCRIPT"
+                                                                                    y mostrarla en una línea separada.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    J<br>A<br>V<br>A<br>S<br>C<br>R<br>I<br>P<br>T
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo15">
+                                                                                    // Escribir el código aquí
+                                                                                    const palabra = "JAVASCRIPT";
+                                                                                    for (let letra of palabra) {
+                                                                                    // Completar el código...
+                                                                                    }</div>
+                                                                                <button onclick="toggleSolucion(15)">👁️
+                                                                                    Ver Solución</button>
+                                                                                <div id="solucion15" class="solucion">
+                                                                                    <h4>📝 Solución:</h4>
+                                                                                    <div class="codigo-area">const
+                                                                                        palabra = "JAVASCRIPT";
+                                                                                        for (let letra of palabra) {
+                                                                                        console.log(letra);
+                                                                                        }</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- SECCIÓN 6: BREAK Y CONTINUE -->
+                                                                        <div class="seccion">
+                                                                            <h2>⚡ EJERCICIOS CON BREAK Y CONTINUE</h2>
+
+                                                                            <div class="problema">
+                                                                                <h3>Ejercicio 16: Buscar número
+                                                                                    específico</h3>
+                                                                                <div class="enunciado">
+                                                                                    Utilice un ciclo
+                                                                                    <strong>for</strong> del 1 al 50.
+                                                                                    Cuando encuentre el número 23,
+                                                                                    muestre "¡Encontrado!" y salga del
+                                                                                    ciclo usando <strong>break</strong>.
+                                                                                </div>
+                                                                                <div class="salida-esperada">
+                                                                                    <h4>💡 Salida Esperada:</h4>
+                                                                                    1<br>2<br>3<br>...<br>22<br>¡Encontrado
+                                                                                    el número 23!
+                                                                                </div>
+                                                                                <div class="codigo-area" id="codigo16">
+                                                                                    // Escribir el código aquí
+                                                                                    for (let i = 1; i <= 50; i++) { if
+                                                                                        (i===23) { // Completar el
+                                                                                        código... } // Completar el
+                                                                                        código... }</div>
+                                                                                        <button
+                                                                                            onclick="toggleSolucion(16)">👁️
+                                                                                            Ver Solución</button>
+                                                                                        <div id="solucion16"
+                                                                                            class="solucion">
+                                                                                            <h4>📝 Solución:</h4>
+                                                                                            <div class="codigo-area">for
+                                                                                                (let i = 1; i <= 50;
+                                                                                                    i++) { if (i===23) {
+                                                                                                    console.log("¡Encontrado
+                                                                                                    el número 23!");
+                                                                                                    break; }
+                                                                                                    console.log(i);
+                                                                                                    }</div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="problema">
+                                                                                            <h3>Ejercicio 17: Saltar
+                                                                                                múltiplos de 3</h3>
+                                                                                            <div class="enunciado">
+                                                                                                Utilice un ciclo
+                                                                                                <strong>for</strong> del
+                                                                                                1 al 20. Use
+                                                                                                <strong>continue</strong>
+                                                                                                para saltar los números
+                                                                                                que sean múltiplos de 3,
+                                                                                                pero muestre los demás.
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="salida-esperada">
+                                                                                                <h4>💡 Salida Esperada:
+                                                                                                </h4>
+                                                                                                1<br>2<br>4<br>5<br>7<br>8<br>10<br>11<br>13<br>14<br>16<br>17<br>19<br>20
+                                                                                            </div>
+                                                                                            <div class="codigo-area"
+                                                                                                id="codigo17">//
+                                                                                                Escribir el código aquí
+                                                                                                for (let i = 1; i <= 20;
+                                                                                                    i++) { if (i %
+                                                                                                    3===0) { //
+                                                                                                    Completar el
+                                                                                                    código... } //
+                                                                                                    Completar el
+                                                                                                    código... }</div>
+                                                                                                    <button
+                                                                                                        onclick="toggleSolucion(17)">👁️
+                                                                                                        Ver
+                                                                                                        Solución</button>
+                                                                                                    <div id="solucion17"
+                                                                                                        class="solucion">
+                                                                                                        <h4>📝 Solución:
+                                                                                                        </h4>
+                                                                                                        <div
+                                                                                                            class="codigo-area">
+                                                                                                            for (let i =
+                                                                                                            1; i <= 20;
+                                                                                                                i++) {
+                                                                                                                if (i %
+                                                                                                                3===0) {
+                                                                                                                continue;
+                                                                                                                }
+                                                                                                                console.log(i);
+                                                                                                                }</div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                            </div>
+
+                                                                                            <!-- SECCIÓN 7: EJERCICIOS AVANZADOS -->
+                                                                                            <div class="seccion">
+                                                                                                <h2>🔥 EJERCICIOS
+                                                                                                    AVANZADOS</h2>
+
+                                                                                                <div class="problema">
+                                                                                                    <h3>Ejercicio 18:
+                                                                                                        Patrón de
+                                                                                                        asteriscos</h3>
+                                                                                                    <div
+                                                                                                        class="enunciado">
+                                                                                                        Utilice ciclos
+                                                                                                        <strong>anidados</strong>
+                                                                                                        (for dentro de
+                                                                                                        for) para crear
+                                                                                                        este patrón de
+                                                                                                        asteriscos:
+                                                                                                        <pre>*
+**
+***
+****
+*****</pre>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="salida-esperada">
+                                                                                                        <h4>💡 Salida
+                                                                                                            Esperada:
+                                                                                                        </h4>
+                                                                                                        *<br>**<br>***<br>****<br>*****
+                                                                                                    </div>
+                                                                                                    <div class="codigo-area"
+                                                                                                        id="codigo18">//
+                                                                                                        Escribir el
+                                                                                                        código aquí
+                                                                                                        for (let i = 1;
+                                                                                                        i <= 5; i++) {
+                                                                                                            let fila=""
+                                                                                                            ; for (let
+                                                                                                            j=1; j <=i;
+                                                                                                            j++) { //
+                                                                                                            Completar el
+                                                                                                            código... }
+                                                                                                            // Completar
+                                                                                                            el código...
+                                                                                                            }</div>
+                                                                                                            <button
+                                                                                                                onclick="toggleSolucion(18)">👁️
+                                                                                                                Ver
+                                                                                                                Solución</button>
+                                                                                                            <div id="solucion18"
+                                                                                                                class="solucion">
+                                                                                                                <h4>📝
+                                                                                                                    Solución:
+                                                                                                                </h4>
+                                                                                                                <div
+                                                                                                                    class="codigo-area">
+                                                                                                                    for
+                                                                                                                    (let
+                                                                                                                    i =
+                                                                                                                    1; i
+                                                                                                                    <= 5;
+                                                                                                                        i++)
+                                                                                                                        {
+                                                                                                                        let
+                                                                                                                        fila=""
+                                                                                                                        ;
+                                                                                                                        for
+                                                                                                                        (let
+                                                                                                                        j=1;
+                                                                                                                        j
+                                                                                                                        <=i;
+                                                                                                                        j++)
+                                                                                                                        {
+                                                                                                                        fila
+                                                                                                                        +="*"
+                                                                                                                        ;
+                                                                                                                        }
+                                                                                                                        console.log(fila);
+                                                                                                                        }</div>
+                                                                                                                </div>
+                                                                                                            </div>
+
+                                                                                                            <div
+                                                                                                                class="problema">
+                                                                                                                <h3>Ejercicio
+                                                                                                                    19:
+                                                                                                                    Números
+                                                                                                                    primos
+                                                                                                                    del
+                                                                                                                    1 al
+                                                                                                                    30
+                                                                                                                </h3>
+                                                                                                                <div
+                                                                                                                    class="enunciado">
+                                                                                                                    Utilice
+                                                                                                                    ciclos
+                                                                                                                    <strong>anidados</strong>
+                                                                                                                    y
+                                                                                                                    condicionales
+                                                                                                                    para
+                                                                                                                    encontrar
+                                                                                                                    todos
+                                                                                                                    los
+                                                                                                                    números
+                                                                                                                    primos
+                                                                                                                    del
+                                                                                                                    1 al
+                                                                                                                    30.
+                                                                                                                    (Un
+                                                                                                                    número
+                                                                                                                    primo
+                                                                                                                    solo
+                                                                                                                    es
+                                                                                                                    divisible
+                                                                                                                    por
+                                                                                                                    1 y
+                                                                                                                    por
+                                                                                                                    sí
+                                                                                                                    mismo)
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    class="salida-esperada">
+                                                                                                                    <h4>💡
+                                                                                                                        Salida
+                                                                                                                        Esperada:
+                                                                                                                    </h4>
+                                                                                                                    2<br>3<br>5<br>7<br>11<br>13<br>17<br>19<br>23<br>29
+                                                                                                                </div>
+                                                                                                                <div class="codigo-area"
+                                                                                                                    id="codigo19">
+                                                                                                                    //
+                                                                                                                    Escribir
+                                                                                                                    el
+                                                                                                                    código
+                                                                                                                    aquí
+                                                                                                                    for
+                                                                                                                    (let
+                                                                                                                    num
+                                                                                                                    = 2;
+                                                                                                                    num
+                                                                                                                    <= 30;
+                                                                                                                        num++)
+                                                                                                                        {
+                                                                                                                        let
+                                                                                                                        esPrimo=true;
+                                                                                                                        for
+                                                                                                                        (let
+                                                                                                                        i=2;
+                                                                                                                        i
+                                                                                                                        <
+                                                                                                                        num;
+                                                                                                                        i++)
+                                                                                                                        {
+                                                                                                                        if
+                                                                                                                        (num
+                                                                                                                        %
+                                                                                                                        i===0)
+                                                                                                                        {
+                                                                                                                        //
+                                                                                                                        Completar
+                                                                                                                        el
+                                                                                                                        código...
+                                                                                                                        }
+                                                                                                                        }
+                                                                                                                        if
+                                                                                                                        (esPrimo)
+                                                                                                                        {
+                                                                                                                        //
+                                                                                                                        Completar
+                                                                                                                        el
+                                                                                                                        código...
+                                                                                                                        }
+                                                                                                                        }</div>
+                                                                                                                        <button
+                                                                                                                            onclick="toggleSolucion(19)">👁️
+                                                                                                                            Ver
+                                                                                                                            Solución</button>
+                                                                                                                        <div id="solucion19"
+                                                                                                                            class="solucion">
+                                                                                                                            <h4>📝
+                                                                                                                                Solución:
+                                                                                                                            </h4>
+                                                                                                                            <div
+                                                                                                                                class="codigo-area">
+                                                                                                                                for
+                                                                                                                                (let
+                                                                                                                                num
+                                                                                                                                =
+                                                                                                                                2;
+                                                                                                                                num
+                                                                                                                                <= 30;
+                                                                                                                                    num++)
+                                                                                                                                    {
+                                                                                                                                    let
+                                                                                                                                    esPrimo=true;
+                                                                                                                                    for
+                                                                                                                                    (let
+                                                                                                                                    i=2;
+                                                                                                                                    i
+                                                                                                                                    <
+                                                                                                                                    num;
+                                                                                                                                    i++)
+                                                                                                                                    {
+                                                                                                                                    if
+                                                                                                                                    (num
+                                                                                                                                    %
+                                                                                                                                    i===0)
+                                                                                                                                    {
+                                                                                                                                    esPrimo=false;
+                                                                                                                                    break;
+                                                                                                                                    }
+                                                                                                                                    }
+                                                                                                                                    if
+                                                                                                                                    (esPrimo)
+                                                                                                                                    {
+                                                                                                                                    console.log(num);
+                                                                                                                                    }
+                                                                                                                                    }</div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+
+                                                                                                                        <div
+                                                                                                                            class="problema">
+                                                                                                                            <h3>Ejercicio
+                                                                                                                                20:
+                                                                                                                                Simulador
+                                                                                                                                de
+                                                                                                                                cajero
+                                                                                                                                automático
+                                                                                                                            </h3>
+                                                                                                                            <div
+                                                                                                                                class="enunciado">
+                                                                                                                                Simule
+                                                                                                                                un
+                                                                                                                                cajero
+                                                                                                                                automático.
+                                                                                                                                Utilice
+                                                                                                                                <strong>do-while</strong>
+                                                                                                                                para
+                                                                                                                                mostrar
+                                                                                                                                un
+                                                                                                                                menú
+                                                                                                                                con
+                                                                                                                                opciones:
+                                                                                                                                <br>1.
+                                                                                                                                Consultar
+                                                                                                                                saldo
+                                                                                                                                (saldo
+                                                                                                                                inicial:
+                                                                                                                                1000)
+                                                                                                                                <br>2.
+                                                                                                                                Retirar
+                                                                                                                                dinero
+                                                                                                                                (verifica
+                                                                                                                                que
+                                                                                                                                no
+                                                                                                                                sea
+                                                                                                                                mayor
+                                                                                                                                al
+                                                                                                                                saldo)
+                                                                                                                                <br>3.
+                                                                                                                                Depositar
+                                                                                                                                dinero
+                                                                                                                                <br>4.
+                                                                                                                                Salir
+                                                                                                                                <br>Simule
+                                                                                                                                las
+                                                                                                                                transacciones
+                                                                                                                                y
+                                                                                                                                muestre
+                                                                                                                                el
+                                                                                                                                saldo
+                                                                                                                                actualizado.
+                                                                                                                            </div>
+                                                                                                                            <div
+                                                                                                                                class="salida-esperada">
+                                                                                                                                <h4>💡
+                                                                                                                                    Salida
+                                                                                                                                    Esperada:
+                                                                                                                                </h4>
+                                                                                                                                ===
+                                                                                                                                CAJERO
+                                                                                                                                AUTOMÁTICO
+                                                                                                                                ===<br>1.
+                                                                                                                                Consultar
+                                                                                                                                saldo<br>2.
+                                                                                                                                Retirar
+                                                                                                                                dinero<br>3.
+                                                                                                                                Depositar
+                                                                                                                                dinero<br>4.
+                                                                                                                                Salir<br>
+                                                                                                                                Su
+                                                                                                                                saldo
+                                                                                                                                actual
+                                                                                                                                es:
+                                                                                                                                $1000<br>(continúa
+                                                                                                                                según
+                                                                                                                                transacciones)
+                                                                                                                            </div>
+                                                                                                                            <div class="codigo-area"
+                                                                                                                                id="codigo20">
+                                                                                                                                //
+                                                                                                                                Escribir
+                                                                                                                                el
+                                                                                                                                código
+                                                                                                                                aquí
+                                                                                                                                let
+                                                                                                                                saldo
+                                                                                                                                =
+                                                                                                                                1000;
+                                                                                                                                let
+                                                                                                                                opcion
+                                                                                                                                =
+                                                                                                                                0;
+                                                                                                                                let
+                                                                                                                                operaciones
+                                                                                                                                =
+                                                                                                                                [1,
+                                                                                                                                2,
+                                                                                                                                3,
+                                                                                                                                1,
+                                                                                                                                4];
+                                                                                                                                //
+                                                                                                                                Simula
+                                                                                                                                selecciones
+                                                                                                                                del
+                                                                                                                                usuario
+                                                                                                                                let
+                                                                                                                                indiceOp
+                                                                                                                                =
+                                                                                                                                0;
+
+                                                                                                                                do
+                                                                                                                                {
+                                                                                                                                console.log("\n===
+                                                                                                                                CAJERO
+                                                                                                                                AUTOMÁTICO
+                                                                                                                                ===");
+                                                                                                                                console.log("1.
+                                                                                                                                Consultar
+                                                                                                                                saldo");
+                                                                                                                                console.log("2.
+                                                                                                                                Retirar
+                                                                                                                                dinero");
+                                                                                                                                console.log("3.
+                                                                                                                                Depositar
+                                                                                                                                dinero");
+                                                                                                                                console.log("4.
+                                                                                                                                Salir");
+
+                                                                                                                                opcion
+                                                                                                                                =
+                                                                                                                                operaciones[indiceOp];
+                                                                                                                                console.log("Opción
+                                                                                                                                seleccionada:",
+                                                                                                                                opcion);
+
+                                                                                                                                //
+                                                                                                                                Completar
+                                                                                                                                el
+                                                                                                                                código
+                                                                                                                                para
+                                                                                                                                cada
+                                                                                                                                opción...
+
+                                                                                                                                }
+                                                                                                                                while
+                                                                                                                                (opcion
+                                                                                                                                !==
+                                                                                                                                4);
+                                                                                                                            </div>
+                                                                                                                            <button
+                                                                                                                                onclick="toggleSolucion(20)">👁️
+                                                                                                                                Ver
+                                                                                                                                Solución</button>
+                                                                                                                            <div id="solucion20"
+                                                                                                                                class="solucion">
+                                                                                                                                <h4>📝
+                                                                                                                                    Solución:
+                                                                                                                                </h4>
+                                                                                                                                <div
+                                                                                                                                    class="codigo-area">
+                                                                                                                                    let
+                                                                                                                                    saldo
+                                                                                                                                    =
+                                                                                                                                    1000;
+                                                                                                                                    let
+                                                                                                                                    opcion
+                                                                                                                                    =
+                                                                                                                                    0;
+                                                                                                                                    let
+                                                                                                                                    operaciones
+                                                                                                                                    =
+                                                                                                                                    [1,
+                                                                                                                                    2,
+                                                                                                                                    3,
+                                                                                                                                    1,
+                                                                                                                                    4];
+                                                                                                                                    //
+                                                                                                                                    Simula
+                                                                                                                                    selecciones
+                                                                                                                                    del
+                                                                                                                                    usuario
+                                                                                                                                    let
+                                                                                                                                    indiceOp
+                                                                                                                                    =
+                                                                                                                                    0;
+
+                                                                                                                                    do
+                                                                                                                                    {
+                                                                                                                                    console.log("\n===
+                                                                                                                                    CAJERO
+                                                                                                                                    AUTOMÁTICO
+                                                                                                                                    ===");
+                                                                                                                                    console.log("1.
+                                                                                                                                    Consultar
+                                                                                                                                    saldo");
+                                                                                                                                    console.log("2.
+                                                                                                                                    Retirar
+                                                                                                                                    dinero");
+                                                                                                                                    console.log("3.
+                                                                                                                                    Depositar
+                                                                                                                                    dinero");
+                                                                                                                                    console.log("4.
+                                                                                                                                    Salir");
+
+                                                                                                                                    opcion
+                                                                                                                                    =
+                                                                                                                                    operaciones[indiceOp];
+                                                                                                                                    console.log("Opción
+                                                                                                                                    seleccionada:",
+                                                                                                                                    opcion);
+
+                                                                                                                                    if
+                                                                                                                                    (opcion
+                                                                                                                                    ===
+                                                                                                                                    1)
+                                                                                                                                    {
+                                                                                                                                    console.log("Su
+                                                                                                                                    saldo
+                                                                                                                                    actual
+                                                                                                                                    es:
+                                                                                                                                    $"
+                                                                                                                                    +
+                                                                                                                                    saldo);
+                                                                                                                                    }
+                                                                                                                                    else
+                                                                                                                                    if
+                                                                                                                                    (opcion
+                                                                                                                                    ===
+                                                                                                                                    2)
+                                                                                                                                    {
+                                                                                                                                    let
+                                                                                                                                    retiro
+                                                                                                                                    =
+                                                                                                                                    200;
+                                                                                                                                    //
+                                                                                                                                    Simula
+                                                                                                                                    cantidad
+                                                                                                                                    a
+                                                                                                                                    retirar
+                                                                                                                                    if
+                                                                                                                                    (retiro
+                                                                                                                                    <= saldo)
+                                                                                                                                        {
+                                                                                                                                        saldo=saldo
+                                                                                                                                        -
+                                                                                                                                        retiro;
+                                                                                                                                        console.log("Retiro
+                                                                                                                                        exitoso.
+                                                                                                                                        Nuevo
+                                                                                                                                        saldo:
+                                                                                                                                        $"
+                                                                                                                                        +
+                                                                                                                                        saldo);
+                                                                                                                                        }
+                                                                                                                                        else
+                                                                                                                                        {
+                                                                                                                                        console.log("Saldo
+                                                                                                                                        insuficiente");
+                                                                                                                                        }
+                                                                                                                                        }
+                                                                                                                                        else
+                                                                                                                                        if
+                                                                                                                                        (opcion===3)
+                                                                                                                                        {
+                                                                                                                                        let
+                                                                                                                                        deposito=300;
+                                                                                                                                        //
+                                                                                                                                        Simula
+                                                                                                                                        cantidad
+                                                                                                                                        a
+                                                                                                                                        depositar
+                                                                                                                                        saldo=saldo
+                                                                                                                                        +
+                                                                                                                                        deposito;
+                                                                                                                                        console.log("Depósito
+                                                                                                                                        exitoso.
+                                                                                                                                        Nuevo
+                                                                                                                                        saldo:
+                                                                                                                                        $"
+                                                                                                                                        +
+                                                                                                                                        saldo);
+                                                                                                                                        }
+                                                                                                                                        indiceOp++;
+                                                                                                                                        if
+                                                                                                                                        (indiceOp>
+                                                                                                                                        =
+                                                                                                                                        operaciones.length)
+                                                                                                                                        indiceOp
+                                                                                                                                        =
+                                                                                                                                        operaciones.length
+                                                                                                                                        -
+                                                                                                                                        1;
+
+                                                                                                                                        }
+                                                                                                                                        while
+                                                                                                                                        (opcion
+                                                                                                                                        !==
+                                                                                                                                        4);
+
+                                                                                                                                        console.log("¡Gracias
+                                                                                                                                        por
+                                                                                                                                        usar
+                                                                                                                                        nuestro
+                                                                                                                                        cajero!");
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                            </div>
+
+                                                                                                            <script>
+                                                                                                                function toggleSolucion(num) {
+                                                                                                                    const solucion = document.getElementById('solucion' + num);
+                                                                                                                    if (solucion.style.display === 'none' || solucion.style.display === '') {
+                                                                                                                        solucion.style.display = 'block';
+                                                                                                                    } else {
+                                                                                                                        solucion.style.display = 'none';
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            </script>
+</body>
+
+</html>

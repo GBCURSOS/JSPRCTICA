@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 10 - Problemas con Condicionales y Ciclos</title>
+    <link rel="stylesheet" href="../CSS/taller10.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Taller 10: Problemas de Lógica con Condicionales y Ciclos</h1>
+            <div class="taller-info">
+                <span class="badge">20 Problemas</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECCIÓN 1: PROBLEMAS BÁSICOS -->
+        <div class="seccion">
+            <h2>🟢 PROBLEMAS BÁSICOS</h2>
+
+            <div class="problema">
+                <span class="dificultad basico">BÁSICO</span>
+                <h3>Problema 1: Contador de números positivos</h3>
+                <div class="enunciado">
+                    Una empresa quiere analizar una lista de números que representan ganancias (positivas) y pérdidas
+                    (negativas) durante 10 días.
+                    <strong>Cuenta cuántos días tuvieron ganancias</strong> y muestra el resultado.
+                </div>
+                <div class="contexto">
+                    <h4>📊 Datos:</h4>
+                    Números: [150, -80, 200, -45, 300, 120, -30, 250, -100, 180]
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Total de días con ganancias: 6
+                </div>
+                <button onclick="toggleSolucion(1)">👁️ Ver Solución</button>
+                <div id="solucion1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">const numeros = [150, -80, 200, -45, 300, 120, -30, 250, -100, 180];
+                        let diasConGanancias = 0;
+
+                        for (let i = 0; i < numeros.length; i++) { if (numeros[i]> 0) {
+                            diasConGanancias++;
+                            }
+                            }
+
+                            console.log("Total de días con ganancias:", diasConGanancias);</div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad basico">BÁSICO</span>
+                <h3>Problema 2: Buscador de contraseña</h3>
+                <div class="enunciado">
+                    Un usuario ha olvidado su contraseña de 4 dígitos, pero recuerda que está entre 1000 y 1010.
+                    <strong>Ayúdale a encontrar su contraseña</strong> probando todos los números hasta encontrar el
+                    correcto.
+                </div>
+                <div class="contexto">
+                    <h4>🔐 Datos:</h4>
+                    La contraseña correcta es: 1007
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Probando: 1000<br>Probando: 1001<br>...<br>¡Contraseña encontrada: 1007!
+                </div>
+                <button onclick="toggleSolucion(2)">👁️ Ver Solución</button>
+                <div id="solucion2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">const contraseñaCorrecta = 1007;
+
+                        for (let intento = 1000; intento <= 1010; intento++) { console.log("Probando:", intento); if
+                            (intento===contraseñaCorrecta) { console.log("¡Contraseña encontrada:", intento + "!" );
+                            break; } }</div>
+                    </div>
+                </div>
+
+                <div class="problema">
+                    <span class="dificultad basico">BÁSICO</span>
+                    <h3>Problema 3: Calificaciones escolares</h3>
+                    <div class="enunciado">
+                        Un profesor tiene las calificaciones de 8 estudiantes y quiere saber cuántos aprobaron (nota >=
+                        6)
+                        y cuántos reprobaron. <strong>Clasifica las calificaciones</strong> y muestra los totales.
+                    </div>
+                    <div class="contexto">
+                        <h4>📚 Datos:</h4>
+                        Calificaciones: [8.5, 4.2, 7.0, 5.8, 9.2, 6.5, 3.9, 8.1]
+                    </div>
+                    <div class="salida-esperada">
+                        <h4>💡 Salida Esperada:</h4>
+                        Estudiantes aprobados: 5<br>Estudiantes reprobados: 3
+                    </div>
+                    <button onclick="toggleSolucion(3)">👁️ Ver Solución</button>
+                    <div id="solucion3" class="solucion">
+                        <h4>📝 Solución:</h4>
+                        <div class="codigo-area">const calificaciones = [8.5, 4.2, 7.0, 5.8, 9.2, 6.5, 3.9, 8.1];
+                            let aprobados = 0;
+                            let reprobados = 0;
+
+                            for (let i = 0; i < calificaciones.length; i++) { if (calificaciones[i]>= 6) {
+                                aprobados++;
+                                } else {
+                                reprobados++;
+                                }
+                                }
+
+                                console.log("Estudiantes aprobados:", aprobados);
+                                console.log("Estudiantes reprobados:", reprobados);</div>
+                    </div>
+                </div>
+
+                <div class="problema">
+                    <span class="dificultad basico">BÁSICO</span>
+                    <h3>Problema 4: Calculadora de factorial</h3>
+                    <div class="enunciado">
+                        Una fábrica necesita calcular cuántas formas diferentes puede organizar 6 productos en una fila.
+                        <strong>Calcula el factorial de 6</strong> (6! = 6 × 5 × 4 × 3 × 2 × 1).
+                    </div>
+                    <div class="contexto">
+                        <h4>🏭 Contexto:</h4>
+                        El factorial indica el número de permutaciones posibles de organizar los productos.
+                    </div>
+                    <div class="salida-esperada">
+                        <h4>💡 Salida Esperada:</h4>
+                        El factorial de 6 es: 720
+                    </div>
+                    <button onclick="toggleSolucion(4)">👁️ Ver Solución</button>
+                    <div id="solucion4" class="solucion">
+                        <h4>📝 Solución:</h4>
+                        <div class="codigo-area">const numero = 6;
+let factorial = 1;
+
+for (let i = 1; i <= numero; i++) {
+    factorial *= i;
+}
+
+console.log("El factorial de", numero, "es:", factorial);</div>
+                    </div>
+                    </div>
+
+                    <div class="problema">
+                        <span class="dificultad basico">BÁSICO</span>
+                        <h3>Problema 5: Contador de vocales</h3>
+                        <div class="enunciado">
+                            Un escritor quiere analizar su texto y necesita contar cuántas vocales (a, e, i, o, u)
+                            contiene.
+                            <strong>Cuenta las vocales</strong> en la palabra dada.
+                        </div>
+                        <div class="contexto">
+                            <h4>📝 Datos:</h4>
+                            Palabra: "programacion"
+                        </div>
+                        <div class="salida-esperada">
+                            <h4>💡 Salida Esperada:</h4>
+                            La palabra "programacion" tiene 5 vocales
+                        </div>
+                        <button onclick="toggleSolucion(5)">👁️ Ver Solución</button>
+                        <div id="solucion5" class="solucion">
+                            <h4>📝 Solución:</h4>
+                            <div class="codigo-area">const palabra = "programacion";
+const vocales = "aeiou";
+let contadorVocales = 0;
+
+for (let i = 0; i < palabra.length; i++) {
+    let letra = palabra[i].toLowerCase();
+    if (vocales.includes(letra)) {
+        contadorVocales++;
+    }
+}
+
+console.log(`La palabra "${palabra}" tiene ${contadorVocales} vocales`);</div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN 2: PROBLEMAS INTERMEDIOS -->
+                    <div class="seccion">
+                        <h2>🟡 PROBLEMAS INTERMEDIOS</h2>
+
+                        <div class="problema">
+                            <span class="dificultad intermedio">INTERMEDIO</span>
+                            <h3>Problema 6: Sistema de inventario</h3>
+                            <div class="enunciado">
+                                Una tienda tiene un inventario de productos con sus cantidades. Quiere identificar qué
+                                productos necesita
+                                reabastecer (cantidad < 10) y cuáles están bien surtidos. <strong>Clasifica el
+                                    inventario</strong>.
+                            </div>
+                            <div class="contexto">
+                                <h4>📦 Datos:</h4>
+                                Inventario: {laptops: 5, mouse: 25, teclados: 8, monitores: 15, cables: 3}
+                            </div>
+                            <div class="salida-esperada">
+                                <h4>💡 Salida Esperada:</h4>
+                                REABASTECER: laptops (5)<br>REABASTECER: teclados (8)<br>REABASTECER: cables (3)<br>
+                                BIEN SURTIDO: mouse (25)<br>BIEN SURTIDO: monitores (15)
+                            </div>
+                            <button onclick="toggleSolucion(6)">👁️ Ver Solución</button>
+                            <div id="solucion6" class="solucion">
+                                <h4>📝 Solución:</h4>
+                                <div class="codigo-area">const inventario = {
+                                    laptops: 5,
+                                    mouse: 25,
+                                    teclados: 8,
+                                    monitores: 15,
+                                    cables: 3
+                                    };
+
+                                    for (let producto in inventario) {
+                                    let cantidad = inventario[producto];
+                                    if (cantidad < 10) { console.log(`REABASTECER: ${producto} (${cantidad})`); } else {
+                                        console.log(`BIEN SURTIDO: ${producto} (${cantidad})`); } }</div>
+                                </div>
+                            </div>
+
+                            <div class="problema">
+                                <span class="dificultad intermedio">INTERMEDIO</span>
+                                <h3>Problema 7: Validador de números primos</h3>
+                                <div class="enunciado">
+                                    Un matemático necesita verificar si un número es primo (solo divisible por 1 y por
+                                    sí mismo).
+                                    <strong>Verifica si el número 17 es primo</strong> probando todas las divisiones
+                                    posibles.
+                                </div>
+                                <div class="contexto">
+                                    <h4>🔢 Contexto:</h4>
+                                    Un número es primo si no tiene divisores entre 2 y el número-1.
+                                </div>
+                                <div class="salida-esperada">
+                                    <h4>💡 Salida Esperada:</h4>
+                                    Verificando divisibilidad...<br>El número 17 ES primo
+                                </div>
+                                <button onclick="toggleSolucion(7)">👁️ Ver Solución</button>
+                                <div id="solucion7" class="solucion">
+                                    <h4>📝 Solución:</h4>
+                                    <div class="codigo-area">const numero = 17;
+                                        let esPrimo = true;
+
+                                        console.log("Verificando divisibilidad...");
+
+                                        if (numero <= 1) { esPrimo=false; } else { for (let i=2; i < numero; i++) { if
+                                            (numero % i===0) { esPrimo=false; break; } } } if (esPrimo) {
+                                            console.log(`El número ${numero} ES primo`); } else { console.log(`El número
+                                            ${numero} NO es primo`); }</div>
+                                    </div>
+                                </div>
+
+                                <div class="problema">
+                                    <span class="dificultad intermedio">INTERMEDIO</span>
+                                    <h3>Problema 8: Calculadora de promedio de temperaturas</h3>
+                                    <div class="enunciado">
+                                        Una estación meteorológica registró temperaturas durante una semana. Necesita
+                                        calcular el promedio
+                                        y determinar cuántos días estuvieron por encima del promedio. <strong>Analiza
+                                            las temperaturas</strong>.
+                                    </div>
+                                    <div class="contexto">
+                                        <h4>🌡️ Datos:</h4>
+                                        Temperaturas: [22, 25, 19, 27, 24, 21, 26] (°C)
+                                    </div>
+                                    <div class="salida-esperada">
+                                        <h4>💡 Salida Esperada:</h4>
+                                        Promedio de temperatura: 23.43°C<br>Días por encima del promedio: 3
+                                    </div>
+                                    <button onclick="toggleSolucion(8)">👁️ Ver Solución</button>
+                                    <div id="solucion8" class="solucion">
+                                        <h4>📝 Solución:</h4>
+                                        <div class="codigo-area">const temperaturas = [22, 25, 19, 27, 24, 21, 26];
+                                            let suma = 0;
+
+                                            // Calcular suma
+                                            for (let i = 0; i < temperaturas.length; i++) { suma +=temperaturas[i]; } //
+                                                Calcular promedio let promedio=suma / temperaturas.length; // Contar
+                                                días por encima del promedio let diasEncima=0; for (let i=0; i <
+                                                temperaturas.length; i++) { if (temperaturas[i]> promedio) {
+                                                diasEncima++;
+                                                }
+                                                }
+
+                                                console.log("Promedio de temperatura:", promedio.toFixed(2) + "°C");
+                                                console.log("Días por encima del promedio:", diasEncima);</div>
+                                    </div>
+                                </div>
+
+                                <div class="problema">
+                                    <span class="dificultad intermedio">INTERMEDIO</span>
+                                    <h3>Problema 9: Generador de tabla de multiplicar personalizada</h3>
+                                    <div class="enunciado">
+                                        Un profesor quiere generar tablas de multiplicar para varios números, pero solo
+                                        hasta cierto límite.
+                                        <strong>Genera las tablas del 3, 7 y 9 hasta el 6</strong>.
+                                    </div>
+                                    <div class="contexto">
+                                        <h4>📚 Contexto:</h4>
+                                        Debe generar tablas para números específicos con un límite determinado.
+                                    </div>
+                                    <div class="salida-esperada">
+                                        <h4>💡 Salida Esperada:</h4>
+                                        Tabla del 3:<br>3 x 1 = 3<br>...<br>Tabla del 7:<br>...<br>Tabla del 9:<br>...
+                                    </div>
+                                    <button onclick="toggleSolucion(9)">👁️ Ver Solución</button>
+                                    <div id="solucion9" class="solucion">
+                                        <h4>📝 Solución:</h4>
+                                        <div class="codigo-area">const numeros = [3, 7, 9];
+                                            const limite = 6;
+
+                                            for (let i = 0; i < numeros.length; i++) { let numero=numeros[i];
+                                                console.log(`Tabla del ${numero}:`); for (let j=1; j <=limite; j++) {
+                                                console.log(`${numero} x ${j}=${numero * j}`); } console.log(""); //
+                                                Línea en blanco }</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="problema">
+                                        <span class="dificultad intermedio">INTERMEDIO</span>
+                                        <h3>Problema 10: Contador de palabras en texto</h3>
+                                        <div class="enunciado">
+                                            Un editor de texto necesita contar cuántas palabras tiene un párrafo. Las
+                                            palabras están separadas por espacios.
+                                            <strong>Cuenta las palabras</strong> en el texto dado.
+                                        </div>
+                                        <div class="contexto">
+                                            <h4>📄 Datos:</h4>
+                                            Texto: "JavaScript es un lenguaje de programacion muy popular"
+                                        </div>
+                                        <div class="salida-esperada">
+                                            <h4>💡 Salida Esperada:</h4>
+                                            El texto tiene 9 palabras
+                                        </div>
+                                        <button onclick="toggleSolucion(10)">👁️ Ver Solución</button>
+                                        <div id="solucion10" class="solucion">
+                                            <h4>📝 Solución:</h4>
+                                            <div class="codigo-area">const texto = "JavaScript es un lenguaje de
+                                                programacion muy popular";
+                                                let palabras = 1; // Empezamos con 1 porque si hay texto, hay al menos 1
+                                                palabra
+
+                                                // Contar espacios para determinar número de palabras
+                                                for (let i = 0; i < texto.length; i++) { if (texto[i]===" " ) {
+                                                    palabras++; } } console.log("El texto tiene", palabras, "palabras"
+                                                    );</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- SECCIÓN 3: PROBLEMAS AVANZADOS -->
+                                    <div class="seccion">
+                                        <h2>🔴 PROBLEMAS AVANZADOS</h2>
+
+                                        <div class="problema">
+                                            <span class="dificultad avanzado">AVANZADO</span>
+                                            <h3>Problema 11: Sistema de votación</h3>
+                                            <div class="enunciado">
+                                                En una elección estudiantil, se registraron votos para diferentes
+                                                candidatos. Necesitas determinar
+                                                quién ganó, cuántos votos obtuvo y si hay empate. <strong>Procesa los
+                                                    resultados electorales</strong>.
+                                            </div>
+                                            <div class="contexto">
+                                                <h4>🗳️ Datos:</h4>
+                                                Votos: ["Ana", "Carlos", "Ana", "María", "Carlos", "Ana", "Luis",
+                                                "María", "Carlos", "Ana"]
+                                            </div>
+                                            <div class="salida-esperada">
+                                                <h4>💡 Salida Esperada:</h4>
+                                                Ana: 4 votos<br>Carlos: 3 votos<br>María: 2 votos<br>Luis: 1
+                                                voto<br>Ganador: Ana con 4 votos
+                                            </div>
+                                            <button onclick="toggleSolucion(11)">👁️ Ver Solución</button>
+                                            <div id="solucion11" class="solucion">
+                                                <h4>📝 Solución:</h4>
+                                                <div class="codigo-area">const votos = ["Ana", "Carlos", "Ana", "María",
+                                                    "Carlos", "Ana", "Luis", "María", "Carlos", "Ana"];
+                                                    const conteoVotos = {};
+
+                                                    // Contar votos
+                                                    for (let i = 0; i < votos.length; i++) { let candidato=votos[i]; if
+                                                        (conteoVotos[candidato]) { conteoVotos[candidato]++; } else {
+                                                        conteoVotos[candidato]=1; } } // Mostrar resultados let
+                                                        ganador="" ; let maxVotos=0; for (let candidato in conteoVotos)
+                                                        { console.log(`${candidato}: ${conteoVotos[candidato]} votos`);
+                                                        if (conteoVotos[candidato]> maxVotos) {
+                                                        maxVotos = conteoVotos[candidato];
+                                                        ganador = candidato;
+                                                        }
+                                                        }
+
+                                                        console.log(`Ganador: ${ganador} con ${maxVotos} votos`);</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="problema">
+                                            <span class="dificultad avanzado">AVANZADO</span>
+                                            <h3>Problema 12: Detector de secuencias numéricas</h3>
+                                            <div class="enunciado">
+                                                Un científico está analizando datos y necesita encontrar la secuencia de
+                                                números consecutivos más larga.
+                                                <strong>Encuentra la secuencia consecutiva más larga</strong> en el
+                                                array dado.
+                                            </div>
+                                            <div class="contexto">
+                                                <h4>🔬 Datos:</h4>
+                                                Números: [1, 2, 3, 7, 8, 12, 13, 14, 15, 20]
+                                            </div>
+                                            <div class="salida-esperada">
+                                                <h4>💡 Salida Esperada:</h4>
+                                                Secuencia más larga: [12, 13, 14, 15] con 4 números consecutivos
+                                            </div>
+                                            <button onclick="toggleSolucion(12)">👁️ Ver Solución</button>
+                                            <div id="solucion12" class="solucion">
+                                                <h4>📝 Solución:</h4>
+                                                <div class="codigo-area">const numeros = [1, 2, 3, 7, 8, 12, 13, 14, 15,
+                                                    20];
+                                                    let secuenciaActual = [numeros[0]];
+                                                    let mejorSecuencia = [numeros[0]];
+
+                                                    for (let i = 1; i < numeros.length; i++) { if
+                                                        (numeros[i]===numeros[i-1] + 1) { // Es consecutivo, agregarlo a
+                                                        la secuencia actual secuenciaActual.push(numeros[i]); } else {
+                                                        // No es consecutivo, verificar si la secuencia actual es la
+                                                        mejor if (secuenciaActual.length> mejorSecuencia.length) {
+                                                        mejorSecuencia = [...secuenciaActual];
+                                                        }
+                                                        // Iniciar nueva secuencia
+                                                        secuenciaActual = [numeros[i]];
+                                                        }
+                                                        }
+
+                                                        // Verificar la última secuencia
+                                                        if (secuenciaActual.length > mejorSecuencia.length) {
+                                                        mejorSecuencia = [...secuenciaActual];
+                                                        }
+
+                                                        console.log(`Secuencia más larga: [${mejorSecuencia.join(", ")}]
+                                                        con ${mejorSecuencia.length} números consecutivos`);</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="problema">
+                                            <span class="dificultad avanzado">AVANZADO</span>
+                                            <h3>Problema 13: Calculadora de números perfectos</h3>
+                                            <div class="enunciado">
+                                                Un número perfecto es aquel que es igual a la suma de sus divisores
+                                                propios (excluyendo el número mismo).
+                                                <strong>Encuentra todos los números perfectos menores a 30</strong>.
+                                            </div>
+                                            <div class="contexto">
+                                                <h4>🔢 Contexto:</h4>
+                                                Ejemplo: 6 es perfecto porque 6 = 1 + 2 + 3 (sus divisores propios)
+                                            </div>
+                                            <div class="salida-esperada">
+                                                <h4>💡 Salida Esperada:</h4>
+                                                Verificando número 6: Divisores [1, 2, 3], Suma: 6 - ES PERFECTO<br>
+                                                Verificando número 28: Divisores [1, 2, 4, 7, 14], Suma: 28 - ES
+                                                PERFECTO<br>
+                                                Números perfectos encontrados: [6, 28]
+                                            </div>
+                                            <button onclick="toggleSolucion(13)">👁️ Ver Solución</button>
+                                            <div id="solucion13" class="solucion">
+                                                <h4>📝 Solución:</h4>
+                                                <div class="codigo-area">const limite = 30;
+                                                    const numerosPerfectos = [];
+
+                                                    for (let num = 1; num < limite; num++) { let divisores=[]; let
+                                                        sumaDivisores=0; // Encontrar divisores propios for (let i=1; i
+                                                        < num; i++) { if (num % i===0) { divisores.push(i);
+                                                        sumaDivisores +=i; } } // Verificar si es perfecto if
+                                                        (sumaDivisores===num && divisores.length> 0) {
+                                                        console.log(`Verificando número ${num}: Divisores
+                                                        [${divisores.join(", ")}], Suma: ${sumaDivisores} - ES
+                                                        PERFECTO`);
+                                                        numerosPerfectos.push(num);
+                                                        }
+                                                        }
+
+                                                        console.log("Números perfectos encontrados:", numerosPerfectos);
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="problema">
+                                            <span class="dificultad avanzado">AVANZADO</span>
+                                            <h3>Problema 14: Analizador de patrones de ventas</h3>
+                                            <div class="enunciado">
+                                                Una empresa quiere analizar sus ventas diarias para identificar
+                                                tendencias. Necesita encontrar
+                                                la racha más larga de días consecutivos con ventas crecientes.
+                                                <strong>Encuentra la mejor racha</strong>.
+                                            </div>
+                                            <div class="contexto">
+                                                <h4>📈 Datos:</h4>
+                                                Ventas diarias: [100, 120, 130, 125, 140, 150, 160, 155, 170, 180]
+                                            </div>
+                                            <div class="salida-esperada">
+                                                <h4>💡 Salida Esperada:</h4>
+                                                Mayor racha de crecimiento: 4 días consecutivos (días 5-8)<br>
+                                                Ventas en esa racha: [140, 150, 160, 170]
+                                            </div>
+                                            <button onclick="toggleSolucion(14)">👁️ Ver Solución</button>
+                                            <div id="solucion14" class="solucion">
+                                                <h4>📝 Solución:</h4>
+                                                <div class="codigo-area">const ventas = [100, 120, 130, 125, 140, 150,
+                                                    160, 155, 170, 180];
+                                                    let rachaActual = 1;
+                                                    let mejorRacha = 1;
+                                                    let inicioMejorRacha = 0;
+                                                    let inicioRachaActual = 0;
+
+                                                    for (let i = 1; i < ventas.length; i++) { if (ventas[i]>
+                                                        ventas[i-1]) {
+                                                        // Ventas crecientes
+                                                        rachaActual++;
+                                                        } else {
+                                                        // Se rompió la racha
+                                                        if (rachaActual > mejorRacha) {
+                                                        mejorRacha = rachaActual;
+                                                        inicioMejorRacha = inicioRachaActual;
+                                                        }
+                                                        rachaActual = 1;
+                                                        inicioRachaActual = i;
+                                                        }
+                                                        }
+
+                                                        // Verificar la última racha
+                                                        if (rachaActual > mejorRacha) {
+                                                        mejorRacha = rachaActual;
+                                                        inicioMejorRacha = inicioRachaActual;
+                                                        }
+
+                                                        // Extraer las ventas de la mejor racha
+                                                        let ventasMejorRacha = [];
+                                                        for (let i = inicioMejorRacha; i < inicioMejorRacha +
+                                                            mejorRacha; i++) { ventasMejorRacha.push(ventas[i]); }
+                                                            console.log(`Mayor racha de crecimiento: ${mejorRacha} días
+                                                            consecutivos (días ${inicioMejorRacha +
+                                                            1}-${inicioMejorRacha + mejorRacha})`); console.log("Ventas
+                                                            en esa racha:", ventasMejorRacha);</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="problema">
+                                                <span class="dificultad avanzado">AVANZADO</span>
+                                                <h3>Problema 15: Generador de pirámide numérica</h3>
+                                                <div class="enunciado">
+                                                    Un programador necesita crear una pirámide numérica donde cada fila
+                                                    tenga números consecutivos
+                                                    empezando desde 1. <strong>Genera una pirámide de 5
+                                                        niveles</strong>.
+                                                </div>
+                                                <div class="contexto">
+                                                    <h4>🏗️ Contexto:</h4>
+                                                    Cada fila debe tener tantos números como su número de fila.
+                                                </div>
+                                                <div class="salida-esperada">
+                                                    <h4>💡 Salida Esperada:</h4>
+                                                    1<br>2 3<br>4 5 6<br>7 8 9 10<br>11 12 13 14 15
+                                                </div>
+                                                <button onclick="toggleSolucion(15)">👁️ Ver Solución</button>
+                                                <div id="solucion15" class="solucion">
+                                                    <h4>📝 Solución:</h4>
+                                                    <div class="codigo-area">const niveles = 5;
+                                                        let numeroActual = 1;
+
+                                                        for (let fila = 1; fila <= niveles; fila++) { let lineaTexto=""
+                                                            ; for (let columna=1; columna <=fila; columna++) {
+                                                            lineaTexto +=numeroActual; if (columna < fila) { lineaTexto
+                                                            +=" " ; } numeroActual++; } console.log(lineaTexto); }</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- SECCIÓN 4: PROBLEMAS EXPERTOS -->
+                                            <div class="seccion">
+                                                <h2>🚀 PROBLEMAS EXPERTOS</h2>
+
+                                                <div class="problema">
+                                                    <span class="dificultad avanzado">EXPERTO</span>
+                                                    <h3>Problema 16: Simulador de juego de dados</h3>
+                                                    <div class="enunciado">
+                                                        Simula un juego donde dos jugadores lanzan dados por turnos. El
+                                                        primer jugador en obtener una suma
+                                                        total de 20 o más puntos gana. <strong>Simula el juego
+                                                            completo</strong> con dados predefinidos.
+                                                    </div>
+                                                    <div class="contexto">
+                                                        <h4>🎲 Datos:</h4>
+                                                        Dados simulados: [3, 6, 2, 4, 5, 1, 6, 3, 4, 2, 5, 6, 1, 4, 3]
+                                                    </div>
+                                                    <div class="salida-esperada">
+                                                        <h4>💡 Salida Esperada:</h4>
+                                                        Turno 1 - Jugador 1: 3, Total: 3<br>Turno 1 - Jugador 2: 6,
+                                                        Total: 6<br>...<br>
+                                                        ¡Jugador X gana con Y puntos!
+                                                    </div>
+                                                    <button onclick="toggleSolucion(16)">👁️ Ver Solución</button>
+                                                    <div id="solucion16" class="solucion">
+                                                        <h4>📝 Solución:</h4>
+                                                        <div class="codigo-area">const dados = [3, 6, 2, 4, 5, 1, 6, 3,
+                                                            4, 2, 5, 6, 1, 4, 3];
+                                                            let puntosJugador1 = 0;
+                                                            let puntosJugador2 = 0;
+                                                            let turno = 1;
+                                                            let indiceDado = 0;
+                                                            let ganador = null;
+
+                                                            while (ganador === null && indiceDado < dados.length) { //
+                                                                Turno del Jugador 1 if (indiceDado < dados.length) { let
+                                                                dado=dados[indiceDado]; puntosJugador1 +=dado;
+                                                                console.log(`Turno ${turno} - Jugador 1: ${dado}, Total:
+                                                                ${puntosJugador1}`); indiceDado++; if (puntosJugador1>=
+                                                                20) {
+                                                                ganador = "Jugador 1";
+                                                                break;
+                                                                }
+                                                                }
+
+                                                                // Turno del Jugador 2
+                                                                if (indiceDado < dados.length) { let
+                                                                    dado=dados[indiceDado]; puntosJugador2 +=dado;
+                                                                    console.log(`Turno ${turno} - Jugador 2: ${dado},
+                                                                    Total: ${puntosJugador2}`); indiceDado++; if
+                                                                    (puntosJugador2>= 20) {
+                                                                    ganador = "Jugador 2";
+                                                                    break;
+                                                                    }
+                                                                    }
+
+                                                                    turno++;
+                                                                    }
+
+                                                                    if (ganador === "Jugador 1") {
+                                                                    console.log(`¡Jugador 1 gana con ${puntosJugador1}
+                                                                    puntos!`);
+                                                                    } else if (ganador === "Jugador 2") {
+                                                                    console.log(`¡Jugador 2 gana con ${puntosJugador2}
+                                                                    puntos!`);
+                                                                    } else {
+                                                                    console.log("Juego terminado sin ganador (se
+                                                                    acabaron los dados)");
+                                                                    }</div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="problema">
+                                                    <span class="dificultad avanzado">EXPERTO</span>
+                                                    <h3>Problema 17: Detector de palíndromos numéricos</h3>
+                                                    <div class="enunciado">
+                                                        Un matemático está estudiando números especiales llamados
+                                                        palíndromos (que se leen igual al derecho y al revés).
+                                                        <strong>Encuentra todos los palíndromos de 3 dígitos</strong>
+                                                        entre 100 y 150.
+                                                    </div>
+                                                    <div class="contexto">
+                                                        <h4>🔢 Contexto:</h4>
+                                                        Un palíndromo numérico es igual cuando se lee de izquierda a
+                                                        derecha y de derecha a izquierda.
+                                                    </div>
+                                                    <div class="salida-esperada">
+                                                        <h4>💡 Salida Esperada:</h4>
+                                                        Verificando 101: SÍ es palíndromo<br>Verificando 111: SÍ es
+                                                        palíndromo<br>...<br>
+                                                        Palíndromos encontrados: [101, 111, 121, 131, 141]
+                                                    </div>
+                                                    <button onclick="toggleSolucion(17)">👁️ Ver Solución</button>
+                                                    <div id="solucion17" class="solucion">
+                                                        <h4>📝 Solución:</h4>
+                                                        <div class="codigo-area">const inicio = 100;
+                                                            const fin = 150;
+                                                            const palindromos = [];
+
+                                                            for (let num = inicio; num <= fin; num++) { // Convertir
+                                                                número a string para facilitar la comparación let
+                                                                numStr=num.toString(); let esPolindromo=true; //
+                                                                Verificar si es palíndromo comparando caracteres for
+                                                                (let i=0; i < numStr.length / 2; i++) { if (numStr[i]
+                                                                !==numStr[numStr.length - 1 - i]) { esPolindromo=false;
+                                                                break; } } if (esPolindromo) { console.log(`Verificando
+                                                                ${num}: SÍ es palíndromo`); palindromos.push(num); } }
+                                                                console.log("Palíndromos encontrados:",
+                                                                palindromos);</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="problema">
+                                                        <span class="dificultad avanzado">EXPERTO</span>
+                                                        <h3>Problema 18: Sistema de calificación ponderada</h3>
+                                                        <div class="enunciado">
+                                                            Una universidad calcula promedios ponderados donde
+                                                            diferentes materias tienen diferentes pesos.
+                                                            <strong>Calcula el promedio ponderado</strong> y determina
+                                                            si el estudiante aprueba (>=7.0).
+                                                        </div>
+                                                        <div class="contexto">
+                                                            <h4>🎓 Datos:</h4>
+                                                            Materias: {matematicas: {nota: 8.5, creditos: 4}, fisica:
+                                                            {nota: 7.2, creditos: 3}, quimica: {nota: 9.0, creditos: 3},
+                                                            literatura: {nota: 6.8, creditos: 2}}
+                                                        </div>
+                                                        <div class="salida-esperada">
+                                                            <h4>💡 Salida Esperada:</h4>
+                                                            matematicas: 8.5 (4 créditos)<br>fisica: 7.2 (3
+                                                            créditos)<br>...<br>
+                                                            Promedio ponderado: 8.02<br>Estado: APROBADO
+                                                        </div>
+                                                        <div class="codigo-area" id="codigo18">// Resolver el problema
+                                                            aquí
+
+                                                        </div>
+                                                        <button onclick="toggleSolucion(18)">👁️ Ver Solución</button>
+                                                        <div id="solucion18" class="solucion">
+                                                            <h4>📝 Solución:</h4>
+                                                            <div class="codigo-area">const materias = {
+matematicas: {
+nota: 8.5, creditos: 4
+}
+,
+fisica: {
+nota: 7.2, creditos: 3
+}
+,
+quimica: {
+nota: 9.0, creditos: 3
+}
+,
+literatura: {
+nota: 6.8, creditos: 2
+}
+}
+;
+let sumaNotasPonderadas = 0;
+let totalCreditos = 0;
+for (let materia in materias) {
+let nota = materias[materia].nota;
+let creditos = materias[materia].creditos;
+console.log(`$ {
+materia
+}
+: $ {
+nota
+}
+($ {
+creditos
+}
+créditos)`);
+sumaNotasPonderadas += nota * creditos;
+totalCreditos += creditos;
+}
+let promedioPonderado = sumaNotasPonderadas /
+totalCreditos;
+let estado = promedioPonderado  >=  7.0 ? "APROBADO" :
+"REPROBADO";
+console.log("Promedio ponderado:",
+promedioPonderado.toFixed(2));
+console.log("Estado:", estado);</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="problema">
+                                                        <span class="dificultad avanzado">EXPERTO</span>
+                                                        <h3>Problema 19: Algoritmo de ordenamiento burbuja</h3>
+                                                        <div class="enunciado">
+                                                            Un desarrollador necesita implementar el algoritmo de
+                                                            ordenamiento burbuja para ordenar una lista de números.
+                                                            <strong>Ordena el array</strong> mostrando cada intercambio
+                                                            realizado.
+                                                        </div>
+                                                        <div class="contexto">
+                                                            <h4>🔄 Datos:</h4>
+                                                            Array: [64, 34, 25, 12, 22, 11, 90]
+                                                        </div>
+                                                        <div class="salida-esperada">
+                                                            <h4>💡 Salida Esperada:</h4>
+                                                            Pasada 1: [34, 25, 12, 22, 11, 64, 90]<br>Pasada 2: [25, 12,
+                                                            22, 11, 34, 64, 90]<br>...<br>
+                                                            Array ordenado: [11, 12, 22, 25, 34, 64, 90]
+                                                        </div>
+                                                        <div class="codigo-area" id="codigo19">// Resolver el problema
+                                                            aquí
+
+                                                        </div>
+                                                        <button onclick="toggleSolucion(19)">👁️ Ver Solución</button>
+                                                        <div id="solucion19" class="solucion">
+                                                            <h4>📝 Solución:</h4>
+                                                            <div class="codigo-area">let arr = [64, 34, 25, 12, 22, 11,
+                                                                90];
+                                                                let n = arr.length;
+
+                                                                console.log("Array inicial:", arr);
+
+                                                                for (let i = 0; i < n - 1; i++) { let
+                                                                    intercambios=false; for (let j=0; j < n - i - 1;
+                                                                    j++) { if (arr[j]> arr[j + 1]) {
+                                                                    // Intercambiar elementos
+                                                                    let temp = arr[j];
+                                                                    arr[j] = arr[j + 1];
+                                                                    arr[j + 1] = temp;
+                                                                    intercambios = true;
+                                                                    }
+                                                                    }
+
+                                                                    console.log(`Pasada ${i + 1}:`, [...arr]);
+
+                                                                    // Si no hubo intercambios, el array ya está
+                                                                    ordenado
+                                                                    if (!intercambios) {
+                                                                    break;
+                                                                    }
+                                                                    }
+
+                                                                    console.log("Array ordenado:", arr);</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="problema">
+                                                        <span class="dificultad avanzado">EXPERTO</span>
+                                                        <h3>Problema 20: Calculadora de secuencia de Fibonacci</h3>
+                                                        <div class="enunciado">
+                                                            Un matemático estudia la secuencia de Fibonacci donde cada
+                                                            número es la suma de los dos anteriores (0, 1, 1, 2, 3, 5,
+                                                            8...).
+                                                            <strong>Genera los primeros 15 números de Fibonacci</strong>
+                                                            y encuentra cuáles son pares.
+                                                        </div>
+                                                        <div class="contexto">
+                                                            <h4>🔢 Contexto:</h4>
+                                                            La secuencia comienza con 0 y 1, y cada siguiente número es
+                                                            la suma de los dos anteriores.
+                                                        </div>
+                                                        <div class="salida-esperada">
+                                                            <h4>💡 Salida Esperada:</h4>
+                                                            Secuencia Fibonacci: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55,
+                                                            89, 144, 233, 377]<br>
+                                                            Números pares en la secuencia: [0, 2, 8, 34, 144]
+                                                        </div>
+                                                        <div class="codigo-area" id="codigo20">// Resolver el problema
+                                                            aquí
+
+                                                        </div>
+                                                        <button onclick="toggleSolucion(20)">👁️ Ver Solución</button>
+                                                        <div id="solucion20" class="solucion">
+                                                            <h4>📝 Solución:</h4>
+                                                            <div class="codigo-area">const cantidad = 15;
+                                                                const fibonacci = [];
+                                                                const numerosPares = [];
+
+                                                                // Inicializar los primeros dos números
+                                                                fibonacci[0] = 0;
+                                                                fibonacci[1] = 1;
+
+                                                                // Verificar si los primeros números son pares
+                                                                if (fibonacci[0] % 2 === 0) {
+                                                                numerosPares.push(fibonacci[0]);
+                                                                }
+                                                                if (fibonacci[1] % 2 === 0) {
+                                                                numerosPares.push(fibonacci[1]);
+                                                                }
+
+                                                                // Generar el resto de la secuencia
+                                                                for (let i = 2; i < cantidad; i++) {
+                                                                    fibonacci[i]=fibonacci[i-1] + fibonacci[i-2]; //
+                                                                    Verificar si es par if (fibonacci[i] % 2===0) {
+                                                                    numerosPares.push(fibonacci[i]); } }
+                                                                    console.log("Secuencia Fibonacci:", fibonacci);
+                                                                    console.log("Números pares en la secuencia:",
+                                                                    numerosPares);</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <script>
+                                                    function toggleSolucion(num) {
+                                                        const solucion = document.getElementById('solucion' + num);
+                                                        if (solucion.style.display === 'none' || solucion.style.display === '') {
+                                                            solucion.style.display = 'block';
+                                                        } else {
+                                                            solucion.style.display = 'none';
+                                                        }
+                                                    }
+                                                </script>
+</body>
+
+</html>
