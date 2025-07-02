@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch JavaScript",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/${relativeFile}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "Launch HTML with JS",
+            "type": "chrome",
+            "request": "launch",
+            "url": "file://${workspaceFolder}/${relativeFile}",
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true
+        }
+    ]
+}
