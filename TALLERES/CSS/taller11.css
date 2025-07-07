@@ -1,0 +1,433 @@
+/* Variables CSS para la paleta de colores */
+:root {
+  /* Paleta de colores principal */
+  --color-primary: #493628; /* Marrón oscuro - texto principal */
+  --color-secondary: #ab886d; /* Marrón medio - acentos */
+  --color-tertiary: #d6c0b3; /* Beige - fondos secundarios */
+  --color-light: #e4e0e1; /* Gris claro - fondo principal */
+
+  /* Colores de estado */
+  --color-success: #4caf50; /* Verde para éxito */
+  --color-warning: #ff9800; /* Naranja para advertencia */
+  --color-error: #f44336; /* Rojo para error */
+  --color-info: #2196f3; /* Azul para información */
+
+  /* Colores de dificultad para ejercicios */
+  --color-ejercicio: #6366f1; /* Azul índigo - Ejercicios */
+  --color-easy: #4caf50; /* Verde - Básico */
+  --color-medium: #ff9800; /* Naranja - Intermedio */
+  --color-hard: #ff5722; /* Rojo - Avanzado */
+  --color-expert: #9c27b0; /* Púrpura - Experto */
+
+  /* Colores de texto */
+  --text-primary: #493628; /* Texto principal */
+  --text-secondary: #ab886d; /* Texto secundario */
+  --text-light: #d6c0b3; /* Texto claro */
+  --text-white: #ffffff; /* Texto blanco */
+
+  /* Colores de fondo */
+  --bg-primary: #e4e0e1; /* Fondo principal */
+  --bg-secondary: #d6c0b3; /* Fondo secundario */
+  --bg-card: #ffffff; /* Fondo de tarjetas */
+  --bg-code: #f8f8f8; /* Fondo de código */
+
+  /* Sombras */
+  --shadow-sm: 0 2px 4px rgba(73, 54, 40, 0.1);
+  --shadow-md: 0 4px 8px rgba(73, 54, 40, 0.15);
+  --shadow-lg: 0 8px 16px rgba(73, 54, 40, 0.2);
+  --shadow-xl: 0 12px 24px rgba(73, 54, 40, 0.25);
+
+  /* Bordes redondeados */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+.header {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  color: var(--text-white);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.header-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.taller-info {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text-white);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-xl);
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos específicos para el taller */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* Secciones */
+.seccion {
+  margin-bottom: var(--spacing-xl);
+}
+
+.seccion h2 {
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-secondary);
+  padding-left: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.5rem;
+}
+
+/* Ejercicios (adaptado de .problema) */
+.problema {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--color-ejercicio);
+}
+
+.problema h3 {
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.25rem;
+}
+
+.enunciado {
+  background: #f0f9ff;
+  border: 1px solid var(--color-ejercicio);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.enunciado strong {
+  color: var(--color-ejercicio);
+  font-weight: 600;
+}
+
+.contexto {
+  background: #fff8e1;
+  border: 1px solid var(--color-warning);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.contexto h4 {
+  color: var(--color-warning);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.salida-esperada {
+  background: #e8f5e8;
+  border: 1px solid var(--color-success);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.salida-esperada h4 {
+  color: var(--color-success);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Áreas de código específicas para ejercicios */
+.codigo-area {
+  background: #2d3748;
+  color: #e2e8f0;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-family: "Courier New", Monaco, "Cascadia Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  margin-bottom: var(--spacing-md);
+  border: 1px solid #4a5568;
+  min-height: 120px;
+  position: relative;
+}
+
+.codigo-area pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.codigo-area code {
+  font-family: inherit;
+  font-size: inherit;
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Resaltado de sintaxis básico para JavaScript */
+.codigo-area .keyword {
+  color: #ff7b72;
+}
+
+.codigo-area .string {
+  color: #a5d6ff;
+}
+
+.codigo-area .comment {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.codigo-area .function {
+  color: #d2a8ff;
+}
+
+/* Botones */
+button {
+  background: var(--color-ejercicio);
+  color: var(--text-white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: var(--spacing-md);
+  font-weight: 500;
+}
+
+button:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Soluciones */
+.solucion {
+  display: none;
+  background: #f0fdf4;
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.solucion h4 {
+  color: var(--color-success);
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.solucion .codigo-area {
+  background: #1a202c;
+  color: #68d391;
+  border: 1px solid #2d3748;
+}
+
+/* Etiquetas de dificultad para ejercicios */
+.dificultad {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dificultad.basico {
+  background: var(--color-easy);
+  color: white;
+}
+
+.dificultad.intermedio {
+  background: var(--color-medium);
+  color: white;
+}
+
+.dificultad.avanzado {
+  background: var(--color-hard);
+  color: white;
+}
+
+.dificultad.ejercicio {
+  background: var(--color-ejercicio);
+  color: white;
+}
+
+/* Estilos específicos para código de función */
+.function-highlight {
+  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", Monaco, monospace;
+  font-size: 0.85em;
+}
+
+/* Indicadores de progreso */
+.progress-indicator {
+  background: #f3f4f6;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.progress-bar {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex: 1;
+  margin: 0 var(--spacing-md);
+}
+
+.progress-fill {
+  background: var(--color-ejercicio);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+
+  .problema {
+    padding: var(--spacing-md);
+  }
+
+  .codigo-area {
+    font-size: 0.8rem;
+    padding: var(--spacing-sm);
+    min-height: 100px;
+  }
+
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  .taller-info {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .codigo-area {
+    font-size: 0.75rem;
+  }
+
+  .problema {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejoras de accesibilidad */
+button:focus {
+  outline: 2px solid var(--color-ejercicio);
+  outline-offset: 2px;
+}
+
+.codigo-area:focus {
+  outline: 2px solid var(--color-ejercicio);
+  outline-offset: 2px;
+}
+
+/* Transiciones suaves */
+.problema {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.problema:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}

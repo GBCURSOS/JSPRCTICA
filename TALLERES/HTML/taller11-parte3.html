@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 11 Parte 3 - Ejercicios de Funciones</title>
+    <link rel="stylesheet" href="../CSS/taller11.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Taller 11 Parte 3: Ejercicios de Funciones en JavaScript</h1>
+            <div class="taller-info">
+                <span class="badge">4 Ejercicios - Parte 3/3</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-content">
+            <a href="taller11.html" class="nav-btn primary">← Inicio</a>
+            <a href="taller11-parte1.html" class="nav-btn">Parte 1</a>
+            <a href="taller11-parte2.html" class="nav-btn">Parte 2</a>
+            <span class="nav-btn active">Parte 3</span>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- SECCIÓN 10: FUNCIONES ASÍNCRONAS -->
+        <div class="seccion">
+            <h2>⚡ FUNCIONES ASÍNCRONAS</h2>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 10.1: Promise Básico</h3>
+                <div class="enunciado">
+                    <strong>Crear una función que retorne una Promise</strong> que simule una operación asíncrona.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>operacionAsincrona</code> que retorne una Promise<br>
+                    • La Promise debe resolverse después de 2 segundos<br>
+                    • Debe retornar un número aleatorio entre 1 y 100<br>
+                    • Maneja tanto el caso de éxito como el de error
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    "Operación completada: 42" (después de 2 segundos)
+                </div>
+                <div class="codigo-area" id="codigo10-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('10-1')">👁️ Ver Solución</button>
+                <div id="solucion10-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Función que retorna una Promise
+function operacionAsincrona() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const numero = Math.floor(Math.random() * 100) + 1;
+            const exito = Math.random() > 0.2; // 80% de éxito
+            
+            if (exito) {
+                resolve(numero);
+            } else {
+                reject("Error en la operación");
+            }
+        }, 2000);
+    });
+}
+
+// Usar la Promise con .then() y .catch()
+console.log("Iniciando operación asíncrona...");
+operacionAsincrona()
+    .then(resultado => {
+        console.log(`Operación completada: ${resultado}`);
+    })
+    .catch(error => {
+        console.log(`Error: ${error}`);
+    });
+
+console.log("Esta línea se ejecuta inmediatamente");
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 10.2: Async/Await</h3>
+                <div class="enunciado">
+                    <strong>Convertir el código anterior a async/await</strong> y manejar múltiples operaciones
+                    asíncronas.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>ejecutarOperaciones</code> usando async/await<br>
+                    • Ejecuta 3 operaciones asíncronas en paralelo<br>
+                    • Suma todos los resultados<br>
+                    • Maneja errores con try/catch
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    "Suma total: 156" (suma de los 3 números aleatorios)
+                </div>
+                <div class="codigo-area" id="codigo10-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('10-2')">👁️ Ver Solución</button>
+                <div id="solucion10-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Función async que maneja múltiples operaciones
+async function ejecutarOperaciones() {
+    try {
+        console.log("Ejecutando múltiples operaciones en paralelo...");
+        
+        // Ejecutar 3 operaciones en paralelo
+        const promesas = [
+            operacionAsincrona(),
+            operacionAsincrona(),
+            operacionAsincrona()
+        ];
+        
+        // Esperar a que todas se completen
+        const resultados = await Promise.all(promesas);
+        
+        // Sumar todos los resultados
+        const suma = resultados.reduce((acc, num) => acc + num, 0);
+        
+        console.log("Resultados individuales:", resultados);
+        console.log(`Suma total: ${suma}`);
+        
+        return suma;
+    } catch (error) {
+        console.log("Error en las operaciones:", error);
+        throw error;
+    }
+}
+
+// Ejecutar la función async
+ejecutarOperaciones()
+    .then(resultado => console.log("Proceso completado:", resultado))
+    .catch(error => console.log("Falló el proceso:", error));
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 11: FUNCIONES DE ORDEN SUPERIOR -->
+        <div class="seccion">
+            <h2>🎯 FUNCIONES DE ORDEN SUPERIOR</h2>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 11.1: Función Curry</h3>
+                <div class="enunciado">
+                    <strong>Implementar función curry</strong> que permita aplicación parcial de argumentos.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>curry</code> que transforme cualquier función<br>
+                    • La función curried debe permitir llamadas parciales<br>
+                    • Prueba con una función de suma de 3 números<br>
+                    • Demuestra diferentes formas de llamarla
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    curry(sumar)(1)(2)(3) → 6<br>
+                    curry(sumar)(1, 2)(3) → 6<br>
+                    curry(sumar)(1)(2, 3) → 6
+                </div>
+                <div class="codigo-area" id="codigo11-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('11-1')">👁️ Ver Solución</button>
+                <div id="solucion11-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Implementación de curry
+function curry(fn) {
+    return function curried(...args) {
+        // Si tenemos todos los argumentos necesarios
+        if (args.length >= fn.length) {
+            return fn.apply(this, args);
+        }
+        
+        // Si no, retornamos una nueva función que espera más argumentos
+        return function(...nextArgs) {
+            return curried.apply(this, args.concat(nextArgs));
+        };
+    };
+}
+
+// Función de ejemplo para testear curry
+function sumarTres(a, b, c) {
+    return a + b + c;
+}
+
+// Crear versión curried
+const sumarCurried = curry(sumarTres);
+
+// Diferentes formas de usar curry
+console.log("Suma normal:", sumarTres(1, 2, 3)); // 6
+
+console.log("Curry completo:", sumarCurried(1)(2)(3)); // 6
+console.log("Curry parcial 1:", sumarCurried(1, 2)(3)); // 6
+console.log("Curry parcial 2:", sumarCurried(1)(2, 3)); // 6
+
+// Crear funciones especializadas
+const sumar5 = sumarCurried(5);
+const sumar5y10 = sumar5(10);
+
+console.log("Función especializada:", sumar5y10(3)); // 18
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 11.2: Composición de Funciones</h3>
+                <div class="enunciado">
+                    <strong>Crear funciones de composición</strong> para combinar múltiples operaciones.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Implementa función <code>compose</code> (de derecha a izquierda)<br>
+                    • Implementa función <code>pipe</code> (de izquierda a derecha)<br>
+                    • Crea funciones simples: incrementar, duplicar, elevar al cuadrado<br>
+                    • Combina las funciones usando ambos métodos
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    compose: (3+1)² * 2 = 32<br>
+                    pipe: ((3+1) * 2)² = 64
+                </div>
+                <div class="codigo-area" id="codigo11-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('11-2')">👁️ Ver Solución</button>
+                <div id="solucion11-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Compose: aplica funciones de derecha a izquierda
+function compose(...funciones) {
+    return function(valor) {
+        return funciones.reduceRight((acc, fn) => fn(acc), valor);
+    };
+}
+
+// Pipe: aplica funciones de izquierda a derecha
+function pipe(...funciones) {
+    return function(valor) {
+        return funciones.reduce((acc, fn) => fn(acc), valor);
+    };
+}
+
+// Funciones simples para componer
+const incrementar = x => x + 1;
+const duplicar = x => x * 2;
+const cuadrado = x => x * x;
+
+// Usando compose (derecha a izquierda)
+const operacionCompose = compose(duplicar, cuadrado, incrementar);
+console.log("Compose con 3:", operacionCompose(3)); // (3+1)² * 2 = 32
+
+// Usando pipe (izquierda a derecha)
+const operacionPipe = pipe(incrementar, duplicar, cuadrado);
+console.log("Pipe con 3:", operacionPipe(3)); // ((3+1) * 2)² = 64
+
+// Ejemplo más complejo con strings
+const procesar = pipe(
+    str => str.toLowerCase(),
+    str => str.trim(),
+    str => str.replace(/\s+/g, '-'),
+    str => str.substring(0, 10)
+);
+
+console.log("Procesando texto:", procesar("  Hola Mundo JavaScript  "));
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 14: FUNCIONES CON CONTEXTO DINÁMICO -->
+        <div class="seccion">
+            <h2>🔄 CONTEXTO DINÁMICO (THIS)</h2>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 14.1: Call, Apply y Bind</h3>
+                <div class="enunciado">
+                    <strong>Usar call, apply y bind</strong> para cambiar el contexto de funciones.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea dos objetos: <code>persona1</code> y <code>persona2</code> con propiedad
+                    <code>nombre</code><br>
+                    • Crea una función <code>saludar</code> que use <code>this.nombre</code><br>
+                    • Usa call, apply y bind para ejecutar la función con diferentes contextos<br>
+                    • Demuestra la diferencia entre los tres métodos
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    "Hola, soy Ana" (usando call)<br>
+                    "Hola, soy Carlos" (usando apply)<br>
+                    "Hola, soy Ana" (usando bind)
+                </div>
+                <div class="codigo-area" id="codigo14-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('14-1')">👁️ Ver Solución</button>
+                <div id="solucion14-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Objetos con contexto
+const persona1 = {
+    nombre: "Ana",
+    edad: 25
+};
+
+const persona2 = {
+    nombre: "Carlos",
+    edad: 30
+};
+
+// Función que depende del contexto (this)
+function saludar(saludo = "Hola") {
+    return `${saludo}, soy ${this.nombre} y tengo ${this.edad} años`;
+}
+
+function presentarse(profesion, ciudad) {
+    return `${this.nombre} es ${profesion} y vive en ${ciudad}`;
+}
+
+// Usando CALL (argumentos individuales)
+console.log("--- CALL ---");
+console.log(saludar.call(persona1)); // Hola, soy Ana...
+console.log(saludar.call(persona2, "Buenos días")); // Buenos días, soy Carlos...
+console.log(presentarse.call(persona1, "doctora", "Madrid"));
+
+// Usando APPLY (argumentos en array)
+console.log("--- APPLY ---");
+console.log(saludar.apply(persona1, ["¡Hola!"])); // ¡Hola!, soy Ana...
+console.log(presentarse.apply(persona2, ["ingeniero", "Barcelona"]));
+
+// Usando BIND (crear nueva función con contexto fijo)
+console.log("--- BIND ---");
+const saludarAna = saludar.bind(persona1);
+const saludarCarlos = saludar.bind(persona2, "¡Qué tal!");
+
+console.log(saludarAna()); // Hola, soy Ana...
+console.log(saludarCarlos()); // ¡Qué tal!, soy Carlos...
+
+// Bind con argumentos parciales
+const presentarAna = presentarse.bind(persona1, "diseñadora");
+console.log(presentarAna("Valencia")); // Ana es diseñadora...
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 14.2: Factory de Objetos con Métodos</h3>
+                <div class="enunciado">
+                    <strong>Crear una fábrica de objetos</strong> que genere calculadoras con métodos encadenables.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea función <code>crearCalculadora</code> que retorne un objeto<br>
+                    • El objeto debe tener métodos: sumar, restar, multiplicar, dividir, resultado<br>
+                    • Los métodos deben ser encadenables (retornar <code>this</code>)<br>
+                    • Incluye método <code>reset</code> para reiniciar
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    calc.sumar(10).multiplicar(2).restar(5).resultado() → 15
+                </div>
+                <div class="codigo-area" id="codigo14-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('14-2')">👁️ Ver Solución</button>
+                <div id="solucion14-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Factory function para crear calculadoras
+function crearCalculadora(valorInicial = 0) {
+    let valor = valorInicial;
+    let historial = [];
+    
+    function registrarOperacion(operacion, operando, resultado) {
+        historial.push(`${operacion} ${operando} = ${resultado}`);
+    }
+
+    return {
+        sumar(num) {
+            const anterior = valor;
+            valor += num;
+            registrarOperacion(`${anterior} +`, num, valor);
+            console.log(`Sumando ${num}: ${anterior} + ${num} = ${valor}`);
+            return this; // Para encadenamiento
+        },
+
+        restar(num) {
+            const anterior = valor;
+            valor -= num;
+            registrarOperacion(`${anterior} -`, num, valor);
+            console.log(`Restando ${num}: ${anterior} - ${num} = ${valor}`);
+            return this;
+        },
+
+        multiplicar(num) {
+            const anterior = valor;
+            valor *= num;
+            registrarOperacion(`${anterior} ×`, num, valor);
+            console.log(`Multiplicando por ${num}: ${anterior} × ${num} = ${valor}`);
+            return this;
+        },
+
+        dividir(num) {
+            if (num === 0) {
+                console.log("Error: División por cero");
+                return this;
+            }
+            const anterior = valor;
+            valor /= num;
+            registrarOperacion(`${anterior} ÷`, num, valor);
+            console.log(`Dividiendo por ${num}: ${anterior} ÷ ${num} = ${valor}`);
+            return this;
+        },
+
+        resultado() {
+            console.log(`Resultado final: ${valor}`);
+            return valor;
+        },
+
+        reset() {
+            valor = valorInicial;
+            historial = [];
+            console.log(`Calculadora reseteada a ${valorInicial}`);
+            return this;
+        },
+
+        historial() {
+            console.log("Historial de operaciones:", historial);
+            return this;
+        }
+    };
+}
+
+// Crear y usar calculadoras
+const calc1 = crearCalculadora(10);
+const resultado1 = calc1
+    .sumar(5)
+    .multiplicar(2)
+    .restar(8)
+    .dividir(3)
+    .resultado(); // 4
+
+console.log("\n--- Segunda calculadora ---");
+const calc2 = crearCalculadora();
+calc2.sumar(100).dividir(4).multiplicar(3).resultado(); // 75
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 15: FUNCIONES AVANZADAS Y PATRONES -->
+        <div class="seccion">
+            <h2>🚀 PATRONES AVANZADOS</h2>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 15.1: Throttle y Debounce</h3>
+                <div class="enunciado">
+                    <strong>Implementar throttle y debounce</strong> para controlar la frecuencia de ejecución de
+                    funciones.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Implementa función <code>throttle</code> que limite ejecuciones por tiempo<br>
+                    • Implementa función <code>debounce</code> que retrase ejecución hasta que pare de llamarse<br>
+                    • Simula casos de uso: búsqueda (debounce) y scroll (throttle)<br>
+                    • Usa <code>setTimeout</code> para simular llamadas rápidas
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Throttle: Se ejecuta máximo cada X ms<br>
+                    Debounce: Se ejecuta solo después de que paren las llamadas
+                </div>
+                <div class="codigo-area" id="codigo15-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('15-1')">👁️ Ver Solución</button>
+                <div id="solucion15-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// THROTTLE: Limita ejecución a máximo una vez por período
+function throttle(func, delay) {
+    let lastCall = 0;
+    return function(...args) {
+        const now = Date.now();
+        if (now - lastCall >= delay) {
+            lastCall = now;
+            return func.apply(this, args);
+        }
+    };
+}
+
+// DEBOUNCE: Retrasa ejecución hasta que paren las llamadas
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// Funciones de ejemplo
+function buscar(termino) {
+    console.log(`🔍 Buscando: "${termino}" - ${new Date().toLocaleTimeString()}`);
+}
+
+function onScroll(posicion) {
+    console.log(`📜 Scroll en posición: ${posicion} - ${new Date().toLocaleTimeString()}`);
+}
+
+// Crear versiones optimizadas
+const busquedaDebounced = debounce(buscar, 500); // 500ms de espera
+const scrollThrottled = throttle(onScroll, 200); // máximo cada 200ms
+
+// Simular búsqueda rápida (debounce)
+console.log("=== SIMULANDO BÚSQUEDA RÁPIDA (DEBOUNCE) ===");
+busquedaDebounced("j");
+setTimeout(() => busquedaDebounced("ja"), 100);
+setTimeout(() => busquedaDebounced("jav"), 200);
+setTimeout(() => busquedaDebounced("java"), 300);
+setTimeout(() => busquedaDebounced("javas"), 400);
+setTimeout(() => busquedaDebounced("javascript"), 450);
+// Solo se ejecutará la última búsqueda después de 500ms
+
+// Simular scroll rápido (throttle)
+setTimeout(() => {
+    console.log("\n=== SIMULANDO SCROLL RÁPIDO (THROTTLE) ===");
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => scrollThrottled(i * 100), i * 50);
+    }
+}, 2000);
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 15.2: Función Once y Partial</h3>
+                <div class="enunciado">
+                    <strong>Implementar patrones once y partial</strong> para crear funciones especializadas.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Implementa función <code>once</code> que solo se ejecute una vez<br>
+                    • Implementa función <code>partial</code> para aplicación parcial de argumentos<br>
+                    • Crea ejemplos prácticos: inicialización única y funciones especializadas<br>
+                    • Demuestra que once no se ejecuta en llamadas subsecuentes
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Once: "Inicializando..." (primera vez), undefined (siguientes veces)<br>
+                    Partial: función especializada con argumentos preestablecidos
+                </div>
+                <div class="codigo-area" id="codigo15-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('15-2')">👁️ Ver Solución</button>
+                <div id="solucion15-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// ONCE: Función que solo se ejecuta una vez
+function once(fn) {
+    let executed = false;
+    let result;
+
+    return function(...args) {
+        if (!executed) {
+            executed = true;
+            result = fn.apply(this, args);
+            console.log("✅ Función ejecutada por primera vez");
+        } else {
+            console.log("❌ Función ya ejecutada, retornando resultado anterior");
+        }
+        return result;
+    };
+}
+
+// PARTIAL: Aplicación parcial de argumentos
+function partial(fn, ...argsIniciales) {
+    return function(...argsRestantes) {
+        return fn.apply(this, [...argsIniciales, ...argsRestantes]);
+    };
+}
+
+// Ejemplos de uso de ONCE
+function inicializar() {
+    console.log("🚀 Inicializando sistema...");
+    console.log("📊 Cargando configuración...");
+    console.log("🔗 Conectando a base de datos...");
+    return "Sistema inicializado correctamente";
+}
+
+const inicializarUnaVez = once(inicializar);
+
+console.log("=== PROBANDO FUNCIÓN ONCE ===");
+console.log("Primera llamada:", inicializarUnaVez());
+console.log("Segunda llamada:", inicializarUnaVez());
+console.log("Tercera llamada:", inicializarUnaVez());
+
+// Ejemplos de uso de PARTIAL
+function calcular(operacion, a, b, c) {
+    switch(operacion) {
+        case 'suma':
+            return a + b + c;
+        case 'producto':
+            return a * b * c;
+        case 'promedio':
+            return (a + b + c) / 3;
+        default:
+            return 0;
+    }
+}
+
+console.log("\n=== PROBANDO FUNCIÓN PARTIAL ===");
+
+// Crear funciones especializadas
+const sumar = partial(calcular, 'suma');
+const multiplicar = partial(calcular, 'producto');
+const promediar = partial(calcular, 'promedio');
+
+console.log("Suma 2+3+4:", sumar(2, 3, 4)); // 9
+console.log("Producto 2×3×4:", multiplicar(2, 3, 4)); // 24
+console.log("Promedio (10,20,30):", promediar(10, 20, 30)); // 20
+
+// Partial con más argumentos fijos
+const sumarCon10 = partial(sumar, 10); // ya tiene 'suma' y primer número 10
+console.log("Sumar 10+5+3:", sumarCon10(5, 3)); // 18
+
+// Combinar once y partial
+const inicializarBaseDatos = once(partial(calcular, 'inicializar'));
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolucion(num) {
+            const solucion = document.getElementById('solucion' + num);
+            if (solucion.style.display === 'none' || solucion.style.display === '') {
+                solucion.style.display = 'block';
+            } else {
+                solucion.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

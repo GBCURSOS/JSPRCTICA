@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 11 - Ejercicios de Funciones en JavaScript</title>
+    <link rel="stylesheet" href="../CSS/taller11.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Taller 11: Ejercicios de Funciones en JavaScript</h1>
+            <div class="taller-info">
+                <span class="badge">15 Secciones - 3 Partes</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- INTRODUCCIÓN AL TALLER -->
+        <div class="seccion">
+            <h2>📚 INTRODUCCIÓN</h2>
+
+            <div class="problema">
+                <h3>Bienvenido al Taller de Funciones en JavaScript</h3>
+                <div class="enunciado">
+                    Este taller cubre todos los aspectos importantes de las funciones en JavaScript, desde lo más básico
+                    hasta conceptos avanzados como closures, funciones asíncronas y patrones de diseño.
+                </div>
+                <div class="contexto">
+                    <h4>🎯 Objetivos del Taller:</h4>
+                    • Dominar la declaración y uso de funciones<br>
+                    • Entender scope, closures y contexto (this)<br>
+                    • Trabajar con funciones asíncronas y promises<br>
+                    • Aplicar patrones avanzados de programación funcional
+                </div>
+                <div class="salida-esperada">
+                    <h4>📋 Contenido del Taller:</h4>
+                    <strong>Parte 1:</strong> Fundamentos (Secciones 1-5)<br>
+                    <strong>Parte 2:</strong> Funciones Avanzadas (Secciones 6-10)<br>
+                    <strong>Parte 3:</strong> Patrones y Conceptos Avanzados (Secciones 11, 14-15)
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVEGACIÓN A LAS PARTES -->
+        <div class="seccion">
+            <h2>🗂️ NAVEGACIÓN</h2>
+
+            <div class="problema">
+                <span class="dificultad basico">PARTE 1</span>
+                <h3>Fundamentos de Funciones</h3>
+                <div class="enunciado">
+                    <strong>Secciones 1-5:</strong> Funciones básicas, expresiones de función, arrow functions,
+                    parámetros y scope.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Contenido:</h4>
+                    • Sección 1: Funciones Básicas<br>
+                    • Sección 2: Expresiones de Función<br>
+                    • Sección 3: Arrow Functions<br>
+                    • Sección 4: Parámetros Avanzados<br>
+                    • Sección 5: Scope y Variables
+                </div>
+                <div class="salida-esperada">
+                    <h4>🎓 Nivel:</h4>
+                    Principiante a Intermedio
+                </div>
+                <a href="taller11-parte1.html" class="btn-navegacion">Ir a Parte 1 →</a>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad intermedio">PARTE 2</span>
+                <h3>Funciones Avanzadas</h3>
+                <div class="enunciado">
+                    <strong>Secciones 6-10:</strong> Funciones anónimas, callbacks, funciones de orden superior y
+                    closures.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Contenido:</h4>
+                    • Sección 6: Funciones Anónimas<br>
+                    • Sección 7: Arrow Functions Avanzadas<br>
+                    • Sección 8: Callbacks<br>
+                    • Sección 9: Funciones de Orden Superior<br>
+                    • Sección 10: Closures
+                </div>
+                <div class="salida-esperada">
+                    <h4>🎓 Nivel:</h4>
+                    Intermedio
+                </div>
+                <a href="taller11-parte2.html" class="btn-navegacion">Ir a Parte 2 →</a>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">PARTE 3</span>
+                <h3>Patrones y Conceptos Avanzados</h3>
+                <div class="enunciado">
+                    <strong>Secciones 11, 14-15:</strong> Funciones asíncronas, contexto dinámico y patrones avanzados.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Contenido:</h4>
+                    • Sección 10: Funciones Asíncronas<br>
+                    • Sección 11: Funciones de Orden Superior<br>
+                    • Sección 14: Contexto Dinámico (this)<br>
+                    • Sección 15: Patrones Avanzados
+                </div>
+                <div class="salida-esperada">
+                    <h4>🎓 Nivel:</h4>
+                    Avanzado
+                </div>
+                <a href="taller11-parte3.html" class="btn-navegacion">Ir a Parte 3 →</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .btn-navegacion {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-navegacion:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            color: white;
+        }
+
+        .dificultad.basico {
+            background: linear-gradient(135deg, #4CAF50, #66BB6A);
+        }
+
+        .dificultad.intermedio {
+            background: linear-gradient(135deg, #FF9800, #FFB74D);
+        }
+
+        .dificultad.avanzado {
+            background: linear-gradient(135deg, #F44336, #EF5350);
+        }
+    </style>
+
+    <script>
+        function toggleSolucion(num) {
+            const solucion = document.getElementById('solucion' + num);
+            if (solucion.style.display === 'none' || solucion.style.display === '') {
+                solucion.style.display = 'block';
+            } else {
+                solucion.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 11 Parte 1 - Ejercicios de Funciones</title>
+    <link rel="stylesheet" href="../CSS/taller11.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Taller 11 Parte 1: Ejercicios de Funciones en JavaScript</h1>
+            <div class="taller-info">
+                <span class="badge">10 Ejercicios - Parte 1/3</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- SECCIÓN 1: FUNCIONES BÁSICAS -->
+        <div class="seccion">
+            <h2>🟢 FUNCIONES BÁSICAS</h2>
+
+            <div class="problema">
+                <span class="dificultad basico">EJERCICIO</span>
+                <h3>Ejercicio 1.1: Función de bienvenida</h3>
+                <div class="enunciado">
+                    <strong>Crea una función llamada 'darBienvenida'</strong> que reciba un nombre como parámetro
+                    y retorne el mensaje: "Bienvenido/a [nombre] al curso de JavaScript"
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa function declaration<br>
+                    • La función debe recibir un parámetro 'nombre'<br>
+                    • Debe retornar un string con el mensaje de bienvenida
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    darBienvenida("Ana") → "Bienvenido/a Ana al curso de JavaScript"
+                </div>
+                <div class="codigo-area" id="codigo1-1">
+                    <pre><code>// Escribe tu función aquí
+function darBienvenida(nombre) {
+    // Tu código aquí
+}
+
+// Pruebas
+console.log(darBienvenida("Ana"));
+console.log(darBienvenida("Carlos"));</code></pre>
+                </div>
+                <button onclick="toggleSolucion('1-1')">👁️ Ver Solución</button>
+                <div id="solucion1-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+function darBienvenida(nombre) {
+    return "Bienvenido/a " + nombre + " al curso de JavaScript";
+}
+
+// Pruebas
+console.log(darBienvenida("Ana")); // "Bienvenido/a Ana al curso de JavaScript"
+console.log(darBienvenida("Carlos")); // "Bienvenido/a Carlos al curso de JavaScript"
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad basico">EJERCICIO</span>
+                <h3>Ejercicio 1.2: Calculadora de descuentos</h3>
+                <div class="enunciado">
+                    <strong>Crea una función 'calcularDescuento'</strong> que reciba precio y descuento (por defecto 10)
+                    y retorne el precio final después del descuento.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa parámetros por defecto<br>
+                    • Fórmula: precio - (precio * descuento / 100)<br>
+                    • El descuento por defecto debe ser 10%
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    calcularDescuento(100) → 90<br>
+                    calcularDescuento(100, 20) → 80
+                </div>
+                <div class="codigo-area" id="codigo1-2">
+                    <pre><code>// Escribe tu función aquí
+function calcularDescuento(precio, descuento = 10) {
+    // Tu código aquí
+}
+
+// Pruebas
+console.log(calcularDescuento(100));
+console.log(calcularDescuento(100, 20));</code></pre>
+                </div>
+                <button onclick="toggleSolucion('1-2')">👁️ Ver Solución</button>
+                <div id="solucion1-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+function calcularDescuento(precio, descuento = 10) {
+    return precio - (precio * descuento / 100);
+}
+
+// Pruebas
+console.log(calcularDescuento(100)); // 90
+console.log(calcularDescuento(100, 20)); // 80
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: EXPRESIONES DE FUNCIÓN -->
+        <div class="seccion">
+            <h2>🟡 EXPRESIONES DE FUNCIÓN</h2>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 2.1: Validador de edad</h3>
+                <div class="enunciado">
+                    <strong>Asigna a la variable 'validarEdad' una función expresión</strong> que reciba una edad
+                    y retorne true si es mayor o igual a 18, false en caso contrario.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa function expression (no arrow function)<br>
+                    • Asigna la función a la variable 'validarEdad'<br>
+                    • Retorna boolean
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    validarEdad(20) → true<br>
+                    validarEdad(15) → false
+                </div>
+                <div class="codigo-area" id="codigo2-1">
+                    <pre><code>// Escribe tu función expresión aquí
+const validarEdad = function(edad) {
+    // Tu código aquí
+};
+
+// Pruebas
+console.log(validarEdad(20));
+console.log(validarEdad(15));</code></pre>
+                </div>
+                <button onclick="toggleSolucion('2-1')">👁️ Ver Solución</button>
+                <div id="solucion2-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+const validarEdad = function(edad) {
+    return edad >= 18;
+};
+
+// Pruebas
+console.log(validarEdad(20)); // true
+console.log(validarEdad(15)); // false
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 2.2: Contador regresivo recursivo</h3>
+                <div class="enunciado">
+                    <strong>Crea una función expresión nombrada 'contarRegresivo'</strong> que cuente desde n hasta 1
+                    usando recursión y retorne un array con los números.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa función expresión nombrada<br>
+                    • Implementa recursión<br>
+                    • Caso base: n <= 0 retorna array vacío<br>
+                        • Caso recursivo: [n] + resto de números
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    contarRegresivo(5) → [5, 4, 3, 2, 1]<br>
+                    contarRegresivo(3) → [3, 2, 1]
+                </div>
+                <div class="codigo-area" id="codigo2-2">
+                    <pre><code>// Escribe tu función expresión nombrada aquí
+const contarRegresivo = function contar(n) {
+    // Tu código aquí
+};
+
+// Pruebas
+console.log(contarRegresivo(5));
+console.log(contarRegresivo(3));</code></pre>
+                </div>
+                <button onclick="toggleSolucion('2-2')">👁️ Ver Solución</button>
+                <div id="solucion2-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+const contarRegresivo = function contar(n) {
+    if (n <= 0) {
+        return [];
+    }
+    return [n].concat(contar(n - 1));
+};
+
+// Pruebas
+console.log(contarRegresivo(5)); // [5, 4, 3, 2, 1]
+console.log(contarRegresivo(3)); // [3, 2, 1]
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: FUNCIONES FLECHA -->
+        <div class="seccion">
+            <h2>🔵 FUNCIONES FLECHA</h2>
+
+            <div class="problema">
+                <span class="dificultad basico">EJERCICIO</span>
+                <h3>Ejercicio 3.1: Arrow function simple</h3>
+                <div class="enunciado">
+                    <strong>Convierte esta función normal a arrow function de una línea:</strong><br>
+                    <code>function doblar(numero) { return numero * 2; }</code>
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa sintaxis de arrow function<br>
+                    • Debe ser de una sola línea<br>
+                    • No uses llaves ni return explícito
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    doblar(5) → 10<br>
+                    doblar(8) → 16
+                </div>
+                <div class="codigo-area" id="codigo3-1">
+                    <pre><code>// Convierte a arrow function
+const doblar = // Tu código aquí
+
+// Pruebas
+console.log(doblar(5));
+console.log(doblar(8));</code></pre>
+                </div>
+                <button onclick="toggleSolucion('3-1')">👁️ Ver Solución</button>
+                <div id="solucion3-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+const doblar = numero => numero * 2;
+
+// Pruebas
+console.log(doblar(5)); // 10
+console.log(doblar(8)); // 16
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 3.2: Arrow function que retorna objeto</h3>
+                <div class="enunciado">
+                    <strong>Crea una arrow function 'crearEstudiante'</strong> que reciba nombre y nota
+                    y retorne un objeto con {nombre, nota, aprobado} donde aprobado es true si nota >= 60.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa arrow function<br>
+                    • Usa paréntesis para retornar objeto<br>
+                    • aprobado = true si nota >= 60
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    crearEstudiante("Luis", 75) → {nombre: "Luis", nota: 75, aprobado: true}<br>
+                    crearEstudiante("Ana", 45) → {nombre: "Ana", nota: 45, aprobado: false}
+                </div>
+                <div class="codigo-area" id="codigo3-2">
+                    <pre><code>// Escribe tu arrow function aquí
+const crearEstudiante = (nombre, nota) => // Tu código aquí
+
+// Pruebas
+console.log(crearEstudiante("Luis", 75));
+console.log(crearEstudiante("Ana", 45));</code></pre>
+                </div>
+                <button onclick="toggleSolucion('3-2')">👁️ Ver Solución</button>
+                <div id="solucion3-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+const crearEstudiante = (nombre, nota) => ({
+    nombre: nombre,
+    nota: nota,
+    aprobado: nota >= 60
+});
+
+// Pruebas
+console.log(crearEstudiante("Luis", 75)); // {nombre: "Luis", nota: 75, aprobado: true}
+console.log(crearEstudiante("Ana", 45)); // {nombre: "Ana", nota: 45, aprobado: false}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: SCOPE Y CLOSURES -->
+        <div class="seccion">
+            <h2>🟣 SCOPE Y CLOSURES</h2>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 4.1: Contador personalizado con closure</h3>
+                <div class="enunciado">
+                    <strong>Crea una función 'crearContadorPersonalizado'</strong> que reciba un valor inicial
+                    y retorne una función que incremente desde ese valor.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa closure para mantener el estado<br>
+                    • La función interna debe incrementar el contador<br>
+                    • Cada llamada debe retornar el nuevo valor
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    contador10() → 11<br>
+                    contador10() → 12<br>
+                    contador100() → 101 (independiente)
+                </div>
+                <div class="codigo-area" id="codigo4-1">
+                    <pre><code>// Escribe tu función con closure aquí
+function crearContadorPersonalizado(inicial) {
+    // Tu código aquí
+}
+
+// Pruebas
+const contador10 = crearContadorPersonalizado(10);
+console.log(contador10()); // 11
+console.log(contador10()); // 12
+const contador100 = crearContadorPersonalizado(100);
+console.log(contador100()); // 101</code></pre>
+                </div>
+                <button onclick="toggleSolucion('4-1')">👁️ Ver Solución</button>
+                <div id="solucion4-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+function crearContadorPersonalizado(inicial) {
+    let contador = inicial;
+    
+    return function() {
+        contador++;
+        return contador;
+    };
+}
+
+// Pruebas
+const contador10 = crearContadorPersonalizado(10);
+console.log(contador10()); // 11
+console.log(contador10()); // 12
+const contador100 = crearContadorPersonalizado(100);
+console.log(contador100()); // 101
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 4.2: Cuenta bancaria con closure</h3>
+                <div class="enunciado">
+                    <strong>Crea una función 'crearCuentaBancaria'</strong> que reciba saldo inicial
+                    y retorne un objeto con métodos depositar, retirar y consultarSaldo.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa closure para mantener saldo privado<br>
+                    • depositar(cantidad): suma al saldo<br>
+                    • retirar(cantidad): resta del saldo<br>
+                    • consultarSaldo(): retorna saldo actual
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    consultarSaldo() → 1000<br>
+                    depositar(500) → saldo: 1500<br>
+                    retirar(200) → saldo: 1300
+                </div>
+                <div class="codigo-area" id="codigo4-2">
+                    <pre><code>// Escribe tu función con closure aquí
+function crearCuentaBancaria(saldoInicial) {
+    // Tu código aquí
+}
+
+// Pruebas
+const cuenta = crearCuentaBancaria(1000);
+console.log(cuenta.consultarSaldo()); // 1000
+cuenta.depositar(500);
+console.log(cuenta.consultarSaldo()); // 1500
+cuenta.retirar(200);
+console.log(cuenta.consultarSaldo()); // 1300</code></pre>
+                </div>
+                <button onclick="toggleSolucion('4-2')">👁️ Ver Solución</button>
+                <div id="solucion4-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+function crearCuentaBancaria(saldoInicial) {
+    let saldo = saldoInicial;
+    
+    return {
+        depositar: function(cantidad) {
+            saldo += cantidad;
+        },
+        retirar: function(cantidad) {
+            saldo -= cantidad;
+        },
+        consultarSaldo: function() {
+            return saldo;
+        }
+    };
+}
+
+// Pruebas
+const cuenta = crearCuentaBancaria(1000);
+console.log(cuenta.consultarSaldo()); // 1000
+cuenta.depositar(500);
+console.log(cuenta.consultarSaldo()); // 1500
+cuenta.retirar(200);
+console.log(cuenta.consultarSaldo()); // 1300
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 5: PARÁMETROS AVANZADOS -->
+        <div class="seccion">
+            <h2>🔶 PARÁMETROS AVANZADOS</h2>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 5.1: Función con parámetros rest</h3>
+                <div class="enunciado">
+                    <strong>Crea una función 'calcularPromedio'</strong> que use parámetros rest (...numeros)
+                    para recibir cualquier cantidad de números y retorne su promedio.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa parámetros rest (...numeros)<br>
+                    • Suma todos los números<br>
+                    • Divide entre la cantidad de números<br>
+                    • Retorna el promedio
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    calcularPromedio(10, 20, 30) → 20<br>
+                    calcularPromedio(5, 15, 25, 35) → 20
+                </div>
+                <div class="codigo-area" id="codigo5-1">
+                    <pre><code>// Escribe tu función con parámetros rest aquí
+function calcularPromedio(...numeros) {
+    // Tu código aquí
+}
+
+// Pruebas
+console.log(calcularPromedio(10, 20, 30)); // 20
+console.log(calcularPromedio(5, 15, 25, 35)); // 20</code></pre>
+                </div>
+                <button onclick="toggleSolucion('5-1')">👁️ Ver Solución</button>
+                <div id="solucion5-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+function calcularPromedio(...numeros) {
+    let suma = 0;
+    for (let numero of numeros) {
+        suma += numero;
+    }
+    return suma / numeros.length;
+}
+
+// Pruebas
+console.log(calcularPromedio(10, 20, 30)); // 20
+console.log(calcularPromedio(5, 15, 25, 35)); // 20
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 5.2: Función con destructuring</h3>
+                <div class="enunciado">
+                    <strong>Crea una función 'presentarPersona'</strong> que use destructuring para extraer
+                    nombre, edad y ciudad (por defecto 'No especificada') de un objeto.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Usa destructuring en los parámetros<br>
+                    • ciudad debe tener valor por defecto<br>
+                    • Muestra la información formateada
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    "María, 25 años, vive en Madrid"<br>
+                    "Pedro, 30 años, vive en No especificada"
+                </div>
+                <div class="codigo-area" id="codigo5-2">
+                    <pre><code>// Escribe tu función con destructuring aquí
+function presentarPersona({nombre, edad, ciudad = "No especificada"}) {
+    // Tu código aquí
+}
+
+// Pruebas
+presentarPersona({nombre: "María", edad: 25, ciudad: "Madrid"});
+presentarPersona({nombre: "Pedro", edad: 30});</code></pre>
+                </div>
+                <button onclick="toggleSolucion('5-2')">👁️ Ver Solución</button>
+                <div id="solucion5-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+function presentarPersona({nombre, edad, ciudad = "No especificada"}) {
+    console.log(`${nombre}, ${edad} años, vive en ${ciudad}`);
+}
+
+// Pruebas
+presentarPersona({nombre: "María", edad: 25, ciudad: "Madrid"});
+// "María, 25 años, vive en Madrid"
+presentarPersona({nombre: "Pedro", edad: 30});
+// "Pedro, 30 años, vive en No especificada"
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolucion(num) {
+            const solucion = document.getElementById('solucion' + num);
+            if (solucion.style.display === 'none' || solucion.style.display === '') {
+                solucion.style.display = 'block';
+            } else {
+                solucion.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

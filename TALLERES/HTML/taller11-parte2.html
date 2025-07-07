@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 11 Parte 2 - Ejercicios de Funciones</title>
+    <link rel="stylesheet" href="../CSS/taller11.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Taller 11 Parte 2: Ejercicios de Funciones en JavaScript</h1>
+            <div class="taller-info">
+                <span class="badge">5 Ejercicios - Parte 2/3</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-content">
+            <a href="taller11.html" class="nav-btn primary">← Inicio</a>
+            <a href="taller11-parte1.html" class="nav-btn">Parte 1</a>
+            <span class="nav-btn active">Parte 2</span>
+            <a href="taller11-parte3.html" class="nav-btn">Parte 3</a>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- SECCIÓN 6: FUNCIONES ANÓNIMAS -->
+        <div class="seccion">
+            <h2>🟡 FUNCIONES ANÓNIMAS</h2>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 6.1: Función Anónima Básica</h3>
+                <div class="enunciado">
+                    <strong>Crear y ejecutar una función anónima</strong> que calcule el área de un rectángulo.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función anónima que reciba ancho y alto como parámetros<br>
+                    • La función debe retornar el área (ancho * alto)<br>
+                    • Asigna la función a una variable llamada <code>calcularArea</code><br>
+                    • Prueba la función con valores 5 y 8
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    calcularArea(5, 8) → 40
+                </div>
+                <div class="codigo-area" id="codigo6-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('6-1')">👁️ Ver Solución</button>
+                <div id="solucion6-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Función anónima asignada a una variable
+const calcularArea = function(ancho, alto) {
+    return ancho * alto;
+};
+
+// Prueba de la función
+const area = calcularArea(5, 8);
+console.log(`El área del rectángulo es: ${area}`); // 40
+
+// Ejemplo adicional
+console.log(calcularArea(10, 3)); // 30
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 6.2: Función Anónima como Callback</h3>
+                <div class="enunciado">
+                    <strong>Crear una función anónima como callback</strong> para procesar un array de números.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea un array con los números [1, 2, 3, 4, 5]<br>
+                    • Usa el método <code>map()</code> con una función anónima<br>
+                    • La función debe duplicar cada número<br>
+                    • Muestra el resultado en la consola
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    [2, 4, 6, 8, 10]
+                </div>
+                <div class="codigo-area" id="codigo6-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('6-2')">👁️ Ver Solución</button>
+                <div id="solucion6-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Array de números
+const numeros = [1, 2, 3, 4, 5];
+
+// Usar map con función anónima
+const duplicados = numeros.map(function(numero) {
+    return numero * 2;
+});
+
+console.log("Números originales:", numeros);
+console.log("Números duplicados:", duplicados);
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 7: ARROW FUNCTIONS -->
+        <div class="seccion">
+            <h2>🟠 ARROW FUNCTIONS</h2>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 7.1: Arrow Function Básica</h3>
+                <div class="enunciado">
+                    <strong>Convertir función tradicional a arrow function</strong> para calcular el cuadrado de un
+                    número.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una arrow function llamada <code>cuadrado</code><br>
+                    • Debe recibir un número como parámetro<br>
+                    • Debe retornar el número elevado al cuadrado<br>
+                    • Usa la sintaxis más corta posible
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    cuadrado(4) → 16
+                </div>
+                <div class="codigo-area" id="codigo7-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('7-1')">👁️ Ver Solución</button>
+                <div id="solucion7-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Arrow function - sintaxis corta
+const cuadrado = num => num * num;
+
+// Arrow function - sintaxis completa
+const cuadradoCompleto = (num) => {
+    return num * num;
+};
+
+// Pruebas
+console.log(cuadrado(4)); // 16
+console.log(cuadrado(7)); // 49
+console.log(cuadradoCompleto(5)); // 25
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 7.2: Arrow Functions con Arrays</h3>
+                <div class="enunciado">
+                    <strong>Usar arrow functions con métodos de array</strong> para filtrar y transformar datos.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea un array de números del 1 al 10<br>
+                    • Usa <code>filter()</code> con arrow function para obtener números pares<br>
+                    • Usa <code>map()</code> con arrow function para elevar al cubo cada número par<br>
+                    • Combina ambas operaciones en una sola cadena
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    [8, 64, 216, 512, 1000]
+                </div>
+                <div class="codigo-area" id="codigo7-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('7-2')">👁️ Ver Solución</button>
+                <div id="solucion7-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Array de números del 1 al 10
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Método por pasos
+const pares = numeros.filter(num => num % 2 === 0);
+const cubos = pares.map(num => num ** 3);
+
+console.log("Números originales:", numeros);
+console.log("Números pares:", pares);
+console.log("Cubos de pares:", cubos);
+
+// Método encadenado
+const resultado = numeros
+    .filter(num => num % 2 === 0)
+    .map(num => num ** 3);
+
+console.log("Resultado encadenado:", resultado);
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 8: CALLBACKS -->
+        <div class="seccion">
+            <h2>🔵 CALLBACKS</h2>
+
+            <div class="problema">
+                <span class="dificultad intermedio">EJERCICIO</span>
+                <h3>Ejercicio 8.1: Callback Simple</h3>
+                <div class="enunciado">
+                    <strong>Crear una función que use un callback</strong> para procesar datos de manera personalizada.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>procesarNumero</code> que reciba un número y un callback<br>
+                    • El callback debe ser ejecutado con el número como argumento<br>
+                    • Crea tres callbacks diferentes: duplicar, triplicar y elevar al cuadrado<br>
+                    • Prueba la función con cada callback
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    procesarNumero(5, duplicar) → 10<br>
+                    procesarNumero(5, triplicar) → 15<br>
+                    procesarNumero(5, cuadrado) → 25
+                </div>
+                <div class="codigo-area" id="codigo8-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('8-1')">👁️ Ver Solución</button>
+                <div id="solucion8-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Función principal que usa callback
+function procesarNumero(numero, callback) {
+    return callback(numero);
+}
+
+// Callbacks
+const duplicar = (num) => num * 2;
+const triplicar = (num) => num * 3;
+const cuadrado = (num) => num * num;
+
+// Pruebas
+console.log(procesarNumero(5, duplicar)); // 10
+console.log(procesarNumero(5, triplicar)); // 15
+console.log(procesarNumero(5, cuadrado)); // 25
+
+// Uso con función anónima
+console.log(procesarNumero(8, function(n) { return n + 10; })); // 18
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 8.2: Callback con Arrays</h3>
+                <div class="enunciado">
+                    <strong>Implementar una función personalizada</strong> que emule el comportamiento de
+                    <code>forEach</code>.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>miForEach</code> que reciba un array y un callback<br>
+                    • La función debe iterar sobre el array y ejecutar el callback en cada elemento<br>
+                    • El callback debe recibir: elemento, índice y array completo<br>
+                    • Prueba con diferentes callbacks
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Elemento: a, Índice: 0<br>
+                    Elemento: b, Índice: 1<br>
+                    Elemento: c, Índice: 2
+                </div>
+                <div class="codigo-area" id="codigo8-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('8-2')">👁️ Ver Solución</button>
+                <div id="solucion8-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Implementación personalizada de forEach
+function miForEach(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i], i, array);
+    }
+}
+
+// Array de prueba
+const letras = ['a', 'b', 'c'];
+
+// Callback que muestra elemento e índice
+miForEach(letras, (elemento, indice) => {
+    console.log(`Elemento: ${elemento}, Índice: ${indice}`);
+});
+
+// Callback que muestra todo
+miForEach(letras, (elemento, indice, array) => {
+    console.log(`${elemento} en posición ${indice} de [${array}]`);
+});
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 9: FUNCIONES DE ORDEN SUPERIOR -->
+        <div class="seccion">
+            <h2>🟣 FUNCIONES DE ORDEN SUPERIOR</h2>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 9.1: Función que Retorna Función</h3>
+                <div class="enunciado">
+                    <strong>Crear una función de orden superior</strong> que genere multiplicadores personalizados.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>crearMultiplicador</code> que reciba un factor<br>
+                    • Debe retornar una nueva función que multiplique por ese factor<br>
+                    • Crea multiplicadores para 2, 3 y 10<br>
+                    • Prueba cada multiplicador con diferentes números
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    multiplicarPor2(5) → 10<br>
+                    multiplicarPor3(4) → 12<br>
+                    multiplicarPor10(7) → 70
+                </div>
+                <div class="codigo-area" id="codigo9-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('9-1')">👁️ Ver Solución</button>
+                <div id="solucion9-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Función de orden superior que retorna una función
+function crearMultiplicador(factor) {
+    return function(numero) {
+        return numero * factor;
+    };
+}
+
+// Crear multiplicadores específicos
+const multiplicarPor2 = crearMultiplicador(2);
+const multiplicarPor3 = crearMultiplicador(3);
+const multiplicarPor10 = crearMultiplicador(10);
+
+// Pruebas
+console.log(multiplicarPor2(5)); // 10
+console.log(multiplicarPor3(4)); // 12
+console.log(multiplicarPor10(7)); // 70
+
+// Versión con arrow function
+const crearMultiplicadorArrow = factor => numero => numero * factor;
+const multiplicarPor5 = crearMultiplicadorArrow(5);
+console.log(multiplicarPor5(6)); // 30
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 9.2: Decorador de Funciones</h3>
+                <div class="enunciado">
+                    <strong>Crear un decorador</strong> que añada funcionalidad a otras funciones.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>conLog</code> que reciba una función como parámetro<br>
+                    • Debe retornar una nueva función que registre la entrada y salida<br>
+                    • La nueva función debe ejecutar la función original y mostrar logs<br>
+                    • Prueba con una función de suma
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    Ejecutando función con argumentos: [3, 4]<br>
+                    Resultado: 7
+                </div>
+                <div class="codigo-area" id="codigo9-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('9-2')">👁️ Ver Solución</button>
+                <div id="solucion9-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Decorador que añade logging a cualquier función
+function conLog(func) {
+    return function(...args) {
+        console.log(`Ejecutando función con argumentos: [${args}]`);
+        const resultado = func(...args);
+        console.log(`Resultado: ${resultado}`);
+        return resultado;
+    };
+}
+
+// Función simple de suma
+function sumar(a, b) {
+    return a + b;
+}
+
+// Aplicar el decorador
+const sumarConLog = conLog(sumar);
+
+// Pruebas
+sumarConLog(3, 4); // Logs + retorna 7
+sumarConLog(10, 5); // Logs + retorna 15
+
+// También funciona con arrow functions
+const multiplicar = (a, b) => a * b;
+const multiplicarConLog = conLog(multiplicar);
+multiplicarConLog(3, 7); // Logs + retorna 21
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 10: CLOSURES -->
+        <div class="seccion">
+            <h2>🔴 CLOSURES</h2>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 10.1: Contador con Closure</h3>
+                <div class="enunciado">
+                    <strong>Crear un contador privado</strong> usando closures para encapsular la variable.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>crearContador</code> que retorne un objeto<br>
+                    • El objeto debe tener métodos: incrementar, decrementar, obtenerValor<br>
+                    • La variable contador debe ser privada (no accesible desde fuera)<br>
+                    • Crea múltiples contadores independientes
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    contador1.obtenerValor() → 0<br>
+                    contador1.incrementar() → 1<br>
+                    contador2.obtenerValor() → 0 (independiente)
+                </div>
+                <div class="codigo-area" id="codigo10-1">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('10-1')">👁️ Ver Solución</button>
+                <div id="solucion10-1" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Función que crea un contador con closure
+function crearContador(valorInicial = 0) {
+    let contador = valorInicial; // Variable privada
+
+    return {
+        incrementar: function() {
+            contador++;
+            return contador;
+        },
+        decrementar: function() {
+            contador--;
+            return contador;
+        },
+        obtenerValor: function() {
+            return contador;
+        },
+        reset: function() {
+            contador = valorInicial;
+            return contador;
+        }
+    };
+}
+
+// Crear contadores independientes
+const contador1 = crearContador();
+const contador2 = crearContador(10);
+
+// Pruebas
+console.log(contador1.obtenerValor()); // 0
+console.log(contador1.incrementar()); // 1
+console.log(contador1.incrementar()); // 2
+
+console.log(contador2.obtenerValor()); // 10
+console.log(contador2.decrementar()); // 9
+
+// Los contadores son independientes
+console.log(contador1.obtenerValor()); // 2 (sin cambios)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="problema">
+                <span class="dificultad avanzado">EJERCICIO</span>
+                <h3>Ejercicio 10.2: Módulo con Closures</h3>
+                <div class="enunciado">
+                    <strong>Crear un módulo de gestión de cuentas bancarias</strong> usando closures para datos
+                    privados.
+                </div>
+                <div class="contexto">
+                    <h4>📝 Instrucciones:</h4>
+                    • Crea una función <code>crearCuenta</code> que reciba saldo inicial<br>
+                    • Retorna un objeto con métodos: depositar, retirar, consultarSaldo, obtenerHistorial<br>
+                    • Saldo e historial deben ser privados<br>
+                    • Validar que no se pueda retirar más del saldo disponible
+                </div>
+                <div class="salida-esperada">
+                    <h4>💡 Salida Esperada:</h4>
+                    cuenta.consultarSaldo() → "Saldo actual: $1000"<br>
+                    cuenta.depositar(500) → "Depósito exitoso"<br>
+                    cuenta.retirar(2000) → "Fondos insuficientes"
+                </div>
+                <div class="codigo-area" id="codigo10-2">
+                    <pre><code>// Escribe tu código aquí
+</code></pre>
+                </div>
+                <button onclick="toggleSolucion('10-2')">👁️ Ver Solución</button>
+                <div id="solucion10-2" class="solucion">
+                    <h4>📝 Solución:</h4>
+                    <div class="codigo-area">
+                        <pre>
+                            <code>
+// Módulo de cuenta bancaria con closures
+function crearCuenta(saldoInicial = 0) {
+    let saldo = saldoInicial;
+    let historial = [];
+
+    // Función privada para registrar transacciones
+    function registrarTransaccion(tipo, monto, saldoAnterior) {
+        historial.push({
+            fecha: new Date().toLocaleString(),
+            tipo: tipo,
+            monto: monto,
+            saldoAnterior: saldoAnterior,
+            saldoNuevo: saldo
+        });
+    }
+
+    return {
+        depositar: function(monto) {
+            if (monto <= 0) {
+                return "El monto debe ser positivo";
+            }
+            const saldoAnterior = saldo;
+            saldo += monto;
+            registrarTransaccion("Depósito", monto, saldoAnterior);
+            return `Depósito exitoso. Nuevo saldo: $${saldo}`;
+        },
+
+        retirar: function(monto) {
+            if (monto <= 0) {
+                return "El monto debe ser positivo";
+            }
+            if (monto > saldo) {
+                return "Fondos insuficientes";
+            }
+            const saldoAnterior = saldo;
+            saldo -= monto;
+            registrarTransaccion("Retiro", monto, saldoAnterior);
+            return `Retiro exitoso. Nuevo saldo: $${saldo}`;
+        },
+
+        consultarSaldo: function() {
+            return `Saldo actual: $${saldo}`;
+        },
+
+        obtenerHistorial: function() {
+            return [...historial]; // Retorna copia del historial
+        }
+    };
+}
+
+// Crear cuenta
+const miCuenta = crearCuenta(1000);
+
+// Pruebas
+console.log(miCuenta.consultarSaldo()); // Saldo actual: $1000
+console.log(miCuenta.depositar(500)); // Depósito exitoso...
+console.log(miCuenta.retirar(200)); // Retiro exitoso...
+console.log(miCuenta.retirar(2000)); // Fondos insuficientes
+console.log(miCuenta.consultarSaldo()); // Saldo actual: $1300
+
+// Ver historial
+console.log("Historial de transacciones:");
+console.log(miCuenta.obtenerHistorial());
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSolucion(num) {
+            const solucion = document.getElementById('solucion' + num);
+            if (solucion.style.display === 'none' || solucion.style.display === '') {
+                solucion.style.display = 'block';
+            } else {
+                solucion.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
