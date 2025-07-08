@@ -14,17 +14,19 @@ console.log("====================");
 
 // 1.1 Sintaxis literal (más común)
 let frutas = ["manzana", "banana", "naranja"];
-console.log("Frutas:", frutas);
+console.log("Frutas:", frutas, typeof frutas);
 
 // 1.2 Constructor Array()
 let numeros = new Array(1, 2, 3, 4, 5);
-console.log("Números:", numeros);
+console.log("Números:", numeros, typeof numeros);
 
 // 1.3 Array vacío
 let colores = [];
 colores[0] = "rojo";
 colores[1] = "verde";
 colores[2] = "azul";
+colores[6] = "amarillo";
+colores[9] = "morado";
 console.log("Colores:", colores);
 
 // 1.4 Array.from() - desde string
@@ -55,6 +57,7 @@ console.log("Animales originales:", animales);
 
 // 2.1 Acceso por índice
 console.log("Primer animal:", animales[0]);
+console.log("longitud", animales.length);
 console.log("Último animal:", animales[animales.length - 1]);
 
 // 2.2 Modificación
@@ -347,6 +350,27 @@ console.log("\n");
 console.log("12. MÉTODOS AVANZADOS");
 console.log("====================");
 
+numeros = [1, 2, 3, 4, 5];
+
+suma = numeros.reduce((acumulador, numero) => {
+    return acumulador + numero;
+}, 0);
+
+const promedio = numeros.reduce((acumulador, numero, indice, array) => {
+    acumulador += numero;
+    
+    // Si es el último elemento, dividir por la cantidad
+    if (indice === array.length - 1) {
+        return acumulador / array.length;
+    }
+    
+    return acumulador;
+}, 0);
+
+console.log("Promedio:", promedio); 
+
+console.log("Suma:", suma); // 15
+
 let personas = [
   { nombre: "Ana", edad: 25, ciudad: "Madrid" },
   { nombre: "Luis", edad: 30, ciudad: "Barcelona" },
@@ -388,6 +412,31 @@ console.log("\n");
 console.log("13. ENCADENAMIENTO DE MÉTODOS");
 console.log("=============================");
 
+// MÉTODOS QUE NO MODIFICAN EL ARRAY ORIGINAL (inmutables):
+
+// map() - retorna nuevo array transformado
+// filter() - retorna nuevo array filtrado
+// slice() - retorna copia de una porción
+// concat() - retorna nuevo array concatenado
+// reduce() - retorna un valor acumulado
+// find() - retorna el elemento encontrado
+// some() - retorna true/false
+// every() - retorna true/false
+// includes() - retorna true/false
+// indexOf() - retorna índice
+// join() - retorna string
+// MÉTODOS QUE SÍ MODIFICAN EL ARRAY ORIGINAL (mutables):
+
+// push() - agrega al final
+// pop() - quita del final
+// shift() - quita del inicio
+// unshift() - agrega al inicio
+// splice() - quita/agrega en cualquier posición
+// sort() - ordena el array
+// reverse() - invierte el orden
+// fill() - llena con un valor
+
+
 let ventas = [
   { producto: "laptop", precio: 1000, cantidad: 2 },
   { producto: "mouse", precio: 25, cantidad: 5 },
@@ -397,15 +446,30 @@ let ventas = [
 
 // 13.1 Encadenamiento complejo
 let ventasAltas = ventas
+.map((venta) => ({
+  ...venta,
+  total: venta.precio * venta.cantidad,
+}));
+console.log("Ventas altas (>$150):", ventasAltas);
+ventasAltas = ventasAltas
+.filter((venta) => venta.total > 150);
+console.log("Ventas altas (>$150):", ventasAltas);
+ventasAltas
+.sort((a, b) => b.total - a.total);
+console.log("Ventas altas (>$150):", ventasAltas);
+ventasAltas = ventasAltas
+.map((venta) => `${venta.producto}: $${venta.total}`);
+console.log("Ventas altas (>$150):", ventasAltas);
+
+ventasAltas = ventas
   .map((venta) => ({
     ...venta,
     total: venta.precio * venta.cantidad,
   }))
-  .filter((venta) => venta.total > 100)
+  .filter((venta) => venta.total > 150)
   .sort((a, b) => b.total - a.total)
   .map((venta) => `${venta.producto}: $${venta.total}`);
-
-console.log("Ventas altas (>$100):", ventasAltas);
+  console.log("Ventas altas (>$150):", ventasAltas);
 
 // 13.2 Cadena de transformaciones
 let resultado = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -422,105 +486,105 @@ console.log("\n");
 // 14. COPIAR ARRAYS
 // =====================================================
 
-console.log("14. COPIAR ARRAYS");
-console.log("================");
+// console.log("14. COPIAR ARRAYS");
+// console.log("================");
 
-let original = [1, 2, 3, { nombre: "test" }];
+// let original = [1, 2, 3, { nombre: "test" }];
 
-// 14.1 Copia superficial con spread
-let copiaSpread = [...original];
-copiaSpread[0] = 999;
-copiaSpread[3].nombre = "modificado";
-console.log("Original:", original);
-console.log("Copia spread:", copiaSpread);
+// // 14.1 Copia superficial con spread
+// let copiaSpread = [...original];
+// copiaSpread[0] = 999;
+// copiaSpread[3].nombre = "modificado";
+// console.log("Original:", original);
+// console.log("Copia spread:", copiaSpread);
 
-// 14.2 Copia superficial con slice
-let copiaSlice = original.slice();
-console.log("Copia slice:", copiaSlice);
+// // 14.2 Copia superficial con slice
+// let copiaSlice = original.slice();
+// console.log("Copia slice:", copiaSlice);
 
-// 14.3 Copia profunda (para objetos simples)
-let originalSimple = [1, 2, 3];
-let copiaProfunda = JSON.parse(JSON.stringify(originalSimple));
-console.log("Copia profunda:", copiaProfunda);
+// // 14.3 Copia profunda (para objetos simples)
+// let originalSimple = [1, 2, 3];
+// let copiaProfunda = JSON.parse(JSON.stringify(originalSimple));
+// console.log("Copia profunda:", copiaProfunda);
 
-console.log("\n");
+// console.log("\n");
 
-// =====================================================
-// 15. CASOS DE USO PRÁCTICOS
-// =====================================================
+// // =====================================================
+// // 15. CASOS DE USO PRÁCTICOS
+// // =====================================================
 
-console.log("15. CASOS DE USO PRÁCTICOS");
-console.log("=========================");
+// console.log("15. CASOS DE USO PRÁCTICOS");
+// console.log("=========================");
 
-// 15.1 Eliminar duplicados
-let conDuplicados = [1, 2, 2, 3, 3, 3, 4, 5];
-let sinDuplicados = [...new Set(conDuplicados)];
-console.log("Sin duplicados:", sinDuplicados);
+// // 15.1 Eliminar duplicados
+// let conDuplicados = [1, 2, 2, 3, 3, 3, 4, 5];
+// let sinDuplicados = [...new Set(conDuplicados)];
+// console.log("Sin duplicados:", sinDuplicados);
 
-// 15.2 Buscar intersección de arrays
-let set1 = [1, 2, 3, 4];
-let set2 = [3, 4, 5, 6];
-let interseccion = set1.filter((x) => set2.includes(x));
-console.log("Intersección:", interseccion);
+// // 15.2 Buscar intersección de arrays
+// let set1 = [1, 2, 3, 4];
+// let set2 = [3, 4, 5, 6];
+// let interseccion = set1.filter((x) => set2.includes(x));
+// console.log("Intersección:", interseccion);
 
-// 15.3 Crear rango de números
-let rango = Array.from({ length: 5 }, (_, i) => i + 1);
-console.log("Rango 1-5:", rango);
+// // 15.3 Crear rango de números
+// let rango = Array.from({ length: 5 }, (_, i) => i + 1);
+// console.log("Rango 1-5:", rango);
 
-// 15.4 Shuffle (mezclar) array
-let cartas = ["A", "K", "Q", "J"];
-let mezcladas = [...cartas].sort(() => Math.random() - 0.5);
-console.log("Cartas mezcladas:", mezcladas);
+// // 15.4 Shuffle (mezclar) array
+// let cartas = ["A", "K", "Q", "J"];
+// let mezcladas = [...cartas].sort(() => Math.random() - 0.5);
+// console.log("Cartas mezcladas:", mezcladas);
 
-// 15.5 Chunk (dividir en grupos)
-function chunk(array, size) {
-  let result = [];
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
-  return result;
-}
+// // 15.5 Chunk (dividir en grupos)
+// function chunk(array, size) {
+//   let result = [];
+//   for (let i = 0; i < array.length; i += size) {
+//     result.push(array.slice(i, i + size));
+//   }
+//   return result;
+// }
 
-let numeros15 = [1, 2, 3, 4, 5, 6, 7, 8];
-let grupos = chunk(numeros15, 3);
-console.log("Dividido en grupos de 3:", grupos);
+// let numeros15 = [1, 2, 3, 4, 5, 6, 7, 8];
+// let grupos = chunk(numeros15, 3);
+// console.log("Dividido en grupos de 3:", grupos);
 
-console.log("\n");
+// console.log("\n");
 
-// =====================================================
-// RESUMEN Y MEJORES PRÁCTICAS
-// =====================================================
+// // =====================================================
+// // RESUMEN Y MEJORES PRÁCTICAS
+// // =====================================================
 
-console.log("RESUMEN Y MEJORES PRÁCTICAS");
-console.log("===========================");
+// console.log("RESUMEN Y MEJORES PRÁCTICAS");
+// console.log("===========================");
 
-console.log(`
-CONCEPTOS CUBIERTOS:
-1. ✓ Creación de arrays (literal, constructor, Array.from, Array.of)
-2. ✓ Acceso y modificación de elementos
-3. ✓ Métodos básicos (push, pop, shift, unshift, splice)
-4. ✓ Búsqueda y verificación (indexOf, includes, find, findIndex)
-5. ✓ Transformación (map, filter)
-6. ✓ Reducción (reduce)
-7. ✓ Verificación (every, some)
-8. ✓ Ordenamiento (sort, reverse)
-9. ✓ Combinación y división (concat, slice, join)
-10. ✓ Desestructuración y spread/rest
-11. ✓ Arrays multidimensionales
-12. ✓ Trabajar con arrays de objetos
-13. ✓ Encadenamiento de métodos
-14. ✓ Copia de arrays
-15. ✓ Casos de uso prácticos
+// console.log(`
+// CONCEPTOS CUBIERTOS:
+// 1. ✓ Creación de arrays (literal, constructor, Array.from, Array.of)
+// 2. ✓ Acceso y modificación de elementos
+// 3. ✓ Métodos básicos (push, pop, shift, unshift, splice)
+// 4. ✓ Búsqueda y verificación (indexOf, includes, find, findIndex)
+// 5. ✓ Transformación (map, filter)
+// 6. ✓ Reducción (reduce)
+// 7. ✓ Verificación (every, some)
+// 8. ✓ Ordenamiento (sort, reverse)
+// 9. ✓ Combinación y división (concat, slice, join)
+// 10. ✓ Desestructuración y spread/rest
+// 11. ✓ Arrays multidimensionales
+// 12. ✓ Trabajar con arrays de objetos
+// 13. ✓ Encadenamiento de métodos
+// 14. ✓ Copia de arrays
+// 15. ✓ Casos de uso prácticos
 
-MEJORES PRÁCTICAS:
-• Usar métodos inmutables (map, filter) cuando sea posible
-• Preferir const para arrays que no se reasignan
-• Usar spread operator para copias superficiales
-• Encadenar métodos para operaciones complejas
-• Validar índices antes de acceder a elementos
-• Usar Array.isArray() para verificar tipos
-• Nombrar variables descriptivamente
-• Evitar modificar arrays durante iteración
-`);
+// MEJORES PRÁCTICAS:
+// • Usar métodos inmutables (map, filter) cuando sea posible
+// • Preferir const para arrays que no se reasignan
+// • Usar spread operator para copias superficiales
+// • Encadenar métodos para operaciones complejas
+// • Validar índices antes de acceder a elementos
+// • Usar Array.isArray() para verificar tipos
+// • Nombrar variables descriptivamente
+// • Evitar modificar arrays durante iteración
+// `);
 
-console.log("=== FIN DE LA GUÍA DE ARRAYS ===");
+// console.log("=== FIN DE LA GUÍA DE ARRAYS ===");

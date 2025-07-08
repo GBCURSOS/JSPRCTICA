@@ -1,733 +1,472 @@
-let cadena = "esta es una cadena";
-let numero = 47645;
-let decimal = 54564.8787;
+// =====================================================
+// FUNCIONES EN JAVASCRIPT - GUÍA COMPLETA
+// De lo más básico a lo más avanzado
+// =====================================================
 
-let persona1 = {
-  nombre: "ramiro",
-  apellido: "nogales",
-  edad: 60,
-  rol: "docente",
+console.log("=== INICIANDO GUÍA DE FUNCIONES EN JAVASCRIPT ===\n");
+
+// =====================================================
+// 1. FUNCIONES BÁSICAS
+// =====================================================
+
+console.log("1. FUNCIONES BÁSICAS");
+console.log("===================");
+
+// 1.1 Declaración básica de función
+function saludar() {
+  console.log("¡Prueba de Función!");
+}
+
+// Llamar a la función
+saludar();
+
+// 1.2 Función con parámetros
+function saludarPersona(mensaje) {
+  console.log("¡ " + mensaje + " !");
+}
+
+sona("mensaje uno");
+saludarPersona("mensaje dos");
+
+// 1.3 Función con múltiples parámetros
+function sumar(a, b) {
+  console.log(a + " + " + b + " = " + (a + b));
+}
+
+sumar(5, 3);
+sumar(10, 20);
+
+// 1.4 Función con valor de retorno
+function multiplicar(x, y) {
+  return x * y;
+}
+
+let resultado = multiplicar(4, 7);
+console.log("4 x 7 = " + resultado);
+
+// 1.5 Función con parámetros por defecto
+function saludarConDefault(nombre = "Usuario") {
+  return "¡Hola " + nombre + "!";
+}
+
+console.log(saludarConDefault()); // Sin parámetro
+console.log(saludarConDefault("María")); // Con parámetro
+
+console.log("\n");
+
+// =====================================================
+// 2. EXPRESIONES DE FUNCIÓN
+// =====================================================
+
+console.log("2. EXPRESIONES DE FUNCIÓN");
+console.log("========================");
+
+// 2.1 Función expresión básica
+const dividir = function (a, b) {
+  return a / b;
 };
 
-let sinInicializar;
+console.log("10 ÷ 2 = " + dividir(10, 2));
 
-let frutas = [
-  "manzana",
-  "banana",
-  "naranja",
-  "fresa",
-  "uva",
-  "piña",
-  "mango",
-  "sandía",
-  "kiwi",
-  "pera",
-];
+// 2.2 Función expresión nombrada
+const factorial = function calcularFactorial(n) {
+  if (n <= 1) return 1;
+  return n * calcularFactorial(n - 1);
+};
 
-// console.log("Arreglo de frutas:", frutas);
-// console.log("Número de frutas:", frutas.length);
+console.log("5! = " + factorial(5));
 
-let personas = [
-  persona1,
-  {
-    nombre: "lucia",
-    apellido: "gomez",
-    edad: 28,
-    rol: "estudiante",
-  },
-  {
-    nombre: "carlos",
-    apellido: "perez",
-    edad: 35,
-    rol: "ingeniero",
-  },
-  {
-    nombre: "ana",
-    apellido: "lopez",
-    edad: 42,
-    rol: "doctora",
-  },
-];
+// // 2.3 Funciones anónimas (en callbacks)
+// setTimeout(function () {
+//   console.log("Esta función anónima se ejecuta después de 1 segundo");
+// }, 1000);
 
-console.log("el valor de la variable número es: ", numero);
-numero = 3434534;
-console.log("el valor de la variable número es: ", numero);
+console.log("\n");
 
-console.log(
-  "este es el doble de la edad de la persona1: ",
-  persona1.nombre * 2
-);
-console.log(
-  "este es el valor que tiene la variable sin Inicializar: ",
-  sinInicializar
-);
+// =====================================================
+// 3. FUNCIONES FLECHA (ARROW FUNCTIONS)
+// =====================================================
 
-console.log("persona1: ", persona1);
-// persona1 = null;
-console.log("persona1: ", persona1);
+console.log("3. FUNCIONES FLECHA");
+console.log("==================");
 
-console.log("persona1: ", personas);
+// 3.1 Sintaxis básica
+const restar = (a, b) => {
+  return a - b;
+};
 
-let base = 5;
-let exponente = 3
-let alCubo = Math.pow(base, exponente);
-console.log(`El valor de ${base} elevado a la potencia de ${exponente} es: ${alCubo}`);
-base = Math.PI;
-alCubo = Math.pow(base, exponente);
-console.log(`El valor de ${base} elevado a la potencia de ${exponente} es: ${alCubo}`);
+console.log("8 - 3 = " + restar(8, 3));
 
-console.log(`el valor de ${Math.PI} elevado a la potencia de 3 es: ${Math.pow(Math.PI, exponente)}`);   
+// 3.2 Función flecha simplificada (una línea)
+const cuadrado = (x) => x * x;
+console.log("5² = " + cuadrado(5));
 
+// 3.3 Sin parámetros
+const obtenerFechaActual = () => new Date().toLocaleDateString();
+console.log("Fecha actual: " + obtenerFechaActual());
 
-// ============================================
-// CONDICIONALES EN JAVASCRIPT
-// Estructuras de control para tomar decisiones
-// ============================================
+// 3.4 Múltiples parámetros
+const calcularArea = (largo, ancho) => largo * ancho;
+console.log("Área (5x3): " + calcularArea(5, 3));
 
-console.log("=== CONDICIONALES EN JAVASCRIPT ===");
-
-// ============================================
-// 1. CONDICIONAL IF BÁSICO
-// ============================================
-console.log("\n--- 1. IF BÁSICO ---");
-
-// El programador define una variable para la edad
-let edad = 18;
-console.log("Edad del usuario:", edad);
-
-// La estructura if evalúa una condición
-if (edad >= 18) {
-    console.log("El usuario es mayor de edad");
-}
-
-// Ejemplo con variable booleana
-let esMayorDeEdad = edad >= 18;
-console.log("¿Es mayor de edad?", esMayorDeEdad);
-
-if (esMayorDeEdad) {
-    console.log("Puede votar en las elecciones");
-}
-
-// ============================================
-// 2. CONDICIONAL IF-ELSE
-// ============================================
-console.log("\n--- 2. IF-ELSE ---");
-
-let temperatura = 25;
-console.log("Temperatura actual:", temperatura + "°C");
-
-// El programador usa if-else para dos opciones
-if (temperatura > 20) {
-    console.log("Hace calor, se recomienda ropa ligera");
-} else {
-    console.log("Hace frío, se recomienda abrigarse");
-}
-
-// Ejemplo con número negativo
-let saldo = -150;
-console.log("Saldo de la cuenta:", saldo);
-
-if (saldo >= 0) {
-    console.log("La cuenta tiene fondos disponibles");
-} else {
-    console.log("La cuenta está en números rojos");
-}
-
-// ============================================
-// 3. CONDICIONAL IF-ELSE IF-ELSE
-// ============================================
-console.log("\n--- 3. IF-ELSE IF-ELSE ---");
-
-let calificacion = 85;
-console.log("Calificación del estudiante:", calificacion);
-
-// El sistema evalúa múltiples rangos
-if (calificacion >= 90) {
-    console.log("Calificación: A - Excelente");
-} else if (calificacion >= 80) {
-    console.log("Calificación: B - Muy bueno");
-} else if (calificacion >= 70) {
-    console.log("Calificación: C - Bueno");
-} else if (calificacion >= 60) {
-    console.log("Calificación: D - Suficiente");
-} else {
-    console.log("Calificación: F - Insuficiente");
-}
-
-// Ejemplo con día de la semana
-let diaSemana = 3;
-console.log("Día de la semana (número):", diaSemana);
-
-if (diaSemana === 1) {
-    console.log("Hoy es Lunes");
-} else if (diaSemana === 2) {
-    console.log("Hoy es Martes");
-} else if (diaSemana === 3) {
-    console.log("Hoy es Miércoles");
-} else if (diaSemana === 4) {
-    console.log("Hoy es Jueves");
-} else if (diaSemana === 5) {
-    console.log("Hoy es Viernes");
-} else if (diaSemana === 6) {
-    console.log("Hoy es Sábado");
-} else if (diaSemana === 7) {
-    console.log("Hoy es Domingo");
-} else {
-    console.log("Día inválido");
-}
-
-// ============================================
-// 4. OPERADORES DE COMPARACIÓN: == & ===
-// ============================================
-console.log("\n--- 4. OPERADORES DE COMPARACIÓN ---");
-
-let a = 10;
-let b = 20;
-let c = "10";
-
-console.log("a =", a);
-console.log("b =", b);
-console.log("c =", c, "(string)");
-
-// Igual (==) - compara valor, no tipo
-console.log("a == c:", a == c); // true
-console.log("a === c:", a === c); // false (estricto)
-
-// Diferente
-console.log("a != b:", a != b); // true
-console.log("a !== c:", a !== c); // true (estricto)
-
-// Mayor y menor
-console.log("a > b:", a > b); // false
-console.log("a < b:", a < b); // true
-console.log("a >= 10:", a >= 10); // true
-console.log("b <= 20:", b <= 20); // true
-
-// El programador usa comparaciones en condicionales
-if (a === parseInt(c)) {
-    console.log("a y c son iguales en valor y tipo después de conversión");
-}
-
-/* 
-parseInt() - Convierte cadena a número entero
-parseFloat() - Convierte cadena a número decimal
-JSON.parse() - Convierte cadena JSON a objeto/array
-Date.parse() - Convierte cadena de fecha a timestamp
-Number.parseInt() - Método estático para enteros (ES6+)
-Number.parseFloat() - Método estático para decimales (ES6+)
-*/
-
-console.log("=== CONVERSIONES PARSE... EN JAVASCRIPT ===");
-
-// 1. parseInt() - Convierte cadena a número entero
-console.log("\n--- parseInt() ---");
-console.log("parseInt('42'):", parseInt("42")); // 42
-console.log("parseInt('42.5'):", parseInt("42.5")); // 42 (solo la parte entera)
-console.log("parseInt('42px'):", parseInt("42px")); // 42 (ignora caracteres no numéricos al final)
-console.log("parseInt('px42'):", parseInt("px42")); // NaN (no puede empezar con no-numérico)
-console.log("parseInt('1010', 2):", parseInt("1010", 2)); // 10 (binario a decimal)
-console.log("parseInt('FF', 16):", parseInt("FF", 16)); // 255 (hexadecimal a decimal)
-
-// 2. parseFloat() - Convierte cadena a número decimal
-console.log("\n--- parseFloat() ---");
-console.log("parseFloat('42.5'):", parseFloat("42.5")); // 42.5
-console.log("parseFloat('42.5px'):", parseFloat("42.5px")); // 42.5
-console.log("parseFloat('3.14159'):", parseFloat("3.14159")); // 3.14159
-console.log("parseFloat('px3.14'):", parseFloat("px3.14")); // NaN
-
-// 3. Number.parseInt() - Método estático (ES6+)
-console.log("\n--- Number.parseInt() ---");
-console.log("Number.parseInt('42'):", Number.parseInt("42"));
-console.log("Number.parseInt('1010', 2):", Number.parseInt("1010", 2));
-
-// 4. Number.parseFloat() - Método estático (ES6+)
-console.log("\n--- Number.parseFloat() ---");
-console.log("Number.parseFloat('3.14'):", Number.parseFloat("3.14"));
-
-// ============================================
-// 5. OPERADORES LÓGICOS
-// ============================================
-console.log("\n--- 5. OPERADORES LÓGICOS ---");
-
-let usuario = "admin";
-let contraseña = "12345";
-let esActivo = true;
-
-console.log("Usuario:", usuario);
-console.log("Contraseña:", contraseña);
-console.log("Está activo:", esActivo);
-
-// AND (&&) - ambas condiciones deben ser verdaderas
-if (usuario === "admin" && contraseña === "12345") {
-    console.log("Credenciales correctas");
-}
-
-// OR (||) - al menos una condición debe ser verdadera
-if (usuario === "admin" || usuario === "moderator") {
-    console.log("El usuario tiene privilegios");
-}
-
-// NOT (!) - invierte el valor booleano
-if (!esActivo) {
-    console.log("El usuario está inactivo");
-} else {
-    console.log("El usuario está activo");
-}
-
-// Combinación de operadores lógicos
-let edadUsuario = 25;
-let tienePermiso = true;
-
-if ((edadUsuario >= 18 && edadUsuario <= 65) && tienePermiso) {
-    console.log("El usuario puede acceder al sistema");
-} else {
-    console.log("Acceso denegado");
-}
-
-// ============================================
-// 6. SWITCH STATEMENT
-// ============================================
-console.log("\n--- 6. SWITCH STATEMENT ---");
-
-let mes = 3;
-console.log("Mes (número):", mes);
-
-// El programador usa switch para múltiples opciones exactas
-switch (mes) {
-    case 1:
-        console.log("Enero - Invierno");
-        break;
-    case 2:
-        console.log("Febrero - Invierno");
-        break;
-    case 3:
-        console.log("Marzo - Primavera");
-        break;
-    case 4:
-        console.log("Abril - Primavera");
-        break;
-    case 5:
-        console.log("Mayo - Primavera");
-        break;
-    case 6:
-        console.log("Junio - Verano");
-        break;
-    case 7:
-        console.log("Julio - Verano");
-        break;
-    case 8:
-        console.log("Agosto - Verano");
-        break;
-    case 9:
-        console.log("Septiembre - Otoño");
-        break;
-    case 10:
-        console.log("Octubre - Otoño");
-        break;
-    case 11:
-        console.log("Noviembre - Otoño");
-        break;
-    case 12:
-        console.log("Diciembre - Invierno");
-        break;
-    default:
-        console.log("Mes inválido");
-}
-
-// Switch con agrupación de casos
-let tipoVehiculo = "carro";
-console.log("Tipo de vehículo:", tipoVehiculo);
-
-switch (tipoVehiculo) {
-    case "carro":
-    case "auto":
-    case "automóvil":
-        console.log("Vehículo de 4 ruedas para pasajeros");
-        break;
-    case "moto":
-    case "motocicleta":
-        console.log("Vehículo de 2 ruedas");
-        break;
-    case "bicicleta":
-        console.log("Vehículo sin motor");
-        break;
-    default:
-        console.log("Tipo de vehículo no reconocido");
-}
-
-// ============================================
-// 7. OPERADOR TERNARIO
-// ============================================
-console.log("\n--- 7. OPERADOR TERNARIO ---");
-
-let puntuacion = 750;
-console.log("Puntuación del jugador:", puntuacion);
-
-// Sintaxis: condición ? valor_si_verdadero : valor_si_falso
-let mensaje = puntuacion >= 500 ? "¡Has ganado!" : "Intenta de nuevo";
-console.log("Mensaje:", mensaje);
-
-// El programador puede anidar operadores ternarios
-let categoria = puntuacion >= 800 ? "Experto" : 
-               puntuacion >= 500 ? "Intermedio" : "Principiante";
-console.log("Categoría del jugador:", categoria);
-
-// Operador ternario en asignación de variables
-let descuento = puntuacion >= 1000 ? 0.2 : 0.1;
-console.log("Descuento aplicado:", descuento * 100 + "%");
-
-// ============================================
-// 8. VALIDACIONES COMUNES
-// ============================================
-console.log("\n--- 8. VALIDACIONES COMUNES ---");
-
-// Validación de números
-numero = 42;
-console.log("Número a validar:", numero);
-
-if (typeof numero === "number" && !isNaN(numero)) {
-    console.log("Es un número válido");
-    
-    if (numero > 0) {
-        console.log("Es un número positivo");
-    } else if (numero < 0) {
-        console.log("Es un número negativo");
-    } else {
-        console.log("Es cero");
-    }
-} else {
-    console.log("No es un número válido");
-}
-
-// Validación de strings
-let texto = "JavaScript";
-console.log("Texto a validar:", texto);
-
-if (typeof texto === "string" && texto.length > 0) {
-    console.log("Es un string válido y no está vacío");
-    
-    if (texto.length >= 5) {
-        console.log("El texto tiene suficiente longitud");
-    }
-} else {
-    console.log("String inválido o vacío");
-}
-
-// Validación de arrays
-let lista = [1, 2, 3, 4, 5];
-console.log("Array a validar:", lista);
-
-if (Array.isArray(lista) && lista.length > 0) {
-    console.log("Es un array válido con elementos");
-    console.log("Cantidad de elementos:", lista.length);
-} else {
-    console.log("No es un array válido o está vacío");
-}
-
-// ============================================
-// 9. CONDICIONALES ANIDADOS
-// ============================================
-console.log("\n--- 9. CONDICIONALES ANIDADOS ---");
-
-let esEstudiante = true;
-let edadEstudiante = 20;
-let promedioNotas = 8.5;
-
-console.log("¿Es estudiante?", esEstudiante);
-console.log("Edad:", edadEstudiante);
-console.log("Promedio de notas:", promedioNotas);
-
-// El programador anida condicionales para lógica compleja
-if (esEstudiante) {
-    console.log("La persona es estudiante");
-    
-    if (edadEstudiante >= 18) {
-        console.log("Es estudiante universitario");
-        
-        if (promedioNotas >= 9.0) {
-            console.log("Estudiante con honores - Beca completa");
-        } else if (promedioNotas >= 8.0) {
-            console.log("Buen estudiante - Beca parcial");
-        } else if (promedioNotas >= 7.0) {
-            console.log("Estudiante regular - Sin beca");
-        } else {
-            console.log("Estudiante en riesgo académico");
-        }
-    } else {
-        console.log("Es estudiante de secundaria");
-    }
-} else {
-    console.log("La persona no es estudiante");
-}
-
-// ============================================
-// 10. TRUTHY Y FALSY VALUES
-// ============================================
-console.log("\n--- 10. VALORES TRUTHY Y FALSY ---");
-
-// El programador debe conocer los valores falsy en JavaScript
-let valoresFalsy = [false, 0, -0, 0n, "", null, undefined, NaN];
-console.log("Valores falsy en JavaScript:", valoresFalsy);
-
-// Prueba de valores falsy
-valoresFalsy.forEach((valor, index) => {
-    if (valor) {
-        console.log(`Valor ${index + 1} (${valor}) es truthy`);
-    } else {
-        console.log(`Valor ${index + 1} (${valor}) es falsy`);
-    }
+// 3.5 Retorno de objeto (requiere paréntesis)
+const crearPersona = (nombre, edad) => ({
+  nombre: nombre,
+  edad: edad,
+  esAdulto: edad >= 18,
 });
 
-// Ejemplos prácticos con truthy/falsy
-let nombreUsuario = "";
-if (nombreUsuario) {
-    console.log("Bienvenido,", nombreUsuario);
-} else {
-    console.log("Por favor, ingrese su nombre");
+console.log("Persona:", crearPersona("Luis", 25));
+
+console.log("\n");
+
+// =====================================================
+// 4. SCOPE Y CLOSURES
+// =====================================================
+
+console.log("4. SCOPE Y CLOSURES");
+console.log("==================");
+
+// 4.1 Scope global vs local
+let variableGlobal = "Soy global";
+
+function ejemploScope() {
+  let variableLocal = "Soy local";
+  console.log("Dentro de función - Global:", variableGlobal);
+  console.log("Dentro de función - Local:", variableLocal);
 }
 
-let listaCompras = [];
-if (listaCompras.length) {
-    console.log("Hay", listaCompras.length, "elementos en la lista");
-} else {
-    console.log("La lista de compras está vacía");
+ejemploScope();
+console.log("Fuera de función - Global:", variableGlobal);
+// console.log(variableLocal); // Error: no está definida
+
+// 4.2 Closure básico
+function crearContador() {
+  let contador = 0;
+
+  return function () {
+    contador++;
+    return contador;
+  };
 }
 
-// ============================================
-// 11. SHORT-CIRCUIT EVALUATION
-// ============================================
-console.log("\n--- 11. EVALUACIÓN DE CORTOCIRCUITO ---");
+const contador1 = crearContador();
+const contador2 = crearContador();
 
-let config = null;
-let valorPorDefecto = "Configuración predeterminada";
+console.log("Contador 1:", contador1()); // 1
+console.log("Contador 1:", contador1()); // 2
+console.log("Contador 2:", contador2()); // 1
+console.log("Contador 1:", contador1()); // 3
 
-// OR (||) - devuelve el primer valor truthy
-let configuracion = config || valorPorDefecto;
-console.log("Configuración:", configuracion);
+function crearContadorAvanzado(inicio = 0, paso = 1) {
+  let contador = inicio;
 
-// AND (&&) - devuelve el último valor si todos son truthy
-let usuario2 = { nombre: "Juan", activo: true };
-let saludo = usuario2 && usuario2.activo && "Hola, " + usuario2.nombre;
-console.log("Saludo:", saludo);
-
-// Nullish coalescing (??) - solo considera null y undefined como falsy
-/*
-El operador ?? devuelve el valor de la derecha cuando el valor de la izquierda es null o undefined. En cualquier otro caso, devuelve el valor de la izquierda.
-*/
-
-let valor1 = 0;
-let valor2 = null;
-
-console.log("Con ||:", valor1 || "Por defecto"); // "Por defecto"
-console.log("Con ??:", valor1 ?? "Por defecto"); // 0
-
-console.log("Con ||:", valor2 || "Por defecto"); // "Por defecto"
-console.log("Con ??:", valor2 ?? "Por defecto"); // "Por defecto"
-
-console.log(validarContraseña("123"));
-console.log(validarContraseña("Contraseña123"));
-
-console.log("\n=== FIN DE EJEMPLOS DE CONDICIONALES ===");
-
-/* CICLOS */
-
-// ===================================================================
-// CICLOS EN JAVASCRIPT - EXPLICACIÓN COMPLETA
-// ===================================================================
-
-console.log("=== CICLOS EN JAVASCRIPT ===");
-
-// ===================================================================
-// 1. CICLO FOR - El más común y versátil
-// ===================================================================
-console.log("\n1. CICLO FOR:");
-console.log("Sintaxis: for (inicialización; condición; incremento)");
-
-// Ejemplo básico
-console.log("\nContando del 1 al 5:");
-for (let i = 1; i <= 5; i++) {
-  console.log("Número:", i);
+  return {
+    incrementar: () => {
+      contador += paso;
+      return contador;
+    },
+    decrementar: () => {
+      contador -= paso;
+      return contador;
+    },
+    obtenerValor: () => contador,
+    reset: () => {
+      contador = inicio;
+      return contador;
+    },
+  };
 }
 
-// For con incremento diferente
-console.log("\nContando de 2 en 2:");
-for (let i = 0; i <= 10; i += 2) {
-  console.log("Par:", i);
+const contador = crearContadorAvanzado(10, 2);
+console.log(contador.incrementar()); // 12
+console.log(contador.incrementar()); // 14
+console.log(contador.obtenerValor()); // 14
+console.log(contador.reset()); // 10
+
+// 4.3 Closure con parámetros
+function crearMultiplicador(factor) {
+  return function (numero) {
+    return numero * factor;
+  };
 }
 
-// For descendente
-console.log("\nCuenta regresiva:");
-for (let i = 5; i >= 1; i--) {
-  console.log("Cuenta regresiva:", i);
+const duplicar = crearMultiplicador(2);
+const triplicar = crearMultiplicador(3);
+const quintuplicar = crearMultiplicador(5);
+
+console.log("Duplicar 5:", duplicar(5)); // 10
+console.log("Triplicar 4:", triplicar(4)); // 12
+console.log("Quintuplicar 3:", quintuplicar(3)); // 15
+
+console.log("\n");
+
+// =====================================================
+// 5. PARÁMETROS AVANZADOS
+// =====================================================
+
+console.log("5. PARÁMETROS AVANZADOS");
+console.log("======================");
+
+// 5.0 EXPLICACIÓN DEL OPERADOR TRES PUNTOS (...)
+console.log("5.0 EL OPERADOR TRES PUNTOS (...)");
+console.log("---------------------------------");
+
+// El operador ... tiene dos usos principales:
+// 1. SPREAD (expansión) - Expandir elementos de arrays/objetos
+// 2. REST (agrupación) - Agrupar elementos en arrays
+
+// 5.0.1 SPREAD OPERATOR - Expandir arrays
+console.log("\n--- SPREAD con Arrays ---");
+const numArray1 = [1, 2, 3];
+const numArray2 = [4, 5, 6];
+
+// Combinar arrays con spread
+const arraysCombinados = [...numArray1, ...numArray2];
+console.log("Array 1:", numArray1);
+console.log("Array 2:", numArray2);
+console.log("Arrays combinados:", arraysCombinados);
+
+// Copiar array
+const copiaArray = [...numArray1];
+console.log("Copia del array 1:", copiaArray);
+
+// Agregar elementos al inicio y final
+const arrayExtendido = [0, ...numArray1, 7, 8];
+console.log("Array extendido:", arrayExtendido);
+
+// 5.0.2 SPREAD OPERATOR - Expandir objetos
+console.log("\n--- SPREAD con Objetos ---");
+const persona = { nombre: "Juan", edad: 30 };
+const direccion = { ciudad: "Madrid", pais: "España" };
+
+// Combinar objetos
+const personaCompleta = { ...persona, ...direccion };
+console.log("Persona:", persona);
+console.log("Dirección:", direccion);
+console.log("Persona completa:", personaCompleta);
+
+// Sobrescribir propiedades
+const personaModificada = { ...persona, edad: 31, profesion: "Desarrollador" };
+console.log("Persona modificada:", personaModificada);
+
+// 5.0.3 SPREAD OPERATOR - En llamadas a funciones
+console.log("\n--- SPREAD en llamadas a funciones ---");
+function mostrarNumeros(a, b, c, d, e) {
+  console.log("Números recibidos:", a, b, c, d, e);
 }
 
-// ===================================================================
-// 2. CICLO WHILE - Se ejecuta mientras la condición sea verdadera
-// ===================================================================
-console.log("\n2. CICLO WHILE:");
-console.log("Sintaxis: while (condición)");
+const numerosParaEnviar = [10, 20, 30, 40, 50];
+console.log("Array original:", numerosParaEnviar);
+mostrarNumeros(...numerosParaEnviar); // Expande el array como argumentos separados
 
-let contador = 1;
-console.log("\nUsando while para contar del 1 al 3:");
-while (contador <= 3) {
-  console.log("Contador while:", contador);
-  contador++;
-}
+// Convertir string a array de caracteres
+const texto = "Dabale arroz a la zorra el Abad";
+const caracteres = [...texto];
+console.log("Texto:", texto);
+console.log("Caracteres:", caracteres);
 
-// Ejemplo práctico con while
-let numero = 1024;
-let divisiones = 0;
-console.log("\n¿Cuántas veces se puede dividir 1024 entre 2?");
-while (numero > 1) {
-  numero = numero / 2;
-  divisiones++;
-  console.log(`División ${divisiones}: ${numero}`);
-}
+// 5.0.4 REST OPERATOR - Agrupar elementos
+console.log("\n--- REST Operator ---");
 
-// ===================================================================
-// 3. CICLO DO-WHILE - Se ejecuta al menos una vez
-// ===================================================================
-console.log("\n3. CICLO DO-WHILE:");
-console.log("Sintaxis: do { } while (condición)");
+// En destructuring de arrays
+const [primero, segundo, ...resto] = [1, 2, 3, 4, 5, 6];
+console.log("Primero:", primero);
+console.log("Segundo:", segundo);
+console.log("Resto:", resto);
 
-let x = 1;
-console.log("\nEjemplo do-while (se ejecuta al menos una vez):");
-do {
-  console.log("Valor de x:", x);
-  x++;
-} while (x <= 3);
-
-// Ejemplo donde la condición es falsa desde el inicio
-let y = 10;
-console.log("\nDo-while con condición falsa (aún así se ejecuta una vez):");
-do {
-  console.log("Este mensaje se muestra aunque y sea 10");
-  y++;
-} while (y < 5);
-
-// ===================================================================
-// 4. CICLO FOR...IN - Para iterar sobre propiedades de objetos
-// ===================================================================
-console.log("\n4. CICLO FOR...IN:");
-console.log("Sintaxis: for (variable in objeto)");
-
-const persona = {
-  nombre: "Juan",
-  edad: 30,
-  ciudad: "Madrid",
-  profesion: "Desarrollador",
+// En destructuring de objetos
+const { nombre, ...otrosDatos } = {
+  nombre: "Ana",
+  edad: 25,
+  ciudad: "Barcelona",
+  profesion: "Médica",
 };
+console.log("Nombre:", nombre);
+console.log("Otros datos:", otrosDatos);
 
-console.log("\nIterando sobre propiedades de un objeto:");
-for (let propiedad in persona) {
-  console.log(`${propiedad}: ${persona[propiedad]}`);
-}
+// 5.0.5 Ejemplos prácticos del operador ...
+console.log("\n--- Ejemplos prácticos ---");
 
-// For...in con arrays (devuelve los índices)
-const colores = ["rojo", "azul", "verde"];
-console.log("\nFor...in con array (devuelve índices):");
-for (let indice in colores) {
-  console.log(`Índice ${indice}: ${colores[indice]}`);
-}
+// Encontrar el máximo en un array
+const numerosEjemplo = [15, 8, 23, 4, 42, 16];
+const maximoA = Math.max(numerosEjemplo);
+console.log("Máximo:", maximoA);
+const maximoB = Math.max(...numerosEjemplo);
+console.log("Array:", numerosEjemplo);
+console.log("Máximo:", maximoB);
 
-// ===================================================================
-// 5. CICLO FOR...OF - Para iterar sobre valores de objetos iterables
-// ===================================================================
 
-/* Un objeto iterable es cualquier objeto que implementa el protocolo de iteración, lo que significa que define cómo sus valores pueden ser recorridos o iterados. */
+console.log("\n--- Ahora aplicamos ... en FUNCIONES ---");
 
-console.log("\n5. CICLO FOR...OF:");
-console.log("Sintaxis: for (variable of iterable)");
-
-console.log("\nIterando sobre valores de un array:");
-frutas = ["manzana", "banana", "naranja"];
-for (let fruta of frutas) {
-  console.log("Fruta:", fruta);
-}
-
-// For...of con strings
-texto = "Hola";
-console.log("\nIterando sobre caracteres de un string:");
-for (let caracter of texto) {
-  console.log("Carácter:", caracter);
-}
-
-// ===================================================================
-// CONTROL DE FLUJO EN CICLOS
-// ===================================================================
-console.log("\n=== CONTROL DE FLUJO ===");
-
-// BREAK - Sale del ciclo
-console.log("\nUsando BREAK:");
-for (let i = 1; i <= 10; i++) {
-  if (i === 5) {
-    console.log("Encontré el 5, salgo del ciclo");
-    break;
+// 5.1 Parámetros rest (...) en funciones
+function sumarTodosA(numeros) {
+  console.log("Números recibidos:", numeros, typeof numeros);
+  let suma = 0;
+  for (let numero of numeros) {
+    suma += numero;
   }
-  console.log("Número:", i);
+  return suma;
 }
 
-// CONTINUE - Salta a la siguiente iteración
-console.log("\nUsando CONTINUE:");
-for (let i = 1; i <= 5; i++) {
-  if (i === 3) {
-    console.log("Saltando el número 3");
-    continue;
+function sumarTodosB(...numeros) {
+  console.log("Números recibidos:", numeros, typeof numeros);
+  let suma = 0;
+  for (let numero of numeros) {
+    suma += numero;
   }
-  console.log("Número:", i);
+  return suma;
 }
 
-// ===================================================================
-// CICLOS ANIDADOS
-// ===================================================================
-console.log("\n=== CICLOS ANIDADOS ===");
+console.log("Suma de varios números:", sumarTodosA(1, 2, 3, 4, 5));
+console.log("Suma de otros números:", sumarTodosA(10, 20));
 
-console.log("\nTabla de multiplicar del 1 al 3:");
-for (let i = 1; i <= 3; i++) {
-  console.log(`\nTabla del ${i}:`);
-  for (let j = 1; j <= 5; j++) {
-    console.log(`${i} x ${j} = ${i * j}`);
-  }
+console.log("Suma de varios números:", sumarTodosB(1, 2, 3, 4, 5));
+console.log("Suma de otros números:", sumarTodosB(10, 20));
+
+// 5.2 Destructuring en parámetros - Arrays
+function procesarArray([primero, segundo, ...resto]) {
+  console.log("Primero:", primero);
+  console.log("Segundo:", segundo);
+  console.log("Resto:", resto);
 }
 
-// ===================================================================
-// EJEMPLOS PRÁCTICOS
-// ===================================================================
-console.log("\n=== EJEMPLOS PRÁCTICOS ===");
+procesarArray([1, 2, 3, 4, 5]);
 
-// Sumar números del 1 al 10
-let suma = 0;
-for (let i = 1; i <= 10; i++) {
-  suma += i;
-}
-console.log("\nSuma de números del 1 al 10:", suma);
-
-// Encontrar números pares
-console.log("\nNúmeros pares del 1 al 10:");
-for (let i = 1; i <= 10; i++) {
-  if (i % 2 === 0) {
-    console.log("Par:", i);
-  }
+// 5.3 Destructuring en parámetros - Objetos
+function procesarPersona({ nombre, edad, ciudad = "No especificada" }) {
+  console.log(`${nombre}, ${edad} años, vive en ${ciudad}`);
 }
 
-// Factorial usando while
-let num = 5;
-let factorial = 1;
-let temp = num;
-while (temp > 0) {
-  factorial *= temp;
-  temp--;
-}
-console.log(`\nFactorial de ${num}:`, factorial);
+procesarPersona({ nombre: "Ana", edad: 30, ciudad: "Madrid" });
+procesarPersona({ nombre: "Pedro", edad: 25 }); // sin ciudad
 
-// ===================================================================
-// RESUMEN DE CUÁNDO USAR CADA CICLO
-// ===================================================================
-console.log("\n=== CUÁNDO USAR CADA CICLO ===");
-console.log("FOR: Cuando se sabe cuántas iteraciones se necesitan");
-console.log(
-  "WHILE: Cuando no se sabe cuántas iteraciones, pero se tiene una condición"
+// 5.4 Combinando rest y destructuring
+function analizarDatos({ nombre, ...otrosDatos }, ...comentarios) {
+  console.log("Nombre:", nombre);
+  console.log("Otros datos:", otrosDatos);
+  console.log("Comentarios:", comentarios);
+}
+
+analizarDatos(
+  { nombre: "María", edad: 28, profesion: "Doctora" },
+  "Excelente",
+  "Muy profesional"
 );
-console.log("DO-WHILE: Cuando necesitas ejecutar el código al menos una vez");
-console.log("FOR...IN: Para iterar sobre propiedades de objetos");
-console.log("FOR...OF: Para iterar sobre valores de arrays, strings, etc.");
+
+console.log("\n");
+
+// =====================================================
+// 6. FUNCIONES COMO OBJETOS DE PRIMERA CLASE
+// =====================================================
+
+console.log("6. FUNCIONES COMO OBJETOS DE PRIMERA CLASE");
+console.log("==========================================");
+
+// 6.1 Asignar funciones a variables
+function original() {
+  return "Función original";
+}
+
+const copia = original;
+console.log("Función copiada:", copia());
+
+// 6.2 Pasar funciones como parámetros
+function ejecutarOperacion(a, b, operacion) {
+  return operacion(a, b);
+}
+
+function suma(x, y) {
+  return x + y;
+}
+function resta(x, y) {
+  return x - y;
+}
+
+console.log("Ejecutar suma:", ejecutarOperacion(10, 5, suma));
+console.log("Ejecutar resta:", ejecutarOperacion(10, 5, resta));
+
+console.log(
+  "Ejecutar suma con arrow:",
+  ejecutarOperacion(10, 5, (x, y) => x + y)
+);
+console.log(
+  "Ejecutar resta con arrow:",
+  ejecutarOperacion(10, 5, (x, y) => x - y)
+);
+
+// 6.3 Retornar funciones desde funciones
+function crearSaludador(saludo) {
+  return function (nombre) {
+    return saludo + " " + nombre;
+  };
+}
+
+const saludoFormal = crearSaludador("Buenos días");
+const saludoInformal = crearSaludador("¡Hola");
+
+console.log(saludoFormal("Dr. García"));
+console.log(saludoInformal("amigo!"));
+
+// 6.4 Almacenar funciones en arrays
+const operaciones = [
+  (a, b) => a + b,
+  (a, b) => a - b,
+  (a, b) => a * b,
+  (a, b) => a / b,
+];
+
+console.log("Operaciones con 12 y 3:");
+const nombres = ["+", "-", "*", "/"];
+for (let i = 0; i < operaciones.length; i++) {
+  console.log(`12 ${nombres[i]} 3 = ${operaciones[i](12, 3)}`);
+}
+
+console.log("\n");
+
+// =====================================================
+// 7. MÉTODOS DE FUNCIÓN AVANZADOS
+// =====================================================
+
+console.log("7. MÉTODOS DE FUNCIÓN AVANZADOS");
+console.log("===============================");
+
+// 7.1 call() - llamar función con contexto específico
+function presentarse() {
+  return `Hola, soy ${this.nombre} y tengo ${this.edad} años`;
+}
+
+const persona1 = { nombre: "Juan", edad: 30 };
+const persona2 = { nombre: "María", edad: 25 };
+
+console.log("Con call():");
+console.log(presentarse.call(persona1));
+console.log(presentarse.call(persona2));
+
+// =====================================================
+// 11. FUNCIONES DE ORDEN SUPERIOR
+// =====================================================
+
+console.log("11. FUNCIONES DE ORDEN SUPERIOR");
+console.log("===============================");
+
+// 11.1 Función que recibe otra función
+function aplicarOperacion(arr, operacion) {
+  const resultado = [];
+  for (let i = 0; i < arr.length; i++) {
+    resultado.push(operacion(arr[i]));
+  }
+  return resultado;
+}
+
+const numeros = [1, 2, 3, 4, 5];
+console.log("Números originales:", numeros);
+console.log(
+  "Números al cuadrado:",
+  aplicarOperacion(numeros, (x) => x * x)
+);
+console.log(
+  "Números duplicados:",
+  aplicarOperacion(numeros, (x) => x * 2)
+);
+

@@ -22,9 +22,9 @@ saludar();
 
 // 1.2 Función con parámetros
 function saludarPersona(mensaje) {
-  console.log("¡ " + mensaje  + " !");
+  console.log("¡ " + mensaje + " !");
 }
- 
+
 sona("mensaje uno");
 saludarPersona("mensaje dos");
 
@@ -160,7 +160,7 @@ console.log("Contador 1:", contador1()); // 3
 
 function crearContadorAvanzado(inicio = 0, paso = 1) {
   let contador = inicio;
-  
+
   return {
     incrementar: () => {
       contador += paso;
@@ -174,7 +174,7 @@ function crearContadorAvanzado(inicio = 0, paso = 1) {
     reset: () => {
       contador = inicio;
       return contador;
-    }
+    },
   };
 }
 
@@ -260,6 +260,12 @@ const numerosParaEnviar = [10, 20, 30, 40, 50];
 console.log("Array original:", numerosParaEnviar);
 mostrarNumeros(...numerosParaEnviar); // Expande el array como argumentos separados
 
+// Convertir string a array de caracteres
+const texto = "Dabale arroz a la zorra el Abad";
+const caracteres = [...texto];
+console.log("Texto:", texto);
+console.log("Caracteres:", caracteres);
+
 // 5.0.4 REST OPERATOR - Agrupar elementos
 console.log("\n--- REST Operator ---");
 
@@ -284,15 +290,11 @@ console.log("\n--- Ejemplos prácticos ---");
 
 // Encontrar el máximo en un array
 const numerosEjemplo = [15, 8, 23, 4, 42, 16];
-const maximo = Math.max(...numerosEjemplo);
+const maximoA = Math.max(numerosEjemplo);
+console.log("Máximo:", maximoA);
+const maximoB = Math.max(...numerosEjemplo);
 console.log("Array:", numerosEjemplo);
-console.log("Máximo:", maximo);
-
-// Convertir string a array de caracteres
-const texto = "Dabale arroz a la zorra el Abad";
-const caracteres = [...texto];
-console.log("Texto:", texto);
-console.log("Caracteres:", caracteres);
+console.log("Máximo:", maximoB);
 
 // Eliminar duplicados de un array
 // const numerosConDuplicados = [1, 2, 2, 3, 4, 4, 5];
@@ -303,7 +305,8 @@ console.log("Caracteres:", caracteres);
 console.log("\n--- Ahora aplicamos ... en FUNCIONES ---");
 
 // 5.1 Parámetros rest (...) en funciones
-function sumarTodos(...numeros) {
+function sumarTodosA(numeros) {
+  console.log("Números recibidos:", numeros, typeof numeros);
   let suma = 0;
   for (let numero of numeros) {
     suma += numero;
@@ -311,8 +314,20 @@ function sumarTodos(...numeros) {
   return suma;
 }
 
-console.log("Suma de varios números:", sumarTodos(1, 2, 3, 4, 5));
-console.log("Suma de otros números:", sumarTodos(10, 20));
+function sumarTodosB(...numeros) {
+  console.log("Números recibidos:", numeros, typeof numeros);
+  let suma = 0;
+  for (let numero of numeros) {
+    suma += numero;
+  }
+  return suma;
+}
+
+console.log("Suma de varios números:", sumarTodosA(1, 2, 3, 4, 5));
+console.log("Suma de otros números:", sumarTodosA(10, 20));
+
+console.log("Suma de varios números:", sumarTodosB(1, 2, 3, 4, 5));
+console.log("Suma de otros números:", sumarTodosB(10, 20));
 
 // 5.2 Destructuring en parámetros - Arrays
 function procesarArray([primero, segundo, ...resto]) {
@@ -376,6 +391,15 @@ function resta(x, y) {
 console.log("Ejecutar suma:", ejecutarOperacion(10, 5, suma));
 console.log("Ejecutar resta:", ejecutarOperacion(10, 5, resta));
 
+console.log(
+  "Ejecutar suma con arrow:",
+  ejecutarOperacion(10, 5, (x, y) => x + y)
+);
+console.log(
+  "Ejecutar resta con arrow:",
+  ejecutarOperacion(10, 5, (x, y) => x - y)
+);
+
 // 6.3 Retornar funciones desde funciones
 function crearSaludador(saludo) {
   return function (nombre) {
@@ -397,11 +421,11 @@ const operaciones = [
   (a, b) => a / b,
 ];
 
-// console.log("Operaciones con 12 y 3:");
-// operaciones.forEach((op, index) => {
-//   const nombres = ["+", "-", "*", "/"];
-//   console.log(`12 ${nombres[index]} 3 = ${op(12, 3)}`);
-// });
+console.log("Operaciones con 12 y 3:");
+const nombres = ["+", "-", "*", "/"];
+for (let i = 0; i < operaciones.length; i++) {
+  console.log(`12 ${nombres[i]} 3 = ${operaciones[i](12, 3)}`);
+}
 
 console.log("\n");
 
@@ -454,18 +478,18 @@ console.log(presentarse.call(persona2));
 // console.log(presentarseMaria());
 
 // 7.4 bind() con argumentos parciales
-function multiplicarPor(factor, numero) {
-  return factor * numero;
-}
+// function multiplicarPor(factor, numero) {
+//   return factor * numero;
+// }
 
-const duplicarNumero = multiplicarPor.bind(null, 2);
-const triplicarNumero = multiplicarPor.bind(null, 3);
+// const duplicarNumero = multiplicarPor.bind(null, 2);
+// const triplicarNumero = multiplicarPor.bind(null, 3);
 
-console.log("\nBind con argumentos parciales:");
-console.log("Duplicar 5:", duplicarNumero(5));
-console.log("Triplicar 4:", triplicarNumero(4));
+// console.log("\nBind con argumentos parciales:");
+// console.log("Duplicar 5:", duplicarNumero(5));
+// console.log("Triplicar 4:", triplicarNumero(4));
 
-console.log("\n");
+// console.log("\n");
 
 // =====================================================
 // 8. FUNCIONES RECURSIVAS
@@ -605,78 +629,95 @@ console.log("\n");
 // 10. FUNCIONES ASÍNCRONAS
 // =====================================================
 
-console.log("10. FUNCIONES ASÍNCRONAS");
-console.log("=======================");
+// console.log("10. FUNCIONES ASÍNCRONAS");
+// console.log("=======================");
+
+/*
+Una función callback (también llamada "función de retorno" o "función de devolución de llamada") es una función que se pasa como argumento a otra función, para ser ejecutada en un momento específico dentro de esa función.
+
+Características principales:
+
+Se pasa como parámetro a otra función
+Se ejecuta después de que ocurra algo específico
+Permite personalizar el comportamiento de una función
+Es asíncrona o síncrona dependiendo del contexto
+*/
 
 // 10.1 Función con callback
-function operacionAsincrona(callback) {
-  setTimeout(() => {
-    const resultado = Math.random() * 100;
-    callback(resultado);
-  }, 1000);
-}
+// function operacionAsincrona(callback) {
+//   setTimeout(() => {
+//     const resultado = Math.random() * 100;
+//     callback(resultado);
+//   }, 1000);
+// }
 
-console.log("Iniciando operación asíncrona con callback...");
-operacionAsincrona((resultado) => {
-  console.log("Resultado del callback:", resultado.toFixed(2));
-});
+// console.log("Iniciando operación asíncrona con callback...");
+// operacionAsincrona((resultado) => {
+//   console.log("Resultado del callback:", resultado.toFixed(2));
+// });
 
-// 10.2 Función que retorna Promise
-function operacionPromise() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const exito = Math.random() > 0.2; // 80% de éxito
-      if (exito) {
-        resolve("Operación exitosa!");
-      } else {
-        reject("Error en la operación");
-      }
-    }, 1500);
-  });
-}
+// // sincronizar la ejecución
 
-console.log("Iniciando operación con Promise...");
-operacionPromise()
-  .then((resultado) => console.log("Promise resuelto:", resultado))
-  .catch((error) => console.log("Promise rechazado:", error));
+// // 10.2 Función que retorna Promise
+// function operacionPromise() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       let valor = Math.random();
+//       const exito = valor > 0.5; // 50% de éxito
+//       console.log(valor,exito);
+//       if (exito) {
+//         resolve("Operación exitosa!");
+//       } else {
+//         reject("Error en la operación");
+//       }
+//     }, 1500);
+//   });
+// }
 
-// 10.3 Función async/await
-async function operacionAsync() {
-  try {
-    console.log("Iniciando operación async...");
-    const resultado = await operacionPromise();
-    console.log("Resultado async:", resultado);
-    return resultado;
-  } catch (error) {
-    console.log("Error en async:", error);
-    throw error;
-  }
-}
+// // console.log("Iniciando operación con Promise...");
+// // operacionPromise()
+// //   .then((resultado) => console.log("Promise resuelto:", resultado))
+// //   .catch((error) => console.log("Promise rechazado:", error));
 
-// Ejecutar función async
-operacionAsync();
+// // 10.3 Función async/await
+// async function operacionAsync() {
+//   try {
+//     console.log("Iniciando operación async...");
+//     const resultado = await operacionPromise();
+//     console.log("Resultado async:", resultado);
+//     return resultado;
+//   } catch (error) {
+//     console.log("Error en async:", error);
+//     throw error;
+//   }
+// }
 
-// 10.4 Múltiples operaciones async
-async function operacionesMultiples() {
-  try {
-    console.log("Ejecutando múltiples operaciones async...");
+// // Ejecutar función async
+// operacionAsync().catch((error) =>
+//   console.log("Error no manejado capturado:", error)
+// );
 
-    const promesas = [
-      operacionPromise(),
-      operacionPromise(),
-      operacionPromise(),
-    ];
+// // 10.4 Múltiples operaciones async
+// async function operacionesMultiples() {
+//   try {
+//     console.log("Ejecutando múltiples operaciones async...");
 
-    const resultados = await Promise.all(promesas);
-    console.log("Todos los resultados:", resultados);
-  } catch (error) {
-    console.log("Error en operaciones múltiples:", error);
-  }
-}
+//     const promesas = [
+//       operacionPromise(),
+//       operacionPromise(),
+//       operacionPromise(),
+//     ];
 
-setTimeout(() => operacionesMultiples(), 3000);
+//     const resultados = await Promise.all(promesas);
+//     console.log("Todos los resultados:", resultados);
+//   } catch (error) {
+//     console.log("Error en operaciones múltiples:", error);
+//   }
+// }
 
-console.log("\n");
+// setTimeout(() => operacionesMultiples(), 3000);
+
+// console.log("\n");
 
 // =====================================================
 // 11. FUNCIONES DE ORDEN SUPERIOR
@@ -705,49 +746,51 @@ console.log(
   aplicarOperacion(numeros, (x) => x * 2)
 );
 
+
+
 // 11.2 Función que retorna función (currying)
-function curry(fn) {
-  return function (...args) {
-    if (args.length >= fn.length) {
-      return fn(...args);
-    }
-    return function (...moreArgs) {
-      return curry(fn)(...args, ...moreArgs);
-    };
-  };
-}
+// function curry(fn) {
+//   return function (...args) {
+//     if (args.length >= fn.length) {
+//       return fn(...args);
+//     }
+//     return function (...moreArgs) {
+//       return curry(fn)(...args, ...moreArgs);
+//     };
+//   };
+// }
 
-function sumarTres(a, b, c) {
-  return a + b + c;
-}
+// function sumarTres(a, b, c) {
+//   return a + b + c;
+// }
 
-const sumarCurried = curry(sumarTres);
-console.log("\nCurrying:");
-console.log("Suma normal:", sumarTres(1, 2, 3));
-console.log("Suma curried:", sumarCurried(1)(2)(3));
-console.log("Suma curried parcial:", sumarCurried(1, 2)(3));
+// const sumarCurried = curry(sumarTres);
+// console.log("\nCurrying:");
+// console.log("Suma normal:", sumarTres(1, 2, 3));
+// console.log("Suma curried:", sumarCurried(1)(2)(3));
+// console.log("Suma curried parcial:", sumarCurried(1, 2)(3));
 
 // 11.3 Composición de funciones
-function componer(...funciones) {
-  return function (valor) {
-    return funciones.reduceRight((acc, fn) => fn(acc), valor);
-  };
-}
+// function componer(...funciones) {
+//   return function (valor) {
+//     return funciones.reduceRight((acc, fn) => fn(acc), valor);
+//   };
+// }
 
-const incrementar = (x) => x + 1;
-const duplicarValor = (x) => x * 2;
-const elevarAlCuadrado = (x) => x * x;
+// const incrementar = (x) => x + 1;
+// const duplicarValor = (x) => x * 2;
+// const elevarAlCuadrado = (x) => x * x;
 
-const operacionCompuesta = componer(
-  elevarAlCuadrado,
-  duplicarValor,
-  incrementar
-);
-console.log("\nComposición de funciones:");
-console.log("Valor inicial: 3");
-console.log("(3 + 1) * 2 ^ 2 =", operacionCompuesta(3));
+// const operacionCompuesta = componer(
+//   elevarAlCuadrado,
+//   duplicarValor,
+//   incrementar
+// );
+// console.log("\nComposición de funciones:");
+// console.log("Valor inicial: 3");
+// console.log("(3 + 1) * 2 ^ 2 =", operacionCompuesta(3));
 
-console.log("\n");
+// console.log("\n");
 
 // =====================================================
 // 12. FUNCIONES PURAS E IMPURAS
@@ -854,199 +897,199 @@ console.log("\n");
 // 14. FUNCIONES CON CONTEXTO DINÁMICO
 // =====================================================
 
-console.log("14. FUNCIONES CON CONTEXTO DINÁMICO");
-console.log("===================================");
+// console.log("14. FUNCIONES CON CONTEXTO DINÁMICO");
+// console.log("===================================");
 
-// 14.1 Simulador de this dinámico
-const objetoA = {
-  nombre: "Objeto A",
-  metodo: function () {
-    console.log("This apunta a:", this.nombre);
-  },
-};
+// // 14.1 Simulador de this dinámico
+// const objetoA = {
+//   nombre: "Objeto A",
+//   metodo: function () {
+//     console.log("This apunta a:", this.nombre);
+//   },
+// };
 
-const objetoB = {
-  nombre: "Objeto B",
-};
+// const objetoB = {
+//   nombre: "Objeto B",
+// };
 
-// Diferentes formas de cambiar el contexto
-console.log("Contexto normal:");
-objetoA.metodo();
+// // Diferentes formas de cambiar el contexto
+// console.log("Contexto normal:");
+// objetoA.metodo();
 
-console.log("Contexto cambiado con call:");
-objetoA.metodo.call(objetoB);
+// console.log("Contexto cambiado con call:");
+// objetoA.metodo.call(objetoB);
 
-console.log("Contexto cambiado con apply:");
-objetoA.metodo.apply(objetoB);
+// console.log("Contexto cambiado con apply:");
+// objetoA.metodo.apply(objetoB);
 
-console.log("Contexto fijado con bind:");
-const metodoFijado = objetoA.metodo.bind(objetoB);
-metodoFijado();
+// console.log("Contexto fijado con bind:");
+// const metodoFijado = objetoA.metodo.bind(objetoB);
+// metodoFijado();
 
-// 14.2 Factory de objetos con métodos
-function crearCalculadora(nombre) {
-  return {
-    nombre: nombre,
-    resultado: 0,
+// // 14.2 Factory de objetos con métodos
+// function crearCalculadora(nombre) {
+//   return {
+//     nombre: nombre,
+//     resultado: 0,
 
-    sumar: function (valor) {
-      this.resultado += valor;
-      console.log(
-        `${this.nombre}: sumando ${valor}, resultado: ${this.resultado}`
-      );
-      return this; // Para encadenamiento
-    },
+//     sumar: function (valor) {
+//       this.resultado += valor;
+//       console.log(
+//         `${this.nombre}: sumando ${valor}, resultado: ${this.resultado}`
+//       );
+//       return this; // Para encadenamiento
+//     },
 
-    restar: function (valor) {
-      this.resultado -= valor;
-      console.log(
-        `${this.nombre}: restando ${valor}, resultado: ${this.resultado}`
-      );
-      return this; // Para encadenamiento
-    },
+//     restar: function (valor) {
+//       this.resultado -= valor;
+//       console.log(
+//         `${this.nombre}: restando ${valor}, resultado: ${this.resultado}`
+//       );
+//       return this; // Para encadenamiento
+//     },
 
-    reset: function () {
-      this.resultado = 0;
-      console.log(`${this.nombre}: reseteado a 0`);
-      return this;
-    },
-  };
-}
+//     reset: function () {
+//       this.resultado = 0;
+//       console.log(`${this.nombre}: reseteado a 0`);
+//       return this;
+//     },
+//   };
+// }
 
-console.log("\nCalculadora con encadenamiento:");
-const calc = crearCalculadora("Calc-Pro");
-calc.sumar(10).sumar(5).restar(3).sumar(2);
+// console.log("\nCalculadora con encadenamiento:");
+// const calc = crearCalculadora("Calc-Pro");
+// calc.sumar(10).sumar(5).restar(3).sumar(2);
 
-console.log("\n");
+// console.log("\n");
 
-// =====================================================
-// 15. FUNCIONES AVANZADAS Y PATRONES
-// =====================================================
+// // =====================================================
+// // 15. FUNCIONES AVANZADAS Y PATRONES
+// // =====================================================
 
-console.log("15. FUNCIONES AVANZADAS Y PATRONES");
-console.log("==================================");
+// console.log("15. FUNCIONES AVANZADAS Y PATRONES");
+// console.log("==================================");
 
-// 15.1 Throttle - limitar ejecución por tiempo
-function throttle(func, delay) {
-  let lastCall = 0;
-  return function (...args) {
-    const now = Date.now();
-    if (now - lastCall >= delay) {
-      lastCall = now;
-      return func.apply(this, args);
-    }
-  };
-}
+// // 15.1 Throttle - limitar ejecución por tiempo
+// function throttle(func, delay) {
+//   let lastCall = 0;
+//   return function (...args) {
+//     const now = Date.now();
+//     if (now - lastCall >= delay) {
+//       lastCall = now;
+//       return func.apply(this, args);
+//     }
+//   };
+// }
 
-// 15.2 Debounce - retrasar ejecución hasta que pare de llamarse
-function debounce(func, delay) {
-  let timeoutId;
-  return function (...args) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func.apply(this, args), delay);
-  };
-}
+// // 15.2 Debounce - retrasar ejecución hasta que pare de llamarse
+// function debounce(func, delay) {
+//   let timeoutId;
+//   return function (...args) {
+//     clearTimeout(timeoutId);
+//     timeoutId = setTimeout(() => func.apply(this, args), delay);
+//   };
+// }
 
-// Ejemplos de uso (simulados)
-const busquedaRapida = throttle(function (termino) {
-  console.log("Buscando:", termino);
-}, 1000);
+// // Ejemplos de uso (simulados)
+// const busquedaRapida = throttle(function (termino) {
+//   console.log("Buscando:", termino);
+// }, 1000);
 
-const autoguardado = debounce(function (contenido) {
-  console.log("Guardando:", contenido);
-}, 2000);
+// const autoguardado = debounce(function (contenido) {
+//   console.log("Guardando:", contenido);
+// }, 2000);
 
-// 15.3 Pipe - composición de funciones de izquierda a derecha
-function pipe(...funciones) {
-  return function (valor) {
-    return funciones.reduce((acc, fn) => fn(acc), valor);
-  };
-}
+// // 15.3 Pipe - composición de funciones de izquierda a derecha
+// function pipe(...funciones) {
+//   return function (valor) {
+//     return funciones.reduce((acc, fn) => fn(acc), valor);
+//   };
+// }
 
-const procesarTexto = pipe(
-  (str) => str.toLowerCase(),
-  (str) => str.replace(/\s+/g, "-"),
-  (str) => str.replace(/[^a-z0-9-]/g, ""),
-  (str) => str.substring(0, 20)
-);
+// const procesarTexto = pipe(
+//   (str) => str.toLowerCase(),
+//   (str) => str.replace(/\s+/g, "-"),
+//   (str) => str.replace(/[^a-z0-9-]/g, ""),
+//   (str) => str.substring(0, 20)
+// );
 
-console.log("Procesamiento de texto:");
-console.log(procesarTexto("¡Hola Mundo! Este es un Texto de Prueba"));
+// console.log("Procesamiento de texto:");
+// console.log(procesarTexto("¡Hola Mundo! Este es un Texto de Prueba"));
 
-// 15.4 Función partial - aplicación parcial de argumentos
-function partial(fn, ...argsIniciales) {
-  return function (...argsRestantes) {
-    return fn(...argsIniciales, ...argsRestantes);
-  };
-}
+// // 15.4 Función partial - aplicación parcial de argumentos
+// function partial(fn, ...argsIniciales) {
+//   return function (...argsRestantes) {
+//     return fn(...argsIniciales, ...argsRestantes);
+//   };
+// }
 
-function operacionCompleja(a, b, c, d) {
-  return (a + b) * (c + d);
-}
+// function operacionCompleja(a, b, c, d) {
+//   return (a + b) * (c + d);
+// }
 
-const operacionParcial = partial(operacionCompleja, 10, 20);
-console.log("\nFunción parcial:");
-console.log("Resultado:", operacionParcial(5, 15)); // (10+20) * (5+15) = 600
+// const operacionParcial = partial(operacionCompleja, 10, 20);
+// console.log("\nFunción parcial:");
+// console.log("Resultado:", operacionParcial(5, 15)); // (10+20) * (5+15) = 600
 
-// 15.5 Once - función que solo se ejecuta una vez
-function once(fn) {
-  let executed = false;
-  let result;
+// // 15.5 Once - función que solo se ejecuta una vez
+// function once(fn) {
+//   let executed = false;
+//   let result;
 
-  return function (...args) {
-    if (!executed) {
-      executed = true;
-      result = fn.apply(this, args);
-    }
-    return result;
-  };
-}
+//   return function (...args) {
+//     if (!executed) {
+//       executed = true;
+//       result = fn.apply(this, args);
+//     }
+//     return result;
+//   };
+// }
 
-const inicializarUnaVez = once(function () {
-  console.log("Inicializando sistema...");
-  return "Sistema inicializado";
-});
+// const inicializarUnaVez = once(function () {
+//   console.log("Inicializando sistema...");
+//   return "Sistema inicializado";
+// });
 
-console.log("\nFunción once:");
-console.log(inicializarUnaVez()); // Se ejecuta
-console.log(inicializarUnaVez()); // No se ejecuta, retorna resultado guardado
+// console.log("\nFunción once:");
+// console.log(inicializarUnaVez()); // Se ejecuta
+// console.log(inicializarUnaVez()); // No se ejecuta, retorna resultado guardado
 
-console.log("\n");
+// console.log("\n");
 
-// =====================================================
-// RESUMEN Y MEJORES PRÁCTICAS
-// =====================================================
+// // =====================================================
+// // RESUMEN Y MEJORES PRÁCTICAS
+// // =====================================================
 
-console.log("RESUMEN Y MEJORES PRÁCTICAS");
-console.log("===========================");
+// console.log("RESUMEN Y MEJORES PRÁCTICAS");
+// console.log("===========================");
 
-console.log(`
-CONCEPTOS CUBIERTOS:
-1. ✓ Funciones básicas y declaraciones
-2. ✓ Expresiones de función y funciones flecha
-3. ✓ Scope, closures y contexto
-4. ✓ Parámetros avanzados (rest, destructuring)
-5. ✓ Funciones como objetos de primera clase
-6. ✓ Métodos call, apply, bind
-7. ✓ Recursión y casos base
-8. ✓ Funciones generadoras
-9. ✓ Funciones asíncronas (callbacks, promises, async/await)
-10. ✓ Funciones de orden superior
-11. ✓ Funciones puras vs impuras
-12. ✓ Memoización para optimización
-13. ✓ Contexto dinámico y this
-14. ✓ Patrones avanzados (throttle, debounce, pipe, partial, once)
+// console.log(`
+// CONCEPTOS CUBIERTOS:
+// 1. ✓ Funciones básicas y declaraciones
+// 2. ✓ Expresiones de función y funciones flecha
+// 3. ✓ Scope, closures y contexto
+// 4. ✓ Parámetros avanzados (rest, destructuring)
+// 5. ✓ Funciones como objetos de primera clase
+// 6. ✓ Métodos call, apply, bind
+// 7. ✓ Recursión y casos base
+// 8. ✓ Funciones generadoras
+// 9. ✓ Funciones asíncronas (callbacks, promises, async/await)
+// 10. ✓ Funciones de orden superior
+// 11. ✓ Funciones puras vs impuras
+// 12. ✓ Memoización para optimización
+// 13. ✓ Contexto dinámico y this
+// 14. ✓ Patrones avanzados (throttle, debounce, pipe, partial, once)
 
-MEJORES PRÁCTICAS:
-• Usar funciones puras cuando sea posible
-• Nombrar funciones descriptivamente
-• Evitar funciones muy largas (principio de responsabilidad única)
-• Usar arrow functions para callbacks simples
-• Implementar manejo de errores en funciones async
-• Documentar funciones complejas
-• Usar memoización para operaciones costosas
-• Preferir composición sobre herencia
-• Mantener funciones testeable y reutilizable
-`);
+// MEJORES PRÁCTICAS:
+// • Usar funciones puras cuando sea posible
+// • Nombrar funciones descriptivamente
+// • Evitar funciones muy largas (principio de responsabilidad única)
+// • Usar arrow functions para callbacks simples
+// • Implementar manejo de errores en funciones async
+// • Documentar funciones complejas
+// • Usar memoización para operaciones costosas
+// • Preferir composición sobre herencia
+// • Mantener funciones testeable y reutilizable
+// `);
 
-console.log("=== FIN DE LA GUÍA DE FUNCIONES ===");
+// console.log("=== FIN DE LA GUÍA DE FUNCIONES ===");
