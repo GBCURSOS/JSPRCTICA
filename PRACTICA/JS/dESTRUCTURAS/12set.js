@@ -183,7 +183,7 @@ let setC = new Set([1, 2]);
 console.log("¿C es subconjunto de A?", esSubconjunto(setC, setA));
 
 console.log("\n");
-
+/*
 // =====================================================
 // 6. CASOS DE USO PRÁCTICOS
 // =====================================================
@@ -556,3 +556,4 @@ MEJORES PRÁCTICAS:
 `);
 
 console.log("=== FIN DE LA GUÍA DE SET ===");
+*/

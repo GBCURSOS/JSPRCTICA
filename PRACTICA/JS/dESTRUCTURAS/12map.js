@@ -48,9 +48,9 @@ const frutasPrecios = new Map([
 console.log("Map de frutas y precios:", frutasPrecios);
 
 // Crear un Map a partir de un objeto
-const objeto = { nombre: "Juan", edad: 30, ciudad: "Madrid" };
-const mapFromObject = new Map(Object.entries(objeto));
-console.log("Map creado desde objeto:", mapFromObject);
+// const objeto = { nombre: "Juan", edad: 30, ciudad: "Madrid" };
+// const mapFromObject = new Map(Object.entries(objeto));
+// console.log("Map creado desde objeto:", mapFromObject);
 
 console.log("\n");
 
@@ -174,7 +174,7 @@ console.log("Valores como array:", valoresArray);
 console.log("Entradas como array:", entradasArray);
 
 console.log("\n");
-
+/* se deja comentado para no interferir con el resto del código
 // ================================================================================
 // 5. CONVERSIÓN ENTRE MAP Y OTROS TIPOS
 // ================================================================================
@@ -617,7 +617,7 @@ const numerosDobles = transformarMap(numeros, (valor) => valor * 2);
 console.log("Números duplicados:", numerosDobles);
 
 console.log("\n=== FIN DE EJEMPLOS DE MAP ===");
-
+*/
 /*
 ================================================================================
 RESUMEN DE CARACTERÍSTICAS PRINCIPALES DE MAP:
