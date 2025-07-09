@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas - Proyecto Final DOM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Lista de Tareas</h1>
+            <p>Proyecto Final - DOM + Fetch API + LocalStorage</p>
+        </header>
+
+        <!-- FORMULARIO PARA AGREGAR TAREA -->
+        <section class="add-task-section">
+            <h2>➕ Agregar Nueva Tarea</h2>
+            <form id="taskForm">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        id="taskTitle" 
+                        placeholder="Título de la tarea" 
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <textarea 
+                        id="taskDescription" 
+                        placeholder="Descripción (opcional)"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <div class="form-group">
+                    <select id="taskPriority">
+                        <option value="baja">🟢 Prioridad Baja</option>
+                        <option value="media">🟡 Prioridad Media</option>
+                        <option value="alta">🔴 Prioridad Alta</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Agregar Tarea</button>
+            </form>
+        </section>
+
+        <!-- FILTROS Y BÚSQUEDA -->
+        <section class="filters-section">
+            <h2>🔍 Filtros y Búsqueda</h2>
+            <div class="filters-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Buscar tareas..."
+                >
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="todas">Todas</button>
+                    <button class="filter-btn" data-filter="pendientes">Pendientes</button>
+                    <button class="filter-btn" data-filter="completadas">Completadas</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LISTA DE TAREAS -->
+        <section class="tasks-section">
+            <h2>📋 Mis Tareas</h2>
+            <div id="tasksContainer">
+                <!-- Las tareas se generan dinámicamente aquí -->
+            </div>
+            
+            <!-- Mensaje cuando no hay tareas -->
+            <div id="emptyMessage" class="empty-message" style="display: none;">
+                <p>🎉 ¡No tienes tareas pendientes!</p>
+                <p>Agrega una nueva tarea arriba para comenzar.</p>
+            </div>
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+        <section class="stats-section">
+            <h2>📊 Estadísticas</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalTasks">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="pendingTasks">0</span>
+                    <span class="stat-label">Pendientes</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="completedTasks">0</span>
+                    <span class="stat-label">Completadas</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODAL PARA EDITAR TAREA -->
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>✏️ Editar Tarea</h3>
+            <form id="editTaskForm">
+                <input type="hidden" id="editTaskId">
+                <div class="form-group">
+                    <label for="editTaskTitle">Título:</label>
+                    <input type="text" id="editTaskTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="editTaskDescription">Descripción:</label>
+                    <textarea id="editTaskDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editTaskPriority">Prioridad:</label>
+                    <select id="editTaskPriority">
+                        <option value="baja">🟢 Prioridad Baja</option>
+                        <option value="media">🟡 Prioridad Media</option>
+                        <option value="alta">🔴 Prioridad Alta</option>
+                    </select>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-primary">Guardar Cambios</button>
+                    <button type="button" class="btn-secondary" onclick="closeEditModal()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

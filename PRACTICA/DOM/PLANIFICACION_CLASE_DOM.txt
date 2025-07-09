@@ -1,0 +1,157 @@
+PLANIFICACIÓN DE CLASE COMPLETA - 12 HORAS
+==========================================
+DOM + FETCH API + JSON + APIS EN LA NUBE
+
+PERFIL DE ESTUDIANTES:
+=====================
+- Nivel: Principiantes con base sólida
+- Conocimientos previos: HTML, CSS, JavaScript básico
+- Objetivo: Crear aplicaciones web interactivas con APIs
+
+ENFOQUE PEDAGÓGICO:
+==================
+- **Combinación:** Teoría + Ejercicios progresivos + Proyecto integrador
+- **Metodología:** Aprender haciendo con ejemplos reales
+- **Resultado final:** App web completa que consume APIs
+
+TEMAS A CUBRIR EN 12 HORAS:
+===========================
+
+📚 BLOQUE 1: DOM MANIPULATION (Horas 1-5)
+- ✅ Qué es el DOM y cómo funciona
+- ✅ Seleccionar elementos (getElementById, querySelector, querySelectorAll)
+- ✅ Modificar contenido (innerHTML, textContent, value)
+- ✅ Cambiar estilos dinámicamente (style, classList)
+- ✅ Eventos básicos (click, input, change, submit)
+- ✅ Crear y eliminar elementos dinámicamente
+- ✅ Formularios y validación en tiempo real
+
+🌐 BLOQUE 2: JSON + FETCH API (Horas 6-9)
+- ✅ Qué es JSON y cómo manipularlo
+- ✅ ¿Qué son las APIs? (conceptos básicos)
+- ✅ Fetch API - Sintaxis y uso práctico
+- ✅ GET: Obtener datos desde APIs
+- ✅ POST: Enviar datos hacia APIs
+- ✅ PUT/DELETE: Actualizar y eliminar datos
+- ✅ Promesas y async/await con Fetch
+- ✅ Manejo de errores y estados de carga
+
+🚀 BLOQUE 3: PROYECTO INTEGRADOR (Horas 10-12)
+- ✅ Planificación de una app completa
+- ✅ Integración DOM + FETCH + JSON
+- ✅ CRUD completo (Create, Read, Update, Delete)
+- ✅ Interfaz responsiva y user-friendly
+- ✅ Deploy y pruebas finales
+
+DISTRIBUCIÓN DETALLADA DE TIEMPO:
+=================================
+🕐 HORA 1-2: FUNDAMENTOS DEL DOM
+- Conceptos: Qué es el DOM, árbol de nodos
+- Práctica: Seleccionar elementos (getElementById, querySelector)
+- Ejercicio: Cambiar textos y contenidos básicos
+
+🕐 HORA 3-4: MANIPULACIÓN AVANZADA
+- Conceptos: innerHTML vs textContent, modificar estilos
+- Práctica: Cambiar clases CSS dinámicamente
+- Ejercicio: Crear un cambio de tema (light/dark mode)
+
+*** DESCANSO LARGO: 20 minutos ***
+
+🕐 HORA 5: EVENTOS E INTERACTIVIDAD
+- Conceptos: addEventListener, tipos de eventos
+- Práctica: Eventos de mouse, teclado, formularios
+- Ejercicio: Formulario interactivo con validación
+
+🕐 HORA 6-7: JSON Y FETCH API BÁSICO
+- Conceptos: ¿Qué es JSON? ¿Qué son las APIs? (solo lo esencial)
+- Práctica: Manipular objetos JSON en JavaScript
+- Introducción: Fetch API - sintaxis básica y promesas
+- Ejercicio: Primera petición GET a una API pública
+
+🕐 HORA 8: FETCH API AVANZADO
+- Conceptos: Async/await con Fetch, manejo de errores
+- Práctica: GET requests con parámetros y headers
+- Ejercicio: Mostrar datos de API en el DOM dinámicamente
+- Bonus: Loading states y feedback visual
+
+*** DESCANSO LARGO: 20 minutos ***
+
+🕐 HORA 9-10: FETCH API COMPLETO (POST, PUT, DELETE)
+- Conceptos: Métodos HTTP - POST, PUT, DELETE con Fetch
+- Práctica: Usar JSONPlaceholder para aprender sintaxis de CRUD
+- Ejercicio: Simular CRUD completo con Fetch + LocalStorage
+- Estrategia: JSONPlaceholder para aprender + LocalStorage para persistir
+
+🕐 HORA 11-12: PROYECTO FINAL - LISTA DE TAREAS
+- Proyecto: App "TODO LIST" 100% frontend (HTML + CSS + JS)
+- Funcionalidades: Agregar, editar, eliminar, marcar como completada
+- Persistencia: LocalStorage (guardado real y permanente)
+- Datos iniciales: Opcional cargar desde JSONPlaceholder al inicio
+- Deploy: GitHub Pages (compatible al 100%)
+
+RECURSOS TÉCNICOS NECESARIOS:
+============================
+✅ Editor de código (VS Code)
+✅ Navegador moderno (Chrome/Firefox)
+✅ Extensión Live Server para VS Code
+✅ APIs públicas gratuitas (JSONPlaceholder, etc.)
+✅ Cuenta en GitHub (para deploy en GitHub Pages)
+
+⚠️ IMPORTANTE: TODO ES FRONTEND - NO SE NECESITA NODE.JS
+- Fetch API es nativo del navegador
+- GitHub Pages solo sirve archivos estáticos
+- El proyecto debe funcionar con HTML + CSS + JS puro
+
+📋 ESTRATEGIA DE DATOS:
+- JSONPlaceholder: Solo para aprender Fetch API (práctica/ejercicios)
+- LocalStorage: Para el proyecto final (persistencia real)
+- NO usar JSON Server (requiere Node.js y no funciona en GitHub Pages)
+
+💡 FLUJO DE APRENDIZAJE:
+- Horas 6-10: Aprender Fetch API con JSONPlaceholder
+- Horas 11-12: Proyecto final usando LocalStorage para guardar datos
+
+PROYECTO FINAL SUGERIDO:
+=======================
+"LISTA DE TAREAS (TODO LIST)" - 100% FRONTEND
+- Estructura: HTML + CSS + JavaScript puro
+- Persistencia: LocalStorage (guardado permanente)
+- Datos iniciales: Opcional desde JSONPlaceholder (solo al cargar por primera vez)
+- Formulario para agregar nueva tarea
+- Marcar tareas como completadas/pendientes
+- Edición en línea de tareas existentes
+- Eliminación de tareas con confirmación
+- Filtros: Todas, Completadas, Pendientes
+- Búsqueda en tiempo real
+- Interfaz moderna y responsiva
+- Deploy: GitHub Pages (funciona al 100%)
+
+METODOLOGÍA:
+============
+- 70% Práctica hands-on
+- 20% Teoría con ejemplos visuales  
+- 10% Discusión y resolución de dudas
+- Cada concepto se explica + se practica inmediatamente
+- Ejercicios incrementales que construyen hacia el proyecto final
+
+EVALUACIÓN CONTINUA:
+===================
+- Mini-ejercicios cada hora para verificar comprensión
+- Proyecto final como evaluación integral
+- Peer review entre estudiantes
+- Autoevaluación al final de cada bloque
+
+NOTAS:
+======
+- Incluir descansos de 15 minutos cada 2 horas
+- Alternar teoría con práctica cada 30-45 minutos
+- Ejercicios progresivos de dificultad creciente
+- Proyecto final que integre todos los conceptos
+
+¿COMENZAMOS A CREAR EL MATERIAL DETALLADO?
+==========================================
+Con esta planificación podemos crear:
+1. Presentaciones interactivas (HTML)
+2. Ejercicios progresivos paso a paso
+3. Código base para el proyecto final
+4. Recursos y cheat sheets para estudiantes
