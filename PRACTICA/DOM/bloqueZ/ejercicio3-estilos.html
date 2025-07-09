@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Cambiar Estilos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .exercise-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #3498db;
+        }
+
+        .exercise-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .demo-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .demo-area {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .demo-elements {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px dashed #bdc3c7;
+        }
+
+        .demo-elements h3 {
+            color: #8e44ad;
+            margin-bottom: 1rem;
+        }
+
+        .style-target {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            transition: all 0.5s ease;
+            background: #ecf0f1;
+            color: #2c3e50;
+            border: 2px solid #bdc3c7;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .controls {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid #3498db;
+        }
+
+        .controls h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .control-group h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .control-btn {
+            display: inline-block;
+            padding: 0.6rem 1rem;
+            margin: 0.25rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .btn-style {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .btn-class {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+
+        .btn-reset {
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .input-group input[type="color"],
+        .input-group input[type="range"] {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .input-group input[type="range"] {
+            height: 20px;
+        }
+
+        .range-value {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .code-example code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .highlight-code {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* Clases CSS predefinidas para los ejercicios */
+        .clase-roja {
+            background-color: #e74c3c !important;
+            color: white !important;
+            border-color: #c0392b !important;
+        }
+
+        .clase-verde {
+            background-color: #27ae60 !important;
+            color: white !important;
+            border-color: #229954 !important;
+        }
+
+        .clase-azul {
+            background-color: #3498db !important;
+            color: white !important;
+            border-color: #2980b9 !important;
+        }
+
+        .clase-grande {
+            font-size: 1.5rem !important;
+            padding: 2rem !important;
+        }
+
+        .clase-pequena {
+            font-size: 0.8rem !important;
+            padding: 0.5rem !important;
+        }
+
+        .clase-centrado {
+            text-align: center !important;
+        }
+
+        .clase-izquierda {
+            text-align: left !important;
+        }
+
+        .clase-derecha {
+            text-align: right !important;
+        }
+
+        .clase-sombra {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+            transform: translateY(-5px) !important;
+        }
+
+        .clase-redondeado {
+            border-radius: 25px !important;
+        }
+
+        .clase-animado {
+            animation: pulsar 2s infinite !important;
+        }
+
+        @keyframes pulsar {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .nav-btn {
+            padding: 1rem 2rem;
+            margin: 0 0.5rem;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
+        }
+
+        .color-preview {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 10px;
+            border: 2px solid #bdc3c7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 Ejercicio 3: Cambiar Estilos</h1>
+            <p>Aprende a modificar estilos CSS dinámicamente con JavaScript</p>
+        </header>
+
+        <!-- PARTE 1: Estilos inline con style -->
+        <section class="exercise-section">
+            <h2>🖌️ Parte 1: Estilos Inline (element.style)</h2>
+            <p>Modifica estilos directamente usando la propiedad style.</p>
+
+            <div class="code-example">
+                <code>
+// Cambiar estilos individuales
+elemento.style.backgroundColor = 'blue';
+elemento.style.color = 'white';
+elemento.style.fontSize = '20px';
+
+// Cambiar múltiples estilos
+elemento.style.cssText = 'background: red; color: white; padding: 20px;';
+                </code>
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-elements">
+                    <h3>Elemento de prueba:</h3>
+                    <div id="elemento-style" class="style-target">
+                        Haz clic en los controles para cambiar mi estilo
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Controles de estilo</h3>
+
+                    <div class="control-group">
+                        <h4>Colores</h4>
+                        <div class="input-group">
+                            <label for="color-fondo">Color de fondo:</label>
+                            <input type="color" id="color-fondo" value="#3498db">
+                            <span class="color-preview" id="preview-fondo"></span>
+                        </div>
+                        <div class="input-group">
+                            <label for="color-texto">Color de texto:</label>
+                            <input type="color" id="color-texto" value="#ffffff">
+                            <span class="color-preview" id="preview-texto"></span>
+                        </div>
+                        <button class="control-btn btn-style" onclick="aplicarColores()">Aplicar Colores</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Tamaño y espaciado</h4>
+                        <div class="input-group">
+                            <label for="tamano-fuente">Tamaño de fuente: <span class="range-value"
+                                    id="valor-fuente">16px</span></label>
+                            <input type="range" id="tamano-fuente" min="12" max="36" value="16"
+                                oninput="actualizarTamano()">
+                        </div>
+                        <div class="input-group">
+                            <label for="padding">Padding: <span class="range-value"
+                                    id="valor-padding">24px</span></label>
+                            <input type="range" id="padding" min="5" max="50" value="24" oninput="actualizarPadding()">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Acciones rápidas</h4>
+                        <button class="control-btn btn-style" onclick="estiloAleatorio()">Estilo Aleatorio</button>
+                        <button class="control-btn btn-reset" onclick="resetearEstilos()">Resetear</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTE 2: classList (add, remove, toggle) -->
+        <section class="exercise-section">
+            <h2>📝 Parte 2: classList (add, remove, toggle)</h2>
+            <p>Maneja clases CSS dinámicamente para un control más limpio.</p>
+
+            <div class="code-example">
+                <code>
+// Agregar clase
+elemento.classList.add('mi-clase');
+
+// Quitar clase
+elemento.classList.remove('mi-clase');
+
+// Alternar clase (toggle)
+elemento.classList.toggle('mi-clase');
+
+// Verificar si tiene clase
+if (elemento.classList.contains('mi-clase')) {
+    console.log('Tiene la clase');
+}
+                </code>
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-elements">
+                    <h3>Elemento de prueba:</h3>
+                    <div id="elemento-classList" class="style-target">
+                        Experimenta con las clases CSS predefinidas
+                    </div>
+
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                        <strong>Clases activas:</strong> <span id="clases-activas">ninguna</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Controles de clases</h3>
+
+                    <div class="control-group">
+                        <h4>Colores</h4>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-roja')">Toggle Rojo</button>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-verde')">Toggle Verde</button>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-azul')">Toggle Azul</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Tamaños</h4>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-grande')">Toggle
+                            Grande</button>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-pequena')">Toggle
+                            Pequeño</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Alineación</h4>
+                        <button class="control-btn btn-class"
+                            onclick="setAlineacion('clase-izquierda')">Izquierda</button>
+                        <button class="control-btn btn-class" onclick="setAlineacion('clase-centrado')">Centro</button>
+                        <button class="control-btn btn-class" onclick="setAlineacion('clase-derecha')">Derecha</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Efectos especiales</h4>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-sombra')">Toggle
+                            Sombra</button>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-redondeado')">Toggle
+                            Redondeado</button>
+                        <button class="control-btn btn-class" onclick="toggleClase('clase-animado')">Toggle
+                            Animación</button>
+                    </div>
+
+                    <div class="control-group">
+                        <button class="control-btn btn-reset" onclick="limpiarClases()">Limpiar Todas las
+                            Clases</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTE 3: Ejercicio integrador -->
+        <section class="exercise-section">
+            <h2>🎯 Parte 3: Proyecto Mini - Configurador de Tarjeta</h2>
+            <p>Combina estilos inline y clases para crear un configurador completo.</p>
+
+            <div class="demo-area">
+                <div class="demo-elements">
+                    <h3>Vista previa de la tarjeta:</h3>
+                    <div id="tarjeta-personalizada"
+                        style="background: white; border: 2px solid #ddd; border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s ease;">
+                        <h4 id="tarjeta-titulo">Mi Tarjeta Personalizada</h4>
+                        <p id="tarjeta-subtitulo">Subtítulo de la tarjeta</p>
+                        <div id="tarjeta-contenido"
+                            style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 6px;">
+                            Contenido principal de la tarjeta. Personaliza todos los aspectos usando los controles.
+                        </div>
+                        <button id="tarjeta-boton"
+                            style="padding: 0.8rem 1.5rem; border: none; border-radius: 6px; background: #3498db; color: white; cursor: pointer;">
+                            Botón de Acción
+                        </button>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Configurador de tarjeta</h3>
+
+                    <div class="control-group">
+                        <h4>Esquema de colores</h4>
+                        <button class="control-btn btn-class" onclick="aplicarTema('azul')">Tema Azul</button>
+                        <button class="control-btn btn-class" onclick="aplicarTema('verde')">Tema Verde</button>
+                        <button class="control-btn btn-class" onclick="aplicarTema('rojo')">Tema Rojo</button>
+                        <button class="control-btn btn-class" onclick="aplicarTema('oscuro')">Tema Oscuro</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Personalización avanzada</h4>
+                        <div class="input-group">
+                            <label for="borde-radio">Border radius: <span class="range-value"
+                                    id="valor-radio">10px</span></label>
+                            <input type="range" id="borde-radio" min="0" max="30" value="10"
+                                oninput="actualizarBordeRadio()">
+                        </div>
+                        <div class="input-group">
+                            <label for="sombra-intensidad">Intensidad de sombra: <span class="range-value"
+                                    id="valor-sombra">5</span></label>
+                            <input type="range" id="sombra-intensidad" min="0" max="20" value="5"
+                                oninput="actualizarSombra()">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h4>Efectos</h4>
+                        <button class="control-btn btn-class" onclick="toggleEfecto('hover')">Efecto Hover</button>
+                        <button class="control-btn btn-class" onclick="toggleEfecto('escala')">Efecto Escala</button>
+                        <button class="control-btn btn-class" onclick="toggleEfecto('rotacion')">Efecto
+                            Rotación</button>
+                    </div>
+
+                    <div class="control-group">
+                        <button class="control-btn btn-reset" onclick="resetearTarjeta()">Resetear Tarjeta</button>
+                        <button class="control-btn btn-style" onclick="guardarConfiguracion()">Guardar
+                            Configuración</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navigation">
+            <a href="ejercicio2-modificar.html" class="nav-btn">← Anterior: Modificar</a>
+            <a href="index.html" class="nav-btn">Inicio</a>
+            <a href="ejercicio4-tema.html" class="nav-btn">Siguiente: Modo Oscuro →</a>
+        </nav>
+    </div>
+
+    <script>
+        // Variables globales
+        let configuracionTarjeta = {};
+        let efectosActivos = [];
+
+        // PARTE 1: Estilos inline
+        function aplicarColores() {
+            const elemento = document.getElementById('elemento-style');
+            const colorFondo = document.getElementById('color-fondo').value;
+            const colorTexto = document.getElementById('color-texto').value;
+
+            elemento.style.backgroundColor = colorFondo;
+            elemento.style.color = colorTexto;
+            elemento.style.borderColor = colorFondo;
+
+            // Actualizar previews
+            document.getElementById('preview-fondo').style.backgroundColor = colorFondo;
+            document.getElementById('preview-texto').style.backgroundColor = colorTexto;
+
+            console.log('Colores aplicados:', { fondo: colorFondo, texto: colorTexto });
+        }
+
+        function actualizarTamano() {
+            const valor = document.getElementById('tamano-fuente').value;
+            const elemento = document.getElementById('elemento-style');
+
+            elemento.style.fontSize = valor + 'px';
+            document.getElementById('valor-fuente').textContent = valor + 'px';
+        }
+
+        function actualizarPadding() {
+            const valor = document.getElementById('padding').value;
+            const elemento = document.getElementById('elemento-style');
+
+            elemento.style.padding = valor + 'px';
+            document.getElementById('valor-padding').textContent = valor + 'px';
+        }
+
+        function estiloAleatorio() {
+            const elemento = document.getElementById('elemento-style');
+            const colores = ['#e74c3c', '#27ae60', '#3498db', '#f39c12', '#9b59b6', '#1abc9c'];
+            const colorFondo = colores[Math.floor(Math.random() * colores.length)];
+            const colorTexto = '#ffffff';
+            const tamano = Math.floor(Math.random() * 20) + 14;
+            const padding = Math.floor(Math.random() * 30) + 10;
+            const borderRadius = Math.floor(Math.random() * 25) + 5;
+
+            elemento.style.backgroundColor = colorFondo;
+            elemento.style.color = colorTexto;
+            elemento.style.fontSize = tamano + 'px';
+            elemento.style.padding = padding + 'px';
+            elemento.style.borderRadius = borderRadius + 'px';
+            elemento.style.transform = `rotate(${Math.floor(Math.random() * 10) - 5}deg)`;
+
+            console.log('Estilo aleatorio aplicado');
+        }
+
+        function resetearEstilos() {
+            const elemento = document.getElementById('elemento-style');
+            elemento.style.cssText = '';
+            elemento.className = 'style-target';
+
+            // Resetear controles
+            document.getElementById('color-fondo').value = '#3498db';
+            document.getElementById('color-texto').value = '#ffffff';
+            document.getElementById('tamano-fuente').value = '16';
+            document.getElementById('padding').value = '24';
+
+            actualizarTamano();
+            actualizarPadding();
+            aplicarColores();
+        }
+
+        // PARTE 2: classList
+        function toggleClase(nombreClase) {
+            const elemento = document.getElementById('elemento-classList');
+            elemento.classList.toggle(nombreClase);
+            actualizarListaClases();
+
+            console.log('Clase toggleada:', nombreClase);
+        }
+
+        function setAlineacion(claseAlineacion) {
+            const elemento = document.getElementById('elemento-classList');
+            const clasesAlineacion = ['clase-izquierda', 'clase-centrado', 'clase-derecha'];
+
+            // Quitar todas las clases de alineación
+            clasesAlineacion.forEach(clase => elemento.classList.remove(clase));
+
+            // Agregar la nueva
+            elemento.classList.add(claseAlineacion);
+            actualizarListaClases();
+
+            console.log('Alineación cambiada a:', claseAlineacion);
+        }
+
+        function limpiarClases() {
+            const elemento = document.getElementById('elemento-classList');
+            elemento.className = 'style-target';
+            actualizarListaClases();
+        }
+
+        function actualizarListaClases() {
+            const elemento = document.getElementById('elemento-classList');
+            const clases = Array.from(elemento.classList).filter(clase => clase !== 'style-target');
+            document.getElementById('clases-activas').textContent = clases.length > 0 ? clases.join(', ') : 'ninguna';
+        }
+
+        // PARTE 3: Configurador de tarjeta
+        function aplicarTema(tema) {
+            const tarjeta = document.getElementById('tarjeta-personalizada');
+            const boton = document.getElementById('tarjeta-boton');
+
+            const temas = {
+                azul: {
+                    border: '2px solid #3498db',
+                    background: 'linear-gradient(135deg, #e3f2fd, #ffffff)',
+                    botonBg: '#3498db'
+                },
+                verde: {
+                    border: '2px solid #27ae60',
+                    background: 'linear-gradient(135deg, #e8f5e8, #ffffff)',
+                    botonBg: '#27ae60'
+                },
+                rojo: {
+                    border: '2px solid #e74c3c',
+                    background: 'linear-gradient(135deg, #fdeaea, #ffffff)',
+                    botonBg: '#e74c3c'
+                },
+                oscuro: {
+                    border: '2px solid #2c3e50',
+                    background: 'linear-gradient(135deg, #2c3e50, #34495e)',
+                    botonBg: '#e74c3c',
+                    color: '#ecf0f1'
+                }
+            };
+
+            const configuracion = temas[tema];
+            tarjeta.style.border = configuracion.border;
+            tarjeta.style.background = configuracion.background;
+            boton.style.backgroundColor = configuracion.botonBg;
+
+            if (configuracion.color) {
+                tarjeta.style.color = configuracion.color;
+            } else {
+                tarjeta.style.color = '';
+            }
+
+            configuracionTarjeta.tema = tema;
+            console.log('Tema aplicado:', tema);
+        }
+
+        function actualizarBordeRadio() {
+            const valor = document.getElementById('borde-radio').value;
+            const tarjeta = document.getElementById('tarjeta-personalizada');
+
+            tarjeta.style.borderRadius = valor + 'px';
+            document.getElementById('valor-radio').textContent = valor + 'px';
+
+            configuracionTarjeta.borderRadius = valor;
+        }
+
+        function actualizarSombra() {
+            const valor = document.getElementById('sombra-intensidad').value;
+            const tarjeta = document.getElementById('tarjeta-personalizada');
+
+            if (valor > 0) {
+                tarjeta.style.boxShadow = `0 ${valor}px ${valor * 2}px rgba(0, 0, 0, 0.${valor > 10 ? '3' : '2'})`;
+            } else {
+                tarjeta.style.boxShadow = 'none';
+            }
+
+            document.getElementById('valor-sombra').textContent = valor;
+            configuracionTarjeta.sombra = valor;
+        }
+
+        function toggleEfecto(efecto) {
+            const tarjeta = document.getElementById('tarjeta-personalizada');
+
+            const efectos = {
+                hover: () => {
+                    tarjeta.style.transition = 'all 0.3s ease';
+                    tarjeta.addEventListener('mouseenter', () => {
+                        tarjeta.style.transform = 'translateY(-10px)';
+                    });
+                    tarjeta.addEventListener('mouseleave', () => {
+                        tarjeta.style.transform = 'translateY(0)';
+                    });
+                },
+                escala: () => {
+                    if (efectosActivos.includes('escala')) {
+                        tarjeta.style.transform = '';
+                    } else {
+                        tarjeta.style.transform = 'scale(1.05)';
+                    }
+                },
+                rotacion: () => {
+                    if (efectosActivos.includes('rotacion')) {
+                        tarjeta.style.transform = '';
+                    } else {
+                        tarjeta.style.transform = 'rotate(2deg)';
+                    }
+                }
+            };
+
+            if (efectosActivos.includes(efecto)) {
+                efectosActivos = efectosActivos.filter(e => e !== efecto);
+            } else {
+                efectosActivos.push(efecto);
+            }
+
+            efectos[efecto]();
+            console.log('Efecto toggleado:', efecto, 'Activos:', efectosActivos);
+        }
+
+        function resetearTarjeta() {
+            const tarjeta = document.getElementById('tarjeta-personalizada');
+            tarjeta.style.cssText = 'background: white; border: 2px solid #ddd; border-radius: 10px; padding: 2rem; text-align: center; transition: all 0.3s ease;';
+
+            document.getElementById('tarjeta-boton').style.cssText = 'padding: 0.8rem 1.5rem; border: none; border-radius: 6px; background: #3498db; color: white; cursor: pointer;';
+
+            // Resetear controles
+            document.getElementById('borde-radio').value = '10';
+            document.getElementById('sombra-intensidad').value = '5';
+            document.getElementById('valor-radio').textContent = '10px';
+            document.getElementById('valor-sombra').textContent = '5';
+
+            configuracionTarjeta = {};
+            efectosActivos = [];
+        }
+
+        function guardarConfiguracion() {
+            const config = {
+                ...configuracionTarjeta,
+                efectos: [...efectosActivos],
+                timestamp: new Date().toLocaleString()
+            };
+
+            console.log('Configuración guardada:', config);
+            alert('¡Configuración guardada en la consola!');
+        }
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function () {
+            aplicarColores();
+            actualizarListaClases();
+
+            console.log('🎨 Ejercicio 3: Cambiar Estilos');
+            console.log('Experimenta con estilos inline y clases CSS');
+        });
+    </script>
+</body>
+
+</html>

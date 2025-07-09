@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Modificar Contenido</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .exercise-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid #3498db;
+        }
+
+        .exercise-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .demo-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .demo-area {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .demo-elements {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px dashed #bdc3c7;
+        }
+
+        .demo-elements h3 {
+            color: #8e44ad;
+            margin-bottom: 1rem;
+        }
+
+        .target-element {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: #ecf0f1;
+            color: #2c3e50;
+            border: 2px solid #bdc3c7;
+        }
+
+        .target-element.modified {
+            background: #d5f4e6;
+            border-color: #27ae60;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .controls {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border: 2px solid #3498db;
+        }
+
+        .controls h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .control-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .btn-inner {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .btn-text {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+
+        .btn-value {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+        }
+
+        .btn-clear {
+            background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .code-example code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .highlight-code {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ecf0f1;
+        }
+
+        .nav-btn {
+            padding: 1rem 2rem;
+            margin: 0 0.5rem;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(155, 89, 182, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>✏️ Ejercicio 2: Modificar Contenido</h1>
+            <p>Aprende a cambiar el contenido de elementos HTML usando JavaScript</p>
+        </header>
+
+        <!-- PARTE 1: innerHTML vs textContent -->
+        <section class="exercise-section">
+            <h2>📝 Parte 1: innerHTML vs textContent</h2>
+            <p>Aprende las diferencias entre innerHTML y textContent.</p>
+
+            <div class="code-example">
+                <code>
+// innerHTML - Interpreta etiquetas HTML
+elemento.innerHTML = "&lt;strong&gt;Texto en negrita&lt;/strong&gt;";
+
+// textContent - Solo texto plano
+elemento.textContent = "&lt;strong&gt;Se ve como texto&lt;/strong&gt;";
+                </code>
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-elements">
+                    <h3>Elementos de prueba:</h3>
+                    <div id="elemento-inner" class="target-element">
+                        Texto original para innerHTML
+                    </div>
+                    <div id="elemento-text" class="target-element">
+                        Texto original para textContent
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Controles</h3>
+
+                    <div class="input-group">
+                        <label for="input-html">Contenido HTML:</label>
+                        <textarea id="input-html" rows="2"
+                            placeholder="Ejemplo: &lt;strong&gt;Texto en negrita&lt;/strong&gt;">&lt;strong&gt;¡Texto en negrita!&lt;/strong&gt; &lt;em&gt;y cursiva&lt;/em&gt;</textarea>
+                    </div>
+
+                    <div class="control-group">
+                        <button class="control-btn btn-inner" onclick="cambiarInnerHTML()">
+                            Usar innerHTML
+                        </button>
+                        <button class="control-btn btn-text" onclick="cambiarTextContent()">
+                            Usar textContent
+                        </button>
+                        <button class="control-btn btn-clear" onclick="restaurarOriginales()">
+                            Restaurar Original
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTE 2: Modificar inputs y formularios -->
+        <section class="exercise-section">
+            <h2>📋 Parte 2: Modificar Inputs y Formularios</h2>
+            <p>Trabaja con campos de entrada y sus valores.</p>
+
+            <div class="code-example">
+                <code>
+// Para inputs, usamos la propiedad <span class="highlight-code">value</span>
+const input = document.getElementById('mi-input');
+input.value = "Nuevo valor";
+
+// También podemos leer el valor actual
+console.log(input.value);
+                </code>
+            </div>
+
+            <div class="demo-area">
+                <div class="demo-elements">
+                    <h3>Formulario de prueba:</h3>
+                    <div style="background: white; padding: 1rem; border-radius: 8px;">
+                        <div style="margin-bottom: 1rem;">
+                            <label for="input-nombre">Nombre:</label>
+                            <input type="text" id="input-nombre" value="Nombre inicial"
+                                style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="input-email">Email:</label>
+                            <input type="email" id="input-email" value="ejemplo@email.com"
+                                style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+
+                        <div style="margin-bottom: 1rem;">
+                            <label for="textarea-mensaje">Mensaje:</label>
+                            <textarea id="textarea-mensaje" rows="3"
+                                style="width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ddd; border-radius: 4px;">Mensaje inicial</textarea>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input type="checkbox" id="checkbox-acepto"> Acepto términos y condiciones
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Modificar valores</h3>
+
+                    <div class="input-group">
+                        <label for="nuevo-nombre">Nuevo nombre:</label>
+                        <input type="text" id="nuevo-nombre" placeholder="Escribe un nombre">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nuevo-email">Nuevo email:</label>
+                        <input type="email" id="nuevo-email" placeholder="nuevo@email.com">
+                    </div>
+
+                    <div class="control-group">
+                        <button class="control-btn btn-value" onclick="actualizarNombre()">
+                            Actualizar Nombre
+                        </button>
+                        <button class="control-btn btn-value" onclick="actualizarEmail()">
+                            Actualizar Email
+                        </button>
+                        <button class="control-btn btn-value" onclick="leerValores()">
+                            Mostrar Todos los Valores
+                        </button>
+                        <button class="control-btn btn-clear" onclick="limpiarFormulario()">
+                            Limpiar Formulario
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTE 3: Ejercicio práctico integrador -->
+        <section class="exercise-section">
+            <h2>🎯 Parte 3: Ejercicio Práctico</h2>
+            <p>Combina todo lo aprendido en un ejercicio real.</p>
+
+            <div class="demo-area">
+                <div class="demo-elements">
+                    <h3>Simulador de perfil de usuario:</h3>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; border: 2px solid #3498db;">
+                        <div id="perfil-usuario">
+                            <h4 id="perfil-nombre">Nombre del Usuario</h4>
+                            <p id="perfil-email">email@ejemplo.com</p>
+                            <p id="perfil-bio">Biografía del usuario aparecerá aquí...</p>
+                            <div id="perfil-estado"
+                                style="margin-top: 1rem; padding: 0.5rem; background: #ecf0f1; border-radius: 4px;">
+                                Estado: <span id="estado-texto">Inactivo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <h3>Editor de perfil</h3>
+
+                    <div class="input-group">
+                        <label for="editor-nombre">Nombre:</label>
+                        <input type="text" id="editor-nombre" placeholder="Tu nombre completo">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="editor-email">Email:</label>
+                        <input type="email" id="editor-email" placeholder="tu@email.com">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="editor-bio">Biografía:</label>
+                        <textarea id="editor-bio" rows="3" placeholder="Cuéntanos sobre ti..."></textarea>
+                    </div>
+
+                    <div class="control-group">
+                        <button class="control-btn btn-value" onclick="actualizarPerfil()">
+                            Actualizar Perfil Completo
+                        </button>
+                        <button class="control-btn btn-inner" onclick="alternarEstado()">
+                            Cambiar Estado (Activo/Inactivo)
+                        </button>
+                        <button class="control-btn btn-clear" onclick="resetearPerfil()">
+                            Resetear Perfil
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="navigation">
+            <a href="ejercicio1-seleccionar.html" class="nav-btn">← Anterior: Seleccionar</a>
+            <a href="index.html" class="nav-btn">Inicio</a>
+            <a href="ejercicio3-estilos.html" class="nav-btn">Siguiente: Estilos →</a>
+        </nav>
+    </div>
+
+    <script>
+        // Variables globales para estados
+        let estadoActivo = false;
+
+        // PARTE 1: innerHTML vs textContent
+        function cambiarInnerHTML() {
+            const elemento = document.getElementById('elemento-inner');
+            const contenido = document.getElementById('input-html').value;
+
+            elemento.innerHTML = contenido;
+            elemento.classList.add('modified');
+
+            console.log('innerHTML aplicado:', contenido);
+        }
+
+        function cambiarTextContent() {
+            const elemento = document.getElementById('elemento-text');
+            const contenido = document.getElementById('input-html').value;
+
+            elemento.textContent = contenido;
+            elemento.classList.add('modified');
+
+            console.log('textContent aplicado:', contenido);
+        }
+
+        function restaurarOriginales() {
+            document.getElementById('elemento-inner').innerHTML = 'Texto original para innerHTML';
+            document.getElementById('elemento-text').textContent = 'Texto original para textContent';
+
+            // Quitar clase modified
+            document.getElementById('elemento-inner').classList.remove('modified');
+            document.getElementById('elemento-text').classList.remove('modified');
+        }
+
+        // PARTE 2: Inputs y formularios
+        function actualizarNombre() {
+            const nuevoNombre = document.getElementById('nuevo-nombre').value;
+            const inputNombre = document.getElementById('input-nombre');
+
+            if (nuevoNombre.trim()) {
+                inputNombre.value = nuevoNombre;
+                inputNombre.style.background = '#d5f4e6';
+
+                // Limpiar el campo de entrada
+                document.getElementById('nuevo-nombre').value = '';
+
+                console.log('Nombre actualizado a:', nuevoNombre);
+            } else {
+                alert('Por favor, escribe un nombre válido');
+            }
+        }
+
+        function actualizarEmail() {
+            const nuevoEmail = document.getElementById('nuevo-email').value;
+            const inputEmail = document.getElementById('input-email');
+
+            if (nuevoEmail.trim() && nuevoEmail.includes('@')) {
+                inputEmail.value = nuevoEmail;
+                inputEmail.style.background = '#d5f4e6';
+
+                // Limpiar el campo de entrada
+                document.getElementById('nuevo-email').value = '';
+
+                console.log('Email actualizado a:', nuevoEmail);
+            } else {
+                alert('Por favor, escribe un email válido');
+            }
+        }
+
+        function leerValores() {
+            const nombre = document.getElementById('input-nombre').value;
+            const email = document.getElementById('input-email').value;
+            const mensaje = document.getElementById('textarea-mensaje').value;
+            const acepto = document.getElementById('checkbox-acepto').checked;
+
+            const info = `
+VALORES ACTUALES DEL FORMULARIO:
+• Nombre: "${nombre}"
+• Email: "${email}"
+• Mensaje: "${mensaje}"
+• Acepta términos: ${acepto ? 'Sí' : 'No'}
+            `;
+
+            alert(info);
+            console.log('Valores del formulario:', { nombre, email, mensaje, acepto });
+        }
+
+        function limpiarFormulario() {
+            document.getElementById('input-nombre').value = '';
+            document.getElementById('input-email').value = '';
+            document.getElementById('textarea-mensaje').value = '';
+            document.getElementById('checkbox-acepto').checked = false;
+
+            // Restaurar estilos
+            document.getElementById('input-nombre').style.background = '';
+            document.getElementById('input-email').style.background = '';
+        }
+
+        // PARTE 3: Ejercicio integrador
+        function actualizarPerfil() {
+            const nombre = document.getElementById('editor-nombre').value.trim();
+            const email = document.getElementById('editor-email').value.trim();
+            const bio = document.getElementById('editor-bio').value.trim();
+
+            if (!nombre || !email || !bio) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+
+            if (!email.includes('@')) {
+                alert('Por favor, ingresa un email válido');
+                return;
+            }
+
+            // Actualizar el perfil
+            document.getElementById('perfil-nombre').textContent = nombre;
+            document.getElementById('perfil-email').textContent = email;
+            document.getElementById('perfil-bio').textContent = bio;
+
+            // Efectos visuales
+            const perfil = document.getElementById('perfil-usuario');
+            perfil.style.border = '2px solid #27ae60';
+            perfil.style.background = '#f8fff8';
+
+            // Limpiar campos de entrada
+            document.getElementById('editor-nombre').value = '';
+            document.getElementById('editor-email').value = '';
+            document.getElementById('editor-bio').value = '';
+
+            console.log('Perfil actualizado:', { nombre, email, bio });
+        }
+
+        function alternarEstado() {
+            estadoActivo = !estadoActivo;
+            const estadoTexto = document.getElementById('estado-texto');
+            const estadoDiv = document.getElementById('perfil-estado');
+
+            if (estadoActivo) {
+                estadoTexto.textContent = 'Activo';
+                estadoDiv.style.background = '#d5f4e6';
+                estadoDiv.style.color = '#27ae60';
+            } else {
+                estadoTexto.textContent = 'Inactivo';
+                estadoDiv.style.background = '#fdeaea';
+                estadoDiv.style.color = '#e74c3c';
+            }
+
+            console.log('Estado cambiado a:', estadoActivo ? 'Activo' : 'Inactivo');
+        }
+
+        function resetearPerfil() {
+            document.getElementById('perfil-nombre').textContent = 'Nombre del Usuario';
+            document.getElementById('perfil-email').textContent = 'email@ejemplo.com';
+            document.getElementById('perfil-bio').textContent = 'Biografía del usuario aparecerá aquí...';
+
+            // Resetear estado
+            estadoActivo = false;
+            document.getElementById('estado-texto').textContent = 'Inactivo';
+            const estadoDiv = document.getElementById('perfil-estado');
+            estadoDiv.style.background = '#ecf0f1';
+            estadoDiv.style.color = '';
+
+            // Resetear estilos del perfil
+            const perfil = document.getElementById('perfil-usuario');
+            perfil.style.border = '2px solid #3498db';
+            perfil.style.background = 'white';
+        }
+
+        // Mensaje de bienvenida
+        console.log('✏️ Ejercicio 2: Modificar Contenido');
+        console.log('Experimenta con los diferentes métodos para modificar contenido HTML');
+        console.log('Observa las diferencias entre innerHTML, textContent y value');
+    </script>
+</body>
+
+</html>

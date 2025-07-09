@@ -198,7 +198,105 @@ console.log("Longitudes:", longitudes);
 console.log("\n");
 
 // =====================================================
-// 7. MÉTODOS DE VERIFICACIÓN
+// 7. MÉTODO forEach - ITERACIÓN SIN RETORNO
+// =====================================================
+
+console.log("7. MÉTODO forEach - ITERACIÓN SIN RETORNO");
+console.log("==========================================");
+
+// 7.1 forEach con array de enteros
+numeros = [1, 2, 3, 4, 5];
+console.log("Array de números:", numeros);
+
+console.log("Iterando números con forEach:");
+numeros.forEach((numero, indice) => {
+  console.log(`Posición ${indice}: ${numero} -> ${numero * 2}`);
+});
+
+// forEach no retorna nada (undefined)
+let resultado = numeros.forEach((num) => num * 2);
+console.log("Resultado de forEach:", resultado); // undefined
+
+// 7.2 forEach con array de strings
+frutas = ["manzana", "banana", "naranja", "uva"];
+console.log("\nArray de frutas:", frutas);
+
+console.log("Procesando frutas con forEach:");
+frutas.forEach((fruta, index, array) => {
+  const mayuscula = fruta.toUpperCase();
+  const longitud = fruta.length;
+  console.log(`${index + 1}. ${fruta} -> ${mayuscula} (${longitud} letras)`);
+
+  // Acceso al array completo como tercer parámetro
+  if (index === array.length - 1) {
+    console.log("   ✓ Última fruta procesada");
+  }
+});
+
+// 7.3 forEach con array de objetos
+let estudiantes = [
+  { nombre: "Ana", edad: 20, nota: 85 },
+  { nombre: "Carlos", edad: 22, nota: 92 },
+  { nombre: "María", edad: 19, nota: 78 },
+  { nombre: "Luis", edad: 21, nota: 88 },
+];
+
+console.log("\nArray de estudiantes:", estudiantes);
+
+console.log("Procesando estudiantes con forEach:");
+estudiantes.forEach((estudiante, posicion) => {
+  const estado = estudiante.nota >= 80 ? "APROBADO" : "REPROBADO";
+  const emoji = estudiante.nota >= 80 ? "✅" : "❌";
+
+  console.log(
+    `${posicion + 1}. ${estudiante.nombre} (${estudiante.edad} años)`
+  );
+  console.log(`   Nota: ${estudiante.nota} - ${estado} ${emoji}`);
+});
+
+// Ejemplo práctico: modificar elementos durante forEach
+console.log("\nModificando array durante forEach:");
+let puntuaciones = [75, 82, 90, 67, 88];
+console.log("Puntuaciones originales:", puntuaciones);
+
+puntuaciones.forEach((puntuacion, index, arr) => {
+  // Aplicar bonificación del 5% si es menor a 80
+  if (puntuacion < 80) {
+    arr[index] = Math.min(puntuacion * 1.05, 100); // Máximo 100
+    console.log(
+      `  Bonificación aplicada en posición ${index}: ${puntuacion} -> ${arr[
+        index
+      ].toFixed(1)}`
+    );
+  }
+});
+
+console.log("Puntuaciones después de bonificación:", puntuaciones);
+
+// 7.4 Diferencias importantes: forEach vs map vs for
+console.log("\n--- COMPARACIÓN: forEach vs map vs for ---");
+
+let datos = [1, 2, 3, 4, 5];
+
+// forEach: No retorna nada, usado para efectos secundarios
+console.log("forEach - Solo efectos:");
+datos.forEach((num) => console.log(`  Procesando: ${num}`));
+
+// map: Retorna nuevo array con transformaciones
+console.log("map - Retorna nuevo array:");
+let transformados = datos.map((num) => num * 2);
+console.log("  Resultado:", transformados);
+
+// for tradicional: Control total
+console.log("for tradicional - Control total:");
+for (let i = 0; i < datos.length; i++) {
+  console.log(`  Índice ${i}: ${datos[i]}`);
+}
+
+console.log("\n");
+
+// =====================================================
+// 8. MÉTODOS DE VERIFICACIÓN
 // =====================================================
 
 console.log("7. MÉTODOS DE VERIFICACIÓN");
@@ -353,21 +451,21 @@ console.log("====================");
 numeros = [1, 2, 3, 4, 5];
 
 suma = numeros.reduce((acumulador, numero) => {
-    return acumulador + numero;
+  return acumulador + numero;
 }, 0);
 
 const promedio = numeros.reduce((acumulador, numero, indice, array) => {
-    acumulador += numero;
-    
-    // Si es el último elemento, dividir por la cantidad
-    if (indice === array.length - 1) {
-        return acumulador / array.length;
-    }
-    
-    return acumulador;
+  acumulador += numero;
+
+  // Si es el último elemento, dividir por la cantidad
+  if (indice === array.length - 1) {
+    return acumulador / array.length;
+  }
+
+  return acumulador;
 }, 0);
 
-console.log("Promedio:", promedio); 
+console.log("Promedio:", promedio);
 
 console.log("Suma:", suma); // 15
 
@@ -436,7 +534,6 @@ console.log("=============================");
 // reverse() - invierte el orden
 // fill() - llena con un valor
 
-
 let ventas = [
   { producto: "laptop", precio: 1000, cantidad: 2 },
   { producto: "mouse", precio: 25, cantidad: 5 },
@@ -445,20 +542,16 @@ let ventas = [
 ];
 
 // 13.1 Encadenamiento complejo
-let ventasAltas = ventas
-.map((venta) => ({
+let ventasAltas = ventas.map((venta) => ({
   ...venta,
   total: venta.precio * venta.cantidad,
 }));
 console.log("Ventas altas (>$150):", ventasAltas);
-ventasAltas = ventasAltas
-.filter((venta) => venta.total > 150);
+ventasAltas = ventasAltas.filter((venta) => venta.total > 150);
 console.log("Ventas altas (>$150):", ventasAltas);
-ventasAltas
-.sort((a, b) => b.total - a.total);
+ventasAltas.sort((a, b) => b.total - a.total);
 console.log("Ventas altas (>$150):", ventasAltas);
-ventasAltas = ventasAltas
-.map((venta) => `${venta.producto}: $${venta.total}`);
+ventasAltas = ventasAltas.map((venta) => `${venta.producto}: $${venta.total}`);
 console.log("Ventas altas (>$150):", ventasAltas);
 
 ventasAltas = ventas
@@ -469,16 +562,16 @@ ventasAltas = ventas
   .filter((venta) => venta.total > 150)
   .sort((a, b) => b.total - a.total)
   .map((venta) => `${venta.producto}: $${venta.total}`);
-  console.log("Ventas altas (>$150):", ventasAltas);
+console.log("Ventas altas (>$150):", ventasAltas);
 
 // 13.2 Cadena de transformaciones
-let resultado = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let resultadoCadena = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   .filter((n) => n % 2 === 0) // solo pares
   .map((n) => n * n) // elevar al cuadrado
   .filter((n) => n > 10) // solo mayores a 10
   .reduce((sum, n) => sum + n); // sumar todo
 
-console.log("Resultado de cadena:", resultado);
+console.log("Resultado de cadena:", resultadoCadena);
 
 console.log("\n");
 

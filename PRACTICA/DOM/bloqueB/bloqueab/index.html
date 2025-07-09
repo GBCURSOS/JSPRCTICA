@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Bloque B - Manipulación Avanzada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 DOM Manipulación Avanzada</h1>
+            <p>Hora 3-4: innerHTML vs textContent + Estilos Dinámicos</p>
+
+            <!-- Control de tema -->
+            <div class="theme-controls">
+                <button id="btn-light" class="theme-btn">☀️ Modo Claro</button>
+                <button id="btn-dark" class="theme-btn">🌙 Modo Oscuro</button>
+                <button id="btn-auto" class="theme-btn">🔄 Auto</button>
+            </div>
+        </header>
+
+        <!-- Sección 1: innerHTML vs textContent -->
+        <section class="section">
+            <h2>📝 Sección 1: innerHTML vs textContent</h2>
+
+            <div class="demo-area">
+                <div class="content-target" id="content-demo">
+                    <p>Contenido original con <strong>HTML</strong></p>
+                </div>
+
+                <div class="controls">
+                    <div class="input-group">
+                        <label for="text-input">Texto para insertar:</label>
+                        <input type="text" id="text-input"
+                            value="<em>Nuevo texto</em> con <strong>etiquetas HTML</strong>"
+                            placeholder="Escribe algo aquí...">
+                    </div>
+
+                    <div class="button-group">
+                        <button id="btn-innerhtml" class="action-btn">📄 Usar innerHTML</button>
+                        <button id="btn-textcontent" class="action-btn">📝 Usar textContent</button>
+                        <button id="btn-reset" class="action-btn reset">🔄 Restablecer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Diferencias:</h3>
+                <ul>
+                    <li><strong>innerHTML:</strong> Interpreta HTML (etiquetas se convierten en elementos)</li>
+                    <li><strong>textContent:</strong> Solo texto plano (etiquetas se muestran como texto)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Modificar estilos dinámicamente -->
+        <section class="section">
+            <h2>🎨 Sección 2: Modificar Estilos Dinámicamente</h2>
+
+            <div class="demo-area">
+                <div class="style-target" id="style-demo">
+                    <h3>¡Experimenta con mis estilos!</h3>
+                    <p>Cambia mi apariencia usando los controles de abajo</p>
+                </div>
+
+                <div class="controls">
+                    <div class="control-row">
+                        <label for="color-picker">Color de texto:</label>
+                        <input type="color" id="color-picker" value="#333333">
+
+                        <label for="bg-color-picker">Color de fondo:</label>
+                        <input type="color" id="bg-color-picker" value="#f0f0f0">
+                    </div>
+
+                    <div class="control-row">
+                        <label for="font-size">Tamaño de fuente:</label>
+                        <input type="range" id="font-size" min="12" max="48" value="16">
+                        <span id="font-size-display">16px</span>
+                    </div>
+
+                    <div class="control-row">
+                        <label for="border-radius">Borde redondeado:</label>
+                        <input type="range" id="border-radius" min="0" max="50" value="10">
+                        <span id="border-radius-display">10px</span>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="btn-animate" class="action-btn">✨ Animar</button>
+                        <button id="btn-reset-styles" class="action-btn reset">🔄 Restablecer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Cambiar clases CSS -->
+        <section class="section">
+            <h2>🏷️ Sección 3: Manipular Clases CSS</h2>
+
+            <div class="demo-area">
+                <div class="class-target" id="class-demo">
+                    <div class="card">
+                        <h3>📦 Tarjeta de Ejemplo</h3>
+                        <p>Experimenta con las clases CSS</p>
+                        <span class="status">Estado: Normal</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="button-group">
+                        <button id="btn-add-success" class="action-btn">✅ Agregar éxito</button>
+                        <button id="btn-add-warning" class="action-btn">⚠️ Agregar advertencia</button>
+                        <button id="btn-add-error" class="action-btn">❌ Agregar error</button>
+                        <button id="btn-toggle-highlight" class="action-btn">🔥 Toggle highlight</button>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="btn-remove-all" class="action-btn reset">🧹 Limpiar clases</button>
+                        <button id="btn-show-classes" class="action-btn">👁️ Ver clases</button>
+                    </div>
+                </div>
+
+                <div class="class-info">
+                    <strong>Clases actuales:</strong> <span id="current-classes">card</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Proyecto - Cambio de tema completo -->
+        <section class="section">
+            <h2>🌓 Sección 4: Proyecto - Sistema de Temas</h2>
+
+            <div class="demo-area">
+                <div class="theme-demo">
+                    <h3>🎯 Resultado Final</h3>
+                    <p>Todo el sistema de temas está funcionando en esta página.</p>
+                    <p>Usa los botones del header para cambiar entre:</p>
+                    <ul>
+                        <li>☀️ <strong>Modo Claro:</strong> Fondo blanco, texto oscuro</li>
+                        <li>🌙 <strong>Modo Oscuro:</strong> Fondo oscuro, texto claro</li>
+                        <li>🔄 <strong>Modo Auto:</strong> Detecta preferencia del sistema</li>
+                    </ul>
+
+                    <div class="theme-stats">
+                        <p><strong>Tema actual:</strong> <span id="current-theme">light</span></p>
+                        <p><strong>Preferencia sistema:</strong> <span id="system-preference">light</span></p>
+                        <p><strong>Guardado en:</strong> localStorage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Código Ejecutado</h3>
+            <pre id="code-display">// El código JavaScript aparecerá aquí cuando interactúes con los elementos</pre>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

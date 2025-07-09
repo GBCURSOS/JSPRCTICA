@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 1: DOM Manipulation - Fundamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>🎯 BLOQUE 1: DOM MANIPULATION</h1>
+        <p class="subtitle">Fundamentos de manipulación del Document Object Model</p>
+    </header>
+
+    <nav class="navigation">
+        <h2>📚 Contenido del Bloque 1 (Horas 1-5)</h2>
+        <ul class="topic-list">
+            <li><a href="#hora1-2">🕐 Fundamentos del DOM</a></li>
+            <li><a href="#hora3-4">🕑 Manipulación Avanzada</a></li>
+            <li><a href="#hora5">🕒 Eventos e Interactividad</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- HORAS 1-2: FUNDAMENTOS DEL DOM -->
+        <section id="hora1-2" class="time-block">
+            <h2>🕐 FUNDAMENTOS DEL DOM</h2>
+
+            <div class="theory-section">
+                <h3>📖 Conceptos Clave</h3>
+                <div class="concept-card">
+                    <h4>¿Qué es el DOM?</h4>
+                    <p><strong>DOM (Document Object Model)</strong> es una representación en forma de árbol de la
+                        estructura HTML de una página web.</p>
+                    <ul>
+                        <li>Cada elemento HTML es un <strong>nodo</strong></li>
+                        <li>JavaScript puede acceder y modificar estos nodos</li>
+                        <li>Los cambios se reflejan inmediatamente en la página</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>Árbol de Nodos</h4>
+                    <pre><code>
+document (raíz)
+├── html
+    ├── head
+    │   ├── title
+    │   └── meta
+    └── body
+        ├── h1
+        ├── p
+        └── div
+            ├── span
+            └── button
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>🛠 Ejercicios Prácticos</h3>
+                <div class="exercise-links">
+                    <a href="ejercicio1-seleccionar.html" class="exercise-btn">Ejercicio 1: Seleccionar Elementos</a>
+                    <a href="ejercicio2-modificar.html" class="exercise-btn">Ejercicio 2: Modificar Contenido</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORAS 3-4: MANIPULACIÓN AVANZADA -->
+        <section id="hora3-4" class="time-block">
+            <h2>🕑 HORAS 3-4: MANIPULACIÓN AVANZADA</h2>
+
+            <div class="theory-section">
+                <h3>📖 Conceptos Clave</h3>
+                <div class="concept-card">
+                    <h4>innerHTML vs textContent</h4>
+                    <ul>
+                        <li><code>innerHTML</code>: Interpreta HTML tags</li>
+                        <li><code>textContent</code>: Solo texto plano</li>
+                        <li><code>value</code>: Para inputs y formularios</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>Modificar Estilos CSS</h4>
+                    <ul>
+                        <li><code>element.style.property</code>: Estilos inline</li>
+                        <li><code>element.classList</code>: Manipular clases CSS</li>
+                        <li><code>add(), remove(), toggle()</code>: Métodos de classList</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>🛠 Ejercicios Prácticos</h3>
+                <div class="exercise-links">
+                    <a href="ejercicio3-estilos.html" class="exercise-btn">Ejercicio 3: Cambiar Estilos</a>
+                    <a href="ejercicio4-tema.html" class="exercise-btn">Ejercicio 4: Modo Oscuro/Claro</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HORA 5: EVENTOS E INTERACTIVIDAD -->
+        <section id="hora5" class="time-block">
+            <h2>🕒 HORA 5: EVENTOS E INTERACTIVIDAD</h2>
+
+            <div class="theory-section">
+                <h3>📖 Conceptos Clave</h3>
+                <div class="concept-card">
+                    <h4>¿Qué son los Eventos?</h4>
+                    <p>Los eventos son acciones que ocurren en el navegador:</p>
+                    <ul>
+                        <li><code>click</code>: Usuario hace clic</li>
+                        <li><code>input</code>: Usuario escribe en un campo</li>
+                        <li><code>change</code>: Valor de un elemento cambia</li>
+                        <li><code>submit</code>: Formulario se envía</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card">
+                    <h4>addEventListener()</h4>
+                    <pre><code>
+element.addEventListener('evento', function() {
+    // Código a ejecutar
+});
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>🛠 Ejercicios Prácticos</h3>
+                <div class="exercise-links">
+                    <a href="ejercicio5-eventos.html" class="exercise-btn">Ejercicio 5: Eventos Básicos</a>
+                    <a href="ejercicio6-formulario.html" class="exercise-btn">Ejercicio 6: Formulario Interactivo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECURSOS ADICIONALES -->
+        <section class="resources">
+            <h2>📚 Recursos Adicionales</h2>
+            <div class="resource-links">
+                <a href="cheatsheet.html" class="resource-btn">📄 Cheat Sheet DOM</a>
+                <a href="ejemplos-completos.html" class="resource-btn">💡 Ejemplos Completos</a>
+                <a href="proyecto-integrador.html" class="resource-btn">🚀 Proyecto Integrador</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>💡 <strong>Metodología:</strong> 70% Práctica + 20% Teoría + 10% Discusión</p>
+        <p>⏱ <strong>Duración:</strong> 5 horas con descansos de 15 minutos cada 2 horas</p>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+
+</html>
