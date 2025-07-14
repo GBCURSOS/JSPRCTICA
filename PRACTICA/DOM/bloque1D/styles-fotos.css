@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+}
+.galeria-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.listado-fotos {
+  width: 220px;
+  background: #222;
+  color: #fff;
+  padding: 1em;
+  overflow-y: auto;
+}
+.foto-nombre {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.foto-nombre:hover {
+  background: #444;
+}
+.fotos-main {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 2em;
+  overflow-y: auto;
+}
+.foto-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1em;
+  width: 220px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.foto-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.foto-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal.oculto {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 2em;
+  color: #333;
+  cursor: pointer;
+}
+#modal-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}

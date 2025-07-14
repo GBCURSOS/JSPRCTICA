@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Bloque B2 - Clases y Temas</title>
+    <link rel="stylesheet" href="styles-b2.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎨 DOM Bloque B2</h1>
+            <p>Clases CSS + Sistema de Temas</p>
+
+            <!-- Control de tema -->
+            <div class="theme-controls">
+                <button id="btn-light" class="theme-btn">☀️ Modo Claro</button>
+                <button id="btn-dark" class="theme-btn">🌙 Modo Oscuro</button>
+                <button id="btn-auto" class="theme-btn">🔄 Auto</button>
+            </div>
+        </header>
+
+        <!-- Sección 3: Sistema de temas -->
+        <section class="section">
+            <h2>🌓 Sección 3: Sistema de Temas Dinámico</h2>
+        
+            <div class="demo-area">
+                <div class="theme-demo">
+                    <h3>🎯 Sistema de Temas Completo</h3>
+                    <p>Usa los botones del header para cambiar entre temas:</p>
+                    <ul>
+                        <li>☀️ <strong>Modo Claro:</strong> Fondo blanco, texto oscuro</li>
+                        <li>🌙 <strong>Modo Oscuro:</strong> Fondo oscuro, texto claro</li>
+                        <li>🔄 <strong>Modo Auto:</strong> Detecta preferencia del sistema</li>
+                    </ul>
+        
+                    <div class="theme-stats">
+                        <div class="stat-item">
+                            <strong>Tema actual:</strong> <span id="current-theme">light</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>Preferencia sistema:</strong> <span id="system-preference">light</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>Guardado en:</strong> localStorage
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="explanation">
+                <h3>🔍 Técnicas del sistema de temas:</h3>
+                <ul>
+                    <li><strong>CSS Variables:</strong> Cambiar colores dinámicamente</li>
+                    <li><strong>Data attributes:</strong> [data-theme="dark"] para estilos</li>
+                    <li><strong>localStorage:</strong> Persistir preferencia del usuario</li>
+                    <li><strong>matchMedia:</strong> Detectar preferencia del sistema</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 4: Cambiar clases CSS -->
+        <section class="section">
+            <h2>🏷️ Sección 4: Manipular Clases CSS</h2>
+
+            <div class="demo-area">
+                <div class="class-target" id="class-demo">
+                    <div class="card">
+                        <h3>📦 Tarjeta de Ejemplo</h3>
+                        <p>Experimenta con las clases CSS</p>
+                        <span class="status">Estado: Normal</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="button-group">
+                        <button id="btn-add-success" class="action-btn">✅ Agregar éxito</button>
+                        <button id="btn-add-warning" class="action-btn">⚠️ Agregar advertencia</button>
+                        <button id="btn-add-error" class="action-btn">❌ Agregar error</button>
+                        <button id="btn-toggle-highlight" class="action-btn">🔥 Toggle highlight</button>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="btn-remove-all" class="action-btn reset">🧹 Limpiar clases</button>
+                        <button id="btn-show-classes" class="action-btn">👁️ Ver clases</button>
+                    </div>
+                </div>
+
+                <div class="class-info">
+                    <strong>Clases actuales:</strong> <span id="current-classes">card</span>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Métodos para manejar clases:</h3>
+                <ul>
+                    <li><strong>classList.add():</strong> Agregar clase</li>
+                    <li><strong>classList.remove():</strong> Quitar clase</li>
+                    <li><strong>classList.toggle():</strong> Alternar clase</li>
+                    <li><strong>classList.contains():</strong> Verificar si tiene clase</li>
+                </ul>
+            </div>
+        </section>
+
+        
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los elementos para ver el código en acción
+console.log('DOM Bloque B2 - Clases y Temas');</pre>
+        </section>
+
+        <!-- Navegación -->
+        <nav class="navigation">
+            <a href="../bloquea/index-b1.html" class="nav-btn">⬅️ Volver al Bloque B1</a>
+        </nav>
+    </div>
+
+    <script src="script-b2.js"></script>
+</body>
+
+</html>

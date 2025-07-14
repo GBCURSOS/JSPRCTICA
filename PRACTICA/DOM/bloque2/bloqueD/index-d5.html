@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque D4 - UPDATE y DELETE con LocalStorage</title>
+    <link rel="stylesheet" href="styles-d5.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>✏️ Bloque D4</h1>
+            <p>UPDATE y DELETE - Modificar y Eliminar empleados por ID</p>
+        </header>
+
+        <!-- Sección 1: Estado de la Base de Datos -->
+        <section class="section">
+            <h2>📊 Sección 1: Estado Actual de la Base de Datos</h2>
+
+            <div class="concept-area">
+                <div class="concept-card">
+                    <h3>Operaciones CRUD</h3>
+                    <ul>
+                        <li><strong>✅ CREATE:</strong> Agregar nuevos empleados</li>
+                        <li><strong>✅ READ:</strong> Leer y mostrar empleados</li>
+                        <li><strong>🔄 UPDATE:</strong> Modificar empleados existentes</li>
+                        <li><strong>🗑️ DELETE:</strong> Eliminar empleados</li>
+                    </ul>
+                </div>
+
+                <div class="data-status">
+                    <h4>Empleados en LocalStorage:</h4>
+                    <div id="db-status" class="status-display">
+                        <p>Cargando información...</p>
+                    </div>
+                    <div class="quick-actions">
+                        <button id="refresh-data" class="action-btn secondary">🔄 Actualizar vista</button>
+                        <button id="show-all" class="action-btn secondary">👁️ Mostrar todos</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Buscar por ID -->
+        <section class="section">
+            <h2>🔍 Sección 2: Buscar Empleado por ID</h2>
+
+            <div class="demo-area">
+                <div class="search-area">
+                    <h3>Buscar empleado</h3>
+                    <div class="search-form">
+                        <div class="form-group">
+                            <label for="search-id">ID del empleado:</label>
+                            <input type="number" id="search-id" placeholder="Ej: 1, 2, 3..." min="1">
+                            <button id="search-btn" class="action-btn primary">🔍 Buscar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="search-results" class="search-results">
+                    <p class="info-message">Ingresa un ID y haz click en "Buscar" para encontrar un empleado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: UPDATE - Modificar empleado -->
+        <section class="section">
+            <h2>✏️ Sección 3: UPDATE - Modificar Empleado</h2>
+
+            <div class="demo-area">
+                <div class="update-area">
+                    <h3>Formulario de Edición</h3>
+                    <p class="info-message">Primero busca un empleado por ID para poder modificarlo.</p>
+
+                    <form id="update-form" class="form-grid" style="display: none;">
+                        <div class="form-group">
+                            <label for="edit-id">ID:</label>
+                            <input type="number" id="edit-id" readonly class="readonly-field">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-name">Nombre completo:</label>
+                            <input type="text" id="edit-name" required placeholder="Ana García López">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-department">Departamento:</label>
+                            <select id="edit-department" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="Desarrollo">Desarrollo</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="RRHH">RRHH</option>
+                                <option value="Ventas">Ventas</option>
+                                <option value="Finanzas">Finanzas</option>
+                                <option value="IT">IT</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-position">Puesto:</label>
+                            <input type="text" id="edit-position" required placeholder="Frontend Developer">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-salary">Salario:</label>
+                            <input type="number" id="edit-salary" min="0" required placeholder="45000">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-email">Email:</label>
+                            <input type="email" id="edit-email" required placeholder="ana@empresa.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-date">Fecha de Ingreso:</label>
+                            <input type="date" id="edit-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-active">Estado:</label>
+                            <select id="edit-active" required>
+                                <option value="true">Activo</option>
+                                <option value="false">Inactivo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="action-btn success">💾 Guardar Cambios</button>
+                            <button type="button" id="cancel-edit" class="action-btn secondary">❌ Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: DELETE - Eliminar empleado -->
+        <section class="section">
+            <h2>🗑️ Sección 4: DELETE - Eliminar Empleado</h2>
+
+            <div class="demo-area">
+                <div class="delete-area">
+                    <h3>Eliminar Empleado</h3>
+                    <p class="warning-message">⚠️ <strong>Cuidado:</strong> Esta acción no se puede deshacer.</p>
+
+                    <div class="delete-form">
+                        <div class="form-group">
+                            <label for="delete-id">ID del empleado a eliminar:</label>
+                            <input type="number" id="delete-id" placeholder="Ej: 1, 2, 3..." min="1">
+                            <button id="delete-btn" class="action-btn warning">🗑️ Eliminar</button>
+                        </div>
+                    </div>
+
+                    <div id="delete-preview" class="delete-preview" style="display: none;">
+                        <h4>Empleado a eliminar:</h4>
+                        <div id="delete-employee-info" class="employee-card"></div>
+                        <div class="confirm-actions">
+                            <button id="confirm-delete" class="action-btn danger">✅ Confirmar Eliminación</button>
+                            <button id="cancel-delete" class="action-btn secondary">❌ Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Lista completa actualizada -->
+        <section class="section">
+            <h2>📋 Sección 5: Lista Completa de Empleados</h2>
+
+            <div class="demo-area">
+                <div class="table-info">
+                    <h3>Todos los Empleados</h3>
+                    <p>Lista actualizada después de las modificaciones y eliminaciones.</p>
+                </div>
+
+                <div id="employees-list" class="table-container">
+                    <p>Cargando empleados...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Operaciones Ejecutadas</h3>
+            <pre id="code-display">// Sistema UPDATE/DELETE iniciado
+console.log('Bloque D5 - UPDATE y DELETE operaciones cargadas');</pre>
+        </section>
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="index-d4.html" class="nav-btn">⬅️ Anterior: D3 (Create & Update)</a>
+            <a href="../bloqueE/index-e1.html" class="nav-btn">➡️ Siguiente: E1 (¿Qué son las APIs?)</a>
+            <div class="nav-info">
+                <span>Bloque D4 de 4 | UPDATE & DELETE - ¡Operaciones avanzadas!</span>
+            </div>
+        </nav> -->
+    </div>
+
+    <script src="script-d5.js"></script>
+</body>
+
+</html>

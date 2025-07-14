@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Bloque C3 - Eventos de Formularios</title>
+    <link rel="stylesheet" href="styles-c3.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📋 DOM Bloque C3</h1>
+            <p>Eventos de Formularios - Validación Interactiva</p>
+        </header>
+
+        <!-- Sección 1: Eventos básicos de formularios -->
+        <section class="section">
+            <h2>📝 Sección 1: Eventos Básicos de Formularios</h2>
+
+            <div class="demo-area">
+                <form id="demo-form" class="demo-form">
+                    <div class="form-group">
+                        <label for="name-input">Nombre:</label>
+                        <input type="text" id="name-input" placeholder="Ingresa tu nombre">
+                        <div class="event-log" id="name-events"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email-input">Email:</label>
+                        <input type="email" id="email-input" placeholder="tu@email.com">
+                        <div class="event-log" id="email-events"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age-select">Edad:</label>
+                        <select id="age-select">
+                            <option value="">Selecciona tu edad</option>
+                            <option value="18-25">18-25 años</option>
+                            <option value="26-35">26-35 años</option>
+                            <option value="36-50">36-50 años</option>
+                            <option value="51+">51+ años</option>
+                        </select>
+                        <div class="event-log" id="age-events"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message-textarea">Mensaje:</label>
+                        <textarea id="message-textarea" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        <div class="event-log" id="message-events"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn" class="action-btn">📤 Enviar</button>
+                        <button type="reset" id="reset-btn" class="action-btn reset">🔄 Resetear</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Eventos de formularios:</h3>
+                <ul>
+                    <li><strong>focus:</strong> El elemento recibe el foco</li>
+                    <li><strong>blur:</strong> El elemento pierde el foco</li>
+                    <li><strong>input:</strong> El valor del elemento cambia</li>
+                    <li><strong>change:</strong> El valor cambia y pierde el foco</li>
+                    <li><strong>submit:</strong> Se envía el formulario</li>
+                    <li><strong>reset:</strong> Se resetea el formulario</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Validación en tiempo real -->
+        <section class="section">
+            <h2>✅ Sección 2: Validación en Tiempo Real</h2>
+
+            <div class="demo-area">
+                <form id="validation-form" class="validation-form">
+                    <div class="form-group">
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" placeholder="Mínimo 3 caracteres">
+                        <div class="validation-message" id="username-validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" placeholder="Mínimo 8 caracteres">
+                        <div class="validation-message" id="password-validation"></div>
+                        <div class="password-strength" id="password-strength"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar Contraseña:</label>
+                        <input type="password" id="confirm-password" placeholder="Repite la contraseña">
+                        <div class="validation-message" id="confirm-validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" placeholder="(123) 456-7890">
+                        <div class="validation-message" id="phone-validation"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="validation-submit" class="action-btn" disabled>📤 Crear
+                            Cuenta</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Técnicas de validación:</h3>
+                <ul>
+                    <li><strong>Validación inmediata:</strong> Evento 'input' para feedback instantáneo</li>
+                    <li><strong>Validación al salir:</strong> Evento 'blur' para validar campo completo</li>
+                    <li><strong>Validación al enviar:</strong> Evento 'submit' para validación final</li>
+                    <li><strong>Prevenir envío:</strong> event.preventDefault() si hay errores</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 3: Formulario interactivo avanzado -->
+<!--          
+        <section class="section">
+            <h2>🎯 Sección 3: Formulario Interactivo Avanzado</h2>
+
+            <div class="demo-area">
+                <form id="advanced-form" class="advanced-form">
+                    <div class="form-step active" id="step-1">
+                        <h3>Paso 1: Información Personal</h3>
+                        <div class="form-group">
+                            <label for="first-name">Nombre:</label>
+                            <input type="text" id="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Apellido:</label>
+                            <input type="text" id="last-name" required>
+                        </div>
+                        <button type="button" id="next-step-1" class="action-btn">Siguiente ➡️</button>
+                    </div>
+
+                    <div class="form-step" id="step-2">
+                        <h3>Paso 2: Contacto</h3>
+                        <div class="form-group">
+                            <label for="contact-email">Email:</label>
+                            <input type="email" id="contact-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Teléfono:</label>
+                            <input type="tel" id="contact-phone" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="prev-step-2" class="action-btn secondary">⬅️ Anterior</button>
+                            <button type="button" id="next-step-2" class="action-btn">Siguiente ➡️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step-3">
+                        <h3>Paso 3: Confirmación</h3>
+                        <div class="summary" id="form-summary">
+                            
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="prev-step-3" class="action-btn secondary">⬅️ Anterior</button>
+                            <button type="submit" id="final-submit" class="action-btn">✅ Confirmar</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Formulario multi-paso:</h3>
+                <ul>
+                    <li><strong>Navegación:</strong> Botones para avanzar/retroceder</li>
+                    <li><strong>Validación por pasos:</strong> Validar antes de avanzar</li>
+                    <li><strong>Progreso visual:</strong> Barra de progreso</li>
+                    <li><strong>Resumen:</strong> Mostrar datos antes de enviar</li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los formularios para ver el código en acción
+console.log('DOM Bloque C3 - Eventos de Formularios');</pre>
+        </section>
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="index-c2.html" class="nav-btn">⬅️ Volver al C2 (Teclado)</a>
+            <a href="index-c4.html" class="nav-btn">➡️ Continuar al C4 (Avanzados)</a>
+            <div class="nav-info">
+                <span>Bloque C3 de 4 | Eventos de Formularios</span>
+            </div>
+        </nav> -->
+    </div>
+
+    <script src="script-c3.js"></script>
+</body>
+
+</html>

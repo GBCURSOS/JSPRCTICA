@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque E4 - CRUD con JSONBin.io</title>
+    <link rel="stylesheet" href="styles-e4.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🗄️ Bloque E4: CRUD con JSONBin.io</h1>
+            <p class="subtitle">Crear, Leer, Actualizar y Eliminar usuarios con API REST real</p>
+        </header>
+<!-- 
+        <nav class="navigation">
+            <a href="index-e3.html" class="nav-btn prev">⬅️ E3: Usuarios por Género</a>
+            <a href="index-e1.html" class="nav-btn">📖 E1: Definiciones</a>
+            <a href="#" class="nav-btn next disabled">E5: Avanzado ➡️</a>
+        </nav> -->
+
+        <main>
+            <section class="intro-section">
+                <h2>🎯 Objetivo</h2>
+                <p>Aprenderemos a trabajar con una base de datos real usando JSONBin.io:</p>
+                <ul>
+                    <li><strong>CREATE</strong> - Crear nuevos usuarios</li>
+                    <li><strong>READ</strong> - Leer usuarios existentes</li>
+                    <li><strong>UPDATE</strong> - Modificar usuarios por ID</li>
+                    <li><strong>DELETE</strong> - Eliminar usuarios</li>
+                </ul>
+            </section>
+
+            <section class="status-section">
+                <h3>📡 Estado de la Conexión</h3>
+                <div class="status-container">
+                    <div class="status-item">
+                        <span class="status-label">API:</span>
+                        <span id="api-status" class="status-value">Verificando...</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Bin ID:</span>
+                        <span id="bin-id" class="status-value">-</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Total Usuarios:</span>
+                        <span id="total-users" class="status-value">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 1: LEER USUARIOS -->
+            <section class="crud-section read-section">
+                <h3>📖 1. Leer Usuarios</h3>
+                <div class="section-content">
+                    <div class="action-container">
+                        <button id="read-btn" class="action-btn read-btn">🔄 Cargar Usuarios</button>
+                        <div class="info-text">
+                            <p>Obtiene todos los usuarios almacenados en JSONBin.io</p>
+                        </div>
+                    </div>
+                    <div class="results-container">
+                        <div class="results-header">
+                            <span>Usuarios encontrados:</span>
+                            <span id="users-count">0</span>
+                        </div>
+                        <div id="users-list" class="users-list">
+                            <p class="empty-message">Haz clic en "Cargar Usuarios" para ver los datos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: CREAR USUARIO -->
+            <section class="crud-section create-section">
+                <h3>➕ 2. Crear Usuario</h3>
+                <div class="section-content">
+                    <div class="form-container">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="create-name">Nombre:</label>
+                                <input type="text" id="create-name" placeholder="Ej: Juan Pérez">
+                            </div>
+                            <div class="input-group">
+                                <label for="create-email">Email:</label>
+                                <input type="email" id="create-email" placeholder="Ej: juan@email.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="create-age">Edad:</label>
+                                <input type="number" id="create-age" placeholder="25" min="1" max="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="create-country">País:</label>
+                                <input type="text" id="create-country" placeholder="Ej: Colombia">
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button id="create-btn" class="action-btn create-btn">➕ Crear Usuario</button>
+                            <button id="clear-form-btn" class="secondary-btn">🗑️ Limpiar</button>
+                        </div>
+                    </div>
+                    <div id="create-result" class="result-message"></div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: MODIFICAR USUARIO -->
+            <section class="crud-section update-section">
+                <h3>✏️ 3. Modificar Usuario</h3>
+                <div class="section-content">
+                    <div class="form-container">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="update-id">ID del Usuario:</label>
+                                <input type="text" id="update-id" placeholder="Ej: 1, 2, 3...">
+                            </div>
+                            <div class="input-group">
+                                <button id="load-user-btn" class="secondary-btn">🔍 Cargar Datos</button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="update-name">Nombre:</label>
+                                <input type="text" id="update-name" placeholder="Nombre actualizado">
+                            </div>
+                            <div class="input-group">
+                                <label for="update-email">Email:</label>
+                                <input type="email" id="update-email" placeholder="Email actualizado">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="update-age">Edad:</label>
+                                <input type="number" id="update-age" placeholder="25" min="1" max="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="update-country">País:</label>
+                                <input type="text" id="update-country" placeholder="País actualizado">
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <button id="update-btn" class="action-btn update-btn">✏️ Actualizar Usuario</button>
+                            <button id="clear-update-btn" class="secondary-btn">🗑️ Limpiar</button>
+                        </div>
+                    </div>
+                    <div id="update-result" class="result-message"></div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: ELIMINAR USUARIO -->
+            <section class="crud-section delete-section">
+                <h3>🗑️ 4. Eliminar Usuario</h3>
+                <div class="section-content">
+                    <div class="form-container">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="delete-id">ID del Usuario a Eliminar:</label>
+                                <input type="text" id="delete-id" placeholder="Ej: 1, 2, 3...">
+                            </div>
+                            <div class="input-group">
+                                <button id="preview-delete-btn" class="secondary-btn">👁️ Vista Previa</button>
+                            </div>
+                        </div>
+                        <div id="delete-preview" class="delete-preview"></div>
+                        <div class="button-container">
+                            <button id="delete-btn" class="action-btn delete-btn">🗑️ Eliminar Usuario</button>
+                            <button id="clear-delete-btn" class="secondary-btn">🔄 Cancelar</button>
+                        </div>
+                    </div>
+                    <div id="delete-result" class="result-message"></div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h3>💡 Información Técnica</h3>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>🔗 JSONBin.io</h4>
+                        <p>Servicio de base de datos JSON en la nube. Perfecto para prototipos y aprendizaje.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🔑 Autenticación</h4>
+                        <p>Usa API Key para autenticar requests. Cada operación requiere tu clave maestra.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>📦 Estructura de Datos</h4>
+                        <p>Los usuarios se almacenan como array de objetos con ID único incremental.</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>🌐 HTTP Methods</h4>
+                        <p>GET (leer), PUT (actualizar bin completo), DELETE (eliminar bin).</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>💻 JavaScript Práctico - Bloque E: APIs y CRUD | 2025</p>
+        </footer>
+    </div>
+
+    <script src="script-e4.js"></script>
+</body>
+
+</html>

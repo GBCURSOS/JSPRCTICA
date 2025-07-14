@@ -1,0 +1,82 @@
+[
+  {
+    "id": 101,
+    "nombre": "Isabella González",
+    "departamento": "Desarrollo",
+    "puesto": "Senior Frontend Developer",
+    "salario": 65000,
+    "fechaIngreso": "2022-01-15",
+    "email": "isabella.gonzalez@empresa.com",
+    "activo": true
+  },
+  {
+    "id": 102,
+    "nombre": "Sebastián Ramírez",
+    "departamento": "Desarrollo",
+    "puesto": "DevOps Engineer",
+    "salario": 70000,
+    "fechaIngreso": "2021-06-20",
+    "email": "sebastian.ramirez@empresa.com",
+    "activo": true
+  },
+  {
+    "id": 103,
+    "nombre": "Valentina Pérez",
+    "departamento": "Marketing",
+    "puesto": "Brand Manager",
+    "salario": 58000,
+    "fechaIngreso": "2022-03-10",
+    "email": "valentina.perez@empresa.com",
+    "activo": true
+  },
+  {
+    "id": 104,
+    "nombre": "Mateo Sánchez",
+    "departamento": "Ventas",
+    "puesto": "Senior Sales Executive",
+    "salario": 55000,
+    "fechaIngreso": "2021-11-05",
+    "email": "mateo.sanchez@empresa.com",
+    "activo": true
+  },
+  {
+    "id": 105,
+    "nombre": "Camila Ortiz",
+    "departamento": "RRHH",
+    "puesto": "Talent Acquisition Specialist",
+    "salario": 45000,
+    "fechaIngreso": "2023-02-28",
+    "email": "camila.ortiz@empresa.com",
+    "activo": true
+  },
+  {
+    "id": 106,
+    "nombre": "Nicolás Mendoza",
+    "departamento": "IT",
+    "puesto": "Cybersecurity Analyst",
+    "salario": 60000,
+    "fechaIngreso": "2022-08-15",
+    "email": "nicolas.mendoza@empresa.com",
+    "activo": false
+  },
+  {
+    "id": 107,
+    "nombre": "Daniela Vega",
+    "departamento": "Finanzas",
+    "puesto": "Senior Financial Analyst",
+    "salario": 62000,
+    "fechaIngreso": "2021-04-12",
+    "email": "daniela.vega@empresa.com",
+    "activo": true
+  },
+  {
+    "id": 108,
+    "nombre": "Gabriel Flores",
+    "departamento": "Desarrollo",
+    "puesto": "Backend Developer",
+    "salario": 52000,
+    "fechaIngreso": "2023-01-09",
+    "email": "gabriel.flores@empresa.com",
+    "activo": true
+  }
+]

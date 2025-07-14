@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 2D3 - Manipular Objetos JSON</title>
+    <link rel="stylesheet" href="styles-d3.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔧 Bloque 2D3</h1>
+            <p>Hora 6: Manipular y Trabajar con Objetos JSON</p>
+        </header>
+
+        <!-- Sección 1: Acceso y modificación básica -->
+        <section class="section">
+            <h2>🎯 Sección 1: Acceso y Modificación de Propiedades</h2>
+
+            <div class="concept-area">
+                <div class="concept-card">
+                    <h3>Trabajando con Objetos JSON</h3>
+                    <ul>
+                        <li><strong>📥 Acceso:</strong> obj.propiedad o obj["propiedad"]</li>
+                        <li><strong>✏️ Modificar:</strong> obj.propiedad = nuevoValor</li>
+                        <li><strong>➕ Agregar:</strong> obj.nuevaPropiedad = valor</li>
+                        <li><strong>🗑️ Eliminar:</strong> delete obj.propiedad</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <h4>Ejemplo básico:</h4>
+                    <pre class="code-display">const usuario = {
+  nombre: "Ana",
+  edad: 25
+};
+
+// Acceso
+console.log(usuario.nombre); // "Ana"
+
+// Modificar  
+usuario.edad = 26;
+
+// Agregar
+usuario.email = "ana@email.com";
+
+// Eliminar
+delete usuario.edad;</pre>
+                </div>
+            </div>
+
+            <div class="demo-area">
+                <div class="manipulation-demo">
+                    <h3>🧪 Laboratorio de Manipulación</h3>
+
+                    <div class="lab-grid">
+                        <div class="object-panel">
+                            <h4>📦 Objeto Actual:</h4>
+                            <div id="current-object" class="object-display">
+                                <p>Carga un objeto para empezar...</p>
+                            </div>
+                            <div class="load-controls">
+                                <button id="load-user" class="load-btn">👤 Cargar Usuario</button>
+                                <button id="load-product" class="load-btn">📦 Cargar Producto</button>
+                                <button id="load-post" class="load-btn">📝 Cargar Post</button>
+                            </div>
+                        </div>
+
+                        <div class="actions-panel">
+                            <h4>⚙️ Acciones:</h4>
+
+                            <div class="action-group">
+                                <h5>🔍 Acceder a Propiedad:</h5>
+                                <input type="text" id="access-key" placeholder="Ej: nombre, usuario.email">
+                                <button id="access-btn" class="action-btn">🔍 Acceder</button>
+                                <div id="access-result" class="result-mini"></div>
+                            </div>
+
+                            <div class="action-group">
+                                <h5>✏️ Modificar Propiedad:</h5>
+                                <input type="text" id="modify-key" placeholder="Propiedad">
+                                <input type="text" id="modify-value" placeholder="Nuevo valor">
+                                <button id="modify-btn" class="action-btn">✏️ Modificar</button>
+                            </div>
+
+                            <div class="action-group">
+                                <h5>➕ Agregar Propiedad:</h5>
+                                <input type="text" id="add-key" placeholder="Nueva propiedad">
+                                <input type="text" id="add-value" placeholder="Valor">
+                                <button id="add-btn" class="action-btn">➕ Agregar</button>
+                            </div>
+
+                            <div class="action-group">
+                                <h5>🗑️ Eliminar Propiedad:</h5>
+                                <input type="text" id="delete-key" placeholder="Propiedad a eliminar">
+                                <button id="delete-btn" class="action-btn delete">🗑️ Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="history-panel">
+                        <h4>📋 Historial de Cambios:</h4>
+                        <div id="change-history" class="history-display">
+                            <p>Sin cambios aún...</p>
+                        </div>
+                        <button id="clear-history" class="clear-btn">🧹 Limpiar Historial</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Arrays dentro de JSON -->
+        <section class="section">
+            <h2>📋 Sección 2: Trabajar con Arrays en JSON</h2>
+
+            <div class="demo-area">
+                <div class="array-demo">
+                    <h3>🎯 Manipulación de Arrays</h3>
+
+                    <div class="array-grid">
+                        <div class="array-object">
+                            <h4>📊 Objeto con Arrays:</h4>
+                            <div id="array-object" class="object-display">
+                                <p>Carga datos para trabajar con arrays...</p>
+                            </div>
+                            <button id="load-array-data" class="load-btn">📋 Cargar Datos con Arrays</button>
+                        </div>
+
+                        <div class="array-actions">
+                            <h4>🔧 Operaciones con Arrays:</h4>
+
+                            <div class="array-action-group">
+                                <h5>🔍 Buscar en Array:</h5>
+                                <select id="array-property">
+                                    <option value="">Selecciona array...</option>
+                                </select>
+                                <input type="text" id="search-value" placeholder="Valor a buscar">
+                                <button id="search-btn" class="action-btn">🔍 Buscar</button>
+                                <div id="search-result" class="result-mini"></div>
+                            </div>
+
+                            <div class="array-action-group">
+                                <h5>➕ Agregar al Array:</h5>
+                                <select id="add-array-property">
+                                    <option value="">Selecciona array...</option>
+                                </select>
+                                <input type="text" id="array-new-value" placeholder="Nuevo elemento">
+                                <button id="add-array-btn" class="action-btn">➕ Agregar</button>
+                            </div>
+
+                            <div class="array-action-group">
+                                <h5>🗑️ Remover del Array:</h5>
+                                <select id="remove-array-property">
+                                    <option value="">Selecciona array...</option>
+                                </select>
+                                <input type="number" id="remove-index" placeholder="Índice a remover" min="0">
+                                <button id="remove-array-btn" class="action-btn delete">🗑️ Remover</button>
+                            </div>
+
+                            <div class="array-action-group">
+                                <h5>📊 Información del Array:</h5>
+                                <select id="info-array-property">
+                                    <option value="">Selecciona array...</option>
+                                </select>
+                                <button id="array-info-btn" class="action-btn">📊 Info</button>
+                                <div id="array-info-result" class="result-mini"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Objetos anidados -->
+        <section class="section">
+            <h2>🏗️ Sección 3: Objetos Anidados</h2>
+
+            <div class="demo-area">
+                <div class="nested-demo">
+                    <h3>🎯 Navegación en Objetos Complejos</h3>
+
+                    <div class="nested-grid">
+                        <div class="nested-object">
+                            <h4>🏢 Objeto Anidado:</h4>
+                            <div id="nested-object" class="object-display">
+                                <p>Carga estructura anidada...</p>
+                            </div>
+                            <button id="load-nested-data" class="load-btn">🏗️ Cargar Estructura Compleja</button>
+                        </div>
+
+                        <div class="nested-actions">
+                            <h4>🔧 Navegación Anidada:</h4>
+
+                            <div class="nested-action-group">
+                                <h5>🎯 Acceso Profundo:</h5>
+                                <input type="text" id="deep-path" placeholder="Ej: empresa.empleados[0].nombre">
+                                <button id="deep-access-btn" class="action-btn">🎯 Acceder</button>
+                                <div id="deep-result" class="result-mini"></div>
+                            </div>
+
+                            <div class="nested-action-group">
+                                <h5>✏️ Modificación Profunda:</h5>
+                                <input type="text" id="deep-modify-path" placeholder="Ruta a modificar">
+                                <input type="text" id="deep-modify-value" placeholder="Nuevo valor">
+                                <button id="deep-modify-btn" class="action-btn">✏️ Modificar</button>
+                            </div>
+
+                            <div class="nested-action-group">
+                                <h5>🔍 Buscar en Estructura:</h5>
+                                <input type="text" id="structure-search" placeholder="Valor a buscar">
+                                <button id="structure-search-btn" class="action-btn">🔍 Buscar</button>
+                                <div id="structure-search-result" class="result-mini"></div>
+                            </div>
+
+                            <div class="nested-action-group">
+                                <h5>📊 Análisis de Estructura:</h5>
+                                <button id="analyze-btn" class="action-btn">📊 Analizar</button>
+                                <div id="analyze-result" class="result-mini"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Operaciones avanzadas -->
+        <section class="section">
+            <h2>⚡ Sección 4: Operaciones Avanzadas</h2>
+
+            <div class="demo-area">
+                <div class="advanced-demo">
+                    <h3>🚀 Técnicas Avanzadas</h3>
+
+                    <div class="advanced-grid">
+                        <div class="operation-panel">
+                            <h4>🔧 Operaciones:</h4>
+
+                            <div class="operation-group">
+                                <button id="clone-btn" class="operation-btn">📋 Clonar Objeto</button>
+                                <button id="merge-btn" class="operation-btn">🔗 Fusionar Objetos</button>
+                                <button id="filter-btn" class="operation-btn">🔍 Filtrar Propiedades</button>
+                                <button id="transform-btn" class="operation-btn">🔄 Transformar Datos</button>
+                            </div>
+
+                            <div class="operation-inputs">
+                                <div class="input-group">
+                                    <label>Propiedades a filtrar (separadas por coma):</label>
+                                    <input type="text" id="filter-keys" placeholder="nombre, email, edad">
+                                </div>
+                                <div class="input-group">
+                                    <label>Objeto a fusionar (JSON):</label>
+                                    <textarea id="merge-object" placeholder='{"nueva": "propiedad"}'></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="result-panel">
+                            <h4>📤 Resultado:</h4>
+                            <div id="advanced-result" class="advanced-result-display">
+                                <p>Selecciona una operación para ver el resultado...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>💡 Técnicas útiles:</h3>
+                <ul>
+                    <li><strong>Clonar:</strong> JSON.parse(JSON.stringify(obj)) - copia profunda</li>
+                    <li><strong>Fusionar:</strong> {...obj1, ...obj2} o Object.assign()</li>
+                    <li><strong>Filtrar:</strong> Crear nuevo objeto con propiedades específicas</li>
+                    <li><strong>Transformar:</strong> Mapear valores a nuevos formatos</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los laboratorios para ver el código en acción
+console.log('Bloque D3 - Manipular Objetos JSON inicializado');</pre>
+        </section>
+
+        <!-- Navegación -->
+        <nav class="navigation">
+            <a href="index-d2.html" class="nav-btn">⬅️ Anterior: D2 (Parse/Stringify)</a>
+            <a href="index-d4.html" class="nav-btn">➡️ Siguiente: D4 (Ejercicios CSV)</a>
+            <div class="nav-info">
+                <span>Bloque D3 de 4 | Manipular JSON - ¡Práctica!</span>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script-d3.js"></script>
+</body>
+
+</html>

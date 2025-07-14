@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Bloque C1 - Eventos de Mouse</title>
+    <link rel="stylesheet" href="styles-c1.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🖱️ DOM Bloque C1</h1>
+            <p>Eventos de Mouse - Interacciones básicas</p>
+        </header>
+
+        <!-- Sección 1: Eventos básicos de click -->
+        <section class="section">
+            <h2>👆 Sección 1: Eventos de Click</h2>
+
+            <div class="demo-area">
+                <div class="click-demo">
+                    <button id="btn-click" class="demo-btn">Click simple</button>
+                    <button id="btn-dblclick" class="demo-btn">Doble click</button>
+                    <div id="click-target" class="click-target">
+                        <h3>Área de clicks</h3>
+                        <p>Prueba click simple y doble click aquí</p>
+                        <div class="click-counter">
+                            <span>Clicks: <strong id="click-count">0</strong></span>
+                            <span>Dobles: <strong id="dblclick-count">0</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="btn-reset-clicks" class="action-btn reset">🔄 Resetear contadores</button>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Eventos de click:</h3>
+                <ul>
+                    <li><strong>click:</strong> Se dispara al hacer click (mousedown + mouseup)</li>
+                    <li><strong>dblclick:</strong> Se dispara al hacer doble click rápido</li>
+                    <li><strong>mousedown:</strong> Se dispara al presionar el botón del mouse</li>
+                    <li><strong>mouseup:</strong> Se dispara al soltar el botón del mouse</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Eventos de movimiento -->
+        <section class="section">
+            <h2>🏃 Sección 2: Eventos de Movimiento</h2>
+
+            <div class="demo-area">
+                <div class="movement-demo">
+                    <div id="mouse-tracker" class="mouse-tracker">
+                        <h3>Seguidor de Mouse</h3>
+                        <p>Mueve el mouse sobre esta área</p>
+                        <div class="mouse-info">
+                            <span>X: <strong id="mouse-x">0</strong></span>
+                            <span>Y: <strong id="mouse-y">0</strong></span>
+                            <span>Estado: <strong id="mouse-status">Fuera</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="hover-boxes">
+                        <div id="hover-box-1" class="hover-box">
+                            <span>Hover 1</span>
+                        </div>
+                        <div id="hover-box-2" class="hover-box">
+                            <span>Hover 2</span>
+                        </div>
+                        <div id="hover-box-3" class="hover-box">
+                            <span>Hover 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Eventos de movimiento:</h3>
+                <ul>
+                    <li><strong>mouseover:</strong> Se dispara al entrar al elemento (incluye hijos)</li>
+                    <li><strong>mouseout:</strong> Se dispara al salir del elemento (incluye hijos)</li>
+                    <li><strong>mouseenter:</strong> Se dispara al entrar (NO incluye hijos)</li>
+                    <li><strong>mouseleave:</strong> Se dispara al salir (NO incluye hijos)</li>
+                    <li><strong>mousemove:</strong> Se dispara al mover el mouse dentro del elemento</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 3: Arrastrar y soltar básico -->
+<!--          
+        <section class="section">
+            <h2>🤏 Sección 3: Arrastrar y Soltar</h2>
+
+            <div class="demo-area">
+                <div class="drag-demo">
+                    <div class="drag-source">
+                        <h3>Elementos arrastrables</h3>
+                        <div id="drag-item-1" class="drag-item" draggable="true">📦 Caja 1</div>
+                        <div id="drag-item-2" class="drag-item" draggable="true">📋 Documento</div>
+                        <div id="drag-item-3" class="drag-item" draggable="true">🎯 Target</div>
+                    </div>
+
+                    <div class="drop-zones">
+                        <div id="drop-zone-1" class="drop-zone">
+                            <h4>Zona A</h4>
+                            <p>Suelta aquí</p>
+                        </div>
+                        <div id="drop-zone-2" class="drop-zone">
+                            <h4>Zona B</h4>
+                            <p>Suelta aquí</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="btn-reset-drag" class="action-btn reset">🔄 Resetear posiciones</button>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Eventos de arrastrar:</h3>
+                <ul>
+                    <li><strong>dragstart:</strong> Inicia el arrastre</li>
+                    <li><strong>drag:</strong> Durante el arrastre</li>
+                    <li><strong>dragend:</strong> Termina el arrastre</li>
+                    <li><strong>dragover:</strong> Sobre zona válida</li>
+                    <li><strong>drop:</strong> Soltar elemento</li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los elementos para ver el código en acción
+console.log('DOM Bloque C1 - Eventos de Mouse');</pre>
+        </section> 
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="index-c2.html" class="nav-btn">➡️ Continuar al C2 (Teclado)</a>
+            <div class="nav-info">
+                <span>Bloque C1 de 4 | Eventos de Mouse</span>
+            </div>
+        </nav> -->
+    </div>
+
+    <script src="script-c1.js"></script>
+</body>
+
+</html>

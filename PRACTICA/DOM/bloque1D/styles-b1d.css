@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  background: #333;
+  color: #fff;
+  padding: 0.5em 1em;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+  font-weight: bold;
+}
+.navbar button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  margin-right: 1em;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #222;
+  color: #fff;
+  padding: 2em 1em 1em 1em;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+/* Sidebar oculta por defecto */
+.sidebar.oculto {
+  transform: translateX(-100%);
+}
+.sidebar button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+.division {
+  border: 1px solid yellow;
+  margin: 5px auto;
+  padding: 5px;
+}
+
+main {
+  margin: 2em auto;
+  max-width: 900px;
+  padding: 1em;
+}
+.seccion {
+  background: #fff;
+  margin-bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+/* Solo la sección activa se muestra */
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+  width: 90%;
+  margin: 10px auto ;
+  padding: 10px;
+  border: 2px solid #007bff;
+}
+
+/* Ajuste para main-content y responsividad */
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+.sections {
+  flex: 1;
+  margin-left: 260px;
+}
+@media (max-width: 700px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .sections {
+    margin-left: 0;
+  }
+  .sidebar {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50px;
+    left: 0;
+    z-index: 1000;
+  }
+}

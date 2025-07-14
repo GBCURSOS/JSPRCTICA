@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque E2 - Fetch API: Países del Mundo</title>
+    <link rel="stylesheet" href="styles-e2.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Bloque E2: Fetch API - Países del Mundo</h1>
+            <p class="subtitle">Explorando la API REST Countries con JavaScript</p>
+        </header>
+
+        <!-- <nav class="navigation">
+            <a href="../bloqueD/index-d4.html" class="nav-btn prev">⬅️ Volver al Bloque D4</a>
+            <a href="index-e1.html" class="nav-btn">📖 E1: Definiciones</a>
+            <a href="index-e3.html" class="nav-btn next">👥 E3: App Usuarios ➡️</a>
+        </nav> -->
+
+        <main>
+            <section class="intro-section">
+                <h2>🎯 Objetivo</h2>
+                <p>En esta página aprenderemos a:</p>
+                <ul>
+                    <li>Hacer requests GET a la API REST Countries</li>
+                    <li>Visualizar el JSON de respuesta en tiempo real</li>
+                    <li>Entender la estructura de datos de una API REST</li>
+                    <li>Manejar errores en requests HTTP</li>
+                </ul>
+            </section>
+
+            <section class="api-info">
+                <h2>📡 API REST Countries</h2>
+                <div class="api-details">
+                    <p><strong>URL Base:</strong> <code>https://restcountries.com/v3.1/</code></p>
+                    <p><strong>Tipo:</strong> API pública (sin autenticación)</p>
+                    <p><strong>Formato:</strong> JSON</p>
+                </div>
+            </section>
+
+            <section class="controls-section">
+                <h2>🚀 Probar la API</h2>
+                <div class="controls">
+                    <div class="input-group">
+                        <label for="endpoint-select">Selecciona un endpoint:</label>
+                        <select id="endpoint-select">
+                            <option value="name/spain">Buscar por nombre: Spain</option>
+                            <option value="name/colombia">Buscar por nombre: Colombia</option>
+                            <option value="alpha/US">Buscar por código: US</option>
+                            <option value="alpha/FR">Buscar por código: FR</option>
+                            <option value="region/europe">Por región: Europe</option>
+                            <option value="region/americas">Por región: Americas</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="custom-endpoint">O escribe tu propio endpoint:</label>
+                        <input type="text" id="custom-endpoint" placeholder="Ej: name/mexico">
+                    </div>
+
+                    <div class="button-group">
+                        <button id="fetch-btn" class="fetch-btn">🌐 Hacer Request</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="request-info">
+                <h3>📊 Información del Request</h3>
+                <div class="request-details">
+                    <p><strong>URL:</strong> <span id="current-url">-</span></p>
+                    <p><strong>Método:</strong> <span class="method-get">GET</span></p>
+                    <p><strong>Estado:</strong> <span id="request-status">Esperando...</span></p>
+                    <p><strong>Tiempo:</strong> <span id="request-time">-</span></p>
+                </div>
+            </section>
+
+            <section class="response-section">
+                <h3>📄 Respuesta JSON</h3>
+                <div class="response-container">
+                    <div class="response-header">
+                        <span class="response-title">JSON Response</span>
+                        <button id="copy-btn" class="copy-btn" title="Copiar JSON">📋</button>
+                    </div>
+                    <pre id="json-display" class="json-display">
+{
+  "message": "Haz clic en 'Hacer Request' para ver la respuesta de la API",
+  "tip": "Prueba diferentes endpoints para explorar la API"
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section class="field-explorer-section">
+                <h3>🔍 Explorar Campos del JSON</h3>
+                <div class="explorer-container">
+                    <div class="explorer-input-group">
+                        <label for="field-input">Escribe el campo que quieres acceder:</label>
+                        <input type="text" id="field-input"
+                            placeholder="Ej: name.common, capital[0], population, flags.svg"
+                            title="Presiona Enter para ver el resultado">
+                        <div class="examples">
+                            <span class="example-label">Ejemplos:</span>
+                            <code class="example" data-field="name.common">name.common</code>
+                            <code class="example" data-field="capital[0]">capital[0]</code>
+                            <code class="example" data-field="population">population</code>
+                            <code class="example" data-field="region">region</code>
+                        </div>
+                    </div>
+                    <div class="field-result-container">
+                        <div class="result-header">
+                            <span class="result-title">Resultado:</span>
+                            <span id="field-path" class="field-path">-</span>
+                        </div>
+                        <div id="field-result" class="field-result">
+                            <em>Haz un request primero, luego escribe un campo y presiona Enter</em>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="learning-section">
+                <h3>💡 ¿Qué observar en la respuesta?</h3>
+                <div class="learning-points">
+                    <div class="point">
+                        <h4>🔍 Estructura del JSON</h4>
+                        <p>Observa cómo están organizados los datos: arrays, objetos, propiedades anidadas.</p>
+                    </div>
+                    <div class="point">
+                        <h4>📝 Propiedades importantes</h4>
+                        <p>Cada país tiene: name, capital, population, region, flags, etc.</p>
+                    </div>
+                    <div class="point">
+                        <h4>🌐 URLs de recursos</h4>
+                        <p>Muchas APIs incluyen URLs a imágenes, mapas u otros recursos.</p>
+                    </div>
+                    <div class="point">
+                        <h4>⚠️ Manejo de errores</h4>
+                        <p>Observa qué pasa cuando el endpoint no existe o hay problemas de red.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>💻 JavaScript Práctico - Bloque E: APIs y Fetch | 2025</p>
+        </footer>
+    </div>
+
+    <script src="script-e2.js"></script>
+</body>
+
+</html>

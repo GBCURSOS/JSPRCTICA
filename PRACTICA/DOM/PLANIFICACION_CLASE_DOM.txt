@@ -43,73 +43,6 @@ TEMAS A CUBRIR EN 12 HORAS:
 - ✅ Interfaz responsiva y user-friendly
 - ✅ Deploy y pruebas finales
 
-DISTRIBUCIÓN DETALLADA DE TIEMPO:
-=================================
-🕐 HORA 1-2: FUNDAMENTOS DEL DOM
-- Conceptos: Qué es el DOM, árbol de nodos
-- Práctica: Seleccionar elementos (getElementById, querySelector)
-- Ejercicio: Cambiar textos y contenidos básicos
-
-🕐 HORA 3-4: MANIPULACIÓN AVANZADA
-- Conceptos: innerHTML vs textContent, modificar estilos
-- Práctica: Cambiar clases CSS dinámicamente
-- Ejercicio: Crear un cambio de tema (light/dark mode)
-
-*** DESCANSO LARGO: 20 minutos ***
-
-🕐 HORA 5: EVENTOS E INTERACTIVIDAD
-- Conceptos: addEventListener, tipos de eventos
-- Práctica: Eventos de mouse, teclado, formularios
-- Ejercicio: Formulario interactivo con validación
-
-🕐 HORA 6-7: JSON Y FETCH API BÁSICO
-- Conceptos: ¿Qué es JSON? ¿Qué son las APIs? (solo lo esencial)
-- Práctica: Manipular objetos JSON en JavaScript
-- Introducción: Fetch API - sintaxis básica y promesas
-- Ejercicio: Primera petición GET a una API pública
-
-🕐 HORA 8: FETCH API AVANZADO
-- Conceptos: Async/await con Fetch, manejo de errores
-- Práctica: GET requests con parámetros y headers
-- Ejercicio: Mostrar datos de API en el DOM dinámicamente
-- Bonus: Loading states y feedback visual
-
-*** DESCANSO LARGO: 20 minutos ***
-
-🕐 HORA 9-10: FETCH API COMPLETO (POST, PUT, DELETE)
-- Conceptos: Métodos HTTP - POST, PUT, DELETE con Fetch
-- Práctica: Usar JSONPlaceholder para aprender sintaxis de CRUD
-- Ejercicio: Simular CRUD completo con Fetch + LocalStorage
-- Estrategia: JSONPlaceholder para aprender + LocalStorage para persistir
-
-🕐 HORA 11-12: PROYECTO FINAL - LISTA DE TAREAS
-- Proyecto: App "TODO LIST" 100% frontend (HTML + CSS + JS)
-- Funcionalidades: Agregar, editar, eliminar, marcar como completada
-- Persistencia: LocalStorage (guardado real y permanente)
-- Datos iniciales: Opcional cargar desde JSONPlaceholder al inicio
-- Deploy: GitHub Pages (compatible al 100%)
-
-RECURSOS TÉCNICOS NECESARIOS:
-============================
-✅ Editor de código (VS Code)
-✅ Navegador moderno (Chrome/Firefox)
-✅ Extensión Live Server para VS Code
-✅ APIs públicas gratuitas (JSONPlaceholder, etc.)
-✅ Cuenta en GitHub (para deploy en GitHub Pages)
-
-⚠️ IMPORTANTE: TODO ES FRONTEND - NO SE NECESITA NODE.JS
-- Fetch API es nativo del navegador
-- GitHub Pages solo sirve archivos estáticos
-- El proyecto debe funcionar con HTML + CSS + JS puro
-
-📋 ESTRATEGIA DE DATOS:
-- JSONPlaceholder: Solo para aprender Fetch API (práctica/ejercicios)
-- LocalStorage: Para el proyecto final (persistencia real)
-- NO usar JSON Server (requiere Node.js y no funciona en GitHub Pages)
-
-💡 FLUJO DE APRENDIZAJE:
-- Horas 6-10: Aprender Fetch API con JSONPlaceholder
-- Horas 11-12: Proyecto final usando LocalStorage para guardar datos
 
 PROYECTO FINAL SUGERIDO:
 =======================
@@ -126,32 +59,148 @@ PROYECTO FINAL SUGERIDO:
 - Interfaz moderna y responsiva
 - Deploy: GitHub Pages (funciona al 100%)
 
-METODOLOGÍA:
-============
-- 70% Práctica hands-on
-- 20% Teoría con ejemplos visuales  
-- 10% Discusión y resolución de dudas
-- Cada concepto se explica + se practica inmediatamente
-- Ejercicios incrementales que construyen hacia el proyecto final
 
-EVALUACIÓN CONTINUA:
-===================
-- Mini-ejercicios cada hora para verificar comprensión
-- Proyecto final como evaluación integral
-- Peer review entre estudiantes
-- Autoevaluación al final de cada bloque
+PROGRESO ACTUAL - DECISIONES TÉCNICAS TOMADAS:
+============================================
 
-NOTAS:
-======
-- Incluir descansos de 15 minutos cada 2 horas
-- Alternar teoría con práctica cada 30-45 minutos
-- Ejercicios progresivos de dificultad creciente
-- Proyecto final que integre todos los conceptos
+✅ BLOQUE 1: DOM MANIPULATION (COMPLETADO - Horas 1-5)
+- ✅ bloqueA: Selección de elementos DOM
+- ✅ bloqueB1: innerHTML vs textContent con efectos dinámicos
+- ✅ bloqueB2: Sistema de temas (auto/light/dark) con localStorage
+- ✅ bloqueC1: Eventos de mouse interactivos
+- ✅ bloqueC2: Eventos de teclado con validaciones
+- ✅ bloqueC3: Eventos de formularios con validación completa
+- ✅ bloqueC4: Eventos avanzados (scroll, resize, delegation, custom events, propagación)
 
-¿COMENZAMOS A CREAR EL MATERIAL DETALLADO?
-==========================================
-Con esta planificación podemos crear:
-1. Presentaciones interactivas (HTML)
-2. Ejercicios progresivos paso a paso
-3. Código base para el proyecto final
-4. Recursos y cheat sheets para estudiantes
+🔄 BLOQUE 2: JSON + FETCH API (EN PROGRESO - Horas 6-9)
+Estructura definitiva decidida:
+
+📂 DOM/bloque2/
+├── bloqueD/ - JSON Fundamentals (Hora 6)
+│   ├── ✅ D1: ¿Qué es JSON? Sintaxis y estructura (COMPLETADO)
+│   ├── ✅ D2: JSON.parse() y JSON.stringify() (COMPLETADO)
+│   ├── ✅ D3: Manipular objetos y arrays JSON (COMPLETADO)
+│   └── ✅ D4: CRUD con LocalStorage - Sistema completo (COMPLETADO)
+├── bloqueE/ - Fetch API Básico (Hora 7)
+│   ├── ⏳ E1: ¿Qué son las APIs? Conceptos esenciales
+│   ├── ⏳ E2: Introducción a Fetch API - sintaxis básica
+│   ├── ⏳ E3: Primera petición GET - ReqRes
+│   └── ⏳ E4: Mostrar datos de API en el DOM
+├── bloqueF/ - Fetch API Avanzado (Hora 8)
+│   ├── ⏳ F1: Async/await con Fetch
+│   ├── ⏳ F2: Manejo de errores y try/catch
+│   ├── ⏳ F3: Loading states y feedback visual
+│   └── ⏳ F4: GET con parámetros y headers
+├── bloqueG/ - CRUD Completo (Horas 9-10)
+│   ├── ⏳ G1: POST - Enviar datos a APIs
+│   ├── ⏳ G2: PUT - Actualizar datos existentes
+│   ├── ⏳ G3: DELETE - Eliminar datos
+│   └── ⏳ G4: CRUD integrado con LocalStorage
+└── data/ - Archivos CSV iniciales
+
+⏳ BLOQUE 3: PROYECTO INTEGRADOR (PENDIENTE - Horas 10-12)
+
+DECISIONES TÉCNICAS ESTRATÉGICAS:
+=================================
+
+🎯 API ELEGIDA: REQRES (https://reqres.in)
+✅ Más sencilla que JSONPlaceholder
+✅ Datos realistas (usuarios con nombre, email, avatar)
+✅ Responses consistentes y predecibles
+✅ Documentación student-friendly
+✅ Perfecto para simular una app real
+
+🔄 ESTRATEGIA DE DATOS HÍBRIDA:
+✅ CSV inicial: Datos base sin tipeo manual
+✅ ReqRes: Para aprender sintaxis de CRUD
+✅ LocalStorage: Para persistencia real en proyecto final
+✅ GitHub Pages: Deploy final con URLs públicas
+
+📁 ESTRUCTURA DE ARCHIVOS IMPLEMENTADA:
+✅ Separación clara por bloques (A, B, C, D, E, F, G)
+✅ HTML + CSS + JS separados por ejercicio
+✅ Navegación secuencial entre bloques
+✅ Panel de código dinámico en cada ejercicio
+✅ Estilo consistente con variables CSS
+
+🎨 INTERFAZ DESARROLLADA:
+✅ Validadores JSON interactivos
+✅ Laboratorios de parse/stringify
+✅ Simulación de flujo completo de API
+✅ Manejo de errores visualizado
+✅ Notificaciones y feedback en tiempo real
+
+PRÓXIMOS PASOS INMEDIATOS:
+=========================
+1. ⏳ Completar D4 (ejercicio práctico JSON)
+2. ⏳ Crear bloqueE completo (Fetch API básico con ReqRes)
+3. ⏳ Crear bloqueF (Fetch API avanzado)
+4. ⏳ Crear bloqueG (CRUD completo)
+5. ⏳ Proyecto final integrador
+
+MATERIAL CREADO HASTA AHORA:
+============================
+📁 8 bloques completamente funcionales (A, B1, B2, C1, C2, C3, C4, D1, D2, D3)
+📄 24 archivos HTML interactivos
+🎨 24 archivos CSS con variables consistentes
+⚙️ 24 archivos JavaScript con funcionalidades reales
+🔗 Navegación completa entre todos los bloques
+📱 Responsive design para móviles y tablets
+
+ÚLTIMO BLOQUE COMPLETADO - D4 (LocalStorage CRUD):
+==================================================
+✅ Sistema completo de gestión de empleados
+✅ CRUD completo: Crear, Leer, Actualizar, Eliminar
+✅ LocalStorage como base de datos del navegador
+✅ Interfaz moderna con modales, filtros y búsquedas
+✅ Importación/exportación de JSON y CSV
+✅ Estadísticas en tiempo real con gráficos
+✅ Validaciones de formulario robustas
+✅ Notificaciones tipo toast
+✅ Filtros avanzados por departamento, salario, estado
+✅ Archivos de datos de ejemplo (empleados.csv, departamentos.json)
+✅ Clase EmpleadosManager con 600+ líneas de funcionalidad
+✅ Manejo completo de errores y casos edge
+✅ Funciones de reseteo y carga de datos iniciales
+
+📂 Archivos creados para D4:
+- index-d4.html (interfaz completa con tabla, formularios, modales)
+- styles-d4.css (diseño moderno y responsive)
+- script-d4.js (lógica completa del CRUD)
+- data/empleados.csv (datos de prueba en CSV)
+- data/departamentos.json (estructura de departamentos)
+- data/empleados-ejemplo.json (datos adicionales de prueba)
+
+🎯 FUNCIONALIDADES DESTACADAS DE D4:
+- Sistema de gestión empresarial realista
+- Persistencia total de datos en LocalStorage
+- Importación masiva desde CSV/JSON
+- Exportación de datos para respaldo
+- Filtros complejos multi-criterio
+- Estadísticas visuales automáticas
+- Validación completa de datos
+- UX moderna con feedback visual
+
+PRÓXIMO: Iniciar bloqueE (Fetch API básico con ReqRes)
+
+https://randomuser.me/api/?results=5
+// Ejemplo: Obtener usuario aleatorio
+fetch('https://randomuser.me/api/')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Usuario aleatorio:', data.results[0]);
+  });
+
+// Ejemplo: Obtener todos los países
+fetch('https://restcountries.com/v3.1/name/{nombre}')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Lista de países:', data);
+  });
+
+// Ejemplo: Obtener imagen aleatoria de perro
+fetch('https://dog.ceo/api/breeds/image/random')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Imagen de perro:', data.message);
+  });

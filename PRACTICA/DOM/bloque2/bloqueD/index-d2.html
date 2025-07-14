@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 2D2 - JSON Parse y Stringify</title>
+    <link rel="stylesheet" href="styles-d2.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🔄 Bloque 2D2</h1>
+            <p>JSON.parse() y JSON.stringify() - Convertir entre JS y JSON</p>
+        </header>
+
+        <!-- Sección 1: JSON.parse() -->
+        <section class="section">
+            <h2>📥 Sección 1: JSON.parse() - De JSON a JavaScript</h2>
+
+            <div class="concept-area">
+                <div class="concept-card">
+                    <h3>¿Qué hace JSON.parse()?</h3>
+                    <ul>
+                        <li><strong>🔄 Convierte</strong> texto JSON a objeto JavaScript</li>
+                        <li><strong>📡 Necesario</strong> cuando recibes datos de APIs</li>
+                        <li><strong>💾 También</strong> para leer de localStorage</li>
+                        <li><strong>⚠️ Puede fallar</strong> si el JSON es inválido</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <h4>Ejemplo básico:</h4>
+                    <pre class="code-display">// Texto JSON (string)
+const jsonString = '{"nombre": "Ana", "edad": 25}';
+
+// Convertir a objeto JavaScript
+const usuario = JSON.parse(jsonString);
+
+console.log(usuario.nombre); // "Ana"
+console.log(usuario.edad);   // 25</pre>
+                </div>
+            </div>
+
+            <div class="demo-area">
+                <div class="parse-demo">
+                    <h3>🧪 Laboratorio de JSON.parse()</h3>
+
+                    <div class="lab-grid">
+                        <div class="input-side">
+                            <h4>📄 Texto JSON (String):</h4>
+                            <textarea id="parse-input"
+                                placeholder='{"nombre": "Tu nombre", "edad": 25}'>{"nombre": "María García", "profesion": "Frontend Developer", "experiencia": 3, "activo": true, "skills": ["React", "Vue", "Angular"], "salario": 45000.50}</textarea>
+                            <button id="parse-btn" class="action-btn">🔄 Ejecutar JSON.parse()</button>
+                        </div>
+
+                        <div class="output-side">
+                            <h4>💻 Objeto JavaScript:</h4>
+                            <div id="parse-result" class="result-display">
+                                <p>Ingresa JSON válido y presiona "Ejecutar JSON.parse()"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="access-demo">
+                        <h4>🎯 Acceso a propiedades:</h4>
+                        <div id="property-access" class="property-display">
+                            <p>Primero ejecuta JSON.parse() para ver cómo acceder a las propiedades</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: JSON.stringify() -->
+        <section class="section">
+            <h2>📤 Sección 2: JSON.stringify() - De JavaScript a JSON</h2>
+
+            <div class="concept-area">
+                <div class="concept-card">
+                    <h3>¿Qué hace JSON.stringify()?</h3>
+                    <ul>
+                        <li><strong>🔄 Convierte</strong> objeto JavaScript a texto JSON</li>
+                        <li><strong>📡 Necesario</strong> para enviar datos a APIs</li>
+                        <li><strong>💾 También</strong> para guardar en localStorage</li>
+                        <li><strong>✨ Formatea</strong> automáticamente el JSON</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <h4>Ejemplo básico:</h4>
+                    <pre class="code-display">// Objeto JavaScript
+const usuario = {
+  nombre: "Ana",
+  edad: 25,
+  activo: true
+};
+
+// Convertir a JSON string
+const jsonString = JSON.stringify(usuario);
+
+console.log(jsonString);
+// '{"nombre":"Ana","edad":25,"activo":true}'</pre>
+                </div>
+            </div>
+
+            <div class="demo-area">
+                <div class="stringify-demo">
+                    <h3>🧪 Laboratorio de JSON.stringify()</h3>
+
+                    <div class="lab-grid">
+                        <div class="input-side">
+                            <h4>💻 Objeto JavaScript:</h4>
+                            <div class="object-builder">
+                                <div class="form-group">
+                                    <label>Nombre:</label>
+                                    <input type="text" id="obj-name" value="Carlos Mendoza">
+                                </div>
+                                <div class="form-group">
+                                    <label>Edad:</label>
+                                    <input type="number" id="obj-age" value="30">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email:</label>
+                                    <input type="email" id="obj-email" value="carlos@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Activo:</label>
+                                    <input type="checkbox" id="obj-active" checked>
+                                </div>
+                                <div class="form-group">
+                                    <label>Skills (separadas por coma):</label>
+                                    <input type="text" id="obj-skills" value="Node.js, MongoDB, Express">
+                                </div>
+                            </div>
+                            <button id="stringify-btn" class="action-btn">🔄 Ejecutar JSON.stringify()</button>
+                        </div>
+
+                        <div class="output-side">
+                            <h4>📄 JSON String:</h4>
+                            <div id="stringify-result" class="result-display">
+                                <p>Modifica los datos y presiona "Ejecutar JSON.stringify()"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Ciclo completo parse + stringify -->
+<!--          
+        <section class="section">
+            <h2>♻️ Sección 3: Ciclo Completo - Parse ↔ Stringify</h2>
+
+            <div class="demo-area">
+                <div class="cycle-demo">
+                    <h3>🔄 Simulación de API: Recibir y Enviar Datos</h3>
+
+                    <div class="cycle-flow">
+                        <div class="flow-step">
+                            <h4>1️⃣ Datos llegan de API (JSON string)</h4>
+                            <div class="api-response">
+                                <pre
+                                    id="api-response-display">{"id": 1, "name": "Leanne Graham", "username": "Bret", "email": "Sincere@april.biz", "phone": "1-770-736-8031", "website": "hildegard.org"}</pre>
+                            </div>
+                            <button id="step1-btn" class="step-btn">📥 1. JSON.parse()</button>
+                        </div>
+
+                        <div class="flow-step">
+                            <h4>2️⃣ Trabajas con objeto JavaScript</h4>
+                            <div id="js-object-display" class="js-object">
+                                <p>Ejecuta paso 1 para ver el objeto JavaScript</p>
+                            </div>
+                            <div class="modification-controls">
+                                <input type="text" id="modify-name" placeholder="Nuevo nombre">
+                                <input type="email" id="modify-email" placeholder="Nuevo email">
+                                <button id="modify-btn" class="step-btn">✏️ 2. Modificar datos</button>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <h4>3️⃣ Envías de vuelta a API (JSON string)</h4>
+                            <div id="send-data-display" class="send-data">
+                                <p>Ejecuta pasos 1 y 2 para preparar datos para envío</p>
+                            </div>
+                            <button id="step3-btn" class="step-btn">📤 3. JSON.stringify()</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Flujo típico con APIs:</h3>
+                <ol>
+                    <li><strong>Recibir:</strong> API envía JSON string → JSON.parse() → Objeto JS</li>
+                    <li><strong>Procesar:</strong> Modificar, validar, transformar el objeto JS</li>
+                    <li><strong>Enviar:</strong> Objeto JS → JSON.stringify() → JSON string → API</li>
+                </ol>
+            </div>
+        </section> -->
+
+         
+        <!-- Sección 4: Casos especiales y errores -->
+<!-- 
+        <section class="section">
+            <h2>⚠️ Sección 4: Casos Especiales y Manejo de Errores</h2>
+
+            <div class="demo-area">
+                <div class="error-handling">
+                    <h3>🚨 Manejo de Errores con try/catch</h3>
+
+                    <div class="error-examples">
+                        <div class="error-case">
+                            <h4>Caso 1: JSON inválido</h4>
+                            <textarea id="invalid-json">{"nombre": "Ana", "edad": 25,}</textarea>
+                            <button class="test-btn" data-test="invalid">🧪 Probar JSON inválido</button>
+                            <div class="error-result" id="invalid-result"></div>
+                        </div>
+
+                        <div class="error-case">
+                            <h4>Caso 2: Valores no serializables</h4>
+                            <div class="non-serializable">
+                                <p>Objeto con función (no se puede convertir a JSON):</p>
+                                <pre>const obj = {
+  nombre: "Ana",
+  saludar: function() { return "Hola"; },
+  fecha: new Date()
+};</pre>
+                            </div>
+                            <button class="test-btn" data-test="non-serializable">🧪 Probar stringify con
+                                función</button>
+                            <div class="error-result" id="non-serializable-result"></div>
+                        </div>
+
+                        <div class="error-case">
+                            <h4>Caso 3: JSON.stringify con formato</h4>
+                            <button class="test-btn" data-test="formatted">🧪 JSON formateado (pretty print)</button>
+                            <div class="error-result" id="formatted-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>💡 Buenas prácticas:</h3>
+                <ul>
+                    <li><strong>Siempre usar try/catch</strong> con JSON.parse()</li>
+                    <li><strong>Validar datos</strong> antes de JSON.stringify()</li>
+                    <li><strong>Usar formato</strong> JSON.stringify(obj, null, 2) para debug</li>
+                    <li><strong>Manejar tipos especiales</strong> (Date, undefined, funciones)</li>
+                </ul>
+            </div>
+        </section>  -->
+
+        <!-- Panel de código -->
+<!-- 
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los laboratorios para ver el código en acción
+console.log('Bloque D2 - JSON Parse y Stringify inicializado');</pre>
+        </section>
+ -->
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="index-d1.html" class="nav-btn">⬅️ Anterior: D1 (¿Qué es JSON?)</a>
+            <a href="index-d4.html" class="nav-btn">➡️ Siguiente: D3 (Aplicativo)</a>
+            <div class="nav-info">
+                <span>Bloque D2 de 4 | JSON Parse/Stringify - ¡Conversiones!</span>
+            </div>
+        </nav>
+         -->
+    </div>
+
+    <script src="script-d2.js"></script>
+</body>
+
+</html>

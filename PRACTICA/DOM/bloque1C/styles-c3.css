@@ -1,0 +1,459 @@
+/* ========================================
+   ESTILOS PARA DOM BLOQUE C3
+   Eventos de Formularios - Hora 5
+======================================== */
+
+/* Variables CSS */
+:root {
+  --primary-color: #059669;
+  --secondary-color: #7c3aed;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --text-color: #374151;
+  --bg-color: #ffffff;
+  --surface-color: #f0fdf4;
+  --border-color: #bbf7d0;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: var(--surface-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.header p {
+  font-size: 1.2em;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* Secciones */
+.section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: var(--surface-color);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.section h2 {
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* Área de demostración */
+.demo-area {
+  margin-bottom: 25px;
+}
+
+/* Controles */
+.controls {
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: var(--transition);
+  background: var(--primary-color);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn.secondary {
+  background: var(--secondary-color);
+}
+
+.action-btn.warning {
+  background: var(--warning-color);
+}
+
+.action-btn.error {
+  background: var(--error-color);
+}
+
+/* Sección 1: Inputs y Validación */
+.form-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-container {
+  padding: 25px;
+  background: var(--bg-color);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.form-container h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.4em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1em;
+  background: white;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Estados de validación */
+.form-group.valid input {
+  border-color: var(--success-color);
+  background: #f0fdf4;
+}
+
+.form-group.invalid input {
+  border-color: var(--error-color);
+  background: #fef2f2;
+}
+
+.validation-message {
+  margin-top: 5px;
+  font-size: 0.9em;
+  padding: 5px;
+  border-radius: 4px;
+  display: none;
+}
+
+.validation-message.success {
+  color: var(--success-color);
+  background: #f0fdf4;
+  display: block;
+}
+
+.validation-message.error {
+  color: var(--error-color);
+  background: #fef2f2;
+  display: block;
+}
+
+/* Sección 2: Checkbox y Radio */
+.checkbox-radio-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.checkbox-container,
+.radio-container {
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.checkbox-container h4,
+.radio-container h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.checkbox-item,
+.radio-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.checkbox-item:hover,
+.radio-item:hover {
+  background: var(--surface-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-item input,
+.radio-item input {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox-item label,
+.radio-item label {
+  cursor: pointer;
+  font-weight: 500;
+  flex: 1;
+}
+
+.selection-info {
+  margin-top: 15px;
+  padding: 15px;
+  background: var(--surface-color);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Sección 3: Select y Eventos */
+.select-demo {
+  display: grid;
+  gap: 20px;
+}
+
+.select-container {
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.select-container h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.select-container select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.select-info {
+  margin-top: 15px;
+  padding: 15px;
+  background: var(--surface-color);
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+}
+
+.select-info h5 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.select-info p {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+/* Área de resultado */
+.result-area {
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+.result-area h4 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.result-display {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  min-height: 60px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+/* Explicaciones */
+.explanation {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.explanation h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.explanation ul {
+  margin-left: 20px;
+}
+
+.explanation li {
+  margin-bottom: 8px;
+}
+
+/* Panel de código */
+.code-panel {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.code-panel h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.code-panel pre {
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  min-height: 60px;
+}
+
+/* Navegación */
+.navigation {
+  text-align: center;
+  padding: 30px;
+  background: var(--surface-color);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: var(--transition);
+  font-size: 1.1em;
+  margin: 0 10px;
+}
+
+.nav-btn:hover {
+  background: #047857;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-info {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .form-demo {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-radio-demo {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .action-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}

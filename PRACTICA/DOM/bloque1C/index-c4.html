@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Bloque C4 - Eventos Avanzados</title>
+    <link rel="stylesheet" href="styles-c4.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>⚡ DOM Bloque C4</h1>
+            <p>Hora 5: Eventos Avanzados - Scroll, Resize, Delegation</p>
+        </header>
+
+        <!-- Sección 1: Eventos de ventana -->
+        <section class="section">
+            <h2>🪟 Sección 1: Eventos de Ventana</h2>
+
+            <div class="demo-area">
+                <div class="window-events-demo">
+                    <div class="scroll-container" id="scroll-container">
+                        <h3>Área de Scroll</h3>
+                        <p>Desplázate dentro de esta área para ver eventos de scroll</p>
+                        <div class="scroll-content">
+                            <div class="scroll-item">Item 1</div>
+                            <div class="scroll-item">Item 2</div>
+                            <div class="scroll-item">Item 3</div>
+                            <div class="scroll-item">Item 4</div>
+                            <div class="scroll-item">Item 5</div>
+                            <div class="scroll-item">Item 6</div>
+                            <div class="scroll-item">Item 7</div>
+                            <div class="scroll-item">Item 8</div>
+                            <div class="scroll-item">Item 9</div>
+                            <div class="scroll-item">Item 10</div>
+                        </div>
+                    </div>
+
+                    <div class="event-info">
+                        <div class="info-item">
+                            <span>Scroll Y:</span>
+                            <span id="scroll-y">0px</span>
+                        </div>
+                        <div class="info-item">
+                            <span>Ventana:</span>
+                            <span id="window-size">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span>Último evento:</span>
+                            <span id="last-event">Ninguno</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Eventos de ventana:</h3>
+                <ul>
+                    <li><strong>scroll:</strong> Se dispara al hacer scroll</li>
+                    <li><strong>resize:</strong> Se dispara al cambiar tamaño de ventana</li>
+                    <li><strong>load:</strong> Se dispara cuando la página carga completamente</li>
+                    <li><strong>beforeunload:</strong> Se dispara antes de cerrar/recargar</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Event Delegation -->
+        <section class="section">
+            <h2>🎯 Sección 2: Event Delegation</h2>
+
+            <div class="demo-area">
+                <div class="delegation-demo">
+                    <div class="button-container" id="button-container">
+                        <h3>Contenedor de Botones</h3>
+                        <p>Los eventos se manejan con delegation</p>
+                        <button class="dynamic-btn" data-action="alert">🚨 Alerta</button>
+                        <button class="dynamic-btn" data-action="success">✅ Éxito</button>
+                        <button class="dynamic-btn" data-action="warning">⚠️ Advertencia</button>
+                        <button class="dynamic-btn" data-action="error">❌ Error</button>
+                    </div>
+
+                    <div class="controls">
+                        <button id="add-button" class="action-btn">➕ Agregar botón</button>
+                        <button id="remove-button" class="action-btn reset">➖ Remover último</button>
+                    </div>
+
+                    <div class="action-log">
+                        <h4>Registro de Acciones:</h4>
+                        <div id="action-log" class="log-content">
+                            <p>Sin acciones aún...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Event Delegation:</h3>
+                <ul>
+                    <li><strong>Un solo listener:</strong> En el contenedor padre</li>
+                    <li><strong>event.target:</strong> Identifica el elemento real clickeado</li>
+                    <li><strong>Ventajas:</strong> Menos memoria, funciona con elementos dinámicos</li>
+                    <li><strong>Propagación:</strong> Los eventos burbujean hacia arriba</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 3: Eventos personalizados -->
+        <section class="section">
+            <h2>🎪 Sección 3: Eventos Personalizados</h2>
+
+            <div class="demo-area">
+                <div class="custom-events-demo">
+                    <div class="event-emitter" id="event-emitter">
+                        <h3>Emisor de Eventos</h3>
+                        <p>Crea y escucha eventos personalizados</p>
+                        <div class="emitter-controls">
+                            <button id="emit-celebration" class="action-btn">🎉 Celebrar</button>
+                            <button id="emit-notification" class="action-btn">📢 Notificar</button>
+                            <button id="emit-custom" class="action-btn">✨ Personalizado</button>
+                        </div>
+                    </div>
+
+                    <div class="event-listeners">
+                        <h4>Listeners Activos:</h4>
+                        <div class="listener-list">
+                            <div class="listener-item">
+                                <span>🎉 celebration</span>
+                                <span id="celebration-count">0</span>
+                            </div>
+                            <div class="listener-item">
+                                <span>📢 notification</span>
+                                <span id="notification-count">0</span>
+                            </div>
+                            <div class="listener-item">
+                                <span>✨ custom</span>
+                                <span id="custom-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-history">
+                        <h4>Historial de Eventos:</h4>
+                        <div id="event-history" class="history-content">
+                            <p>Sin eventos personalizados aún...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="clear-history" class="action-btn reset">🧹 Limpiar historial</button>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Eventos personalizados:</h3>
+                <ul>
+                    <li><strong>new CustomEvent():</strong> Crear eventos personalizados</li>
+                    <li><strong>element.dispatchEvent():</strong> Disparar eventos</li>
+                    <li><strong>event.detail:</strong> Pasar datos personalizados</li>
+                    <li><strong>addEventListener():</strong> Escuchar eventos personalizados</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 4: Propagación de eventos -->
+        <section class="section">
+            <h2>🔄 Sección 4: Propagación de Eventos</h2>
+
+            <div class="demo-area">
+                <div class="propagation-demo">
+                    <div class="bubble-container" id="bubble-outer">
+                        <div class="bubble-label">Contenedor Externo</div>
+                        <div class="bubble-middle" id="bubble-middle">
+                            <div class="bubble-label">Contenedor Medio</div>
+                            <div class="bubble-inner" id="bubble-inner">
+                                <div class="bubble-label">Botón Interno</div>
+                                <button id="bubble-target">Click me!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="propagation-controls">
+                        <label>
+                            <input type="checkbox" id="stop-propagation">
+                            Detener propagación
+                        </label>
+                        <label>
+                            <input type="checkbox" id="prevent-default">
+                            Prevenir acción por defecto
+                        </label>
+                    </div>
+
+                    <div class="propagation-log">
+                        <h4>Orden de Propagación:</h4>
+                        <div id="propagation-log" class="log-content">
+                            <p>Haz click en el botón para ver la propagación...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="clear-propagation" class="action-btn reset">🧹 Limpiar log</button>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Propagación de eventos:</h3>
+                <ul>
+                    <li><strong>Bubbling:</strong> Los eventos suben desde el target hasta el documento</li>
+                    <li><strong>Capturing:</strong> Los eventos bajan desde el documento hasta el target</li>
+                    <li><strong>stopPropagation():</strong> Detiene la propagación</li>
+                    <li><strong>preventDefault():</strong> Previene la acción por defecto</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los elementos para ver el código en acción
+console.log('DOM Bloque C4 - Eventos Avanzados');</pre>
+        </section>
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="index-c3.html" class="nav-btn">⬅️ Volver al C3 (Formularios)</a>
+            <div class="nav-info">
+                <span>Bloque C4 de 4 | Eventos Avanzados - ¡Completado!</span>
+            </div>
+        </nav> -->
+    </div>
+
+    <script src="script-c4.js"></script>
+</body>
+
+</html>

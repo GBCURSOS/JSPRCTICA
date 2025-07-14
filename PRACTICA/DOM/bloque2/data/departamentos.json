@@ -1,0 +1,50 @@
+[
+  {
+    "id": "DEV",
+    "nombre": "Desarrollo",
+    "descripcion": "Departamento encargado del desarrollo de software",
+    "presupuesto": 250000,
+    "empleados": 8,
+    "manager": "Ana García"
+  },
+  {
+    "id": "MKT",
+    "nombre": "Marketing",
+    "descripcion": "Departamento de marketing y comunicaciones",
+    "presupuesto": 150000,
+    "empleados": 5,
+    "manager": "Carlos López"
+  },
+  {
+    "id": "RRHH",
+    "nombre": "Recursos Humanos",
+    "descripcion": "Gestión de talento humano y relaciones laborales",
+    "presupuesto": 100000,
+    "empleados": 3,
+    "manager": "Patricia Morales"
+  },
+  {
+    "id": "VTA",
+    "nombre": "Ventas",
+    "descripcion": "Departamento comercial y de ventas",
+    "presupuesto": 180000,
+    "empleados": 6,
+    "manager": "Javier Herrera"
+  },
+  {
+    "id": "FIN",
+    "nombre": "Finanzas",
+    "descripcion": "Gestión financiera y contable",
+    "presupuesto": 120000,
+    "empleados": 4,
+    "manager": "Roberto Silva"
+  },
+  {
+    "id": "IT",
+    "nombre": "Tecnología",
+    "descripcion": "Infraestructura y soporte tecnológico",
+    "presupuesto": 200000,
+    "empleados": 5,
+    "manager": "Manuel Torres"
+  }
+]

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E5 - CRUD Completo de Usuarios</title>
+    <link rel="stylesheet" href="styles-e5.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🔄 CRUD Completo de Usuarios</h1>
+            <p class="subtitle">Gestión completa con JSONBin.io y Random User API</p>
+        </header>
+
+        <!-- Panel de Control -->
+        <div class="control-panel">
+            <div class="bin-status">
+                <button id="config-button" class="btn-config">⚙️ Configurar JSONBin</button>
+                <button id="new-bin" class="btn-info">🆕 Nuevo Bin</button>
+                <button id="clear-config" class="btn-secondary">🗑️ Limpiar Config</button>
+            </div>
+            <div class="actions">
+                <button id="fetch-users" class="btn-primary">👥 Obtener 10 Usuarios</button>
+                <button id="load-users" class="btn-success">📥 Cargar desde JSONBin</button>
+                <button id="save-users" class="btn-warning">💾 Guardar en JSONBin</button>
+            </div>
+        </div>
+
+        <!-- Formulario para Agregar/Editar -->
+        <div class="form-section">
+            <h3 id="form-title">➕ Agregar Nuevo Usuario</h3>
+            <form id="user-form" class="user-form">
+                <input type="hidden" id="edit-index" value="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="user-name">👤 Nombre:</label>
+                        <input type="text" id="user-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-age">🎂 Edad:</label>
+                        <input type="number" id="user-age" min="1" max="120" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="user-email">📧 Email:</label>
+                        <input type="email" id="user-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-site">🌐 Sitio:</label>
+                        <input type="url" id="user-site">
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">💾 Guardar Usuario</button>
+                    <button type="button" id="cancel-edit" class="btn-secondary" style="display:none;">❌
+                        Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Lista de Usuarios -->
+        <div class="users-section">
+            <div class="section-header">
+                <h3>👥 Lista de Usuarios</h3>
+                <div class="stats">
+                    <span id="total-users">Total: 0</span>
+                </div>
+            </div>
+            <div id="users-container" class="users-grid">
+                <div class="no-users">
+                    <p>🔍 No hay usuarios cargados</p>
+                    <p>Obtén usuarios de la API o carga desde JSONBin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Configuración -->
+        <div id="config-modal" class="modal">
+            <div class="modal-content">
+                <h3>⚙️ Configurar JSONBin.io</h3>
+                <form id="config-form">
+                    <div class="form-group">
+                        <label for="master-key">🔑 Master Key (obligatorio):</label>
+                        <input type="password" id="master-key" placeholder="$2a$10$..." required>
+                        <small>Obtén tu Master Key en <a href="https://jsonbin.io/account/keys"
+                                target="_blank">jsonbin.io/account/keys</a></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bin-id">🗂️ Bin ID (opcional):</label>
+                        <input type="text" id="bin-id" placeholder="Si tienes un Bin existente...">
+                        <small>Déjalo vacío para crear un nuevo Bin automáticamente</small>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-primary">💾 Guardar Configuración</button>
+                        <button type="button" id="cancel-config" class="btn-secondary">❌ Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de Confirmación -->
+        <div id="confirm-modal" class="modal">
+            <div class="modal-content">
+                <h3>❓ Confirmar Acción</h3>
+                <p id="confirm-message"></p>
+                <div class="modal-actions">
+                    <button id="confirm-yes" class="btn-danger">✅ Sí</button>
+                    <button id="confirm-no" class="btn-secondary">❌ No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Log de Operaciones -->
+        <div class="log-section">
+            <h3>📋 Log de Operaciones</h3>
+            <div id="log-container" class="log-container">
+                <div class="log-entry">
+                    <span class="timestamp">🕐 Iniciado</span>
+                    <span class="message">Aplicación lista para usar</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script-e5.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+id,nombre,departamento,puesto,salario,email,fechaIngreso,activo
+1,Laura Martínez,Desarrollo,Full Stack Developer,55000,laura.martinez@empresa.com,2023-02-15,true
+2,Diego Fernández,Marketing,Content Creator,42000,diego.fernandez@empresa.com,2023-04-20,true
+3,Sofia Ruiz,RRHH,Recruiter,40000,sofia.ruiz@empresa.com,2022-08-10,true
+4,Andrés Castro,Ventas,Sales Representative,38000,andres.castro@empresa.com,2022-12-05,true
+5,Elena Vargas,Desarrollo,UI/UX Designer,47000,elena.vargas@empresa.com,2023-01-30,true
+6,Roberto Silva,Finanzas,Financial Analyst,50000,roberto.silva@empresa.com,2021-09-15,false
+7,Carmen Jiménez,Marketing,Social Media Manager,43000,carmen.jimenez@empresa.com,2023-05-12,true
+8,Manuel Torres,IT,System Administrator,46000,manuel.torres@empresa.com,2022-07-03,true
+9,Patricia Morales,RRHH,HR Manager,58000,patricia.morales@empresa.com,2021-03-22,true
+10,Javier Herrera,Ventas,Sales Manager,62000,javier.herrera@empresa.com,2020-11-18,true

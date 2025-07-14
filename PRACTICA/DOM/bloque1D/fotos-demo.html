@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos Demo</title>
+    <link rel="stylesheet" href="styles-fotos.css">
+</head>
+
+<body>
+    <div class="galeria-container">
+        <aside class="listado-fotos" id="listado-fotos">
+            <!-- Listado de nombres de fotos -->
+        </aside>
+        <main class="fotos-main" id="fotos-main">
+            <!-- Galería de fotos -->
+        </main>
+    </div>
+    <div id="modal-foto" class="modal oculto">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <img id="modal-img" src="" alt="Foto" />
+            <h2 id="modal-nombre"></h2>
+            <p id="modal-desc-corta"></p>
+            <p id="modal-desc-larga"></p>
+        </div>
+    </div>
+    <script src="script-fotos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 2D1 - ¿Qué es JSON?</title>
+    <link rel="stylesheet" href="styles-d1.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🗂️ Bloque 2D1</h1>
+            <p>¿Qué es JSON? Sintaxis y Estructura</p>
+        </header>
+
+        <!-- Sección 1: Introducción a JSON -->
+        <section class="section">
+            <h2>📋 Sección 1: ¿Qué es JSON?</h2>
+
+            <div class="concept-area">
+                <div class="concept-card">
+                    <h3>JSON = JavaScript Object Notation</h3>
+                    <ul>
+                        <li><strong>📄 Formato de texto</strong> para intercambiar datos</li>
+                        <li><strong>🌐 Estándar universal</strong> usado en APIs</li>
+                        <li><strong>💡 Fácil de leer</strong> para humanos y máquinas</li>
+                        <li><strong>🔄 Independiente del lenguaje</strong> de programación</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <h4>Ejemplo de JSON:</h4>
+                    <pre class="json-display" id="json-example-1">{
+  "nombre": "Ana García",
+  "edad": 28,
+  "activo": true,
+  "skills": ["JavaScript", "CSS", "HTML"],
+  "direccion": {
+    "ciudad": "Madrid",
+    "pais": "España"
+  }
+}</pre>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Características de JSON:</h3>
+                <ul>
+                    <li><strong>Strings:</strong> Siempre entre comillas dobles "texto"</li>
+                    <li><strong>Numbers:</strong> Enteros o decimales sin comillas</li>
+                    <li><strong>Booleans:</strong> true o false (sin comillas)</li>
+                    <li><strong>Arrays:</strong> Lista de valores entre [ ]</li>
+                    <li><strong>Objects:</strong> Pares clave-valor entre { }</li>
+                    <li><strong>null:</strong> Representa un valor nulo</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Sintaxis de JSON -->
+        <section class="section">
+            <h2>⚙️ Sección 2: Sintaxis Correcta</h2>
+
+            <div class="demo-area">
+                <div class="syntax-demo">
+                    <h3>Comparación: JavaScript vs JSON</h3>
+
+                    <div class="comparison-grid">
+                        <div class="js-side">
+                            <h4>💻 JavaScript Object</h4>
+                            <pre class="code-display">{
+  nombre: 'Juan',
+  edad: 25,
+  activo: true,
+  saludar: function() {
+    return 'Hola!';
+  }
+}</pre>
+                        </div>
+
+                        <div class="json-side">
+                            <h4>📄 JSON</h4>
+                            <pre class="code-display">{
+  "nombre": "Juan",
+  "edad": 25,
+  "activo": true
+}</pre>
+                        </div>
+                    </div>
+
+                    <div class="differences">
+                        <h4>🚨 Diferencias importantes:</h4>
+                        <ul>
+                            <li>JSON usa <strong>comillas dobles</strong> para las claves</li>
+                            <li>JSON <strong>NO permite funciones</strong></li>
+                            <li>JSON <strong>NO permite comentarios</strong></li>
+                            <li>JSON <strong>NO permite undefined</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Validador JSON Interactivo -->
+        <section class="section">
+            <h2>🔧 Sección 3: Validador JSON Interactivo</h2>
+
+            <div class="demo-area">
+                <div class="validator-demo">
+                    <div class="input-area">
+                        <h3>Escribe JSON aquí:</h3>
+                        <textarea id="json-input" placeholder='{"nombre": "Tu nombre", "edad": 25}'>{
+  "nombre": "María López",
+  "profesion": "Desarrolladora",
+  "experiencia": 3,
+  "lenguajes": ["JavaScript", "Python", "Java"],
+  "disponible": true,
+  "proyecto_actual": null
+}</textarea>
+                        <button id="validate-btn" class="action-btn">🔍 Validar JSON</button>
+                    </div>
+
+                    <div class="output-area">
+                        <h3>Resultado:</h3>
+                        <div id="validation-result" class="result-display">
+                            <p>Escribe JSON válido y presiona "Validar JSON"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="example-user" class="example-btn">👤 Ejemplo: Usuario</button>
+                    <button id="example-product" class="example-btn">📦 Ejemplo: Producto</button>
+                    <button id="example-array" class="example-btn">📋 Ejemplo: Lista</button>
+                    <button id="example-nested" class="example-btn">🏗️ Ejemplo: Anidado</button>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🎯 Práctica:</h3>
+                <p>Prueba modificar el JSON del área de texto y validarlo. Experimenta con:</p>
+                <ul>
+                    <li>Agregar nuevas propiedades</li>
+                    <li>Crear arrays con diferentes tipos de datos</li>
+                    <li>Anidar objetos dentro de otros objetos</li>
+                    <li>Provocar errores para ver cómo se detectan</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 4: Ejemplos Reales -->
+        <section class="section">
+            <h2>🌟 Sección 4: Ejemplos del Mundo Real</h2>
+
+            <div class="demo-area">
+                <div class="real-examples">
+                    <div class="example-grid">
+                        <div class="example-item">
+                            <h4>👤 Usuario de API</h4>
+                            <pre class="json-display">{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "phone": "1-770-736-8031",
+  "website": "hildegard.org"
+}</pre>
+                        </div>
+
+                        <div class="example-item">
+                            <h4>🛒 Producto E-commerce</h4>
+                            <pre class="json-display">{
+  "id": 101,
+  "titulo": "Laptop Gaming",
+  "precio": 1299.99,
+  "categoria": "Electrónicos",
+  "en_stock": true,
+  "tags": ["gaming", "laptop", "alta-gama"]
+}</pre>
+                        </div>
+
+                        <div class="example-item">
+                            <h4>📝 Post de Blog</h4>
+                            <pre class="json-display">{
+  "id": 1,
+  "title": "Introducción a JSON",
+  "body": "JSON es un formato...",
+  "userId": 1,
+  "publishedAt": "2025-01-15",
+  "comments": 23
+}</pre>
+                        </div>
+
+                        <div class="example-item">
+                            <h4>📊 Respuesta de API</h4>
+                            <pre class="json-display">{
+  "status": "success",
+  "data": [
+    {"id": 1, "name": "Ana"},
+    {"id": 2, "name": "Luis"}
+  ],
+  "meta": {
+    "total": 2,
+    "page": 1
+  }
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 Observaciones:</h3>
+                <ul>
+                    <li><strong>APIs REST:</strong> Casi siempre usan JSON para respuestas</li>
+                    <li><strong>Estructura consistente:</strong> Mismos campos para objetos similares</li>
+                    <li><strong>Anidación:</strong> Objetos dentro de objetos para organizar datos</li>
+                    <li><strong>Arrays:</strong> Para listas de elementos similares</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+<!--          
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Interactúa con los validadores para ver el código en acción
+console.log('Bloque D1 - JSON Fundamentals inicializado');</pre>
+        </section> -->
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="../bloqueC/index-c4.html" class="nav-btn">⬅️ Volver al DOM (C4)</a>
+            <a href="index-d2.html" class="nav-btn">➡️ Siguiente: D2 (Parse/Stringify)</a>
+            <div class="nav-info">
+                <span>Bloque D1 de 4 | JSON Fundamentals - ¡Empezamos!</span>
+            </div>
+        </nav>
+         -->
+    </div>
+
+    <script src="script-d1.js"></script>
+</body>
+
+</html>

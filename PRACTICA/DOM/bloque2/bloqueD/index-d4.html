@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 2D3 - LocalStorage como Base de Datos</title>
+    <link rel="stylesheet" href="styles-d4.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>💾 Bloque 2D3</h1>
+            <p>LocalStorage como Base de Datos del Navegador - Create & Read</p>
+        </header>
+
+        <!-- Sección 1: Inicialización de datos -->
+        <section class="section">
+            <h2>🚀 Sección 1: Inicializar Base de Datos LocalStorage</h2>
+
+            <div class="concept-area">
+                <div class="concept-card">
+                    <h3>LocalStorage como Base de Datos</h3>
+                    <ul>
+                        <li><strong>💾 Persistencia:</strong> Los datos se guardan entre sesiones</li>
+                        <li><strong>🌐 Local:</strong> Solo en este navegador/dispositivo</li>
+                        <li><strong>📄 JSON:</strong> Guardamos arrays de objetos como strings</li>
+                        <li><strong>⚡ Instantáneo:</strong> Sin conexión a internet</li>
+                    </ul>
+                </div>
+
+                <div class="data-status">
+                    <h4>Estado de la Base de Datos:</h4>
+                    <div id="db-status" class="status-display">
+                        <p>Cargando información...</p>
+                    </div>
+                    <div class="init-controls">
+                        <h4>🔄 Secuencia de Carga de Datos:</h4>
+                        <div class="sequence-buttons">
+                            <button id="load-csv" class="action-btn primary">1️⃣ Cargar desde empleados.csv</button>
+                            <button id="load-json" class="action-btn primary">1️⃣ Cargar desde empleados-ejemplo.json</button>
+                            <button id="save-to-storage" class="action-btn success" disabled>2️⃣ Guardar en LocalStorage</button>
+                            <button id="clear-db" class="action-btn warning">🗑️ Limpiar base de datos</button>
+                        </div>
+
+                        <div class="file-upload-buttons">
+                            <!-- <button id="upload-csv" class="action-btn secondary">📁 Subir archivo CSV</button>
+                            <button id="upload-json" class="action-btn secondary">📁 Subir archivo JSON</button> -->
+                        </div>
+                        <div class="management-buttons">
+                            <!-- <button id="init-db" class="action-btn secondary">📝 Usar datos de ejemplo</button> -->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>🔍 ¿Cómo funciona LocalStorage?</h3>
+                <ul>
+                    <li><strong>localStorage.setItem():</strong> Guardar datos</li>
+                    <li><strong>localStorage.getItem():</strong> Leer datos</li>
+                    <li><strong>JSON.stringify():</strong> Convertir objetos a string</li>
+                    <li><strong>JSON.parse():</strong> Convertir string a objetos</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sección 2: Visualizar datos -->
+        <section class="section">
+            <h2>👁️ Sección 2: Visualizar Empleados Cargados</h2>
+
+            <div class="demo-area">
+                <div class="table-info">
+                    <h3>Datos de Empleados</h3>
+                    <p>Aquí se muestran los empleados cargados desde archivos o guardados en LocalStorage.</p>
+                </div>
+
+                <div id="employee-table" class="table-container">
+                    <p>No hay empleados cargados. Usa los botones de la Sección 1 para cargar datos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+<!--          
+        <section class="code-panel">
+            <h3>📋 Código JavaScript Ejecutado</h3>
+            <pre id="code-display">// Sistema LocalStorage iniciado
+console.log('Bloque D4 - LocalStorage Database cargado');</pre>
+        </section> -->
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="index-d3.html" class="nav-btn">⬅️ Anterior: D3 (Manipular JSON)</a>
+            <a href="../bloqueE/index-e1.html" class="nav-btn">➡️ Siguiente: E1 (¿Qué son las APIs?)</a>
+            <div class="nav-info">
+                <span>Bloque D4 de 4 | LocalStorage Database - ¡CRUD Completo!</span>
+            </div>
+        </nav> -->
+    </div>
+
+    <!-- Inputs file ocultos para importar -->
+<!--      
+    <input type="file" id="importarJSON" accept=".json" style="display: none;">
+    <input type="file" id="importarCSV" accept=".csv" style="display: none;"> -->
+
+    <script src="script-d4.js"></script>
+</body>
+
+</html>

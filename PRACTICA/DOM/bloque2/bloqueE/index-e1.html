@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque E1 - Fetch API y REST: Definiciones</title>
+    <link rel="stylesheet" href="styles-e1.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📡 Bloque E1</h1>
+            <p>Fetch API y REST - Conceptos Fundamentales</p>
+        </header>
+
+        <!-- Sección 1: ¿Qué es Fetch API? -->
+        <section class="section">
+            <h2>⚡ Sección 1: ¿Qué es Fetch API?</h2>
+
+            <div class="concept-area">
+                <div class="definition-card fetch-card">
+                    <h3>🚀 Fetch API</h3>
+                    <div class="definition-content">
+                        <p class="definition-main">
+                            <strong>Fetch API</strong> es la herramienta nativa de JavaScript para hacer peticiones HTTP
+                            a servidores y APIs.
+                        </p>
+
+                        <div class="key-points">
+                            <h4>🎯 Puntos clave:</h4>
+                            <ul>
+                                <li><strong>📡 Función:</strong> Conecta tu JavaScript con APIs externas</li>
+                                <li><strong>🌐 Nativo:</strong> Viene integrado en todos los navegadores modernos</li>
+                                <li><strong>🔄 Asíncrono:</strong> No bloquea la interfaz mientras espera respuesta</li>
+                                <li><strong>📊 Flexible:</strong> Maneja JSON, texto, archivos, etc.</li>
+                            </ul>
+                        </div>
+
+                        <div class="syntax-example">
+                            <h4>💻 Sintaxis básica:</h4>
+                            <pre><code>fetch('https://api.ejemplo.com/datos')
+  .then(response => response.json())
+  .then(data => console.log(data));</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analogy-card">
+                    <h3>🏪 Analogía: Ir de compras</h3>
+                    <div class="analogy-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <strong>fetch(url)</strong> = Ir a la tienda
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <strong>response</strong> = El vendedor te atiende
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <strong>.json()</strong> = Abrir la bolsa de compras
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <strong>data</strong> = Usar lo que compraste
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: ¿Qué es API REST? -->
+        <section class="section">
+            <h2>🌐 Sección 2: ¿Qué es API REST?</h2>
+
+            <div class="concept-area">
+                <div class="definition-card rest-card">
+                    <h3>🏗️ API REST</h3>
+                    <div class="definition-content">
+                        <p class="definition-main">
+                            <strong>REST</strong> (REpresentational State Transfer) son las reglas para organizar y
+                            estructurar APIs de forma estándar y predecible.
+                        </p>
+
+                        <div class="key-points">
+                            <h4>🎯 Puntos clave:</h4>
+                            <ul>
+                                <li><strong>📋 Reglas:</strong> Cómo organizar endpoints y URLs</li>
+                                <li><strong>🔄 Métodos HTTP:</strong> GET, POST, PUT, DELETE para CRUD</li>
+                                <li><strong>🗂️ Recursos:</strong> URLs que representan datos (/users, /posts)</li>
+                                <li><strong>📊 Sin estado:</strong> Cada petición es independiente</li>
+                            </ul>
+                        </div>
+
+                        <div class="rest-structure">
+                            <h4>🌳 Estructura REST típica:</h4>
+                            <div class="rest-examples">
+                                <div class="rest-example get">GET /api/usuarios → Lista todos</div>
+                                <div class="rest-example get">GET /api/usuarios/123 → Usuario específico</div>
+                                <div class="rest-example post">POST /api/usuarios → Crear nuevo</div>
+                                <div class="rest-example put">PUT /api/usuarios/123 → Actualizar</div>
+                                <div class="rest-example delete">DELETE /api/usuarios/123 → Eliminar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analogy-card">
+                    <h3>🏢 Analogía: Sistema de oficinas</h3>
+                    <div class="analogy-steps">
+                        <div class="step">
+                            <span class="step-icon">🏢</span>
+                            <strong>/usuarios</strong> = Departamento de RRHH
+                        </div>
+                        <div class="step">
+                            <span class="step-icon">👤</span>
+                            <strong>/usuarios/123</strong> = Escritorio del empleado 123
+                        </div>
+                        <div class="step">
+                            <span class="step-icon">📋</span>
+                            <strong>GET</strong> = Consultar información
+                        </div>
+                        <div class="step">
+                            <span class="step-icon">✏️</span>
+                            <strong>POST/PUT</strong> = Crear/actualizar expediente
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Métodos HTTP en detalle -->
+        <section class="section">
+            <h2>🔄 Sección 3: Métodos HTTP - El lenguaje de las APIs</h2>
+
+            <div class="demo-area">
+                <div class="methods-grid">
+                    <div class="method-card get">
+                        <div class="method-header">
+                            <h3>GET 📥</h3>
+                            <span class="method-purpose">OBTENER</span>
+                        </div>
+                        <div class="method-details">
+                            <p><strong>¿Qué hace?</strong> Solicita información del servidor</p>
+                            <p><strong>¿Modifica datos?</strong> No, solo lee</p>
+                            <p><strong>Ejemplo:</strong> Ver lista de productos</p>
+                            <code>GET /api/productos</code>
+                        </div>
+                    </div>
+
+                    <div class="method-card post">
+                        <div class="method-header">
+                            <h3>POST 📤</h3>
+                            <span class="method-purpose">CREAR</span>
+                        </div>
+                        <div class="method-details">
+                            <p><strong>¿Qué hace?</strong> Envía datos para crear algo nuevo</p>
+                            <p><strong>¿Modifica datos?</strong> Sí, crea nuevos registros</p>
+                            <p><strong>Ejemplo:</strong> Registrar nuevo usuario</p>
+                            <code>POST /api/usuarios</code>
+                        </div>
+                    </div>
+
+                    <div class="method-card put">
+                        <div class="method-header">
+                            <h3>PUT ✏️</h3>
+                            <span class="method-purpose">ACTUALIZAR</span>
+                        </div>
+                        <div class="method-details">
+                            <p><strong>¿Qué hace?</strong> Actualiza un recurso completo</p>
+                            <p><strong>¿Modifica datos?</strong> Sí, reemplaza información</p>
+                            <p><strong>Ejemplo:</strong> Editar perfil completo</p>
+                            <code>PUT /api/usuarios/123</code>
+                        </div>
+                    </div>
+
+                    <div class="method-card delete">
+                        <div class="method-header">
+                            <h3>DELETE 🗑️</h3>
+                            <span class="method-purpose">ELIMINAR</span>
+                        </div>
+                        <div class="method-details">
+                            <p><strong>¿Qué hace?</strong> Elimina un recurso específico</p>
+                            <p><strong>¿Modifica datos?</strong> Sí, borra información</p>
+                            <p><strong>Ejemplo:</strong> Eliminar producto</p>
+                            <code>DELETE /api/productos/456</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Próximos pasos -->
+        <section class="section">
+            <h2>🎯 Sección 4: ¿Qué sigue?</h2>
+
+            <div class="next-steps">
+                <div class="step-card thunder">
+                    <h3>⚡ Paso 1: Thunder Client</h3>
+                    <p>Vamos a <strong>ver en acción</strong> estos conceptos usando Thunder Client para hacer
+                        peticiones reales a APIs.</p>
+                    <ul>
+                        <li>Probar Fetch con APIs reales (clima, países, crypto)</li>
+                        <li>Experimentar con REST usando JSONBin.io</li>
+                        <li>Ver requests y responses sin código</li>
+                    </ul>
+                </div>
+
+                <div class="step-card code">
+                    <h3>💻 Paso 2: Código JavaScript</h3>
+                    <p>Después implementaremos en código <strong>lo mismo que vimos</strong> en Thunder Client.</p>
+                    <ul>
+                        <li>Páginas que consumen APIs reales</li>
+                        <li>Manejo de errores y estados de carga</li>
+                        <li>Interfaces dinámicas con datos en vivo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de código -->
+        <section class="code-panel">
+            <h3>📋 Resumen de Conceptos</h3>
+            <pre id="code-display">// 🎯 CONCEPTOS FUNDAMENTALES
+
+// Fetch API = Herramienta para hacer requests
+fetch('https://api.ejemplo.com/datos')
+  .then(response => response.json())
+  .then(data => usar(data));
+
+// REST = Reglas para organizar APIs
+GET    /api/usuarios     → Obtener lista
+POST   /api/usuarios     → Crear nuevo
+PUT    /api/usuarios/123 → Actualizar usuario 123
+DELETE /api/usuarios/123 → Eliminar usuario 123
+
+// 🚀 Próximo paso: ¡Probarlo en Thunder Client!</pre>
+        </section>
+
+        <!-- Navegación -->
+<!--          
+        <nav class="navigation">
+            <a href="../bloqueD/index-d4.html" class="nav-btn">⬅️ Anterior: D4 (LocalStorage Database)</a>
+            <a href="index-e2.html" class="nav-btn">➡️ Siguiente: E2 (Fetch API Práctica)</a>
+            <div class="nav-info">
+                <span>Bloque E1 | Definiciones - ¡Base sólida para la práctica!</span>
+            </div>
+        </nav> -->
+    </div>
+
+    <script src="script-e1.js"></script>
+</body>
+
+</html>

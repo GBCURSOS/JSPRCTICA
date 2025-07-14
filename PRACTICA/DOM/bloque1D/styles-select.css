@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+}
+.galeria-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.fotos-main {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 2em;
+  overflow-y: auto;
+}
+.foto-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1em;
+  width: 220px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.foto-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+.foto-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+}
+.btn-select {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5em;
+  font-size: 1em;
+}
+.btn-select:hover {
+  background: #0056b3;
+}
+.listado-seleccion {
+  width: 260px;
+  background: #222;
+  color: #fff;
+  padding: 1em;
+  overflow-y: auto;
+}
+.listado-seleccion h2 {
+  margin-top: 0;
+}
+.seleccion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  background: #333;
+  padding: 0.5em;
+  border-radius: 6px;
+}
+.mini-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-right: 0.7em;
+}
