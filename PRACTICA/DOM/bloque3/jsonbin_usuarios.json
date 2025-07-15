@@ -1,0 +1,114 @@
+[
+  {
+    "gender": "female",
+    "name": {
+      "title": "Ms",
+      "first": "Orislava",
+      "last": "Isaievich"
+    },
+    "location": {
+      "street": {
+        "number": 9196,
+        "name": "Avtomobilistiv"
+      },
+      "city": "Berezan",
+      "state": "Volinska",
+      "country": "Ukraine",
+      "postcode": 68833,
+      "coordinates": {
+        "latitude": "73.9194",
+        "longitude": "166.0027"
+      },
+      "timezone": {
+        "offset": "+3:00",
+        "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
+      }
+    },
+    "email": "orislava.isaievich@example.com",
+    "login": {
+      "uuid": "a5d8e001-ae71-461a-b841-de878978ca8c",
+      "username": "bigswan893",
+      "password": "dogwood",
+      "salt": "6DgzgOUH",
+      "md5": "3b5e8aa97c5da48814978f9cffeca776",
+      "sha1": "8e38c1f917944a8921fa38750994eef795ad743d",
+      "sha256": "59323743d30def8c4b15dfa0939b417a1abf8f0cdebef6213e9b9666fdbce2e4"
+    },
+    "dob": {
+      "date": "1975-06-30T12:25:58.989Z",
+      "age": 50
+    },
+    "registered": {
+      "date": "2011-11-04T12:55:17.902Z",
+      "age": 13
+    },
+    "phone": "(097) L57-6581",
+    "cell": "(068) X93-4420",
+    "id": {
+      "name": "",
+      "value": null
+    },
+    "picture": {
+      "large": "https://randomuser.me/api/portraits/women/50.jpg",
+      "medium": "https://randomuser.me/api/portraits/med/women/50.jpg",
+      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/50.jpg"
+    },
+    "nat": "UA"
+  },
+  {
+    "gender": "male",
+    "name": {
+      "title": "Mr",
+      "first": "Rick",
+      "last": "Holt"
+    },
+    "location": {
+      "street": {
+        "number": 4537,
+        "name": "Eason Rd"
+      },
+      "city": "Vernon",
+      "state": "Alabama",
+      "country": "United States",
+      "postcode": 60366,
+      "coordinates": {
+        "latitude": "-59.8924",
+        "longitude": "-58.0787"
+      },
+      "timezone": {
+        "offset": "+7:00",
+        "description": "Bangkok, Hanoi, Jakarta"
+      }
+    },
+    "email": "rick.holt@example.com",
+    "login": {
+      "uuid": "ef57731f-5c6c-473e-8823-a85cf2d3b1dc",
+      "username": "bluepanda176",
+      "password": "slave1",
+      "salt": "koOGuX9k",
+      "md5": "5de6c029259a4f546f5f729752172fc2",
+      "sha1": "9d2f47fe4fb4a986b6a5070c822e02c437b7f3e8",
+      "sha256": "9519a67c246b96238b5f42f309b1a92a7b4492c585e98a3d120b736c2353d9d5"
+    },
+    "dob": {
+      "date": "1992-06-28T22:23:27.133Z",
+      "age": 33
+    },
+    "registered": {
+      "date": "2018-02-18T08:07:13.285Z",
+      "age": 7
+    },
+    "phone": "(512) 747-7110",
+    "cell": "(708) 372-7925",
+    "id": {
+      "name": "SSN",
+      "value": "707-13-7193"
+    },
+    "picture": {
+      "large": "https://randomuser.me/api/portraits/men/48.jpg",
+      "medium": "https://randomuser.me/api/portraits/med/men/48.jpg",
+      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/48.jpg"
+    },
+    "nat": "US"
+  }
+]
