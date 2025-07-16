@@ -1,0 +1,114 @@
+[
+  {
+    "gender": "female",
+    "name": {
+      "title": "Ms",
+      "first": "Luz",
+      "last": "Llamas"
+    },
+    "location": {
+      "street": {
+        "number": 3691,
+        "name": "Calzada Carrero"
+      },
+      "city": "San Tadeo",
+      "state": "Michoacan",
+      "country": "Mexico",
+      "postcode": 85747,
+      "coordinates": {
+        "latitude": "22.4017",
+        "longitude": "162.5064"
+      },
+      "timezone": {
+        "offset": "+5:45",
+        "description": "Kathmandu"
+      }
+    },
+    "email": "luz.llamas@example.com",
+    "login": {
+      "uuid": "97dc54c7-d3d3-47a7-b5b9-f583c6035723",
+      "username": "organiczebra384",
+      "password": "pianoman",
+      "salt": "mZpDPCEu",
+      "md5": "416deee64f483180b26d22e3f72cb14a",
+      "sha1": "02a78aaf0449ca125b5b04add1cf2595de039f69",
+      "sha256": "dbced86e4d13b51e1ff5ec08c44383e5393f7ec477cdbfa296e760e0af584b15"
+    },
+    "dob": {
+      "date": "1975-06-12T13:52:04.455Z",
+      "age": 50
+    },
+    "registered": {
+      "date": "2007-03-12T00:22:59.323Z",
+      "age": 18
+    },
+    "phone": "(640) 234 1153",
+    "cell": "(691) 669 0561",
+    "id": {
+      "name": "NSS",
+      "value": "79 81 84 6123 8"
+    },
+    "picture": {
+      "large": "https://randomuser.me/api/portraits/women/77.jpg",
+      "medium": "https://randomuser.me/api/portraits/med/women/77.jpg",
+      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/77.jpg"
+    },
+    "nat": "MX"
+  },
+  {
+    "gender": "female",
+    "name": {
+      "title": "Ms",
+      "first": "Mary",
+      "last": "Gibson"
+    },
+    "location": {
+      "street": {
+        "number": 4364,
+        "name": "School Lane"
+      },
+      "city": "Enniscorthy",
+      "state": "Kildare",
+      "country": "Ireland",
+      "postcode": 17169,
+      "coordinates": {
+        "latitude": "3.3234",
+        "longitude": "-42.8937"
+      },
+      "timezone": {
+        "offset": "+5:00",
+        "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+      }
+    },
+    "email": "mary.gibson@example.com",
+    "login": {
+      "uuid": "e2baf089-2cfd-41d6-a235-e7cb5fa6b661",
+      "username": "sadbear643",
+      "password": "light",
+      "salt": "XmfjjxqM",
+      "md5": "763439819ee333e55769042b8ab55baf",
+      "sha1": "5ae40205cc3259c5eff5896161db22cc93c133e4",
+      "sha256": "1b0f9ccf46d3a0f8c3fc56dc08977596db96eb5c3519623f1b7c76cddb7bd2e4"
+    },
+    "dob": {
+      "date": "1960-12-06T03:24:46.958Z",
+      "age": 64
+    },
+    "registered": {
+      "date": "2019-05-10T09:37:11.058Z",
+      "age": 6
+    },
+    "phone": "051-723-7600",
+    "cell": "081-653-1604",
+    "id": {
+      "name": "PPS",
+      "value": "8358013T"
+    },
+    "picture": {
+      "large": "https://randomuser.me/api/portraits/women/69.jpg",
+      "medium": "https://randomuser.me/api/portraits/med/women/69.jpg",
+      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/69.jpg"
+    },
+    "nat": "IE"
+  }
+]

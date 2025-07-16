@@ -6,74 +6,115 @@ const USUARIOS_KEY = "usuarios_jsonbin_id";
 const USUARIOS = "usuarios_jsonbin";
 
 async function obtenerUsuariosRandom() {
-  const response = await fetch("https://randomuser.me/api/?results=5");
-  const data = await response.json();
-  // Extraer solo nombre, apellido, celular y foto
-  return data.results.map((u) => ({
-    nombre: u.name.first,
-    apellido: u.name.last,
-    celular: u.cell,
-    foto: u.picture.large,
-  }));
+  try {
+    const response = await fetch("https://randomuser.me/api/?results=2");
+    const data = await response.json();
+    console.log("Usuarios obtenidos:", data.results);
+    return data.results.map((u) => ({
+      nombre: u.name.first,
+      apellido: u.name.last,
+      celular: u.cell,
+      foto: u.picture.large,
+    }));
+  } catch (error) {
+    console.error("Error al obtener usuarios:", error);
+    return []; // Retorna un array vacío en caso de error
+  }
 }
 
 async function guardarEnJsonBin(usuarios) {
-  const res = await fetch("https://api.jsonbin.io/v3/b", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Master-Key": X_Master_Key,
-      "X-Bin-Name": X_Bin_Name,
-    },
-    body: JSON.stringify(usuarios),
-  });
-  const data = await res.json();
-  if (data && data.metadata && data.metadata.id) {
-    localStorage.setItem(USUARIOS_KEY, data.metadata.id);
-    return data.metadata.id;
+  try {
+    console.log("Guardando usuarios en JSONBin:", usuarios);
+    const res = await fetch("https://api.jsonbin.io/v3/b", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": X_Master_Key,
+        "X-Bin-Name": X_Bin_Name,
+      },
+      body: JSON.stringify(usuarios),
+    });
+    if (!res.ok) {
+      console.error("Error en la respuesta de JSONBin:", res.status);
+      return null;
+    }
+    const data = await res.json();
+    if (data && data.metadata && data.metadata.id) {
+      localStorage.setItem(USUARIOS_KEY, data.metadata.id);
+      console.log("Bin guardado con ID:", data.metadata.id);
+      return data.metadata.id;
+    }
+    return null;
+  } catch (error) {
+    console.error("Error en guardarEnJsonBin:", error);
+    return null;
   }
-  throw new Error("No se pudo guardar en JSONBin");
 }
 
 async function leerDeJsonBin(binId) {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
-    method: "GET",
-    headers: {
-      "X-Master-Key": X_Master_Key,
-      "Content-Type": "application/json",
-    },
-  });
-  const data = await res.json();
-  return data.record;
+  try {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+      method: "GET",
+      headers: {
+        "X-Master-Key": X_Master_Key,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!res.ok) {
+      console.error("Error en la respuesta de JSONBin:", res.status);
+      return null;
+    }
+    const data = await res.json();
+    console.log("Datos leídos de JSONBin:", data);
+    return data.record;
+  } catch (error) {
+    console.error("Error en leerDeJsonBin:", error);
+    return null;
+  }
 }
 
 async function putEnJsonBin(binId, usuarios) {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Master-Key": X_Master_Key,
-    },
-    body: JSON.stringify(usuarios),
-  });
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Master-Key": X_Master_Key,
+      },
+      body: JSON.stringify(usuarios),
+    });
+    if (!res.ok) {
+      console.error("Error en la respuesta de JSONBin (PUT):", res.status);
+      return null;
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error en putEnJsonBin:", error);
+    return null;
+  }
 }
 
 async function borrarBin(binId) {
-  const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
-    method: "DELETE",
-    headers: {
-      "X-Master-Key": X_Master_Key,
-    },
-  });
-  if (res.ok) {
-    // Borra también la información en localStorage
-    localStorage.removeItem(USUARIOS_KEY);
-    document.getElementById("usuarios").innerHTML =
-      "<em>Bin y datos locales borrados.</em>";
-  } else {
-    alert("No se pudo borrar el bin.");
+  try {
+    const res = await fetch(`https://api.jsonbin.io/v3/b/${binId}`, {
+      method: "DELETE",
+      headers: {
+        "X-Master-Key": X_Master_Key,
+      },
+    });
+    if (res.ok) {
+      // Borra también la información en localStorage
+      localStorage.removeItem(USUARIOS_KEY);
+      localStorage.removeItem(USUARIOS);
+      document.getElementById("usuarios").innerHTML =
+        "<em>Bin y datos locales borrados.</em>";
+    } else {
+      alert("No se pudo borrar el bin.");
+    }
+  } catch (error) {
+    console.error("Error al borrar el bin:", error);
+    alert("Ocurrió un error al intentar borrar el bin.");
   }
 }
 
@@ -100,7 +141,7 @@ function mostrarUsuarios(usuarios, binId) {
     </div>
   `
     )
-    .join("");
+    .join("<hr>");
   // Listeners para los botones toggle
   cont.querySelectorAll(".toggle-case").forEach((btn) => {
     btn.addEventListener("click", async function () {
@@ -135,6 +176,7 @@ async function flujoPrincipal() {
   let binId = localStorage.getItem(USUARIOS_KEY);
   let usuarios;
   if (!binId) {
+    console.log("No hay bin guardado, obteniendo usuarios random...");
     usuarios = await obtenerUsuariosRandom();
     binId = await guardarEnJsonBin(usuarios);
   }

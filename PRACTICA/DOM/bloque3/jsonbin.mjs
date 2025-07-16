@@ -83,7 +83,7 @@ async function leerUsuariosCrearJsonBin() {
   await postToJsonBin(dataRelevante);
 }
 
-// leerUsuariosCrearJsonBin();
+leerUsuariosCrearJsonBin();
 
 // Leer jsonBinId guardado desde archivo
 const idGuardado = JSON.parse(
