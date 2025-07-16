@@ -1,0 +1,29 @@
+1. Gestor de tareas personales (ToDo List)
+   - Aplicación para crear, editar, eliminar y listar tareas. Permite organizar tareas por categorías, fechas y estados.
+
+2. Agenda de contactos
+   - Sistema para registrar, modificar y eliminar contactos con foto, teléfono, email y notas personales.
+
+3. Blog simple
+   - Plataforma para publicar, editar y eliminar artículos. Permite comentarios de usuarios y visualización de entradas.
+
+4. Gestor de recetas de cocina
+   - Aplicación para guardar, editar y consultar recetas, ingredientes, pasos y fotos. Permite búsqueda y filtrado.
+
+5. Registro de gastos personales
+   - Herramienta para registrar, editar y eliminar gastos, organizados por categorías y fechas. Incluye reportes simples.
+
+6. Directorio de libros
+   - Sistema para administrar libros, autores, géneros y reseñas. Permite búsqueda y consulta de información.
+
+7. Administrador de eventos
+   - Aplicación para crear, editar y listar eventos con fecha, lugar y asistentes. Permite registro y consulta de eventos.
+
+8. Catálogo de mascotas para adopción
+   - Plataforma para publicar, editar y eliminar mascotas disponibles para adopción, con fotos, descripción y contacto.
+
+9. Sistema de registro de estudiantes
+   - Sistema para gestionar estudiantes, cursos, calificaciones y reportes. Permite CRUD y visualización de datos.
+
+10. Catálogo de productos (consulta y detalles)
+    - Aplicación para listar y consultar productos, ver detalles y buscar por categorías, sin funcionalidad de carrito.
